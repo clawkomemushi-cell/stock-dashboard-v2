@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.index",
+    "data_type": "index",
+    "status": "partial",
+    "generated_at_iso": "2026-04-05T02:01:58+08:00",
+    "generated_at_label": "04/05 02:01",
+    "last_successful_run": "2026-04-05T02:01:58+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "publish_layer_validation_only_core_pages_updated",
+      "thesis_check_and_close_review_intentionally_not_published_this_round",
+      "dashboard_summary_and_morning_view_are_publish_artifacts_not_yet_consumed_directly_by_frontend"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-05",
+  "week": "2026-W14",
+  "market_status": "holiday",
+  "paths": {
+    "daily_thesis": "/data/daily/2026-04-05/daily_thesis.json",
+    "action_plan": "/data/daily/2026-04-05/action_plan.json",
+    "thesis_check": null,
+    "close_review": null,
+    "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
+    "performance_history": "/data/performance/history.json"
+  },
+  "file_statuses": {
+    "daily_thesis": {
+      "status": "success",
+      "updated_at_iso": "2026-04-05T01:56:22+08:00",
+      "updated_at_label": "01:56"
+    },
+    "action_plan": {
+      "status": "success",
+      "updated_at_iso": "2026-04-05T01:56:22+08:00",
+      "updated_at_label": "01:56"
+    },
+    "thesis_check": {
+      "status": "failed",
+      "updated_at_iso": "2026-04-05T02:01:58+08:00",
+      "updated_at_label": "02:01"
+    },
+    "close_review": {
+      "status": "failed",
+      "updated_at_iso": "2026-04-05T02:01:58+08:00",
+      "updated_at_label": "02:01"
+    },
+    "weekly_review": {
+      "status": "success",
+      "updated_at_iso": "2026-04-03T16:00:00+08:00",
+      "updated_at_label": "16:00"
+    },
+    "performance_history": {
+      "status": "success",
+      "updated_at_iso": "2026-04-03T16:00:00+08:00",
+      "updated_at_label": "16:00"
+    }
+  },
+  "available_weeks": [
+    "2026-W14"
+  ],
+  "available_dates": [
+    "2026-04-05",
+    "2026-04-03",
+    "2026-04-02",
+    "2026-04-01",
+    "2026-03-31",
+    "2026-03-28"
+  ],
+  "weekly_paths": {
+    "2026-W14": "/data/weekly/2026-W14/weekly_review.json"
+  },
+  "published_views": {
+    "dashboard_summary": "/data/views/2026-04-05/dashboard_summary.json",
+    "morning_view": "/data/views/2026-04-05/morning_view.json"
+  },
+  "publish_notes": [
+    "Core publish validation only: dashboard + morning.",
+    "Current frontend still consumes daily_thesis/action_plan directly via latest.paths.",
+    "Intraday/close/weekly/performance were intentionally left untouched."
+  ]
+}

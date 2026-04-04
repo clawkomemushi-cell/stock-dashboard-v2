@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.action_plan",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-05T01:56:22+08:00",
+    "generated_at_label": "04/05 01:56",
+    "last_successful_run": "2026-04-05T01:56:22+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "weekend_closed_window_plan",
+      "schema_semantics_action_plan_preopen_assumed",
+      "no_live_or_stock_level_snapshot_so_actions_are_conditional_only"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-05",
+  "generated_at_iso": "2026-04-05T01:56:22+08:00",
+  "generated_at_label": "01:56",
+  "version": 1,
+  "overall_stance": "本輪 action_plan 只是一份 next-open 條件式草案。已知背景偏空且風險偏高，但因缺少匯率、殖利率、個股/ETF 最新快照與開盤資料，現階段以保留現金、等待下一輪確認為主。",
+  "actions": [
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "action": "先觀察，不預掛單",
+      "price_target_value": null,
+      "price_target_label": "待補開盤後資料再定",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本輪不執行）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本輪不執行）",
+      "position_size_pct": 0,
+      "position_size_label": "0%（等待確認）",
+      "rationale": "可作為大盤風險收斂後的觀察代理工具，但目前缺乏可執行級別資料。",
+      "conditions": [
+        "補齊台幣 / 美債殖利率 / 個股與 ETF 最新快照",
+        "確認開盤後並非單純假日後補跌或跳空雜訊",
+        "再判斷是否轉為可執行條件"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "direction": "watch",
+      "action": "只保留避險觀察，不直接進場",
+      "price_target_value": null,
+      "price_target_label": "待補風險確認資料",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本輪不執行）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本輪不執行）",
+      "position_size_pct": 0,
+      "position_size_label": "0%（等待確認）",
+      "rationale": "已知背景偏空，但沒有即時數據與工具價格快照，避免把避險觀察錯當成正式做空指令。",
+      "conditions": [
+        "下一輪仍確認偏空背景未改善",
+        "補齊 ETF 與指數延伸資料",
+        "確認不是單日新聞噪音造成的過度反應"
+      ],
+      "status": "active"
+    }
+  ],
+  "paper_trade": {
+    "virtual_capital": 1000000,
+    "available_cash": 1000000,
+    "today_pnl": 0,
+    "today_pnl_pct": 0.0,
+    "total_pnl": 0,
+    "total_pnl_pct": 0.0,
+    "win_rate": 0.0,
+    "open_positions": []
+  },
+  "max_exposure_pct": 0,
+  "max_exposure_label": "0%（本輪僅驗證分析層）",
+  "notes": "這份 action_plan 只驗證 V2 分析層 schema 與依賴鏈；若要進入發布層，至少需補即時市場、FX/yield 與標的層資料。"
+}

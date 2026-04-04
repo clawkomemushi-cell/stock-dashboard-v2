@@ -1,0 +1,171 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-05T01:49:08+08:00",
+    "generated_at_label": "04/05 01:49",
+    "last_successful_run": "2026-04-05T01:49:08+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "weekend_window_no_live_tw_cash_session",
+      "us_macro_risk_snapshot_partially_sourced_from_media_snippets"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-05",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "intended_downstream_use": [
+    "daily_thesis market_context seed",
+    "close/weekly explanation context",
+    "latest market status sanity checks"
+  ],
+  "market_window": {
+    "captured_at_local": "2026-04-05T01:49:08+08:00",
+    "tw_market_live_session_available": false,
+    "current_mode": "weekend_closed_window",
+    "notes": [
+      "This round was restricted to collection only; no thesis, no action plan, no publish.",
+      "Taiwan cash market live intraday collection is unavailable at this timestamp because the market is closed."
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "current_status": "closed",
+    "holiday_reference": {
+      "date": "2026-04-03",
+      "name": "兒童節及民族掃墓節",
+      "description": "兒童節為4月4日適逢星期六，於4月3日（星期五）補假。",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api"
+    },
+    "derived_calendar_notes": [
+      "2026-04-03 was a TWSE holiday entry in the official schedule.",
+      "Current capture time is Sunday early morning in Taipei; TW cash market remains closed."
+    ],
+    "last_known_cash_session": {
+      "date": "2026-04-02",
+      "index_name": "TAIEX",
+      "close": 32572.43,
+      "change_points": -602.39,
+      "change_pct": -1.82,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260402&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "notes": [
+        "Last known cash-session snapshot was collected from TWSE official after-trading index API.",
+        "This is a close snapshot, not a live quote."
+      ]
+    },
+    "institutional_flow_last_known": {
+      "date": "2026-04-02",
+      "foreign_diff_ntd": -38695561840,
+      "investment_trust_diff_ntd": 8424381929,
+      "dealers_proprietary_diff_ntd": 208209184,
+      "dealers_hedge_diff_ntd": -7196749090,
+      "total_diff_ntd": -37259719817,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260402&type=day&response=json",
+      "source_kind": "official_api"
+    }
+  },
+  "global_reference_snapshot": {
+    "us_equities_close_2026_04_02": {
+      "source_type": "media_report",
+      "source_name": "CNBC live updates / Reuters search result snippet",
+      "source_urls": [
+        "https://www.cnbc.com/2026/04/01/stock-market-today-live-updates.html",
+        "https://www.reuters.com/business/wall-st-futures-slide-trump-signals-tougher-iran-strikes-oil-jumps-6-2026-04-02/",
+        "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-04-02/"
+      ],
+      "capture_method": "manual_normalization_from_current_read_only_fetch_search_snippets",
+      "session_date": "2026-04-02",
+      "dow_close": 46504.67,
+      "dow_change_pct": -0.13,
+      "sp500_close": 6582.69,
+      "sp500_change_pct": 0.11,
+      "nasdaq_close": 21879.18,
+      "nasdaq_change_pct": 0.18,
+      "confidence": "medium",
+      "notes": [
+        "Exact close values were consistent across current CNBC/Reuters snippets in this collection round.",
+        "No structured U.S. market API was wired in this round."
+      ]
+    },
+    "energy_and_risk_context_2026_04_02": {
+      "source_type": "media_report",
+      "source_name": "Reuters + CNBC",
+      "source_urls": [
+        "https://www.reuters.com/world/asia-pacific/global-markets-trading-day-graphic-2026-04-02/",
+        "https://www.cnbc.com/2026/04/02/trump-iran-escalation-asian-stocks-oil-prices-markets.html"
+      ],
+      "capture_method": "manual_normalization_from_current_snippet_evidence",
+      "observed_values": {
+        "brent_near_2026_04_02": 108.0,
+        "brent_change_pct_near": 7.0,
+        "wti_near_2026_04_02": 111.0,
+        "wti_change_pct_near": 11.0
+      },
+      "confidence": "medium_low",
+      "notes": [
+        "Energy values came from article-time snapshots, not an official settlement feed.",
+        "Treasury yield direction was referenced by Reuters, but an exact 10Y level was not independently captured in this round."
+      ]
+    }
+  },
+  "data_gaps": [
+    {
+      "key": "tw_live_intraday_tape",
+      "status": "missing_in_this_round",
+      "reason": "weekend closed window; no live cash market session to collect"
+    },
+    {
+      "key": "tw_key_stock_level_snapshots",
+      "status": "missing_in_this_round",
+      "reason": "no stock-level structured collector implemented yet"
+    },
+    {
+      "key": "us_treasury_exact_level",
+      "status": "missing_in_this_round",
+      "reason": "directional coverage found in Reuters snippets, but exact normalized 10Y level not independently captured"
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "not yet wired into collection layer"
+    },
+    {
+      "key": "machine_readable_news_headlines",
+      "status": "partial_only",
+      "reason": "current round used manually normalized media snippets, not a structured headline feed"
+    }
+  ],
+  "source_summary": [
+    {
+      "name": "TWSE holiday API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "status": "ok"
+    },
+    {
+      "name": "TWSE MI_INDEX API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260402&type=ALLBUT0999&response=json",
+      "status": "ok"
+    },
+    {
+      "name": "TWSE BFI82U API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260402&type=day&response=json",
+      "status": "ok"
+    },
+    {
+      "name": "CNBC live updates / Reuters market wrap snippets",
+      "kind": "media_report",
+      "url": "see global_reference_snapshot source_urls",
+      "status": "partial"
+    }
+  ]
+}
