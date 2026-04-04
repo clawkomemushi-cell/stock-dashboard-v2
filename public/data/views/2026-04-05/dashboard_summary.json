@@ -11,7 +11,7 @@
     "source_freshness": "fresh",
     "warnings": [
       "publish_layer_validation_only",
-      "frontend_currently_reads_daily_thesis_and_action_plan_via_latest_not_dashboard_summary_directly",
+      "dashboard_prefers_dashboard_summary_when_available",
       "intraday_close_weekly_performance_not_updated_this_round"
     ],
     "fallback_used": false
@@ -28,7 +28,7 @@
   "watchlist_count": 2,
   "action_count": 2,
   "notes": [
-    "Dashboard page in current V2 implementation still derives content from daily_thesis + action_plan.",
-    "This file was created to validate publish-layer output only."
+    "Dashboard page now prefers this publish-layer summary when latest.published_views.dashboard_summary exists.",
+    "Detailed sections may still fall back to daily_thesis/action_plan if the summary omits fields."
   ]
 }

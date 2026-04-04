@@ -4,12 +4,13 @@ import { RiskLevelMeter } from '../components/ui/RiskLevelMeter'
 import { ConfidenceBar } from '../components/ui/ConfidenceBar'
 import { DataHealthPanel } from '../components/ui/DataHealthPanel'
 import { LoadingSpinner, EmptyState } from '../components/ui/LoadingSpinner'
-import type { DailyThesis, ActionPlan, ThesisCheckDoc, FileHealth } from '../types'
+import type { DailyThesis, ActionPlan, ThesisCheckDoc, DashboardSummaryView, FileHealth } from '../types'
 
 interface Props {
   thesis: DailyThesis | null
   actionPlan: ActionPlan | null
   thesisCheck: ThesisCheckDoc | null
+  dashboardView?: DashboardSummaryView | null
   loading: boolean
   error?: string | null
   healthMap?: Record<string, FileHealth>
@@ -25,8 +26,18 @@ function PnlChip({ value, pct }: { value: number; pct: number }) {
   )
 }
 
-export function Dashboard({ thesis, actionPlan, thesisCheck, loading, error, healthMap = {} }: Props) {
+export function Dashboard({ thesis, actionPlan, thesisCheck, dashboardView, loading, error, healthMap = {} }: Props) {
   if (loading) return <LoadingSpinner message="載入今日分析資料..." />
+
+  const displayDate = dashboardView?.date ?? thesis?.date
+  const displayTime = dashboardView?._meta.generated_at_label?.split(' ').slice(-1)[0] ?? thesis?.generated_at_label
+  const displayDirection = dashboardView?.direction_bias ?? thesis?.direction_bias
+  const displayRisk = dashboardView?.risk_level ?? thesis?.risk_level
+  const displayStyle = dashboardView?.trading_style ?? thesis?.trading_style
+  const displayHeadline = dashboardView?.headline ?? thesis?.headline
+  const displayShort = dashboardView?.core_thesis_short ?? thesis?.core_thesis_short
+  const displayConfidence = dashboardView?.confidence ?? thesis?.confidence
+  const hasCore = Boolean(dashboardView || thesis)
 
   return (
     <div className="space-y-4">
@@ -34,10 +45,10 @@ export function Dashboard({ thesis, actionPlan, thesisCheck, loading, error, hea
       <div className="flex items-baseline justify-between gap-3 flex-wrap">
         <div>
           <h1 className="text-xl font-semibold text-text-primary">今日總覽</h1>
-          {thesis && (
+          {hasCore && (
             <p className="text-sm text-text-muted mt-0.5">
-              {thesis.date} · 盤前 {thesis.generated_at_label} 發布
-              {actionPlan && ` · 操作計畫 v${actionPlan.version}`}
+              {displayDate} · 盤前 {displayTime} 發布
+              {(actionPlan || dashboardView?.action_plan_version) && ` · 操作計畫 v${actionPlan?.version ?? dashboardView?.action_plan_version}`}
             </p>
           )}
         </div>
@@ -53,37 +64,37 @@ export function Dashboard({ thesis, actionPlan, thesisCheck, loading, error, hea
       />
 
       {/* Graceful: no data yet */}
-      {!thesis && !loading && (
+      {!hasCore && !loading && (
         <EmptyState message={error ?? '今日分析資料尚未發布，請稍後再試。'} />
       )}
 
-      {thesis && (
+      {hasCore && displayDirection && displayRisk && displayStyle && displayHeadline && displayShort && displayConfidence !== undefined && (
         <>
           {/* ── 核心判斷 ── */}
           <div className="card p-5 space-y-4">
             <div className="flex items-center gap-2.5 flex-wrap">
-              <DirectionBadge direction={thesis.direction_bias} size="lg" />
-              <RiskLevelBadge level={thesis.risk_level} />
+              <DirectionBadge direction={displayDirection} size="lg" />
+              <RiskLevelBadge level={displayRisk} />
               <span className="text-xs text-text-muted border border-border rounded px-2 py-0.5">
-                {thesis.trading_style}
+                {displayStyle}
               </span>
               <span className="text-xs text-text-muted font-mono ml-auto">
-                {thesis.generated_at_label}
+                {displayTime}
               </span>
             </div>
 
             <h2 className="text-base md:text-lg font-semibold text-text-primary leading-snug">
-              {thesis.headline}
+              {displayHeadline}
             </h2>
 
             {/* Short thesis only — full version is on Morning page */}
             <p className="text-sm text-text-secondary leading-relaxed">
-              {thesis.core_thesis_short}
+              {displayShort}
             </p>
 
             <div className="grid grid-cols-2 gap-4 pt-1">
-              <RiskLevelMeter level={thesis.risk_level} />
-              <ConfidenceBar value={thesis.confidence} />
+              <RiskLevelMeter level={displayRisk} />
+              <ConfidenceBar value={displayConfidence} />
             </div>
           </div>
 
@@ -97,7 +108,7 @@ export function Dashboard({ thesis, actionPlan, thesisCheck, loading, error, hea
               <span className="section-title text-danger">今日禁止事項</span>
             </div>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
-              {thesis.prohibitions.map((p, i) => (
+              {(thesis?.prohibitions ?? []).map((p, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
                   <span className="shrink-0 w-4 h-4 rounded bg-danger/15 text-danger text-[10px] font-bold font-mono flex items-center justify-center mt-0.5">{i + 1}</span>
                   <span>{p}</span>
@@ -174,7 +185,7 @@ export function Dashboard({ thesis, actionPlan, thesisCheck, loading, error, hea
               <Link to="/morning" className="text-xs text-accent hover:underline font-mono">完整分析 →</Link>
             </div>
             <div className="divide-y divide-border/50">
-              {thesis.watchlist.map((item) => (
+              {(thesis?.watchlist ?? []).map((item) => (
                 <div key={item.ticker} className="px-5 py-2.5 flex items-center gap-3">
                   <span className="font-mono font-semibold text-text-primary w-16">{item.ticker}</span>
                   <span className="text-sm text-text-secondary flex-1">{item.name}</span>

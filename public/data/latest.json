@@ -11,7 +11,7 @@
     "warnings": [
       "publish_layer_validation_only_core_pages_updated",
       "thesis_check_and_close_review_intentionally_not_published_this_round",
-      "dashboard_summary_and_morning_view_are_publish_artifacts_not_yet_consumed_directly_by_frontend"
+      "dashboard_and_morning_now_prefer_published_views_when_available"
     ],
     "fallback_used": false
   },
@@ -78,7 +78,7 @@
   },
   "publish_notes": [
     "Core publish validation only: dashboard + morning.",
-    "Current frontend still consumes daily_thesis/action_plan directly via latest.paths.",
+    "Dashboard and Morning now prefer published view files when latest.published_views is present.",
     "Intraday/close/weekly/performance were intentionally left untouched."
   ]
 }

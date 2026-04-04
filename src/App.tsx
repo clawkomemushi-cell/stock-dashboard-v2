@@ -7,7 +7,7 @@ import { PaperTrade } from './pages/PaperTrade'
 import { CloseReview } from './pages/CloseReview'
 import { WeeklyReview } from './pages/WeeklyReview'
 import { SystemStats } from './pages/SystemStats'
-import { useLatestIndex, useDailyData, usePerformanceHistory } from './hooks/useDataLoader'
+import { useLatestIndex, useDailyData, usePerformanceHistory, usePublishedViews } from './hooks/useDataLoader'
 import type { FileHealth } from './types'
 
 function AppRoutes() {
@@ -16,11 +16,12 @@ function AppRoutes() {
 
   // All daily data fetched via paths from latest.json — no manual path construction
   const daily = useDailyData(paths)
+  const publishedViews = usePublishedViews(latest.data?.published_views)
 
   // Performance history hoisted here so its health is tracked in the shared healthMap
   const performance = usePerformanceHistory(paths?.performance_history ?? null)
 
-  const loading = latest.loading || daily.loading
+  const loading = latest.loading || daily.loading || publishedViews.loading
 
   // Derive weekly_review fetchStatus from latest.file_statuses (OpenClaw-reported)
   // Full frontend fetch health is tracked inside WeeklyReview page for the selected week
@@ -58,8 +59,9 @@ function AppRoutes() {
               thesis={daily.thesis.data}
               actionPlan={daily.actionPlan.data}
               thesisCheck={daily.thesisCheck.data}
+              dashboardView={publishedViews.dashboardSummary.data}
               loading={loading}
-              error={latest.error ?? daily.thesis.error ?? daily.actionPlan.error}
+              error={latest.error ?? publishedViews.dashboardSummary.error ?? daily.thesis.error ?? daily.actionPlan.error}
               healthMap={healthMap}
             />
           }
@@ -69,8 +71,9 @@ function AppRoutes() {
           element={
             <MorningAnalysis
               thesis={daily.thesis.data}
+              morningView={publishedViews.morningView.data}
               loading={loading}
-              error={daily.thesis.error}
+              error={publishedViews.morningView.error ?? daily.thesis.error}
             />
           }
         />

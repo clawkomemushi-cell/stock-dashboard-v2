@@ -109,6 +109,51 @@ export interface LatestIndex {
 }
 
 // ============================================================
+// publish-layer views
+// ============================================================
+
+export interface DashboardSummaryView {
+  _meta: DataMeta
+  date: string
+  headline: string
+  core_thesis_short: string
+  direction_bias: DirectionBias
+  risk_level: RiskLevel
+  confidence: number
+  trading_style: string
+  action_plan_version: number | null
+  overall_stance: string
+  watchlist_count: number
+  action_count: number
+  notes: string[]
+}
+
+export interface MorningView {
+  _meta: DataMeta
+  date: string
+  page: 'morning'
+  headline: string
+  hero: {
+    direction_bias: DirectionBias
+    trading_style: string
+    confidence: number
+    risk_level: RiskLevel
+  }
+  sections: {
+    core_thesis: string
+    market_context: DailyThesis['market_context']
+    key_risks: string[]
+    support_levels: SupportResistanceLevel[]
+    resistance_levels: SupportResistanceLevel[]
+    watchlist: WatchlistItem[]
+    prohibitions: string[]
+    cautions: string[]
+    notes: string
+  }
+  notes: string[]
+}
+
+// ============================================================
 // daily_thesis.json
 // ============================================================
 

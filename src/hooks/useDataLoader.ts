@@ -7,6 +7,8 @@ import type {
   CloseReview,
   WeeklyReview,
   PerformanceHistory,
+  DashboardSummaryView,
+  MorningView,
   FileHealth,
   DataMeta,
 } from '../types'
@@ -108,6 +110,30 @@ function useFile<T extends { _meta?: DataMeta }>(
 // ============================================================
 export function useLatestIndex() {
   return useFile<LatestIndex>('data/latest.json', 'index', '資料索引')
+}
+
+// ============================================================
+// Publish-layer views — optional, routed via latest.published_views
+// ============================================================
+export interface PublishedViewsBundle {
+  dashboardSummary: UseFileResult<DashboardSummaryView>
+  morningView: UseFileResult<MorningView>
+  loading: boolean
+}
+
+export function usePublishedViews(publishedViews: LatestIndex['published_views'] | undefined): PublishedViewsBundle {
+  const dashboardSummary = useFile<DashboardSummaryView>(
+    publishedViews?.dashboard_summary ?? null, 'dashboard_summary', '總覽發佈檔',
+  )
+  const morningView = useFile<MorningView>(
+    publishedViews?.morning_view ?? null, 'morning_view', '盤前頁發佈檔',
+  )
+
+  return {
+    dashboardSummary,
+    morningView,
+    loading: dashboardSummary.loading || morningView.loading,
+  }
 }
 
 // ============================================================

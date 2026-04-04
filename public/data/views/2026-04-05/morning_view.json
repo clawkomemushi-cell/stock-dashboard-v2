@@ -11,8 +11,8 @@
     "source_freshness": "fresh",
     "warnings": [
       "publish_layer_validation_only",
-      "rendered_from_partial_analysis_layer",
-      "watchlist_is_framework_level_not_execution_level"
+      "morning_page_prefers_morning_view_when_available",
+      "rendered_from_partial_analysis_layer"
     ],
     "fallback_used": false
   },
@@ -102,7 +102,7 @@
     "notes": "此檔屬分析層驗證輸出，只驗證 schema 與依賴鏈，不代表正式發布版。"
   },
   "notes": [
-    "Morning page in current V2 implementation still reads daily_thesis directly.",
-    "This file was created to validate publish-layer output only."
+    "Morning page now prefers this publish-layer view when latest.published_views.morning_view exists.",
+    "Underlying daily_thesis remains as fallback data source."
   ]
 }
