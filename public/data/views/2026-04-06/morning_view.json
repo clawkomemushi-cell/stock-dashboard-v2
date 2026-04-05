@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.morning_view",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-06T07:28:00+08:00",
+    "generated_at_label": "04/06 07:28",
+    "last_successful_run": "2026-04-06T07:28:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "publish_layer_validation_only",
+      "morning_page_prefers_morning_view_when_available",
+      "rendered_from_partial_analysis_layer"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-06",
+  "page": "morning",
+  "headline": "台股休市日先維持偏空防守框架，等待下個交易日補資料確認",
+  "hero": {
+    "direction_bias": "bearish",
+    "trading_style": "防守等待確認",
+    "confidence": 0.47,
+    "risk_level": 4
+  },
+  "sections": {
+    "core_thesis": "這份 daily_thesis 僅建立在 2026-04-06 的 collection market_context 上。台股今天因兒童節及民族掃墓節補假休市，因此目前只能沿用最近一個已知現貨收盤背景：2026-04-02 TAIEX 收 32572.43、單日 -1.82%，外資賣超 38,695,561,840 元，三大法人合計賣超 37,259,719,817 元，顯示本地已知基調仍偏弱。外部參考又有油價急升的風險背景，但目前仍缺 USD/TWD、DXY、美債殖利率、個股/ETF 結構化快照與機器可讀 headline feed，所以這裡只能先給下一交易日的防守框架，不能當成高確信度進場結論。",
+    "market_context": {
+      "index_trend": "最近已知 TWSE 現貨收盤為 2026-04-02，TAIEX 32572.43、單日 -1.82%；目前僅能視為偏弱收盤背景，不宜直接外推成下一交易日的確定走勢。",
+      "volume_status": "本輪 collection 未提供成交量與量比等結構化量能欄位，量價配合無法完整判讀。",
+      "foreign_capital": "最近已知外資單日賣超 38,695,561,840 元，資金面偏空，但仍需後續補匯率與延伸籌碼資料確認壓力是否延續。",
+      "institutional_summary": "三大法人合計賣超 37,259,719,817 元；投信買超 8,424,381,929 元，自營商(自行)買超 208,209,184 元，自營商(避險)賣超 7,196,749,090 元。"
+    },
+    "key_risks": [
+      "2026-04-06 為台股休市日，沒有現金市場即時盤面可驗證前一交易日壓力是否延續。",
+      "目前缺少 USD/TWD、DXY 與美債殖利率的結構化快照，跨市場風險定價仍不完整。",
+      "沒有個股與 ETF 的最新結構化 snapshot，無法支撐高確信度標的與價位結論。",
+      "外部油價風險背景來自 media snippet supporting context，只能當風險提示，不能當精準交易輸入。",
+      "目前 headline source 仍屬 partial，事件驅動判斷可能有遺漏。"
+    ],
+    "support_levels": [
+      {
+        "price": 32500,
+        "label": "最近已知收盤附近整數支撐（低信心參考）",
+        "strength": "weak"
+      },
+      {
+        "price": 32000,
+        "label": "若弱勢延續時的下方整數防守帶（待下一交易日驗證）",
+        "strength": "weak"
+      }
+    ],
+    "resistance_levels": [
+      {
+        "price": 33000,
+        "label": "短線上方整數壓力（低信心參考）",
+        "strength": "weak"
+      },
+      {
+        "price": 33600,
+        "label": "若出現反彈時的次級壓力區（待更多資料驗證）",
+        "strength": "weak"
+      }
+    ],
+    "watchlist": [
+      {
+        "ticker": "0050",
+        "name": "元大台灣50",
+        "direction": "watch",
+        "entry_condition": "下一交易日前後若補齊 ETF / 權值股 snapshot，且大盤未再出現明顯擴大賣壓，才適合重新評估偏多或中性觀察。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（本輪不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（本輪不給執行價）",
+        "rationale": "可作為大盤風向代理，但目前資料只夠建立市場框架，不足以給正式進出場。",
+        "priority": "medium"
+      },
+      {
+        "ticker": "00632R",
+        "name": "元大台灣50反1",
+        "direction": "watch",
+        "entry_condition": "若下一交易日補齊 FX / yield / headline 後仍確認風險偏空，再評估是否保留避險觀察。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（需補更多資料）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（需補更多資料）",
+        "rationale": "已知背景偏弱，但在休市窗口與資訊缺口下，不宜直接把反向 ETF 視為執行結論。",
+        "priority": "medium"
+      }
+    ],
+    "prohibitions": [
+      "禁止把這份休市窗口的框架分析當成已可直接執行的正式盤前單。",
+      "禁止在缺少 FX / yield / 個股快照的情況下，硬下高確信度個股或 ETF 方向結論。",
+      "禁止把 supporting-only 的 media snippet 當成精準價位依據或正式主訊號。"
+    ],
+    "cautions": [
+      "今天是官方休市日，重點應放在框架與風險盤點，不是提高交易確信度。",
+      "最近一個已知本地交易日收盤偏弱，但下一交易日若外部風險降溫，也可能出現技術性修正反彈。",
+      "目前較適合等下一輪把匯率、殖利率、結構化 headline 與個股快照補齊，再決定是否延續偏空。"
+    ],
+    "notes": "V2 stage1 analysis-only 最小正式版；本輪只生成 daily_thesis.json，不生成 action_plan、不更新 latest.json、不做 publish。"
+  },
+  "notes": [
+    "Morning page now prefers this publish-layer view when latest.published_views.morning_view exists.",
+    "Underlying daily_thesis remains as fallback data source."
+  ]
+}
