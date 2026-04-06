@@ -21,7 +21,7 @@ export type ChangeType =
   | 'risk_update'
   | 'no_change'
 
-export type TradeDirection = 'long' | 'short' | 'watch' | 'avoid'
+export type TradeDirection = 'long' | 'short' | 'watch' | 'avoid' | 'hold'
 
 export type Verdict = 'correct' | 'incorrect' | 'partial' | 'pending'
 

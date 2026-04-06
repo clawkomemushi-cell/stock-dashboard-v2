@@ -46,10 +46,16 @@ const tradeDirectionConfig: Record<TradeDirection, { label: string; color: strin
   short: { label: '放空', color: 'bg-bear/15 text-bear border-bear/30' },
   watch: { label: '觀察', color: 'bg-warning/15 text-warning border-warning/30' },
   avoid: { label: '迴避', color: 'bg-border/50 text-text-muted border-border' },
+  hold:  { label: '保留', color: 'bg-accent/15 text-accent border-accent/30' },
 }
 
-export function TradeDirectionBadge({ direction }: { direction: TradeDirection }) {
-  const cfg = tradeDirectionConfig[direction]
+const unknownTradeDirectionConfig = {
+  label: '未知',
+  color: 'bg-border/50 text-text-muted border-border',
+}
+
+export function TradeDirectionBadge({ direction }: { direction: TradeDirection | string }) {
+  const cfg = tradeDirectionConfig[direction as TradeDirection] ?? unknownTradeDirectionConfig
   return (
     <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border ${cfg.color}`}>
       {cfg.label}
