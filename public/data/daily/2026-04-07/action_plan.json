@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.action_plan",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-07T07:18:00+08:00",
+    "generated_at_label": "04/07 07:18",
+    "last_successful_run": "2026-04-07T07:18:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "preopen_action_plan_is_conditional_only",
+      "built_from_daily_thesis_primary_source",
+      "collection_market_context_missing_at_expected_path",
+      "no_fx_yield_or_stock_level_snapshot_so_execution_confidence_is_limited",
+      "max_exposure_kept_low_due_to_holiday_reopen_gap_risk"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-07",
+  "generated_at_iso": "2026-04-07T07:18:00+08:00",
+  "generated_at_label": "07:18",
+  "version": 1,
+  "overall_stance": "台股今天是連假後首個交易日，已知本地最近收盤與外資籌碼基調偏弱，但隔夜美股並非全面惡化；在缺少 USD/TWD、DXY、美債殖利率、台股即時量價與個股/ETF 結構化快照下，本輪只維持保守偏空、低曝險、等待開盤驗證的框架。若開盤後沒有足夠承接與量能確認，不主張主動擴大風險部位。",
+  "actions": [
+    {
+      "ticker": "CASH",
+      "name": "現金 / 等待確認",
+      "direction": "hold",
+      "action": "維持高現金比重，開盤前不預設主動進場",
+      "price_target_value": null,
+      "price_target_label": "N/A（盤前保守框架）",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A",
+      "take_profit_value": null,
+      "take_profit_label": "N/A",
+      "position_size_pct": 85,
+      "position_size_label": "85% 現金保留",
+      "rationale": "今日存在節後跳空與波動放大風險，而目前資料只足夠做方向框架，不足以支撐高確信度進出場。先保留現金，是避免在資訊不完整時被開盤雜訊帶走的核心風控。",
+      "conditions": [
+        "等待開盤後 30 到 60 分鐘確認是否有穩定承接與量價結構",
+        "等待 FX / yield / intraday tape 等關鍵風險資訊補齊",
+        "若市場僅出現短線拉抬但無法站穩，繼續以現金優先"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "action": "只做條件式觀察；只有在開盤後確認不是開高走弱、且承接與量能同步改善時，才考慮極小試單",
+      "price_target_value": null,
+      "price_target_label": "待開盤後確認",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動試單，需依開盤後結構另定",
+      "take_profit_value": null,
+      "take_profit_label": "若啟動試單，需依開盤後結構另定",
+      "position_size_pct": 10,
+      "position_size_label": "最多 10% 條件式試單上限",
+      "rationale": "0050 可作為大盤風向代理，但目前只有 thesis 級框架，沒有足夠的即時資料支撐直接下判斷，因此只能作為『若市場證明自己轉穩』時的低曝險觀察標的。",
+      "conditions": [
+        "開盤後沒有出現明顯開高走弱或擴量回落",
+        "大盤至少能守住最近已知收盤附近支撐區，不再快速失守",
+        "外部風險訊號沒有同步惡化"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "direction": "watch",
+      "action": "僅保留避險觀察；只有在節後賣壓確認延續且風險資料補齊仍偏空時，才評估小部位避險",
+      "price_target_value": null,
+      "price_target_label": "待開盤後確認",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動避險，需依當日結構另定",
+      "take_profit_value": null,
+      "take_profit_label": "若啟動避險，需依當日結構另定",
+      "position_size_pct": 5,
+      "position_size_label": "最多 5% 避險觀察上限",
+      "rationale": "已知背景偏弱，但盤前資訊缺口仍大，不能因為前一交易日偏空就直接追認反向 ETF。若只是節後一次性補跌或早盤雜訊，追空的風險也很高。",
+      "conditions": [
+        "開盤後確認大盤無法守住弱支撐且賣壓持續擴大",
+        "風險補充資料未顯示明顯修復訊號",
+        "僅限避險用途，不作為主動擴大利潤部位"
+      ],
+      "status": "active"
+    }
+  ],
+  "paper_trade": {
+    "virtual_capital": 1000000,
+    "available_cash": 1000000,
+    "today_pnl": 0,
+    "today_pnl_pct": 0.0,
+    "total_pnl": 0,
+    "total_pnl_pct": 0.0,
+    "win_rate": 0.0,
+    "open_positions": []
+  },
+  "max_exposure": {
+    "pct": 15,
+    "label": "總曝險最多 15%，且僅限開盤後確認條件成立的低曝險試單 / 避險",
+    "stance": "在目前 partial 與盤前資料缺口下，實際建議偏向 0% 到 10%；15% 只是保守上限，不是預設投入值"
+  },
+  "max_exposure_pct": 15,
+  "max_exposure_label": "15% 上限（實際建議偏低，等待開盤確認）",
+  "notes": "本輪 action_plan 只根據 2026-04-07 的 daily_thesis 生成，且 thesis 已明確標示缺 FX / yield / 台股即時量價 / 個股與 ETF snapshot。collection/market_context.json 在預期路徑不存在，因此未作為主來源。第一階段採保守版：以條件式觀察、等待確認、低曝險與避險優先，不把任何 watchlist 解讀成可直接重押的正式盤前執行單。"
+}

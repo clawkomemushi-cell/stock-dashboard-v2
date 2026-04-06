@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.source_manifest",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-07T07:00:00+08:00",
+    "generated_at_label": "04/07 07:00",
+    "last_successful_run": "2026-04-07T07:00:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "manifest_only_no_latest_json_update",
+      "collection_layer_only_no_analysis_or_publish",
+      "pre_open_trade_day_window"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-07",
+  "collection_files": [
+    {
+      "path": "/data/collection/2026-04-07/market_context.json",
+      "purpose": "baseline market background for future analysis layer",
+      "status": "written"
+    },
+    {
+      "path": "/data/collection/2026-04-07/source_manifest.json",
+      "purpose": "source registry and coverage status for this collection-only run",
+      "status": "written"
+    }
+  ],
+  "coverage_matrix": {
+    "calendar_status": "ok",
+    "last_tw_close_snapshot": "ok",
+    "institutional_flow_snapshot": "ok",
+    "us_equities_close_snapshot": "partial",
+    "energy_risk_snapshot": "missing",
+    "live_intraday_tw": "missing",
+    "fx_and_yield_snapshot": "missing",
+    "stock_level_snapshot": "missing"
+  },
+  "constraints": [
+    "This run intentionally did not create daily_thesis/action_plan/thesis_check/close_review/weekly_review/performance.",
+    "This run intentionally did not update latest.json or any page/view files.",
+    "2026-04-07 collection was captured before the Taiwan cash session opened, so same-day official TW close and institutional-flow data were not expected yet."
+  ]
+}
