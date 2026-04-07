@@ -6,6 +6,7 @@ export type MarketStatus =
   | 'pre_market'
   | 'opening'
   | 'intraday'
+  | 'mid_session'
   | 'closing'
   | 'closed'
   | 'holiday'

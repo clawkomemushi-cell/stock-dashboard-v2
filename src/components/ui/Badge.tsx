@@ -5,16 +5,22 @@ const marketStatusConfig: Record<MarketStatus, { label: string; color: string }>
   pre_market:  { label: '盤前', color: 'bg-warning/20 text-warning border-warning/30' },
   opening:     { label: '開盤', color: 'bg-bull/20 text-bull border-bull/30' },
   intraday:    { label: '盤中', color: 'bg-accent/20 text-accent border-accent/30' },
+  mid_session: { label: '盤中', color: 'bg-accent/20 text-accent border-accent/30' },
   closing:     { label: '收盤中', color: 'bg-warning/20 text-warning border-warning/30' },
   closed:      { label: '已收盤', color: 'bg-border/50 text-text-secondary border-border' },
   holiday:     { label: '休市', color: 'bg-border/50 text-text-muted border-border' },
 }
 
-export function MarketStatusBadge({ status }: { status: MarketStatus }) {
-  const cfg = marketStatusConfig[status]
+const unknownMarketStatusConfig = {
+  label: '狀態未知',
+  color: 'bg-border/50 text-text-muted border-border',
+}
+
+export function MarketStatusBadge({ status }: { status: MarketStatus | string }) {
+  const cfg = marketStatusConfig[status as MarketStatus] ?? unknownMarketStatusConfig
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium border ${cfg.color}`}>
-      {status !== 'closed' && status !== 'holiday' && (
+      {status !== 'closed' && status !== 'holiday' && status !== 'unknown' && (
         <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse-slow" />
       )}
       {cfg.label}
