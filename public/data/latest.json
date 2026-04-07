@@ -4,24 +4,24 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-07T07:28:00+08:00",
-    "generated_at_label": "04/07 07:28",
-    "last_successful_run": "2026-04-07T07:28:00+08:00",
+    "generated_at_iso": "2026-04-07T11:30:00+08:00",
+    "generated_at_label": "04/07 11:30",
+    "last_successful_run": "2026-04-07T11:30:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "publish_layer_validation_only_core_pages_updated",
-      "thesis_check_and_close_review_intentionally_not_published_this_round",
-      "dashboard_and_morning_now_prefer_published_views_when_available"
+      "intraday_action_plan_and_thesis_check_published",
+      "close_review_intentionally_left_null_partial",
+      "dashboard_and_morning_views_preserved"
     ],
     "fallback_used": false
   },
   "date": "2026-04-07",
   "week": "2026-W14",
-  "market_status": "pre_market",
+  "market_status": "mid_session",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-07/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-07/action_plan.json",
-    "thesis_check": null,
+    "thesis_check": "/data/daily/2026-04-07/thesis_check.json",
     "close_review": null,
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json"
@@ -34,13 +34,13 @@
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-07T07:18:00+08:00",
-      "updated_at_label": "07:18"
+      "updated_at_iso": "2026-04-07T11:30:00+08:00",
+      "updated_at_label": "11:30"
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-07T07:28:00+08:00",
-      "updated_at_label": "04/07 07:28"
+      "updated_at_iso": "2026-04-07T11:20:00+08:00",
+      "updated_at_label": "11:20"
     },
     "close_review": {
       "status": "partial",

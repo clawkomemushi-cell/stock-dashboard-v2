@@ -1,0 +1,52 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.thesis_check",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-07T11:20:00+08:00",
+    "generated_at_label": "04/07 11:20",
+    "last_successful_run": "2026-04-07T11:20:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "intraday_snapshot_based_on_secondary_quote_pages",
+      "official_twse_intraday_tape_not_available_in_pipeline",
+      "volume_ratio_is_time_normalized_estimate_not_official_metric"
+    ],
+    "fallback_used": false
+  },
+  "entries": [
+    {
+      "id": "check_001",
+      "timestamp": "11:20",
+      "trigger": "午前盤中檢查：節後開盤後指數維持紅盤，台積電與 0050 同步走強",
+      "original_thesis": "連假後首個交易日先維持保守偏空框架，等開盤後再確認是否有修復力道。",
+      "revised_thesis": "到 11:20 為止，早盤的修復力道已經明確出現：加權指數報 33,061.43、較昨收上漲 1.50%，台積電 1,845 元、上漲 1.93%，0050 報 75 元、上漲 1.42%，代表晨間的『保守偏空、等待驗證』框架不能再原樣延續。現階段較合理的解讀是節後資金先回補大型權值，原本偏空基線先下修到中性偏謹慎，而不是直接翻成高確信度追多。",
+      "change_type": "direction_flip",
+      "risk_level_change": -1,
+      "confidence_change": -0.16,
+      "updated_direction": "neutral",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "維持高現金與等待確認，但不再把偏空當成預設主線"
+        },
+        {
+          "ticker": "0050",
+          "action": "保留觀察，若午前後仍能守住紅盤且量價未明顯轉弱，再評估是否從純觀察升級為低曝險試單"
+        },
+        {
+          "ticker": "00632R",
+          "action": "節後賣壓未如盤前擔心般直接延續，午前不宜把反向 ETF 當成主軸"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 33061.43,
+        "taiex_change_pct": 1.5,
+        "volume_ratio": 1.12
+      },
+      "notes": "盤中證據採 Yahoo 股市 11:20 quote page readable snapshot：TAIEX 成交金額約 3,976.40 億、總量 5,768,541；volume_ratio 為依 11:20 時間進度對 4/2 昨量 9,946,365 做時間正規化後的粗估值，僅用來判斷量能未明顯失速。由於仍缺官方盤中 breadth、法人、FX 與殖利率快照，所以本輪屬『明顯修正偏空框架』，不是直接升級成全面偏多結論。"
+    }
+  ]
+}
