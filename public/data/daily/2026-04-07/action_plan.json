@@ -4,43 +4,43 @@
     "job_name": "openclaw.action_plan",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-07T11:30:00+08:00",
-    "generated_at_label": "04/07 11:30",
-    "last_successful_run": "2026-04-07T11:30:00+08:00",
+    "generated_at_iso": "2026-04-07T13:20:00+08:00",
+    "generated_at_label": "04/07 13:20",
+    "last_successful_run": "2026-04-07T13:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "intraday_adjustment_based_on_thesis_check",
       "published_after_build_validation",
       "official_twse_intraday_tape_not_available_in_pipeline",
       "volume_ratio_reference_is_estimated_not_official",
-      "stance_relaxed_from_bearish_to_neutral_cautious_without_chasing_strength"
+      "afternoon_update_keeps_neutral_cautious_stance_and_tightens_chase_risk"
     ],
     "fallback_used": false
   },
   "date": "2026-04-07",
-  "generated_at_iso": "2026-04-07T11:30:00+08:00",
-  "generated_at_label": "11:30",
+  "generated_at_iso": "2026-04-07T13:20:00+08:00",
+  "generated_at_label": "13:20",
   "version": 2,
-  "overall_stance": "午前盤中確認顯示節後修復力道已出現，原本的保守偏空框架需下修為中性偏謹慎：不再預設賣壓延續，也不把早盤紅盤直接解讀成可積極追價的強多訊號。現階段以高現金、低曝險、避免來回翻單為主，只在午前後仍能守住紅盤且量價沒有明顯轉弱時，保留極小試單空間。",
+  "overall_stance": "午後早段確認顯示午前的修復仍在，但上攻斜率已放慢、盤勢轉成高檔整理，因此今日盤中版維持中性偏謹慎且再偏保守一點：不預設午後會翻弱，但也不把紅盤延續解讀成可擴大追價。現階段以高現金、極低曝險、守紅不追為主；只有尾段仍能穩定守住紅盤整理區時，才保留極小試單或續抱空間。",
   "actions": [
     {
       "ticker": "CASH",
       "name": "現金 / 等待確認",
       "direction": "hold",
-      "action": "維持高現金比重，午前後先確認紅盤能否延續，不因早盤反彈急著加碼",
+      "action": "午後尾段維持高現金比重，優先確認紅盤整理是否守住，不因日內仍上漲就擴大加碼",
       "price_target_value": null,
       "price_target_label": "N/A（盤中保守修正）",
       "stop_loss_value": null,
       "stop_loss_label": "N/A",
       "take_profit_value": null,
       "take_profit_label": "N/A",
-      "position_size_pct": 90,
-      "position_size_label": "90% 現金保留",
-      "rationale": "雖然盤中已證明盤前的偏空預設過度保守，但目前可用證據仍以指數、台積電與 0050 的午前快照為主，缺官方盤中 breadth、法人、FX 與殖利率資料。最穩健的做法仍是把大部分資金留在場外，避免因單一上午反彈就改成追價模式。",
+      "position_size_pct": 92,
+      "position_size_label": "92% 現金保留",
+      "rationale": "13:10 thesis_check 顯示大盤、台積電與 0050 的午前修復尚未被午後否定，但指數已自日高回落、量能也沒有進一步放大，代表盤勢更像高檔整理而非擴張式走強。在缺官方盤中 breadth、法人、FX 與殖利率資料下，最穩健做法仍是把絕大部分資金留在場外，避免把紅盤延續誤當成可以加速進攻的訊號。",
       "conditions": [
-        "午前後仍能守住紅盤，不出現快速翻黑或量價同步轉弱",
-        "若修復力道午後鈍化，繼續以現金優先，不主動擴大風險",
-        "若市場重新轉弱，也以回到觀望為主，而非立刻反手追空"
+        "尾段若持續守住紅盤整理區，維持現金優先、不主動擴大風險",
+        "若尾盤再失速或跌離午後整理區，直接回到純觀望",
+        "若只是高檔震盪，避免因雜訊反覆切換多空"
       ],
       "status": "active"
     },
@@ -48,20 +48,20 @@
       "ticker": "0050",
       "name": "元大台灣50",
       "direction": "watch",
-      "action": "由純觀察上修為可評估極小試單，但前提是午前後仍守住紅盤且沒有明顯量價背離",
+      "action": "只保留極小試單／續抱彈性，前提是尾段仍守紅且未明顯跌離午後整理區；不追急拉",
       "price_target_value": null,
       "price_target_label": "不追價，等盤中結構確認",
       "stop_loss_value": null,
       "stop_loss_label": "若啟動試單，需以當日盤中轉弱結構作退出依據",
       "take_profit_value": null,
       "take_profit_label": "以分批保守處理，不預設大波段",
-      "position_size_pct": 10,
-      "position_size_label": "最多 10% 條件式試單上限",
-      "rationale": "11:20 盤中快照顯示 0050 與台積電、大盤同步走強，代表節後資金確實先回補大型權值，因此不需要再把 0050 完全停留在盤前偏空框架裡。但由於這仍只是午前修正，不是全天趨勢定案，所以最多只保留極小試單彈性。",
+      "position_size_pct": 8,
+      "position_size_label": "最多 8% 條件式試單或續抱上限",
+      "rationale": "13:10 盤中快照顯示 0050 仍高於午前水位，代表大型權值修復尚未被破壞；但指數自日高回落、台積電低於日高，顯示午後更接近整理而不是續攻。這使 0050 仍可保留極小部位彈性，但理由只夠支撐低曝險、不追價的保守操作。",
       "conditions": [
-        "午前後續到午後初段仍能維持紅盤與相對穩定的量價結構",
-        "不在急拉時追價，優先等待拉回後仍能守穩再評估",
-        "若大盤與權值同步轉弱，回到純觀察，不硬做多"
+        "尾段仍維持紅盤且價格沒有明顯跌離午後整理區",
+        "不在急拉時追價，優先等整理後仍守穩再看是否保留小部位",
+        "若大盤與權值同步失速，回到純觀察或收回部位"
       ],
       "status": "active"
     },
@@ -69,7 +69,7 @@
       "ticker": "00632R",
       "name": "元大台灣50反1",
       "direction": "watch",
-      "action": "降級為次要觀察，不作為午前主軸；只有午後明確轉弱時才保留極小避險意義",
+      "action": "維持次要備案，不作為午後主軸；只有尾盤明確轉弱失守整理區時才保留小幅避險意義",
       "price_target_value": null,
       "price_target_label": "非主線，僅弱化情境備案",
       "stop_loss_value": null,
@@ -78,11 +78,11 @@
       "take_profit_label": "僅限保守避險處理",
       "position_size_pct": 0,
       "position_size_label": "預設 0%，僅保留備案",
-      "rationale": "午前盤中已證明節後賣壓沒有照盤前最保守劇本延續，因此反向 ETF 不適合再被放在當下主軸。保留它只是為了防午後結構突然轉弱，而不是鼓勵在上午紅盤背景下逆勢押空。",
+      "rationale": "00632R 於 13:10 仍下跌 1.86%，與大盤紅盤延續相符，表示目前沒有足夠證據把午後主軸切回避險或追空。保留它只是為了應對尾盤若出現更明確的失速破壞，而不是對當前盤勢先行押空。",
       "conditions": [
-        "只有在午後出現明確翻弱、失守關鍵紅盤結構時才重新評估",
-        "若只是短線震盪，不因雜訊切換成追空模式",
-        "用途限避險，不作為主動擴大利潤部位"
+        "只有在尾盤明確翻弱並跌離午後整理區時才重新評估",
+        "若只是高檔震盪，不因雜訊切回追空",
+        "用途限保守避險，不作為主動擴大利潤部位"
       ],
       "status": "active"
     }
@@ -98,11 +98,11 @@
     "open_positions": []
   },
   "max_exposure": {
-    "pct": 10,
-    "label": "總曝險最多 10%，且僅限午前後結構確認仍穩時的極小試單",
-    "stance": "盤中雖已修正為中性偏謹慎，但仍以不追價、不翻單、保留高現金為核心；若後續轉弱，實際曝險可回到 0%"
+    "pct": 8,
+    "label": "總曝險最多 8%，且僅限尾段仍守紅整理時的極小試單或續抱",
+    "stance": "午後修復尚未被否定，但上攻斜率放慢且量能未進一步擴張；核心仍是不追價、不放大部位、尾盤失速就回到 0% 曝險"
   },
-  "max_exposure_pct": 10,
-  "max_exposure_label": "10% 上限（僅限確認後的極小試單）",
-  "notes": "本輪依 2026-04-07 11:20 thesis_check 做午前盤中修正：大盤、台積電與 0050 已證明盤前的偏空預設過度保守，因此 overall stance 下修為中性偏謹慎；但由於仍缺官方盤中 breadth、法人、FX 與殖利率資料，所以不升級成積極偏多，也不因單一上午反彈來回翻單。策略重點是維持高現金、僅保留 0050 極小試單彈性，並把 00632R 降級為午後轉弱時的備案避險。"
+  "max_exposure_pct": 8,
+  "max_exposure_label": "8% 上限（僅限守紅整理下的極小部位）",
+  "notes": "本輪依 2026-04-07 13:10 thesis_check 做午後早段盤中修正：午前確認過的修復力道目前仍在，但指數自日高回落、台積電低於日高、量能未進一步放大，因此整體維持中性偏謹慎，且比 11:30 版再保守一點。策略重點是維持高現金、把 0050 的彈性降為最多 8% 的極小試單／續抱空間，並將 00632R 保留為尾盤明確轉弱時才啟用的次要避險備案。"
 }
