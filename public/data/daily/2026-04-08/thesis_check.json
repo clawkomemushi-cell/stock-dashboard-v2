@@ -4,16 +4,18 @@
     "job_name": "openclaw.thesis_check",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-08T11:20:00+08:00",
-    "generated_at_label": "04/08 11:20",
-    "last_successful_run": "2026-04-08T11:20:00+08:00",
+    "generated_at_iso": "2026-04-08T13:10:00+08:00",
+    "generated_at_label": "04/08 13:10",
+    "last_successful_run": "2026-04-08T13:10:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "analysis_layer_only_no_publish",
       "midmorning_snapshot_based_on_secondary_quote_pages",
       "official_twse_intraday_tape_not_available_in_pipeline",
       "strong_open_has_not_failed_but_no_chase_rule_still_applies",
-      "intraday_volume_is_observational_not_official_signal"
+      "intraday_volume_is_observational_not_official_signal",
+      "afternoon_early_snapshot_based_on_secondary_quote_pages",
+      "late_session_should_still_prefer_no_chase_rule"
     ],
     "fallback_used": false
   },
@@ -141,6 +143,47 @@
         "00632R_change_pct": -5.27
       },
       "notes": "盤中證據採 Yahoo 股市 2026/04/08 11:20 readable snapshot：TAIEX 34,656.96（+4.29%）、成交金額約 5,980.70 億、總量約 9,131,663；台積電 1,945（+4.57%）；0050 79.20（+5.18%）；00632R 13.48（依昨收 14.23 回推約 -5.27%）。相較 10:21，指數僅小幅自高檔整理，台積電維持平盤上方強勢、0050 小幅再墊高，00632R 仍弱，代表午前主導結構仍是權值修復與風險偏好延續，而不是明顯轉弱。由於缺官方盤中 breadth、法人、FX 與殖利率快照，本輪最合理的修正是記錄『偏多框架續用、暫無明顯翻案』，而不是把高檔橫向整理過度解讀成新訊號。"
+    },
+    {
+      "id": "check_004",
+      "timestamp": "13:10",
+      "trigger": "下午早段 thesis check：確認午前高檔整理是否延續，或午後已出現反轉/走弱訊號，供最後一段保守修正參考",
+      "original_thesis": "11:20 時的結論是偏多框架續用、盤勢進入高檔整理但整理幅度仍屬可控，因此操作上維持高現金、不追價，只保留極小條件式試單。",
+      "revised_thesis": "到 13:10 為止，午前的保守偏多框架仍然延續，且目前看不到明確的午後反轉或結構性走弱。加權指數報 34,714.02、較昨收上漲 4.47%，不只高於 11:20 的 34,656.96，也貼近盤中高點 34,718.41；台積電報 1,945 元、上漲 4.57%，與午前持平但仍守在高檔；0050 報 79.20、上漲 5.18%，與 11:20 相同，顯示權值 ETF 也沒有出現明顯午後鬆動；00632R 報 13.43，若依昨收 14.23 回推約下跌 5.62%，比 11:20 的 13.48 更弱，代表避險回補仍不是主導力量。較合理的修正不是把偏多再升級成積極進攻，而是把最後一段操作建議再往保守端收：既然強勢仍在、但新的低風險切入點仍不明確，就維持高現金、不追價，並把『若尾盤跌破午後整理帶才重新降級』當成最後一段的主要觀察。",
+      "change_type": "confirmation_with_caution",
+      "risk_level_change": 0,
+      "confidence_change": 0.02,
+      "updated_direction": "bullish",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "續維持高現金；午後早段沒有看到足以翻空的新證據，但也沒有出現新的低風險切入點，因此最後一段仍以觀望優先"
+        },
+        {
+          "ticker": "0050",
+          "action": "延續偏多觀察但不追價；只有尾盤前仍守住午後整理帶且回吐有限時，才保留極小條件式試單想像"
+        },
+        {
+          "ticker": "00632R",
+          "action": "續列為備案中的備案；目前沒有午後反轉證據支撐提前啟動反向避險"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 34714.02,
+        "taiex_change_pct": 4.47,
+        "taiex_open": 33379.5,
+        "taiex_intraday_high": 34718.41,
+        "taiex_intraday_low": 33379.5,
+        "taiex_trade_value_100m": 7651.08,
+        "taiex_volume_est": 11765969,
+        "tsmc_level": 1945,
+        "tsmc_change_pct": 4.57,
+        "0050_level": 79.2,
+        "0050_change_pct": 5.18,
+        "00632R_level": 13.43,
+        "00632R_change_pct": -5.62
+      },
+      "notes": "盤中證據採 Yahoo 股市 2026/04/08 13:10 readable snapshot：TAIEX 34,714.02（+4.47%）、成交金額約 7,651.08 億、總量約 11,765,969；台積電 1,945（+4.57%）；0050 79.20（+5.18%）；00632R 13.43（依昨收 14.23 回推約 -5.62%）。相較 11:20，指數小幅再墊高並貼近盤中新高，台積電與 0050 持穩高檔，00632R 續弱，代表午前『高檔整理但可控』的判斷在午後早段仍被延續，而不是被反轉驗證。由於本輪仍缺官方盤中 breadth、法人、FX 與殖利率快照，這筆更新只適合拿來作為最後一段操作建議的保守修正依據：偏多框架續用，但不把強勢延續誤讀成尾盤追價訊號。"
     }
   ]
 }
