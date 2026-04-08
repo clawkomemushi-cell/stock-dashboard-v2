@@ -2,11 +2,12 @@ import { useState } from 'react'
 import type { ThesisCheckEntry } from '../../types'
 
 const changeTypeLabel: Record<string, { label: string; color: string }> = {
-  direction_flip:    { label: '方向翻轉', color: 'text-danger bg-danger/10 border-danger/20' },
-  confidence_adjust: { label: '信心調整', color: 'text-warning bg-warning/10 border-warning/20' },
-  target_update:     { label: '目標更新', color: 'text-accent bg-accent/10 border-accent/20' },
-  risk_update:       { label: '風險調整', color: 'text-bear bg-bear/10 border-bear/20' },
-  no_change:         { label: '維持不變', color: 'text-bull bg-bull/10 border-bull/20' },
+  direction_flip:             { label: '方向翻轉', color: 'text-danger bg-danger/10 border-danger/20' },
+  confidence_adjust:          { label: '信心調整', color: 'text-warning bg-warning/10 border-warning/20' },
+  confirmation_with_caution:  { label: '延續但保守', color: 'text-accent bg-accent/10 border-accent/20' },
+  target_update:              { label: '目標更新', color: 'text-accent bg-accent/10 border-accent/20' },
+  risk_update:                { label: '風險調整', color: 'text-bear bg-bear/10 border-bear/20' },
+  no_change:                  { label: '維持不變', color: 'text-bull bg-bull/10 border-bull/20' },
 }
 
 function RiskChangeIndicator({ change }: { change: number | null }) {
@@ -44,10 +45,12 @@ function TimelineEntry({ entry, isLast }: { entry: ThesisCheckEntry; isLast: boo
         <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center mt-1 z-10
           ${entry.change_type === 'direction_flip' ? 'border-danger bg-danger/20' :
             entry.change_type === 'no_change' ? 'border-bull bg-bull/20' :
+            entry.change_type === 'confirmation_with_caution' ? 'border-accent bg-accent/20' :
             'border-warning bg-warning/20'}`}>
           <div className={`w-2 h-2 rounded-full
             ${entry.change_type === 'direction_flip' ? 'bg-danger' :
               entry.change_type === 'no_change' ? 'bg-bull' :
+              entry.change_type === 'confirmation_with_caution' ? 'bg-accent' :
               'bg-warning'}`} />
         </div>
       </div>

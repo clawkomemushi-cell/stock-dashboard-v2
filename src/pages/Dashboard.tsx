@@ -154,12 +154,14 @@ export function Dashboard({ thesis, actionPlan, thesisCheck, dashboardView, load
                   <span className="text-xs font-mono text-text-muted">{latest.timestamp}</span>
                   <span className={`text-xs px-2 py-0.5 rounded border font-mono ml-auto ${
                     latest.change_type === 'direction_flip' ? 'border-danger/30 text-danger bg-danger/10' :
-                    latest.change_type === 'no_change'      ? 'border-bull/30 text-bull bg-bull/10' :
+                    latest.change_type === 'no_change' ? 'border-bull/30 text-bull bg-bull/10' :
+                    latest.change_type === 'confirmation_with_caution' ? 'border-accent/30 text-accent bg-accent/10' :
                     'border-warning/30 text-warning bg-warning/10'
                   }`}>
                     {latest.change_type === 'direction_flip' ? '方向翻轉' :
-                     latest.change_type === 'no_change'      ? '維持不變' :
-                     latest.change_type === 'risk_update'    ? '風險調整' : '信心調整'}
+                     latest.change_type === 'no_change' ? '維持不變' :
+                     latest.change_type === 'risk_update' ? '風險調整' :
+                     latest.change_type === 'confirmation_with_caution' ? '延續但保守' : '信心調整'}
                   </span>
                 </div>
                 <p className="text-sm text-text-secondary leading-relaxed">{latest.revised_thesis}</p>

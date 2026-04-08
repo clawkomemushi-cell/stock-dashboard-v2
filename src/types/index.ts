@@ -18,6 +18,7 @@ export type RiskLevel = 1 | 2 | 3 | 4 | 5
 export type ChangeType =
   | 'direction_flip'
   | 'confidence_adjust'
+  | 'confirmation_with_caution'
   | 'target_update'
   | 'risk_update'
   | 'no_change'
