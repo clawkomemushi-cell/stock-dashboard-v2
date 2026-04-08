@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-09T07:00:00+08:00",
+    "generated_at_label": "04/09 07:00",
+    "last_successful_run": "2026-04-09T07:00:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "pre_open_window_same_day_official_tw_close_not_available_yet"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-09",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "intended_downstream_use": [
+    "daily_thesis market_context seed",
+    "close/weekly explanation context",
+    "latest market status sanity checks"
+  ],
+  "market_window": {
+    "captured_at_local": "2026-04-09T07:00:00+08:00",
+    "tw_market_live_session_available": false,
+    "current_mode": "pre_open_trading_day",
+    "notes": [
+      "This is a collection-only run for pre-open window; no thesis/action/publish generated.",
+      "Same-day official TWSE cash-session close and institutional-flow for 2026-04-09 are not yet published at capture time."
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "current_status": "pre_open",
+    "is_trading_day": true,
+    "trading_day_reference": {
+      "date": "2026-04-09",
+      "status": "open_trading_day_by_calendar_inference",
+      "description": "2026-04-09 is not listed as a holiday in the TWSE 2026 schedule; treated as a normal trading day.",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "derived_calendar_notes": [
+      "Post-holiday trading resumed on 2026-04-07; 04-09 remains a normal weekday trading date.",
+      "Pre-open capture — same-day close/institutional data expected after market close."
+    ],
+    "last_known_cash_session": {
+      "date": "2026-04-08",
+      "index_name": "TAIEX",
+      "close": 34761.38,
+      "change_points": 1531.56,
+      "change_pct": 4.61,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260408&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Latest official TWSE cash-session close available prior to 2026-04-09 pre-open capture.",
+        "TAIEX closed materially higher on 2026-04-08, reflecting a broad regional rebound."
+      ]
+    },
+    "institutional_flow_last_known": {
+      "date": "2026-04-08",
+      "foreign_diff_ntd": 117772619736,
+      "investment_trust_diff_ntd": 4720132160,
+      "dealers_proprietary_diff_ntd": 10570755666,
+      "dealers_hedge_diff_ntd": 25297241582,
+      "total_diff_ntd": 158360749144,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260408&type=day&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Official three-institution net flow snapshot for 2026-04-08 shows large net foreign buying and overall positive net inflows.",
+        "Same-day (04-09) institutional-flow snapshot is not yet available at capture time."
+      ]
+    }
+  },
+  "global_reference_snapshot": {
+    "headline_risk_context": {
+      "source_type": "media_report",
+      "source_name": "Reuters / CNBC / Bloomberg (synthesis)",
+      "source_urls": [
+        "https://www.reuters.com/world/china/global-markets-2026-04-08/",
+        "https://www.cnbc.com/2026/04/07/stock-market-today-live-updates.html",
+        "https://www.bloomberg.com/"
+      ],
+      "capture_method": "manual_normalization_from_readable_page_text",
+      "session_reference": "2026-04-08 U.S. evening / 2026-04-09 Asia morning",
+      "headline": "Markets rally after U.S.-Iran temporary ceasefire; oil prices plunge, prompting broad regional risk-on flows",
+      "supporting_metrics": {
+        "wti_reference_usd": 94.41,
+        "dow_futures_change_pct": 1.5,
+        "sp500_futures_change_pct": 1.6,
+        "nasdaq100_futures_change_pct": 1.7
+      },
+      "confidence": "medium",
+      "source_layer": "media",
+      "notes": [
+        "Major wire services reported a temporary U.S.-Iran ceasefire announcement that materially reduced oil risk premium and triggered global equity rallies on 2026-04-08.",
+        "This is supporting external context for Taiwan market sentiment; it is not a structured market feed."
+      ]
+    }
+  },
+  "market_driver_summary": {
+    "primary_driver": "U.S.-Iran temporary ceasefire & sharp fall in oil prices (risk-on impulse)",
+    "secondary_drivers": [
+      "US monetary policy / Treasury yields uncertainty",
+      "Recent trade/tariff headlines (earlier month)",
+      "Ongoing AI / semiconductor demand optimism"
+    ],
+    "driver_direction": "risk_on (equity-positive, commodity-negative for oil)",
+    "confidence": "medium_high",
+    "likely_affected_groups": [
+      "Oil-importing Asian economies (Taiwan, South Korea)",
+      "Large-cap tech & semiconductor exporters (TSMC, ASML-suppliers)",
+      "Cyclical sectors and ETF/indices sensitive to foreign flows"
+    ],
+    "why_it_matters": "A ceasefire that materially lowers oil prices reduces near-term input-cost risk for Asian economies and removes a key geopolitical risk premium — this tends to unlock foreign risk appetite, contributing to large foreign net-buying and broad index gains (as seen on 2026-04-08). That flow dynamic is particularly important for Taiwan where foreign flows and semiconductor exports drive index moves.",
+    "what_would_invalidate": "Ceasefire collapses or is revealed as temporary with immediate resumption of hostilities (oil spikes); surprise hawkish Fed communication driving yields sharply higher; re-escalation of trade/tariff actions targeting Taiwan supply chains; or major negative earnings surprises from key semiconductor firms."
+  },
+  "driver_watchlist": {
+    "persistent_watch": [
+      "US monetary policy path & Treasury yields (affects FX, capital flows)",
+      "Geopolitical developments in Middle East (oil & shipping risk)",
+      "Large-cap semiconductor / AI supply-chain earnings and guidance",
+      "Trade / tariff policy headlines that could re-introduce structural risk"
+    ],
+    "current_high_priority": [
+      {
+        "title": "U.S.-Iran ceasefire & oil price move",
+        "why": "Immediate driver for 04-08 risk-on rally; directly tied to oil price drop and cross-regional equity gains",
+        "expected_actionability": "High — drives index-level risk appetite and foreign net flows",
+        "source_kind": "wire_media",
+        "confidence": "medium"
+      }
+    ],
+    "deprioritized": [
+      {
+        "title": "April tariff shock (early April)",
+        "why": "Still relevant historically, but the immediate market reaction has shifted toward geopolitics/oil; downgrade until new tariff headlines re-emerge",
+        "confidence": "medium_low"
+      }
+    ],
+    "surprise_buckets": [
+      "Ceasefire breakdown → oil spike → risk-off reversal",
+      "Unexpected hawkish Fed signaling → yield spike & equity rotation",
+      "Major semiconductor earnings miss or supply-chain disruption",
+      "Taiwan-specific policy or regulatory shock"
+    ]
+  },
+  "data_gaps": [
+    {
+      "key": "tw_same_day_official_close_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "2026-04-09 collection ran before the Taiwan cash market close; same-day close not yet published"
+    },
+    {
+      "key": "tw_same_day_institutional_flow",
+      "status": "missing_in_this_round",
+      "reason": "2026-04-09 institutional net-flow data not yet published at capture time"
+    },
+    {
+      "key": "tw_live_intraday_tape",
+      "status": "missing_in_this_round",
+      "reason": "no live TW intraday collector wired into collection layer yet"
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "FX and DXY snapshots not yet integrated into collection layer"
+    }
+  ],
+  "source_summary": [
+    {
+      "name": "TWSE holiday API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE MI_INDEX API (TAIEX close & market summary)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260408&type=ALLBUT0999&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE BFI82U API (institutional flow)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260408&type=day&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "Reuters global markets coverage",
+      "kind": "media_report",
+      "url": "https://www.reuters.com/world/china/global-markets-2026-04-08/",
+      "status": "partial",
+      "confidence": "high"
+    },
+    {
+      "name": "CNBC live updates",
+      "kind": "media_report",
+      "url": "https://www.cnbc.com/2026/04/07/stock-market-today-live-updates.html",
+      "status": "partial",
+      "confidence": "medium"
+    },
+    {
+      "name": "Bloomberg headlines (supporting)",
+      "kind": "media_report",
+      "url": "https://www.bloomberg.com/",
+      "status": "partial",
+      "confidence": "medium"
+    }
+  ]
+}

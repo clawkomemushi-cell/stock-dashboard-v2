@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.dashboard_summary",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-09T07:18:00+08:00",
+    "generated_at_label": "04/09 07:18",
+    "last_successful_run": "2026-04-09T07:18:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "stage1_publish_generated_from_today_action_plan",
+      "dashboard_prefers_dashboard_summary_when_available",
+      "thesis_check_and_close_review_intentionally_not_enabled_in_stage1"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-09",
+  "headline": "停火降油價主線仍偏多，但昨已大幅先反映；今天可保留小倉位先手想像，不追價",
+  "core_thesis_short": "主導市場的仍是停火＋油價回落帶來的風險偏好修復，且屬近期高權重主線，不只是單日 headline；但台股昨天已大幅先反映，所以今天是偏多延續框架、可留小倉位先手想像，不宜再把舊利多當新催化追價。",
+  "direction_bias": "bullish",
+  "risk_level": 3,
+  "confidence": 0.6,
+  "trading_style": "偏多延續框架、可保留小倉位先手想像、但不追價",
+  "action_plan_version": 2,
+  "overall_stance": "今天盤前仍維持偏多但保守的 stance：主導消息還是美伊臨時停火與油價急跌帶來的 risk-on 修復，這條線邏輯上確實有利台股大型權值、半導體與大盤 ETF，所以不必機械式地把自己鎖在全空觀望；但 04/08 已用大漲與大額法人買超先反映，代表今天不是把同一條利多再當全新催化硬追價的日子。較合理的第一階段作法，是把主腳本放在高現金、低曝險、只保留 very small starter position 的想像，且前提必須是開盤後權值與 ETF 有延續承接，而不是急拉後立刻轉弱。若開盤位置已過度延伸、風險報酬比明顯惡化，寧可少做，也不追價。",
+  "watchlist_count": 3,
+  "action_count": 4,
+  "notes": [
+    "Dashboard page prefers this publish-layer summary when latest.published_views.dashboard_summary exists.",
+    "Stage1 publish keeps thesis_check and close_review null/partial until later phases are enabled."
+  ]
+}

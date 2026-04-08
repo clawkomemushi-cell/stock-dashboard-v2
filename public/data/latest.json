@@ -4,26 +4,24 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-08T13:20:00+08:00",
-    "generated_at_label": "04/08 13:20",
-    "last_successful_run": "2026-04-08T13:20:00+08:00",
+    "generated_at_iso": "2026-04-09T07:28:00+08:00",
+    "generated_at_label": "04/09 07:28",
+    "last_successful_run": "2026-04-09T07:28:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "intraday_action_plan_and_thesis_check_published",
-      "close_review_intentionally_left_null_partial",
-      "dashboard_and_morning_views_preserved",
-      "afternoon_intraday_publish_keeps_close_review_untouched",
-      "action_plan_updated_from_1310_thesis_check"
+      "stage1_publish_only_dashboard_and_morning_enabled",
+      "thesis_check_and_close_review_kept_null_or_partial",
+      "weekly_and_performance_paths_list_only_existing_files"
     ],
     "fallback_used": false
   },
-  "date": "2026-04-08",
+  "date": "2026-04-09",
   "week": "2026-W15",
-  "market_status": "mid_session",
+  "market_status": "pre_market",
   "paths": {
-    "daily_thesis": "/data/daily/2026-04-08/daily_thesis.json",
-    "action_plan": "/data/daily/2026-04-08/action_plan.json",
-    "thesis_check": "/data/daily/2026-04-08/thesis_check.json",
+    "daily_thesis": "/data/daily/2026-04-09/daily_thesis.json",
+    "action_plan": "/data/daily/2026-04-09/action_plan.json",
+    "thesis_check": null,
     "close_review": null,
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json"
@@ -31,13 +29,13 @@
   "file_statuses": {
     "daily_thesis": {
       "status": "partial",
-      "updated_at_iso": "2026-04-08T07:10:00+08:00",
+      "updated_at_iso": "2026-04-09T07:10:00+08:00",
       "updated_at_label": "07:10"
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-08T13:20:00+08:00",
-      "updated_at_label": "13:20"
+      "updated_at_iso": "2026-04-09T07:18:00+08:00",
+      "updated_at_label": "07:18"
     },
     "thesis_check": {
       "status": "partial",
@@ -57,13 +55,14 @@
     "performance_history": {
       "status": "success",
       "updated_at_iso": "2026-04-03T16:00:00+08:00",
-      "updated_at_label": "04/03 16:00"
+      "updated_at_label": "16:00"
     }
   },
   "available_weeks": [
     "2026-W14"
   ],
   "available_dates": [
+    "2026-04-09",
     "2026-04-08",
     "2026-04-07",
     "2026-04-06",
@@ -74,12 +73,12 @@
     "2026-W14": "/data/weekly/2026-W14/weekly_review.json"
   },
   "published_views": {
-    "dashboard_summary": "/data/views/2026-04-08/dashboard_summary.json",
-    "morning_view": "/data/views/2026-04-08/morning_view.json"
+    "dashboard_summary": "/data/views/2026-04-09/dashboard_summary.json",
+    "morning_view": "/data/views/2026-04-09/morning_view.json"
   },
   "publish_notes": [
     "Core publish validation only: dashboard + morning.",
-    "Dashboard and Morning now prefer published view files when latest.published_views is present.",
-    "Today publish-layer views were backfilled after missing morning view generation."
+    "Dashboard and Morning now prefer today's published views and today's daily_thesis/action_plan.",
+    "Stage1 leaves thesis_check and close_review null/partial until later phases are enabled."
   ]
 }
