@@ -1,0 +1,174 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-08T07:00:00+08:00",
+    "generated_at_label": "04/08 07:00",
+    "last_successful_run": "2026-04-08T07:00:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "pre_open_window_same_day_official_tw_close_not_available_yet",
+      "global_reference_snapshot_is_supporting_only"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-08",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "intended_downstream_use": [
+    "daily_thesis market_context seed",
+    "close/weekly explanation context",
+    "latest market status sanity checks"
+  ],
+  "market_window": {
+    "captured_at_local": "2026-04-08T07:00:00+08:00",
+    "tw_market_live_session_available": false,
+    "current_mode": "pre_open_trading_day",
+    "notes": [
+      "This round is restricted to collection only; no thesis, no action plan, no publish.",
+      "2026-04-08 is a TWSE trading day, but this capture happened before the Taiwan cash session opened.",
+      "Same-day official TWSE close and institutional-flow data were not yet available at this timestamp."
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "current_status": "pre_open",
+    "is_trading_day": true,
+    "trading_day_reference": {
+      "date": "2026-04-08",
+      "status": "open_trading_day_by_calendar_inference",
+      "description": "2026-04-08 is not listed in the official 2026 TWSE holiday schedule and falls on a Wednesday, so it is treated as a regular TWSE trading day.",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "derived_calendar_notes": [
+      "2026-04-03 to 2026-04-06 are official holiday entries; 2026-04-07 resumed regular trading and 2026-04-08 continues the normal trading calendar.",
+      "This is a pre-open collection window, so same-day official market-close fields are expected to be unavailable."
+    ],
+    "last_known_cash_session": {
+      "date": "2026-04-07",
+      "index_name": "TAIEX",
+      "close": 33229.82,
+      "change_points": 657.39,
+      "change_pct": 2.02,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260407&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Latest available TWSE cash-session close before the 2026-04-08 pre-open window.",
+        "A same-day 2026-04-08 official index close snapshot returned no data at collection time, which is expected before the market closes."
+      ]
+    },
+    "institutional_flow_last_known": {
+      "date": "2026-04-07",
+      "foreign_diff_ntd": 10096606744,
+      "investment_trust_diff_ntd": 4356643821,
+      "dealers_proprietary_diff_ntd": 2355393465,
+      "dealers_hedge_diff_ntd": 4677392016,
+      "total_diff_ntd": 21486036046,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260407&type=day&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Latest available official three-institution net flow before the 2026-04-08 pre-open window.",
+        "A same-day 2026-04-08 official institutional-flow query returned no data at collection time, which is expected before publication."
+      ]
+    }
+  },
+  "global_reference_snapshot": {
+    "headline_risk_context": {
+      "source_type": "media_report",
+      "source_name": "CNBC live updates page",
+      "source_urls": [
+        "https://www.cnbc.com/2026/04/07/stock-market-today-live-updates.html"
+      ],
+      "capture_method": "manual_normalization_from_readable_page_text",
+      "session_reference": "2026-04-07 U.S. evening / 2026-04-08 Asia morning",
+      "headline": "Dow futures jump and oil tumbles after Trump says Iran attacks are suspended for two weeks",
+      "supporting_metrics": {
+        "dow_futures_change_pct": 1.5,
+        "sp500_futures_change_pct": 1.6,
+        "nasdaq100_futures_change_pct": 1.7,
+        "wti_reference_usd": 98.79
+      },
+      "confidence": "medium",
+      "source_layer": "secondary_media",
+      "notes": [
+        "This is supporting external risk context only, not a primary structured market feed for the V2 collection layer.",
+        "Values were normalized from CNBC readable page text captured during this run and may reflect a moving live-update snapshot rather than a finalized close."
+      ]
+    }
+  },
+  "data_gaps": [
+    {
+      "key": "tw_same_day_official_close_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "2026-04-08 collection ran before the Taiwan cash market close; official same-day close data was not yet published"
+    },
+    {
+      "key": "tw_same_day_institutional_flow",
+      "status": "missing_in_this_round",
+      "reason": "2026-04-08 collection ran before official same-day institutional net-flow publication"
+    },
+    {
+      "key": "tw_live_intraday_tape",
+      "status": "missing_in_this_round",
+      "reason": "no live TW intraday collector is wired into the collection layer yet"
+    },
+    {
+      "key": "tw_key_stock_level_snapshots",
+      "status": "missing_in_this_round",
+      "reason": "no stock-level structured collector implemented yet"
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "not yet wired into collection layer"
+    },
+    {
+      "key": "us_treasury_exact_level",
+      "status": "missing_in_this_round",
+      "reason": "no independently normalized Treasury snapshot was collected in this round"
+    },
+    {
+      "key": "us_equities_exact_close_level",
+      "status": "missing_in_this_round",
+      "reason": "supporting external context was available only as readable live-update text, not as a stable structured close snapshot"
+    }
+  ],
+  "source_summary": [
+    {
+      "name": "TWSE holiday API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE MI_INDEX API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260407&type=ALLBUT0999&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE BFI82U API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260407&type=day&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "CNBC external risk context",
+      "kind": "media_report",
+      "url": "https://www.cnbc.com/2026/04/07/stock-market-today-live-updates.html",
+      "status": "partial",
+      "confidence": "medium"
+    }
+  ]
+}

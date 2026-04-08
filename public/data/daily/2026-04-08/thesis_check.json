@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.thesis_check",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-08T09:08:00+08:00",
+    "generated_at_label": "04/08 09:08",
+    "last_successful_run": "2026-04-08T09:08:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "opening_snapshot_based_on_secondary_quote_pages",
+      "official_twse_intraday_tape_not_available_in_pipeline",
+      "opening_window_is_too_early_for_large_directional_rewrite",
+      "volume_ratio_is_opening_window_estimate_not_official_metric"
+    ],
+    "fallback_used": false
+  },
+  "entries": [
+    {
+      "id": "check_001",
+      "timestamp": "09:08",
+      "trigger": "開盤後第一輪 thesis check：驗證盤前保守偏多框架是否被開盤承接支持",
+      "original_thesis": "盤前先採保守偏多框架，但仍要等開盤確認修復買盤能否延續。",
+      "revised_thesis": "到 09:08 為止，開盤第一輪證據明顯偏向支持晨間的保守偏多框架：加權指數報 34,426.82、較昨收上漲 3.60%，台積電報 1,930 元、上漲 3.76%，0050 報 78.35、上漲 4.05%，而 00632R 報 13.63、下跌 4.22%，代表早盤的主導力量仍是權值修復與風險偏好回補，而不是偏空延續。不過現在仍只是 09:08 的 opening window，這種開高本身也意味著短線震盪與回吐風險偏高；因此較合理的修正不是把方向大幅翻成積極追多，而是確認『偏多框架暫時成立、但執行上繼續保守』，並把重點放在接下來 30 至 60 分鐘能否守住開盤跳空後的承接結構。",
+      "change_type": "confidence_adjust",
+      "risk_level_change": 0,
+      "confidence_change": 0.08,
+      "updated_direction": "bullish",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "雖然開盤偏多證據明顯，但現階段仍以高現金、等前 30 至 60 分鐘結構確認為主，不因開盤急拉立刻擴張曝險"
+        },
+        {
+          "ticker": "0050",
+          "action": "保留偏多觀察與極小條件式試單資格，但只在開盤後能續守強勢且沒有明顯回吐時再評估；不追第一段急拉"
+        },
+        {
+          "ticker": "00632R",
+          "action": "開盤第一輪先降為次要備案；目前沒有足夠證據支持把反向 ETF 升為主線"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 34426.82,
+        "taiex_change_pct": 3.6,
+        "volume_ratio": 15.14,
+        "taiex_open": 33379.5,
+        "taiex_intraday_high": 34443.51,
+        "taiex_intraday_low": 33379.5,
+        "taiex_trade_value_100m": 1608.81,
+        "taiex_volume_est": 2034500,
+        "tsmc_level": 1930,
+        "tsmc_change_pct": 3.76,
+        "0050_level": 78.35,
+        "0050_change_pct": 4.05,
+        "00632R_level": 13.63,
+        "00632R_change_pct": -4.22
+      },
+      "notes": "盤中證據採 Yahoo 股市 2026/04/08 09:08 readable snapshot：TAIEX 34,426.82（+3.60%）、成交金額約 1,608.81 億、總量約 2,034,500；台積電 1,930（+3.76%）；0050 78.35（+4.05%）；00632R 13.63（-4.22%）。volume_ratio 以開盤 09:08 的時間進度，對照 TWSE 2026/04/07 official market summary 的上市股票成交量約 4,538,220,095 股（折合約 4,538,220 張）做時間正規化粗估，僅用來提示開盤參與度很高；開盤集合競價會放大此數字，不能把它當成正式趨勢擴張指標。由於仍缺官方盤中 breadth、法人、FX 與殖利率快照，本輪只確認『偏多框架暫時成立且信心小幅上修』，不做大幅翻案，也不把它升級成追價指令。"
+    }
+  ]
+}

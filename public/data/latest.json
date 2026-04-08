@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-07T13:20:00+08:00",
-    "generated_at_label": "04/07 13:20",
-    "last_successful_run": "2026-04-07T13:20:00+08:00",
+    "generated_at_iso": "2026-04-08T09:18:00+08:00",
+    "generated_at_label": "04/08 09:18",
+    "last_successful_run": "2026-04-08T09:18:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "intraday_action_plan_and_thesis_check_published",
@@ -16,13 +16,13 @@
     ],
     "fallback_used": false
   },
-  "date": "2026-04-07",
-  "week": "2026-W14",
+  "date": "2026-04-08",
+  "week": "2026-W15",
   "market_status": "mid_session",
   "paths": {
-    "daily_thesis": "/data/daily/2026-04-07/daily_thesis.json",
-    "action_plan": "/data/daily/2026-04-07/action_plan.json",
-    "thesis_check": "/data/daily/2026-04-07/thesis_check.json",
+    "daily_thesis": "/data/daily/2026-04-08/daily_thesis.json",
+    "action_plan": "/data/daily/2026-04-08/action_plan.json",
+    "thesis_check": "/data/daily/2026-04-08/thesis_check.json",
     "close_review": null,
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json"
@@ -30,18 +30,18 @@
   "file_statuses": {
     "daily_thesis": {
       "status": "partial",
-      "updated_at_iso": "2026-04-07T07:10:00+08:00",
+      "updated_at_iso": "2026-04-08T07:10:00+08:00",
       "updated_at_label": "07:10"
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-07T13:20:00+08:00",
-      "updated_at_label": "13:20"
+      "updated_at_iso": "2026-04-08T09:18:00+08:00",
+      "updated_at_label": "09:18"
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-07T13:10:00+08:00",
-      "updated_at_label": "13:10"
+      "updated_at_iso": "2026-04-08T09:08:00+08:00",
+      "updated_at_label": "09:08"
     },
     "close_review": {
       "status": "partial",
@@ -63,6 +63,7 @@
     "2026-W14"
   ],
   "available_dates": [
+    "2026-04-08",
     "2026-04-07",
     "2026-04-06",
     "2026-04-05",
