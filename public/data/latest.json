@@ -73,12 +73,12 @@
     "2026-W14": "/data/weekly/2026-W14/weekly_review.json"
   },
   "published_views": {
-    "dashboard_summary": "/data/views/2026-04-07/dashboard_summary.json",
-    "morning_view": "/data/views/2026-04-07/morning_view.json"
+    "dashboard_summary": "/data/views/2026-04-08/dashboard_summary.json",
+    "morning_view": "/data/views/2026-04-08/morning_view.json"
   },
   "publish_notes": [
     "Core publish validation only: dashboard + morning.",
     "Dashboard and Morning now prefer published view files when latest.published_views is present.",
-    "Intraday/close/weekly/performance were intentionally left untouched."
+    "Today publish-layer views were backfilled after missing morning view generation."
   ]
 }

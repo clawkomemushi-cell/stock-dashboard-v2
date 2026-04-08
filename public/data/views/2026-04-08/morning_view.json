@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.morning_view",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-08T07:10:00+08:00",
+    "generated_at_label": "04/08 07:10",
+    "last_successful_run": "2026-04-08T07:10:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "publish_layer_backfilled_for_today_views",
+      "morning_page_prefers_morning_view_when_available",
+      "rendered_from_today_daily_thesis"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-08",
+  "page": "morning",
+  "headline": "盤前先採保守偏多框架，但仍要等開盤確認修復買盤能否延續",
+  "hero": {
+    "direction_bias": "bullish",
+    "trading_style": "保守偏多、先看開盤承接、不追價",
+    "confidence": 0.58,
+    "risk_level": 3
+  },
+  "sections": {
+    "core_thesis": "這份 daily_thesis 僅建立在 2026-04-08 07:00 的 collection market_context 上。台股目前仍處於開盤前，本地最近已知官方現貨背景是 2026-04-07：TAIEX 收 33229.82、單日 +2.02%，外資買超 10,096,606,744 元，三大法人合計買超 21,486,036,046 元，代表連假後首日的已知本地基調偏向修復與風險偏好回升。外部 supporting context 方面，美股期貨走高、油價回落，顯示地緣風險暫時有降溫跡象，但這部分仍只是 secondary media snapshot，不是完整穩定的結構化 close feed。再加上本輪仍缺 USD/TWD、DXY、美債殖利率、台股即時量價與個股/ETF 結構化 snapshot，所以目前較合理的是給出『保守偏多、但必須等開盤承接驗證』的方向框架，而不是高確信度的直接執行結論。",
+    "market_context": {
+      "index_trend": "最近已知 TWSE 現貨收盤為 2026-04-07，TAIEX 33229.82、單日 +2.02%；目前較適合視為修復延續的基線，但不能直接外推成 2026-04-08 必然續強。",
+      "volume_status": "本輪 collection 沒有提供成交量、量比與盤前委買委賣等結構化欄位，量價是否同步支持偏多框架，仍要等開盤後驗證。",
+      "foreign_capital": "最近已知外資單日買超 10,096,606,744 元，三大法人合計買超 21,486,036,046 元，顯示資金面較前一輪改善，但是否延續仍需結合匯率與開盤後承接確認。",
+      "institutional_summary": "最近已知投信買超 4,356,643,821 元、自營商(自行)買超 2,355,393,465 元、自營商(避險)買超 4,677,392,016 元，整體籌碼表現偏正向，但同日即時延續性仍未知。"
+    },
+    "key_risks": [
+      "目前仍是盤前窗口，同日官方現貨收盤與法人買賣超尚未發布，方向只能先做框架分析。",
+      "本輪缺少 USD/TWD、DXY 與美債殖利率的結構化快照，跨市場風險定價仍不完整。",
+      "沒有台股即時 intraday tape 與個股/ETF snapshot，無法支撐高確信度標的與價位結論。",
+      "外部利多 headline 主要來自 secondary media snapshot，只能作為風險情緒輔助，不能單獨當成正式主訊號。",
+      "若今天開盤只是延續隔夜情緒而缺乏本地承接，盤勢仍可能從偏多框架快速轉為開高震盪甚至開高走弱。"
+    ],
+    "support_levels": [
+      {
+        "price": 33200,
+        "label": "最近已知收盤附近支撐（低信心參考）",
+        "strength": "weak"
+      },
+      {
+        "price": 33000,
+        "label": "短線整數防守帶（需開盤後驗證）",
+        "strength": "weak"
+      }
+    ],
+    "resistance_levels": [
+      {
+        "price": 33500,
+        "label": "若修復延續時的第一道整數壓力",
+        "strength": "weak"
+      },
+      {
+        "price": 33800,
+        "label": "若開盤後買盤延續時的次級壓力區（待更多資料驗證）",
+        "strength": "weak"
+      }
+    ],
+    "watchlist": [
+      {
+        "ticker": "0050",
+        "name": "元大台灣50",
+        "direction": "watch",
+        "entry_condition": "先觀察開盤後是否能穩定承接並維持在最近已知收盤帶之上，若只是開高後迅速轉弱，則偏多框架不能直接升級成執行判斷。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（本輪不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（本輪不給執行價）",
+        "rationale": "可作為大盤修復延續的代理觀察標的，但目前資料只足夠建立方向框架，不足以下正式進出場結論。",
+        "priority": "medium"
+      },
+      {
+        "ticker": "00632R",
+        "name": "元大台灣50反1",
+        "direction": "watch",
+        "entry_condition": "只有在開盤後確認修復買盤失敗、指數跌回整數支撐下方，且外部風險資料補齊後仍偏空時，才保留避險觀察意義。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（需補更多資料）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（需補更多資料）",
+        "rationale": "目前基線較前一輪改善，反向 ETF 不應先入為主；它只適合作為偏多框架失效後的備用風險觀察。",
+        "priority": "medium"
+      }
+    ],
+    "prohibitions": [
+      "禁止把這份盤前框架分析直接當成正式 action plan 或即時追價依據。",
+      "禁止在缺少 FX / yield / 台股個股快照時，硬下高確信度個股或 ETF 方向結論。",
+      "禁止只因隔夜美股期貨與油價訊號偏正向，就忽略盤前本地承接是否成立這件事。"
+    ],
+    "cautions": [
+      "若今天開盤偏強，仍要看前 30 到 60 分鐘是否能守住，而不是把第一段拉抬直接視為趨勢確認。",
+      "若開盤後權值與指數表現不同步，偏多框架應降級為中性觀察，避免在資料未補齊時追單。",
+      "目前最合理的做法仍是先看開盤結構與後續資料補齊，再判斷偏多是否值得升級成執行結論。"
+    ],
+    "notes": "V2 stage1 analysis-only 最小正式版；本輪只生成 daily_thesis.json，不生成 action_plan、不更新 latest.json、不做 publish。"
+  },
+  "notes": [
+    "Morning page prefers this publish-layer view when latest.published_views.morning_view exists.",
+    "This file was backfilled because today morning views were missing while latest.json had already advanced to today."
+  ]
+}

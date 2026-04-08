@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.dashboard_summary",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-08T10:30:00+08:00",
+    "generated_at_label": "04/08 10:30",
+    "last_successful_run": "2026-04-08T10:30:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "publish_layer_backfilled_for_today_views",
+      "dashboard_prefers_dashboard_summary_when_available",
+      "intraday_action_plan_reflected_in_summary"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-08",
+  "headline": "盤前先採保守偏多框架，但仍要等開盤確認修復買盤能否延續",
+  "core_thesis_short": "已知本地最近一筆官方收盤與法人籌碼明顯轉強，盤前框架可先偏多看待；但 FX / yield / 個股快照仍缺，今天只能先看修復延續是否成立，不能直接追價當成執行答案。",
+  "direction_bias": "bullish",
+  "risk_level": 3,
+  "confidence": 0.58,
+  "trading_style": "保守偏多、先看開盤承接、不追價",
+  "action_plan_version": 2,
+  "overall_stance": "午前檢查顯示早盤偏多框架仍在延續，原本擔心的 opening burst 至少目前沒有被明顯驗證成失敗；但因為指數、台積電與 0050 的漲幅都已進一步擴大，執行姿態仍應維持在「偏多續用、但不追價也不擴張進攻」。此時最重要的不是把方向翻得更激進，而是接受強勢存在、同時把風險控制放在前面：維持高現金、只保留極小條件式試單，若午前高檔整理失守就回到純觀望。",
+  "watchlist_count": 2,
+  "action_count": 3,
+  "notes": [
+    "Dashboard page prefers this publish-layer summary when latest.published_views.dashboard_summary exists.",
+    "This file was backfilled because today morning views were missing while latest.json had already advanced to today."
+  ]
+}
