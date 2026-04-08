@@ -287,7 +287,7 @@ export interface ThesisCheckEntry {
   market_snapshot: {
     taiex_level: number
     taiex_change_pct: number
-    volume_ratio: number
+    volume_ratio?: number | null
   }
   notes: string
 }

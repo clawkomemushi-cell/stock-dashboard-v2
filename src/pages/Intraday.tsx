@@ -48,7 +48,9 @@ export function Intraday({ thesisCheck, actionPlan, loading, error }: Props) {
             <div>
               <p className="label mb-1">量比</p>
               <p className="text-lg font-mono text-text-secondary">
-                {latestEntry.market_snapshot.volume_ratio.toFixed(2)}x
+                {typeof latestEntry.market_snapshot.volume_ratio === 'number'
+                  ? `${latestEntry.market_snapshot.volume_ratio.toFixed(2)}x`
+                  : '—'}
               </p>
             </div>
             <div className="h-12 w-px bg-border" />

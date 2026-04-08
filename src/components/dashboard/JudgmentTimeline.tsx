@@ -84,7 +84,9 @@ function TimelineEntry({ entry, isLast }: { entry: ThesisCheckEntry; isLast: boo
             {entry.market_snapshot.taiex_change_pct.toFixed(2)}%
           </span>
           <span className="text-xs text-text-muted">
-            量比 {entry.market_snapshot.volume_ratio.toFixed(2)}x
+            量比 {typeof entry.market_snapshot.volume_ratio === 'number'
+              ? `${entry.market_snapshot.volume_ratio.toFixed(2)}x`
+              : '—'}
           </span>
         </div>
 

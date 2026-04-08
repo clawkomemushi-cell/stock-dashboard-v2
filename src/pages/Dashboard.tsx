@@ -170,7 +170,7 @@ export function Dashboard({ thesis, actionPlan, thesisCheck, dashboardView, load
                   <span className={latest.market_snapshot.taiex_change_pct < 0 ? 'text-bear' : 'text-bull'}>
                     {latest.market_snapshot.taiex_change_pct > 0 ? '+' : ''}{latest.market_snapshot.taiex_change_pct.toFixed(2)}%
                   </span>
-                  <span className="text-text-muted">量比 {latest.market_snapshot.volume_ratio.toFixed(2)}x</span>
+                  <span className="text-text-muted">量比 {typeof latest.market_snapshot.volume_ratio === 'number' ? `${latest.market_snapshot.volume_ratio.toFixed(2)}x` : '—'}</span>
                   <span className="text-text-muted ml-auto">
                     共 {thesisCheck.entries.length} 次修正 →
                     <Link to="/intraday" className="text-accent ml-1 hover:underline">查看 Timeline</Link>
