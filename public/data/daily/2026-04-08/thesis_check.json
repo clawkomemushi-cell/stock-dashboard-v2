@@ -4,16 +4,16 @@
     "job_name": "openclaw.thesis_check",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-08T09:08:00+08:00",
-    "generated_at_label": "04/08 09:08",
-    "last_successful_run": "2026-04-08T09:08:00+08:00",
+    "generated_at_iso": "2026-04-08T10:21:00+08:00",
+    "generated_at_label": "04/08 10:21",
+    "last_successful_run": "2026-04-08T10:21:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "analysis_layer_only_no_publish",
-      "opening_snapshot_based_on_secondary_quote_pages",
+      "midmorning_snapshot_based_on_secondary_quote_pages",
       "official_twse_intraday_tape_not_available_in_pipeline",
-      "opening_window_is_too_early_for_large_directional_rewrite",
-      "volume_ratio_is_opening_window_estimate_not_official_metric"
+      "strong_open_has_not_failed_but_no_chase_rule_still_applies",
+      "intraday_volume_is_observational_not_official_signal"
     ],
     "fallback_used": false
   },
@@ -59,6 +59,47 @@
         "00632R_change_pct": -4.22
       },
       "notes": "盤中證據採 Yahoo 股市 2026/04/08 09:08 readable snapshot：TAIEX 34,426.82（+3.60%）、成交金額約 1,608.81 億、總量約 2,034,500；台積電 1,930（+3.76%）；0050 78.35（+4.05%）；00632R 13.63（-4.22%）。volume_ratio 以開盤 09:08 的時間進度，對照 TWSE 2026/04/07 official market summary 的上市股票成交量約 4,538,220,095 股（折合約 4,538,220 張）做時間正規化粗估，僅用來提示開盤參與度很高；開盤集合競價會放大此數字，不能把它當成正式趨勢擴張指標。由於仍缺官方盤中 breadth、法人、FX 與殖利率快照，本輪只確認『偏多框架暫時成立且信心小幅上修』，不做大幅翻案，也不把它升級成追價指令。"
+    },
+    {
+      "id": "check_002",
+      "timestamp": "10:21",
+      "trigger": "午前 thesis check：確認開盤跳空後的偏多框架是否延續，或已轉成明顯開高走弱",
+      "original_thesis": "09:08 時已確認晨間保守偏多框架暫時成立，但執行上仍以不追價、觀察 09:30 到 10:00 前後承接結構為主。",
+      "revised_thesis": "到 10:21 為止，早盤的偏多框架整體仍在延續，且至少目前沒有出現足以推翻晨間結論的明顯開高走弱。加權指數報 34,668.67、較昨收上漲 4.33%，高於 09:08 的 34,426.82；台積電報 1,945 元、上漲 4.57%，高於 09:08 的 1,930 元；0050 報 79.15、上漲 5.11%，也高於 09:08 的 78.35；00632R 報 13.47，較昨收下跌約 5.34%，比 09:08 更弱，代表權值修復與風險偏好回補至少在午前仍是主導力量。不過指數也已經離開盤低點很遠，且盤中高點 34,708.81 與現值差距不大，較合理的解讀是『偏多框架續用、但仍不升級成追價指令』：真正需要記錄的變化不是方向翻案，而是原本擔心的 opening burst 在午前前半段尚未被明顯破壞，因此晨間框架可維持，執行上繼續偏保守。",
+      "change_type": "confirmation_with_caution",
+      "risk_level_change": 0,
+      "confidence_change": 0.04,
+      "updated_direction": "bullish",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "維持高現金與等待結構確認；午前雖未見明顯轉弱，但因漲幅已擴大，不因續強就主動追價加碼"
+        },
+        {
+          "ticker": "0050",
+          "action": "延續偏多觀察，但仍只保留極小條件式試單空間；若後續無法守住午前高檔整理，再回到純觀望"
+        },
+        {
+          "ticker": "00632R",
+          "action": "維持非主線備案定位；目前沒有足夠證據支持把反向 ETF 升級成主動交易方向"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 34668.67,
+        "taiex_change_pct": 4.33,
+        "taiex_open": 33379.5,
+        "taiex_intraday_high": 34708.81,
+        "taiex_intraday_low": 33379.5,
+        "taiex_trade_value_100m": 4871.73,
+        "taiex_volume_est": 7383517,
+        "tsmc_level": 1945,
+        "tsmc_change_pct": 4.57,
+        "0050_level": 79.15,
+        "0050_change_pct": 5.11,
+        "00632R_level": 13.47,
+        "00632R_change_pct": -5.34
+      },
+      "notes": "盤中證據採 Yahoo 股市 2026/04/08 10:21 readable snapshot：TAIEX 34,668.67（+4.33%）、成交金額約 4,871.73 億、總量約 7,383,517；台積電 1,945（+4.57%）；0050 79.15（+5.11%）；00632R 13.47（約 -5.34%）。本輪重點不是再把方向往更激進的偏多上修，而是確認 09:08 時擔心的 opening-only burst 到午前前半段尚未被明顯驗證成失敗；因此 thesis 以延續與小幅增強信心為主。由於資料仍來自 secondary quote pages，且缺官方盤中 breadth、法人、FX 與殖利率快照，本輪仍維持 analysis-only，不把強勢延續直接轉成追價執行命令。"
     }
   ]
 }

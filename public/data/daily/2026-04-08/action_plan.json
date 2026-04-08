@@ -4,31 +4,31 @@
     "job_name": "openclaw.action_plan",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-08T09:18:00+08:00",
-    "generated_at_label": "04/08 09:18",
-    "last_successful_run": "2026-04-08T09:18:00+08:00",
+    "generated_at_iso": "2026-04-08T10:30:00+08:00",
+    "generated_at_label": "04/08 10:30",
+    "last_successful_run": "2026-04-08T10:30:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "intraday_revision_based_on_opening_snapshot",
+      "intraday_revision_based_on_midmorning_thesis_check",
       "publish_after_thesis_check_validation",
-      "opening_gap_up_requires_no_chase_discipline",
+      "strong_open_confirmed_but_no_chase_discipline_still_applies",
       "official_twse_intraday_tape_not_available_in_pipeline",
-      "max_exposure_trimmed_due_to_opening_volatility",
+      "max_exposure_kept_tight_despite_strength_extension",
       "no_new_trade_forced_without_better_structure"
     ],
     "fallback_used": false
   },
   "date": "2026-04-08",
-  "generated_at_iso": "2026-04-08T09:18:00+08:00",
-  "generated_at_label": "09:18",
+  "generated_at_iso": "2026-04-08T10:30:00+08:00",
+  "generated_at_label": "10:30",
   "version": 2,
-  "overall_stance": "開盤第一輪證據支持盤前的保守偏多框架，但因為指數與 0050 已出現明顯跳空上衝，現階段更適合把執行姿態收斂成「偏多但不追價」。重點不是擴大進攻，而是觀察 09:30 到 10:00 前後能否守住開盤跳空後的承接結構；若只是開高後震盪或回吐，寧可維持高現金與低曝險，也不要為了有動作而硬做新交易。",
+  "overall_stance": "午前檢查顯示早盤偏多框架仍在延續，原本擔心的 opening burst 至少目前沒有被明顯驗證成失敗；但因為指數、台積電與 0050 的漲幅都已進一步擴大，執行姿態仍應維持在「偏多續用、但不追價也不擴張進攻」。此時最重要的不是把方向翻得更激進，而是接受強勢存在、同時把風險控制放在前面：維持高現金、只保留極小條件式試單，若午前高檔整理失守就回到純觀望。",
   "actions": [
     {
       "ticker": "CASH",
       "name": "現金 / 等待結構確認",
       "direction": "hold",
-      "action": "維持高現金比重，先確認開盤跳空後的承接是否延續；在前 30 至 60 分鐘結構未更清楚前，不主動擴大部位",
+      "action": "維持高現金比重；午前雖確認偏多框架延續，但在漲幅已擴大後仍不主動擴大部位，優先觀察高檔整理是否穩定",
       "price_target_value": null,
       "price_target_label": "N/A（盤中保守版）",
       "stop_loss_value": null,
@@ -37,10 +37,10 @@
       "take_profit_label": "N/A",
       "position_size_pct": 92,
       "position_size_label": "92% 現金保留",
-      "rationale": "09:08 的盤中檢查顯示偏多框架暫時成立，但 opening window 的跳空幅度已大，短線最常見的風險反而是追高後遇到回吐。既然 thesis_check 也明示不應把這波開高直接升級成積極追價指令，維持高現金仍是目前最符合風控的主軸。",
+      "rationale": "10:21 的 thesis_check 顯示偏多框架不只在開盤成立，午前前半段也仍在延續；但越是確認強勢沒有立刻失敗，越要避免在漲幅已經擴大的位置情緒性追價。既然最新檢查仍明示『延續偏多、但不升級成追價命令』，維持高現金仍是最符合風控的主軸。",
       "conditions": [
-        "09:30 到 10:00 前若無法持續守住開盤強勢，維持純觀望",
-        "若出現開高震盪、量價失衡或權值轉弱，不提高曝險",
+        "若午前高檔整理無法持續守住，維持純觀望",
+        "若出現高檔震盪擴大、量價失衡或權值轉弱，不提高曝險",
         "只有在強勢結構續守且回吐可控時，才保留極小試單空間"
       ],
       "status": "active"
@@ -49,7 +49,7 @@
       "ticker": "0050",
       "name": "元大台灣50",
       "direction": "watch",
-      "action": "維持偏多觀察，但只保留極小條件式試單空間；不追開盤第一段急拉，優先等回吐後仍能守穩再評估",
+      "action": "延續偏多觀察，但仍只保留極小條件式試單空間；不因午前續強而追價，優先等高檔整理後仍能守穩再評估",
       "price_target_value": null,
       "price_target_label": "不追價，等回吐與承接確認",
       "stop_loss_value": null,
@@ -58,10 +58,10 @@
       "take_profit_label": "以保守分批與快收斂風險為主",
       "position_size_pct": 8,
       "position_size_label": "最多 8% 條件式試單上限",
-      "rationale": "盤中檢查顯示 0050 約 78.35、漲幅約 4.05%，確實支持偏多框架；但強勢已經先反映在開盤跳空，現在優勢不在追價，而在等待市場證明這不是只有 opening burst。把部位上限從盤前保守版再收斂，能避免因早盤情緒性拉抬而承受不對稱回吐。",
+      "rationale": "最新 thesis_check 顯示 0050 約 79.15、漲幅約 5.11%，代表偏多框架在午前仍獲得延續確認；但也正因為漲幅比 09:08 更大，現在的優勢更不在追價，而在等待市場證明高檔整理後仍有承接。把部位上限維持在極低水位，能避免因強勢延伸後的正常回吐而承受不對稱風險。",
       "conditions": [
-        "需觀察開盤後回吐是否有限且承接仍在",
-        "若指數、台積電與 0050 同步續強，才保留極小試單資格",
+        "需觀察午前高檔整理後回吐是否有限且承接仍在",
+        "若指數、台積電與 0050 同步續強且沒有明顯高檔失守，才保留極小試單資格",
         "若強勢無法延續，維持 0% 到極低曝險，不硬做"
       ],
       "status": "active"
@@ -97,14 +97,14 @@
     "total_pnl_pct": 0.0,
     "win_rate": 0.0,
     "open_positions": [],
-    "notes": "本輪盤中修正未新增 paper trade，仍以觀察與保守控曝為主。"
+    "notes": "本輪依 10:21 thesis_check 維持空倉，未新增 paper trade；午前確認偏多延續，但仍以觀察與保守控曝為主。"
   },
   "max_exposure": {
     "pct": 8,
-    "label": "總曝險最多 8%，且僅限開盤跳空後仍能守住強勢結構時的極小條件式試單",
-    "stance": "盤中檢查確認偏多框架暫時成立，但 opening gap 已大，追價風險高於錯過風險；因此把曝險上限再下修到 8%，實際建議仍以 0% 到低個位數為主。"
+    "label": "總曝險最多 8%，且僅限午前高檔整理後仍能守住強勢結構時的極小條件式試單",
+    "stance": "10:21 thesis_check 確認偏多框架延續，但漲幅也同步擴大；追價風險仍高於錯過風險，因此不提高曝險上限，維持 8% 緊上限，實際建議仍以 0% 到低個位數為主。"
   },
   "max_exposure_pct": 8,
-  "max_exposure_label": "8% 上限（盤中偏多但不追價）",
-  "notes": "本版依 2026-04-08 09:08 thesis_check 轉為 intraday action_plan。修正重點不是加新交易，而是確認早盤偏多框架暫時成立，同時因指數、台積電與 0050 已先大幅跳空而進一步降低曝險上限，維持高現金、不追價、只保留極小條件式試單。00632R 降為偏多失效時才重評的備案；paper_trade 維持空倉，避免為了「有操作」而製造不必要交易。"
+  "max_exposure_label": "8% 上限（午前續強、仍不追價）",
+  "notes": "本版依 2026-04-08 10:21 thesis_check 做午前盤中修正。修正重點不是新增交易，而是確認 09:08 擔心的 opening burst 到午前前半段尚未被明顯破壞，因此整體偏多框架可續用；但因指數、台積電與 0050 漲幅已比早盤更大，風控上仍維持高現金、不追價、只保留極小條件式試單。00632R 繼續維持偏多失效時才重評的備案；paper_trade 維持空倉，避免為了「有操作」而製造不必要交易。"
 }
