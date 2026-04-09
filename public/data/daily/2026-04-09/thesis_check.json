@@ -1,0 +1,71 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.thesis_check",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-09T09:08:00+08:00",
+    "generated_at_label": "04/09 09:08",
+    "last_successful_run": "2026-04-09T09:08:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "first_opening_window_snapshot_only",
+      "mixed_source_snapshot_twse_mis_plus_secondary_quote_pages",
+      "do_not_overreact_to_single_early_bar",
+      "driver_continuity_check_is_probabilistic_not_confirmed_close",
+      "official_intraday_breadth_fx_yield_and_institutional_flow_not_available"
+    ],
+    "fallback_used": false
+  },
+  "entries": [
+    {
+      "id": "check_001",
+      "timestamp": "09:08",
+      "status": "partial",
+      "trigger": "開盤後第一輪 thesis check：驗證盤前偏多延續框架是否有被權值與 ETF 承接確認，並檢查盤前主導消息是否仍成立",
+      "original_thesis": "盤前主線是美伊臨時停火、油價回落帶來的 risk-on 修復，方向偏多，但因 04/08 已大幅先反映，所以 04/09 應是偏多延續確認日，不宜把舊利多當新催化追價。",
+      "revised_thesis": "到 09:08 為止，盤前的偏多框架還不能說被推翻，但也還沒有得到漂亮的開盤延續確認。加權指數在開盤後一度上摸 34,866.11，之後回到 34,763.77，幾乎貼近昨收 34,761.38；2330 報 1,945、低於昨收 1,950，0050 報 79.15、也略低於昨收 79.20，而 00632R 報 13.48、反而小幅高於昨收 13.44。這代表昨天由停火與油價回落帶出的 risk-on 修復，到了今天開盤第一輪仍在支撐市場不至於明顯轉空，但短線買盤的 follow-through 明顯沒有昨天那麼乾淨。較合理的修正不是大幅翻空，而是把『偏多延續』先降級成『偏多主線仍在、但開盤驗證偏弱，先回到更保守的觀察模式』：不追價、也先不因單一幾分鐘震盪就直接改寫成偏空日。",
+      "change_type": "confidence_adjust",
+      "risk_level_change": 1,
+      "confidence_change": -0.1,
+      "updated_direction": "bullish",
+      "driver_status": "weakened",
+      "driver_implication": "停火＋油價回落這條盤前主導消息目前沒有被新消息明確否定，仍足以阻止市場立刻轉成明顯 risk-off；但從開盤第一輪的價格反應看，它對台股今天早盤的邊際推升力道已明顯弱於昨天，因此現階段較支持『不翻空、但不追多』，而不是支持再做一次高斜率 risk-on 追價。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "維持高現金優先；原本允許的 very small starter position 想像先不急著啟動，等 09:30 前後是否重新出現穩定承接再說"
+        },
+        {
+          "ticker": "0050",
+          "action": "保留偏多觀察資格，但開盤第一輪未見乾淨續強前不追；若後續仍能重回並站穩開盤區間上緣，才重談小倉位"
+        },
+        {
+          "ticker": "2330",
+          "action": "目前更適合當偏多框架是否續命的驗證器，而不是主動進攻標的；若權值不能回穩，偏多框架還要再降級"
+        },
+        {
+          "ticker": "00632R",
+          "action": "因開盤第一輪偏多驗證不夠強，反向 ETF 的備案重要性略有上升；但主線仍未反轉，暫時仍只列備案、不主動追空"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 34763.77,
+        "taiex_change_pct": 0.01,
+        "taiex_open": 34779.96,
+        "taiex_intraday_high": 34866.11,
+        "taiex_intraday_low": 34705.9,
+        "taiex_trade_value_100m": 1382.68,
+        "taiex_volume_est": 1661039,
+        "tsmc_level": 1945,
+        "tsmc_change_pct": -0.26,
+        "0050_level": 79.15,
+        "0050_change_pct": -0.06,
+        "00632R_level": 13.48,
+        "00632R_change_pct": 0.3
+      },
+      "notes": "指數主體採 TWSE MIS 2026/04/09 09:08:40 snapshot：TAIEX 34,763.77，開 34,779.96，高 34,866.11，低 34,705.90，昨收 34,761.38。個別驗證標的採 Yahoo 股市 2026/04/09 09:08 readable snapshot：2330 成交 1,945（昨收 1,950，約 -0.26%）、0050 成交 79.15（昨收 79.20，約 -0.06%）、00632R 成交 13.48（昨收 13.44，約 +0.30%）。盤前 driver continuity 另參考 04/09 盤前新聞摘要與外媒描述：停火與油價降溫帶來的 relief/risk-on 邏輯仍在，但外媒同時強調停火本身仍脆弱、荷莫茲與後續落地仍有不確定性，所以本輪把 driver 記為 weakened 而非 intact。由於目前仍缺官方盤中 breadth、法人、FX 與殖利率快照，本輪只做第一輪信心/風險調整，不做大幅翻案。"
+    }
+  ]
+}
