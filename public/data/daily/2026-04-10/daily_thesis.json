@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.daily_thesis",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-10T07:10:00+08:00",
+    "generated_at_label": "04/10 07:10",
+    "last_successful_run": "2026-04-10T07:10:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "built_from_collection_layer_only",
+      "pre_open_trading_day_framework_only",
+      "missing_fx_yield_and_stock_level_snapshot",
+      "driver_is_recent_high_weight_theme_not_fresh_same_moment_headline",
+      "headline_is_opening_bias_not_execution_call"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-10",
+  "generated_at_iso": "2026-04-10T07:10:00+08:00",
+  "generated_at_label": "07:10",
+  "market_status": "pre_market",
+  "risk_level": 3,
+  "direction_bias": "bullish",
+  "confidence": 0.61,
+  "headline": "停火降油價仍支撐權值/ETF 風險偏好，可保留小倉位先手想像；但 Fed 壓力仍在，不追價",
+  "core_thesis": "這份 daily_thesis 僅建立在 2026-04-10 07:00 的 collection market_context 上。今天真正主導市場的不是泛用題材詞，而是 collection 已直接指出、且 driver_watchlist 也列為 current_high_priority 的『美伊停火延續與油價回落』這條主線。這代表它不是今天偶發冒出的 headline，而是近期仍高權重、還在影響風險偏好的市場主導消息。對台股的含義偏多，因為地緣風險溢價與油價壓力下降，通常最先有利於大型權值、半導體/AI 鏈與跟外資風險偏好連動高的大盤 ETF；而 2026-04-09 官方資料也顯示 TAIEX 收 34861.16、單日 +0.29%，外資買超 31,779,629,982 元，代表這條主線至少仍有本地資金面驗證。只是同一份 collection 也明確提醒，Fed 會議紀要偏鷹、殖利率敏感度仍在，所以今天較合理的盤前定義不是全面追價式的強攻，而是『權值/ETF 溫和偏多、個股可能分化』。若開盤後大型權值與大盤 ETF 承接平穩，可以保留小倉位先手想像；但若只是高開後無法延續，或美債殖利率再度上行，那就代表利多已部分反映，今天不適合把舊主線當成新催化去追價。",
+  "core_thesis_short": "主導市場的仍是停火延續＋油價回落帶來的 risk-on，且屬近期高權重主線，不是單日偶發 headline；這對台股大型權值、半導體/AI 鏈與大盤 ETF 偏多，但 Fed 壓力仍在，所以可留小倉位先手想像、不宜追價。",
+  "market_driver_summary": "主導消息仍是『美伊停火延續＋油價回落』帶來的風險偏好修復，driver_watchlist 也確認它仍是近期高權重主線；Fed 紀要偏鷹則是同時存在的上方壓力，所以今天對台股較像權值/ETF 偏多、個股分化，不是全面無腦追價盤。",
+  "market_context": {
+    "index_trend": "最近已知 TWSE 現貨收盤為 2026-04-09，TAIEX 34861.16、單日 +0.29%；相較 04-08 的大幅修復，昨天更像高檔續穩而非全新起漲。",
+    "volume_status": "本輪 collection 沒有提供成交量、量比與盤前委買委賣等結構化欄位，今天若要把偏多框架升級成更高信心結論，仍要等開盤後看量價與承接是否同步。",
+    "foreign_capital": "最近已知外資單日買超 31,779,629,982 元，三大法人合計買超 39,332,571,199 元，顯示昨天的風險偏好修復仍有明確資金面支撐。",
+    "institutional_summary": "最近已知投信買超 1,356,987,590 元、自營商(自行)買超 2,467,646,419 元、自營商(避險)買超 3,728,307,208 元，整體籌碼結構偏正向，但同日延續性仍需開盤後確認。"
+  },
+  "key_risks": [
+    "停火與油價回落雖仍是主導主線，但若停火破局或油價快速反彈，台股風險偏好可能立刻反轉。",
+    "Fed 紀要偏鷹、殖利率敏感度仍在，若美債殖利率上行，最先受壓的反而會是大型權值與大盤 ETF。",
+    "這條偏多主線已不是第一天出現，若今天開高卻缺乏承接，代表利多已部分反映，追價的風險報酬會明顯變差。",
+    "本輪仍缺 USD/TWD、DXY、美債殖利率與台股即時個股/ETF snapshot，跨市場風險定價尚不完整。",
+    "若今天只剩權值撐盤、AI 鏈與一般個股跟不上，盤勢容易變成指數偏強但體感普通的分化盤。"
+  ],
+  "support_levels": [
+    {
+      "price": 34850,
+      "label": "最近已知收盤附近支撐（偏多框架是否續強的第一觀察位）",
+      "strength": "weak"
+    },
+    {
+      "price": 34600,
+      "label": "若開高震盪時的短線防守帶（需開盤後驗證）",
+      "strength": "weak"
+    }
+  ],
+  "resistance_levels": [
+    {
+      "price": 35000,
+      "label": "短線整數心理壓力",
+      "strength": "weak"
+    },
+    {
+      "price": 35200,
+      "label": "若權值與 ETF 承接延續時的次級壓力區（待更多資料驗證）",
+      "strength": "weak"
+    }
+  ],
+  "watchlist": [
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "entry_condition": "若開盤後能穩定守在最近已知收盤帶附近，且不是急拉後立刻轉弱，可保留小倉位先手想像；若高開無承接，則回到觀察。",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本輪不給執行價）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本輪不給執行價）",
+      "rationale": "0050 最能反映大型權值與整體外資風險偏好，是這條停火/油價主線是否仍支撐大盤 ETF 的首要代理。",
+      "priority": "high"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "direction": "watch",
+      "entry_condition": "觀察是否與指數同步穩定承接；若指數偏強但台積電無法續強，代表今天更可能是表面偏多、實際分化。",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本輪不給執行價）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本輪不給執行價）",
+      "rationale": "若主導消息真的有利台股，最先受惠的通常仍是大型半導體權值；2330 是 AI/半導體風險偏好是否跟上指數的關鍵驗證。",
+      "priority": "high"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "direction": "watch",
+      "entry_condition": "只有在停火主線失效、殖利率壓力擴大，或開盤後權值/ETF 承接明顯失敗時，才保留避險觀察意義。",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（需補更多資料）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（需補更多資料）",
+      "rationale": "在目前主導消息偏多的情境下，反向 ETF 不是主腳本，只應作為偏多框架失效後的備用風險觀察。",
+      "priority": "medium"
+    }
+  ],
+  "prohibitions": [
+    "禁止把停火、油價、AI 等常見消息面當成固定題庫，沒有主導性就硬塞進今天 thesis。",
+    "禁止把近期高權重主線誤當成今天才第一次出現的新催化，進而在權值或 ETF 上無腦追價。",
+    "禁止在缺少 FX / yield / 台股個股快照時，把指數層級偏多直接外推成所有個股都適合進場。"
+  ],
+  "cautions": [
+    "今天盤前最值得看的不是零散題材股，而是大型權值、半導體/AI 鏈與大盤 ETF 是否同步承接。",
+    "油價回落理論上也有利成本敏感型族群，但本輪沒有個股層級快照，不宜在 stage1 就硬擴大到細部選股。",
+    "防禦與反向部位目前不是主腳本；除非停火/油價主線逆轉，或殖利率壓力明顯放大，否則不宜過早切去保守端。"
+  ],
+  "trading_style": "溫和偏多、權值/ETF 優先、可保留小倉位先手想像、但不追價",
+  "notes": "V2 stage1 analysis-only 最小正式版；本輪只生成 daily_thesis.json，不生成 action_plan、不更新 latest.json、不做 publish。"
+}

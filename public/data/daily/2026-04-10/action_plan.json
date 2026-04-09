@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.action_plan",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-10T07:18:00+08:00",
+    "generated_at_label": "04/10 07:18",
+    "last_successful_run": "2026-04-10T07:18:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "stage1_analysis_only_no_publish",
+      "built_from_daily_thesis_only",
+      "small_starter_allowed_only_if_open_confirms",
+      "do_not_chase_extended_gap_up",
+      "missing_intraday_fx_yield_and_orderbook_confirmation"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-10",
+  "generated_at_iso": "2026-04-10T07:18:00+08:00",
+  "generated_at_label": "07:18",
+  "version": 2,
+  "overall_stance": "今天盤前的主導消息仍是『美伊停火延續＋油價回落』，而且這條線不是臨時雜訊，而是近期仍有權重的 risk-on driver；對台股最直接有利的仍是大型權值、半導體/AI 鏈與大盤 ETF。只是同時存在的壓力也很清楚：Fed 紀要偏鷹、殖利率敏感度仍在，而這條利多主線本身也已不是第一天出現，所以今天比較合理的 stage1 定位不是全面空手，也不是開盤直接追價，而是『溫和偏多、極低曝險先手可想像，但只限權值/ETF，且必須等開盤承接確認』。若 0050 / 2330 與指數同步穩定、不是急拉後回吐，可容許很小的 starter position；若一開高就接不動，則代表利多已部分反映，今天以觀察為主、不追價。",
+  "driver_based_action_hint": {
+    "driver_status": "still_effective_but_already_partly_priced",
+    "preferred_groups": [
+      "大型權值",
+      "半導體/AI 鏈龍頭",
+      "大盤 ETF"
+    ],
+    "why_not_chase_or_why_starter_allowed": "允許 starter position 的原因，是主導消息目前仍偏向支持權值/ETF 的 risk-on 框架，且外資前一日買超可視為初步驗證；但不能追價，是因為這條主線已非全新催化，若今天直接高開過多卻沒有量價承接，風險報酬會很差。",
+    "risk_if_wrong": "若誤判 driver 仍足以推動盤勢，最容易在開高時追進權值/ETF 後遇到承接不足與回吐；若誤判為完全不能做，也可能錯過由權值與 ETF 帶出的平穩續強，但這類錯失在 stage1 比追高被套更可接受。"
+  },
+  "actions": [
+    {
+      "ticker": "CASH",
+      "name": "現金",
+      "direction": "hold",
+      "action": "保留大部分現金，先把盤前主觀偏多限制在觀察與極小試單想像，不在開盤前先預設進攻。",
+      "price_target_value": null,
+      "price_target_label": "N/A",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A",
+      "take_profit_value": null,
+      "take_profit_label": "N/A",
+      "position_size_pct": 88,
+      "position_size_label": "預設保留約 88% 現金",
+      "rationale": "主導消息偏多但已部分反映，stage1 的優先順序仍是保留機動性，等開盤承接與同步性驗證後再決定是否啟動極小部位。",
+      "conditions": [
+        "若開盤後權值/ETF 承接普通或高開回吐，現金比重維持不變",
+        "若盤勢平穩續強，現金可僅小幅轉為 starter position",
+        "今天不做重倉預設"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "action": "列為最優先的 starter proxy；只有在開盤後守穩最近已知收盤帶附近、且不是跳空急拉後立刻轉弱時，才允許極小試單想像。",
+      "price_target_value": null,
+      "price_target_label": "不預設追價區，先看承接與延續",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動極小試單，以下破開盤承接區或轉弱回吐作退出依據",
+      "take_profit_value": null,
+      "take_profit_label": "不做擴張式樂觀預設，偏向走一步看一步",
+      "position_size_pct": 6,
+      "position_size_label": "僅限 0%~6% 極小 starter position",
+      "rationale": "0050 最能反映大型權值與外資 risk-on 是否延續；若主導消息真的還有效，最合理的 stage1 先手也應先落在大盤 ETF，而不是延伸到高波動題材股。",
+      "conditions": [
+        "需看到開盤後不是只靠跳空，而是有穩定承接",
+        "若高開過大、分時無法續強，今天不追價",
+        "若盤勢僅平穩偏強，可用它作最保守的試單代理"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "direction": "watch",
+      "action": "作為權值風向驗證器；只有在 0050 與指數同步偏強、2330 自身也呈現平穩承接時，才允許更小比例的跟隨式想像。",
+      "price_target_value": null,
+      "price_target_label": "不追急拉，先看是否與指數同步續強",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動微量跟隨部位，以同步性破壞或快速回吐作退出依據",
+      "take_profit_value": null,
+      "take_profit_label": "不預設延伸目標，重點在驗證主線是否成立",
+      "position_size_pct": 4,
+      "position_size_label": "僅限 0%~4% 微量跟隨倉",
+      "rationale": "若盤前 driver 對台股真的有利，2330 通常不會缺席；但因其位置敏感、也容易成為追價陷阱，所以優先級仍低於 0050 的整體性代理。",
+      "conditions": [
+        "須與 0050、指數同步，不接受單點急拉",
+        "若 2330 弱於指數，代表今天更像撐指數而非全面續強，不開倉",
+        "即使啟動也只做很小比例"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "direction": "watch",
+      "action": "不是主腳本，只保留作偏多框架失效時的風險觀察，不在 stage1 先預設反手。",
+      "price_target_value": null,
+      "price_target_label": "N/A（非主線）",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A",
+      "take_profit_value": null,
+      "take_profit_label": "N/A",
+      "position_size_pct": 0,
+      "position_size_label": "預設 0%",
+      "rationale": "目前主導消息仍偏多於權值/ETF，因此反向 ETF 不應成為預設部位；只有在開盤後主線明顯失效時才重新評估。",
+      "conditions": [
+        "若權值與 ETF 明顯高開低走且承接失敗，再提升注意",
+        "若只是正常震盪，不過早切到反向腳本",
+        "今天 stage1 不主動押空"
+      ],
+      "status": "active"
+    }
+  ],
+  "paper_trade": {
+    "virtual_capital": 1000000,
+    "available_cash": 1000000,
+    "today_pnl": 0,
+    "today_pnl_pct": 0.0,
+    "total_pnl": 0,
+    "total_pnl_pct": 0.0,
+    "win_rate": 0.0,
+    "open_positions": [],
+    "notes": "paper trade 的 stage1 基準是高現金、低曝險：僅在開盤承接明確時，允許把 0050 視為 0%~6% 的 starter proxy，2330 再作 0%~4% 的更小跟隨；若承接不夠，維持空倉觀察。"
+  },
+  "max_exposure": {
+    "pct": 12,
+    "label": "總曝險上限 12%，且僅限在權值/ETF 開盤後承接確認時使用",
+    "stance": "主導消息偏多但並非全新，因此可容許極小先手，不容許追價擴倉；stage1 的核心是保留『可以做一點』的彈性，而不是把偏多框架直接翻譯成重倉。"
+  },
+  "max_exposure_pct": 12,
+  "max_exposure_label": "0%~12% 極低曝險，可做先手但不追價",
+  "notes": "這份 action_plan 建立在 2026-04-10 07:10 的 daily_thesis 上，核心操作含義是：主導消息仍支持大型權值/ETF 的風險偏好，但由於停火／油價主線已是近期延續中的高權重敘事，不是全新 surprise，所以 stage1 只能給極保守的先手想像，不能把它當成全面追價理由。若 0050、2330 與指數同步平穩承接，可允許很小 starter position；若只是開高反應消息、沒有後續承接，今天的正確答案就是不追價、保留現金、等待盤中下一輪驗證。"
+}
