@@ -4,55 +4,56 @@
     "job_name": "openclaw.action_plan",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-09T09:18:00+08:00",
-    "generated_at_label": "04/09 09:18",
-    "last_successful_run": "2026-04-09T09:18:00+08:00",
+    "generated_at_iso": "2026-04-09T10:30:00+08:00",
+    "generated_at_label": "04/09 10:30",
+    "last_successful_run": "2026-04-09T10:30:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "intraday_revision_based_on_0908_thesis_check",
+      "intraday_revision_based_on_1020_thesis_check",
       "publish_after_thesis_check_validation",
-      "driver_weakened_not_invalidated",
-      "opening_window_follow_through_was_soft",
-      "starter_position_pulled_back_to_watch_mode_unless_reclaim_occurs",
+      "driver_still_effective_but_fading",
+      "morning_relief_bid_has_shifted_into_digestive_price_action",
+      "starter_position_closed_off_unless_structure_repairs",
       "do_not_chase_or_force_new_trade"
     ],
     "fallback_used": false
   },
   "date": "2026-04-09",
-  "generated_at_iso": "2026-04-09T09:18:00+08:00",
-  "generated_at_label": "09:18",
+  "generated_at_iso": "2026-04-09T10:30:00+08:00",
+  "generated_at_label": "10:30",
   "version": 2,
-  "overall_stance": "09:08 的最新 thesis_check 顯示，盤前主導消息「停火＋油價回落」還沒有被新資訊推翻，但它在今天開盤第一輪提供的邊際推升力道已明顯轉弱：加權幾乎回到昨收附近，0050 與 2330 都沒有交出乾淨續強。因此盤中版最合理的修正不是翻空，而是把原本可保留的 very small starter position 再往回收，先回到高現金、低曝險、偏多但更保守的觀察 stance。只有後續重新出現權值與 ETF 一致回穩、並站回開盤區間上緣時，才重新允許極小試單；在那之前，不追價，也不為了有動作而硬加新交易。",
+  "overall_stance": "10:20 的最新 thesis_check 顯示，盤前主導消息「停火＋油價回落」仍未被新資訊推翻，但它對台股盤中的推升力已由早盤的弱化，進一步轉成偏消化中的托底因子：指數跌回昨收下方、0050 續弱、2330 只回到昨收，代表現在更像在消化昨日大漲後的利多，而不是展開新的順勢進攻。盤中版因此再保守一階：不翻空，但把任何 starter position 想像先關掉，主軸維持高現金、低曝險、偏中性偏多但不追價；只有午前後半真的看到權值與 ETF 同步收復早盤回落區，才重新討論極小順勢試單。",
   "driver_based_action_hint": {
-    "driver_status": "weakened_but_not_invalidated",
-    "driver_implication": "停火＋油價回落主線仍有效到足以避免市場立刻轉成明顯 risk-off，但早盤價格結構顯示它目前更像底部支撐而不是新的上攻燃料。",
-    "action_bias": "消息仍有剩餘有效性，但暫時不足以支持主動追多；先收回到觀察與高現金，只有重新轉強才允許極小 starter。",
+    "driver_status": "still_effective_but_fading",
+    "driver_implication": "停火＋油價回落主線仍在，足以降低市場立刻轉成明顯 risk-off 的機率，但 10:20 的價格結構顯示它已更像消化中的底部支撐，不再是適合主動追多的上攻燃料。",
+    "driver_phase": "digesting",
+    "action_bias": "消息尚未失靈，但已從延續轉為消化；當前以不追價、收斂曝險、等待結構修復為主，除非權值與 ETF 重新同步轉強。",
     "preferred_groups": [
       "大型權值",
       "大盤 ETF（如 0050）"
     ],
-    "why_not_chase_or_why_starter_allowed": "因為 driver 已由盤前的偏多主線降成「仍有效但推升力變弱」，所以現在不該追價；若稍後能重新看到 0050/2330 與指數同步回穩，才只允許極小 starter。",
-    "risk_if_wrong": "若後續證明今天只剩價格在撐、主導消息已不足以帶來 follow-through，任何早盤追多都容易變成在高位承接回吐。"
+    "why_not_chase_or_why_starter_allowed": "因為 driver 的狀態已從可支撐小幅順勢，降到僅剩托底而缺乏新的推升力，所以現在不該追價；只有重新收復早盤回落區且承接改善，才有資格討論極小試單。",
+    "risk_if_wrong": "若誤把剩餘托底效果當成新的進攻催化，最容易在利多消化盤中追在無法延伸的位置，之後承接不足就會變成被動承受回吐。"
   },
   "actions": [
     {
       "ticker": "CASH",
-      "name": "現金 / 等待重新出現承接確認",
+      "name": "現金 / 等待結構修復再說",
       "direction": "hold",
-      "action": "提高現金比重，先把盤中主軸改成觀察；在 09:30 前後重新看到權值與 ETF 一致回穩前，不主動啟動 starter position",
+      "action": "維持極高現金比重，把盤中主軸明確定義為觀察與等待；在權值與 ETF 未同步收復早盤回落區前，不啟動任何 starter position",
       "price_target_value": null,
-      "price_target_label": "N/A（盤中保守修正版）",
+      "price_target_label": "N/A（盤中午前保守修正版）",
       "stop_loss_value": null,
       "stop_loss_label": "N/A",
       "take_profit_value": null,
       "take_profit_label": "N/A",
-      "position_size_pct": 97,
-      "position_size_label": "97% 現金保留",
-      "rationale": "09:08 thesis_check 顯示主導消息沒有失效，但開盤第一輪的價格結構不夠漂亮：指數幾乎貼昨收，2330 與 0050 均小幅轉弱，00632R 反而略強。這種情況更像舊利多支撐市場不墜，還不像新的低風險進攻窗口，所以盤中版應先把主體部位退回高現金。",
+      "position_size_pct": 100,
+      "position_size_label": "100% 現金保留",
+      "rationale": "10:20 thesis_check 顯示主導消息未翻案，但盤勢更接近利多消化：加權落回昨收下方、0050 續弱、2330 只回到昨收，說明現在最缺的是 follow-through，而不是缺一個進場理由。在這種結構下，保留現金比硬做更有優勢。",
       "conditions": [
-        "若 09:30 前後仍無法看到 0050 / 2330 與指數同步回穩，維持高現金不動",
-        "若回到開盤區間下緣附近反覆無承接，直接把今天視為偏多但不適合出手的觀察日",
-        "只有在權值與 ETF 重新站回開盤區間上緣且結構改善時，才從現金撥出極小試單"
+        "若午前後半仍看不到 0050 / 2330 與指數同步收復早盤回落區，維持高現金不動",
+        "若指數續貼近日內低點或 0050 無法回到昨收上方，直接把今天視為利多消化觀察日",
+        "只有在權值與 ETF 一起修復結構時，才重新開啟極小試單討論"
       ],
       "status": "active"
     },
@@ -60,20 +61,20 @@
       "ticker": "0050",
       "name": "元大台灣50",
       "direction": "watch",
-      "action": "從原本可直接保留的 starter 想像，下修成條件更嚴格的觀察名單；只有重新站回開盤區間上緣且承接轉穩，才允許極小試單，不追價",
+      "action": "續留觀察，但由條件式極小試單候選再降一階；除非重新站回早盤回落起點並有承接，否則不啟動",
       "price_target_value": null,
-      "price_target_label": "不追價；先看是否重新收復開盤區間上緣",
+      "price_target_label": "不追價；先看是否收復早盤回落起點",
       "stop_loss_value": null,
-      "stop_loss_label": "若啟動極小試單，以重新轉弱或失守回穩結構作退出依據",
+      "stop_loss_label": "若後續啟動極小試單，以再度跌回弱勢結構下方作退出依據",
       "take_profit_value": null,
-      "take_profit_label": "以快收斂風險與保守分批為主",
-      "position_size_pct": 3,
-      "position_size_label": "最多 3% 條件式極小試單上限",
-      "rationale": "0050 仍是這條停火／油價主線是否還有剩餘效力的最佳代理，但 09:08 價格沒有延續盤前偏多想像，代表它暫時更適合當驗證器而不是直接執行標的。保留它不是為了硬做，而是避免若稍後結構重新轉強時完全沒有預案。",
+      "take_profit_label": "以快收斂風險、保守處理為主",
+      "position_size_pct": 0,
+      "position_size_label": "預設 0%，先不啟動",
+      "rationale": "0050 仍是這條停火／油價主線是否還有操作延續性的最佳代理，但 10:20 已落在昨收下方，代表消息效力較像殘餘支撐而非主動推升。此時保留觀察價值高於執行價值。",
       "conditions": [
-        "需先看到重新站回開盤區間上緣，且不是單根急拉後立刻回吐",
-        "若只是指數勉強撐住、0050 本身仍無明顯承接，維持觀察不啟動",
-        "即使條件改善，也只允許極小倉位，不升級成主動進攻"
+        "需先重新站回早盤回落起點，且不是單根急拉後立刻回吐",
+        "若只是指數短暫反彈但 0050 本身仍弱，維持觀察不啟動",
+        "即使修復，也只回到極小試單層級，不升級成主動進攻"
       ],
       "status": "active"
     },
@@ -81,20 +82,20 @@
       "ticker": "2330",
       "name": "台積電",
       "direction": "watch",
-      "action": "維持驗證器角色，暫不作主動交易；只有當 2330 與 0050、指數同步回穩時，才作為偏多框架重新加分的證據",
+      "action": "維持驗證器角色，暫不作主動交易；只把明確續強視為偏多框架修復證據，而不是僅回到昨收就算過關",
       "price_target_value": null,
-      "price_target_label": "不預設追價區，先看是否回穩同步",
+      "price_target_label": "不預設追價區，先看是否由平盤轉成續強",
       "stop_loss_value": null,
       "stop_loss_label": "若後續有極低曝險跟隨，以同步性再度破壞作退出依據",
       "take_profit_value": null,
       "take_profit_label": "保守處理，不預設延伸波段",
       "position_size_pct": 0,
       "position_size_label": "預設 0%，先作驗證不作執行",
-      "rationale": "2330 在 09:08 低於昨收，說明大型權值尚未給出乾淨 follow-through。既然主導消息只是弱化不是翻案，2330 最有價值的用途就是判斷偏多框架是否還能重新站穩，而不是勉強湊成交易。",
+      "rationale": "2330 到 10:20 只回到昨收，這對偏多框架來說只是止跌，不算重新轉強。既然主導消息已轉入消化，2330 最重要的功能仍是驗證結構有沒有修復，而不是硬湊成交易。",
       "conditions": [
-        "需與指數、0050 一起重新回穩，不能只有指數表面撐住",
-        "若 2330 持續弱於昨收或回穩失敗，偏多框架維持降級看待",
-        "沒有同步轉強前，維持 0% 觀察"
+        "需與指數、0050 一起出現更明確的續強，不是只有回到平盤",
+        "若 2330 再度轉弱或無法帶動 ETF，同步性不足，維持降級看待",
+        "沒有清楚修復前，維持 0% 觀察"
       ],
       "status": "active"
     },
@@ -102,19 +103,19 @@
       "ticker": "00632R",
       "name": "元大台灣50反1",
       "direction": "watch",
-      "action": "備案重要性較盤前略升，但主線仍未翻空；僅在後續確認主導消息進一步失效、且權值與 ETF 續弱時，才重新評估低曝險避險",
+      "action": "備案重要性較早盤再升一點，但主線仍未正式失靈；只有在消息支撐也守不住、且權值與 ETF 再同步走弱時，才評估低曝險避險",
       "price_target_value": null,
-      "price_target_label": "非主線，僅偏多進一步失效時再看",
+      "price_target_label": "非主線，僅偏多支撐失守時再看",
       "stop_loss_value": null,
       "stop_loss_label": "若啟動避險，需依當下失效結構另定",
       "take_profit_value": null,
       "take_profit_label": "僅限低曝險避險用途",
       "position_size_pct": 0,
       "position_size_label": "預設 0%，不主動啟動",
-      "rationale": "因 driver 只是 weakened 而非 invalidated，反向 ETF 仍不該成為盤中主腳本；但開盤第一輪驗證偏弱，也代表它作為備案的觀察價值略有上升。",
+      "rationale": "因 driver 仍屬 still_effective_but_fading，而不是 outright failed，所以反向 ETF 仍不是主腳本；只是隨著盤中結構轉入消化，它作為風險備案的觀察價值再提高。",
       "conditions": [
-        "只有在權值與 ETF 持續轉弱、偏多框架被進一步破壞後才重評",
-        "若只是昨收附近震盪或弱整理，不因雜訊切去追空",
+        "只有在權值與 ETF 續弱、且消息托底效果也失守後才重評",
+        "若只是昨收附近弱整理或區間消化，不因雜訊切去追空",
         "用途限低曝險避險，不作主動押空"
       ],
       "status": "active"
@@ -129,14 +130,14 @@
     "total_pnl_pct": 0.0,
     "win_rate": 0.0,
     "open_positions": [],
-    "notes": "依 09:08 thesis_check，主導消息仍有效但早盤價格驗證偏弱，因此 paper trade 維持空倉；原本允許的 starter position 想像暫時收回，等權值與 ETF 重新同步回穩再說。"
+    "notes": "依 10:20 thesis_check，主導消息仍在但已轉成消化中的托底因素，因此 paper trade 維持空倉；任何早盤殘留的 starter 想像先全部關閉，等權值與 ETF 真正同步修復再說。"
   },
   "max_exposure": {
-    "pct": 3,
-    "label": "總曝險最多 3%，且僅限重新收復開盤區間上緣後的極小條件式試單",
-    "stance": "driver 並未被推翻，所以不需要機械式翻空；但既然 driver_status 已弱化、且開盤 follow-through 不佳，盤中版應把上限由盤前的 8% 大幅收斂到 3%，實際更偏向維持 0%。"
+    "pct": 0,
+    "label": "目前總曝險以 0% 為基準；只有結構明確修復時，才重新開啟最多 2% 的極小條件式試單討論",
+    "stance": "driver 尚未失靈，所以不需要機械式翻空；但既然 driver 已明顯進入 fading / digesting 狀態，且盤中風險報酬未改善，當前最保守合理的盤中版就是先把實際曝險收斂到 0%。"
   },
-  "max_exposure_pct": 3,
-  "max_exposure_label": "3% 上限（消息仍有效但早盤驗證偏弱，先收回觀察）",
-  "notes": "本版依 2026-04-09 09:08 thesis_check 做開盤後第一輪盤中修正。修正重點不是把方向翻成偏空，而是明確承認 driver_status 已由盤前的偏多主線降為「仍有效但轉弱」：消息面尚未被推翻，但價格結構沒有給出乾淨 follow-through，因此 action_plan 把 starter position 從可保留想像收回到更嚴格的條件式觀察，主軸改成高現金、不追價、不為了有動作而硬加新交易。若後續只剩價格勉強撐住、消息效力持續下降，則繼續維持觀察；若權值與 ETF 重新同步回穩，再只允許極小倉位試單。"
+  "max_exposure_pct": 0,
+  "max_exposure_label": "0% 基準（消息未失靈但已轉消化，先不出手）",
+  "notes": "本版依 2026-04-09 10:20 thesis_check 做午前中段盤中修正。核心修正是：driver_status 已從早盤的 weakened_but_not_invalidated，進一步轉為 still_effective_but_fading，代表主導消息還在，但更像托底而非推升；因此 action_plan 不翻空，卻要更明確地收斂曝險，把任何 starter position 想像先關閉，等待權值與 ETF 是否能重新收復早盤回落區。driver_based_action_hint 目前標記為 digesting，供後續回合判斷消息驅動是在延續、消化，還是進一步失靈。"
 }

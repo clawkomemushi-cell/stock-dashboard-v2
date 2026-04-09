@@ -4,9 +4,9 @@
     "job_name": "openclaw.thesis_check",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-09T09:08:00+08:00",
-    "generated_at_label": "04/09 09:08",
-    "last_successful_run": "2026-04-09T09:08:00+08:00",
+    "generated_at_iso": "2026-04-09T10:20:00+08:00",
+    "generated_at_label": "04/09 10:20",
+    "last_successful_run": "2026-04-09T10:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "analysis_layer_only_no_publish",
@@ -66,6 +66,52 @@
         "00632R_change_pct": 0.3
       },
       "notes": "指數主體採 TWSE MIS 2026/04/09 09:08:40 snapshot：TAIEX 34,763.77，開 34,779.96，高 34,866.11，低 34,705.90，昨收 34,761.38。個別驗證標的採 Yahoo 股市 2026/04/09 09:08 readable snapshot：2330 成交 1,945（昨收 1,950，約 -0.26%）、0050 成交 79.15（昨收 79.20，約 -0.06%）、00632R 成交 13.48（昨收 13.44，約 +0.30%）。盤前 driver continuity 另參考 04/09 盤前新聞摘要與外媒描述：停火與油價降溫帶來的 relief/risk-on 邏輯仍在，但外媒同時強調停火本身仍脆弱、荷莫茲與後續落地仍有不確定性，所以本輪把 driver 記為 weakened 而非 intact。由於目前仍缺官方盤中 breadth、法人、FX 與殖利率快照，本輪只做第一輪信心/風險調整，不做大幅翻案。"
+    },
+    {
+      "id": "check_002",
+      "timestamp": "10:20",
+      "status": "partial",
+      "trigger": "午前中段 thesis check：確認開盤後弱化是否持續，並再次檢查停火＋油價回落這條主導消息是仍在支撐市場，還是已經失去操作意義。",
+      "original_thesis": "盤前框架是停火＋油價回落帶來 risk-on 修復，方向偏多但屬延續確認日；09:08 第一輪已把它下修為「主線未翻案、但開盤驗證偏弱，因此不追價、先回高現金觀察」。",
+      "revised_thesis": "到 10:20 為止，晨間框架還不能直接改寫成翻空，但「偏多延續」的成立程度又再往下掉了一階。加權指數報 34,696.54，已低於昨收 34,761.38 約 0.19%，也低於開盤 34,779.96；早盤雖曾衝到 34,884.45，但之後一路回落、目前靠近日內低點 34,617.34。驗證標的也沒有補上 follow-through：2330 報 1,950，僅回到昨收、仍談不上續強；0050 報 79.00、低於昨收 79.20 約 0.25%；00632R 報 13.51、高於昨收 13.44 約 0.52%。這種結構更像市場仍保留停火／油價降溫帶來的底部支撐，所以沒有明顯 risk-off 崩掉，但同時也顯示這條消息對台股今天盤中的邊際推升力已進一步鈍化。操作含義因此不是反手追空，而是更明確地維持高現金、把任何 starter 想像繼續關閉，除非午前後半重新看到權值與 ETF 同步收復早盤回落區。",
+      "change_type": "confidence_adjust",
+      "risk_level_change": 0,
+      "confidence_change": -0.05,
+      "updated_direction": "neutral_to_slightly_bullish",
+      "driver_status": "still_effective_but_fading",
+      "driver_implication": "外部消息面目前仍偏向支持原本的 relief / risk-on 敘事：停火未見明確被新消息推翻，Reuters 等外媒仍描述油價跌破 100 美元、但同時強調停火脆弱、可能不持久。這代表 driver 還有殘餘支撐力，足以避免市場立刻全面翻成 risk-off；但從 10:20 的台股價格驗證看，它已更像「避免大跌的托底因素」，不再是足以驅動盤中主動追多的上攻燃料。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "維持高現金與等待，原本已收回的 starter 想像繼續不開；午前若無重新收復回落區，不主動出手。"
+        },
+        {
+          "ticker": "0050",
+          "action": "續留觀察，但因已跌回昨收下方，除非重新站回早盤回落起點並有承接，否則不啟動極小試單。"
+        },
+        {
+          "ticker": "2330",
+          "action": "仍作驗證器而非執行標的；僅回到昨收不足以替偏多框架加分，需看到明確續強才算修復。"
+        },
+        {
+          "ticker": "00632R",
+          "action": "備案觀察價值較開盤再升一點，但因 driver 尚未反轉，不把它升級為主腳本。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 34696.54,
+        "taiex_change_pct": -0.19,
+        "taiex_open": 34779.96,
+        "taiex_intraday_high": 34884.45,
+        "taiex_intraday_low": 34617.34,
+        "tsmc_level": 1950,
+        "tsmc_change_pct": 0,
+        "0050_level": 79,
+        "0050_change_pct": -0.25,
+        "00632R_level": 13.51,
+        "00632R_change_pct": 0.52
+      },
+      "notes": "台股指數與驗證標的採 TWSE MIS 2026/04/09 10:20:05~10:20:35 snapshot：TAIEX 34,696.54（昨收 34,761.38、開 34,779.96、高 34,884.45、低 34,617.34）、2330 1,950、0050 79.00、00632R 13.51。driver continuity 採 Reuters / Brave 可得盤中摘要交叉檢查：油價跌破 100 美元、停火帶來的 relief 敘事仍在，但報導也反覆強調 ceasefire is fragile、may not last，表示消息沒有被推翻，但邊際效力已從強催化降為脆弱支撐。由於仍缺官方盤中 breadth、可靠量價分布與法人/FX/殖利率同步快照，本輪不虛構量能結論，只記錄真正影響操作的變化：偏多框架續存但進一步鈍化。"
     }
   ]
 }
