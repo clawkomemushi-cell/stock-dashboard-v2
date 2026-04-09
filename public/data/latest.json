@@ -4,15 +4,16 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-09T11:30:00+08:00",
-    "generated_at_label": "04/09 11:30",
-    "last_successful_run": "2026-04-09T11:30:00+08:00",
+    "generated_at_iso": "2026-04-09T13:20:00+08:00",
+    "generated_at_label": "04/09 13:20",
+    "last_successful_run": "2026-04-09T13:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "stage2_intraday_action_publish_trial_enabled",
       "latest_now_points_to_todays_thesis_check",
       "close_review_kept_null_or_partial",
-      "weekly_and_performance_paths_list_only_existing_files"
+      "weekly_and_performance_paths_list_only_existing_files",
+      "afternoon_action_plan_published_after_1310_thesis_check"
     ],
     "fallback_used": false
   },
@@ -35,13 +36,13 @@
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-09T11:30:00+08:00",
-      "updated_at_label": "11:30"
+      "updated_at_iso": "2026-04-09T13:20:00+08:00",
+      "updated_at_label": "13:20"
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-09T11:20:00+08:00",
-      "updated_at_label": "11:20"
+      "updated_at_iso": "2026-04-09T13:10:00+08:00",
+      "updated_at_label": "13:10"
     },
     "close_review": {
       "status": "partial",
@@ -78,8 +79,8 @@
     "morning_view": "/data/views/2026-04-09/morning_view.json"
   },
   "publish_notes": [
-    "Intraday stage2 trial publish: action_plan revised after 11:20 thesis_check validation.",
-    "Latest now points dashboard consumers to today's thesis_check and updated intraday action_plan.",
+    "Intraday stage2 trial publish: action_plan revised after 13:10 thesis_check validation.",
+    "Latest continues to point dashboard consumers to today's thesis_check and the updated afternoon intraday action_plan.",
     "Close review remains null/partial until later phases are enabled."
   ]
 }
