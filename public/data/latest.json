@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-10T11:30:00+08:00",
-    "generated_at_label": "04/10 11:30",
-    "last_successful_run": "2026-04-10T11:30:00+08:00",
+    "generated_at_iso": "2026-04-10T13:20:00+08:00",
+    "generated_at_label": "04/10 13:20",
+    "last_successful_run": "2026-04-10T13:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "stage2_intraday_publish_enabled",
@@ -35,13 +35,13 @@
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-10T11:30:00+08:00",
-      "updated_at_label": "11:30"
+      "updated_at_iso": "2026-04-10T13:20:00+08:00",
+      "updated_at_label": "13:20"
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-10T11:20:00+08:00",
-      "updated_at_label": "11:20"
+      "updated_at_iso": "2026-04-10T13:10:00+08:00",
+      "updated_at_label": "13:10"
     },
     "close_review": {
       "status": "partial",
@@ -80,7 +80,7 @@
   },
   "publish_notes": [
     "Stage2 intraday publish points dashboard consumers to today's published daily_thesis, action_plan, and thesis_check.",
-    "latest.paths.thesis_check and file_statuses were refreshed from the 11:20 intraday thesis check; close_review remains null/partial.",
+    "latest.paths.thesis_check and file_statuses were refreshed from the 13:10 early-afternoon thesis check; close_review remains null/partial.",
     "weekly and performance entries are preserved only when backing files actually exist."
   ]
 }
