@@ -4,55 +4,56 @@
     "job_name": "openclaw.action_plan",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-10T10:30:00+08:00",
-    "generated_at_label": "04/10 10:30",
-    "last_successful_run": "2026-04-10T10:30:00+08:00",
+    "generated_at_iso": "2026-04-10T11:30:00+08:00",
+    "generated_at_label": "04/10 11:30",
+    "last_successful_run": "2026-04-10T11:30:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "stage2_intraday_publish_update",
-      "midmorning_followup_applied",
-      "driver_still_effective_but_not_reaccelerating",
+      "late_morning_followup_applied",
+      "driver_still_effective_but_fragile",
       "starter_only_no_chasing_strength",
       "missing_breadth_fx_yield_and_institutional_flow_confirmation"
     ],
     "fallback_used": false
   },
   "date": "2026-04-10",
-  "generated_at_iso": "2026-04-10T10:30:00+08:00",
-  "generated_at_label": "10:30",
+  "generated_at_iso": "2026-04-10T11:30:00+08:00",
+  "generated_at_label": "11:30",
   "version": 2,
-  "overall_stance": "午前盤勢仍由權值與 ETF 撐住偏多結構，但 10:20 thesis_check 顯示主導消息只是延續、沒有再加速，市場更像利多被接受後的高檔消化，而不是新一輪擴張。因此盤中版 stance 維持溫和偏多但更偏保守：只容許極小順勢觀察倉，限大型權值/大盤 ETF，不追高、不把橫盤整理誤判成可擴倉訊號；若後續失守開盤承接區，再進一步收斂回高現金。",
+  "overall_stance": "午前中段權值與 ETF 在高檔消化後重新站穩，偏多框架延續，但最新 thesis_check 顯示主導消息仍屬「延續但脆弱、推力有限」，不是新的加速器。因此盤中版 stance 維持溫和偏多且更偏保守：只保留極小順勢思路給大型權值/大盤 ETF，允許續抱觀察、不鼓勵新追價；若後續僅剩價格慣性而消息推動感繼續鈍化，應優先收斂曝險而不是擴倉。",
   "driver_based_action_hint": {
     "driver_status": "weakened_but_still_effective",
-    "driver_implication": "主導消息沒有被後續消息正式推翻：停火/風險偏好修復背景仍在，所以權值與 ETF 仍能維持偏多結構；但油價回落這條邊際助力沒有恢復，Reuters 搜尋摘要反而持續顯示 Brent/WTI 反彈且市場仍質疑停火耐久度，表示 driver 目前比較像「仍有效、但正在被消化且推力有限」。這種狀態足以支持盤勢不翻空，卻不足以支持盤中追價或擴倉。",
-    "state_label": "消息延續中但偏消化，尚未失靈、也沒有重新轉強",
+    "driver_implication": "主導消息到 11:20 仍未被推翻：停火延續與油價未重新失控，足以讓 risk-on 背景繼續支撐權值與 ETF；但消息本身帶有『held but fragile』特徵，油價也只是低於 100 美元附近震盪而非再度快速下滑，所以它比較像延續性支撐，不是新的加速器。對操作的意義是：可以維持溫和偏多與極小順勢思路，但不能把重新站穩解讀成可放心追價或擴倉。",
+    "state_label": "消息延續中、偏消化且脆弱，尚未失靈，但不是新的加速器",
+    "phase": "digesting",
     "preferred_groups": [
       "大型權值",
       "半導體/AI 鏈龍頭",
       "大盤 ETF"
     ],
-    "why_not_chase_or_why_starter_allowed": "權值與 ETF 到 10:20 仍守在開盤承接區之上，代表消息驅動還沒壞掉，所以可保留極小順勢思路；但指數已由高點回落、driver 也未再強化，說明現在更像消化而不是加速，追價的風險報酬不佳。",
-    "risk_if_wrong": "若把「延續但消化中」誤判成重新轉強，最容易在高檔整理區追進後被來回震盪或午後回吐磨掉；反之只保留極小倉位，就算後續續強，錯失成本仍明顯小於追高失敗。"
+    "why_not_chase_or_why_starter_allowed": "11:20 的盤中快照顯示 0050、2330 與指數在高檔整理後重新站穩，代表消息驅動尚未壞掉，所以仍可保留極小順勢思路；但 driver 本質仍是 held but fragile 的延續性支撐，油價也只是沒有重新失控，並非再度轉成強力下行，因此不提供追價或擴倉勝率。",
+    "risk_if_wrong": "若把這種重新站穩誤判成新一輪加速，最容易在午前相對高檔追進，之後遇到午後鈍化、回吐或單純價格慣性收斂時被震盪磨損；維持極小倉位，能保留參與權，同時把判斷錯誤成本壓低。"
   },
   "actions": [
     {
       "ticker": "CASH",
       "name": "現金",
       "direction": "hold",
-      "action": "維持高現金主體，午前沒有新增足以提高曝險的優勢訊號；現階段寧可保留彈性，也不在高檔整理時主動追價。",
+      "action": "維持高現金主體；午前中段雖重新站穩，但仍沒有強到足以主動提高總曝險，先保留彈性優於追價。",
       "price_target_value": null,
       "price_target_label": "N/A",
       "stop_loss_value": null,
       "stop_loss_label": "N/A",
       "take_profit_value": null,
       "take_profit_label": "N/A",
-      "position_size_pct": 92,
-      "position_size_label": "預設保留約 92% 現金",
-      "rationale": "消息驅動仍有效，但已進入消化而非擴張狀態；在這種風險報酬下，高現金仍是主體。",
+      "position_size_pct": 90,
+      "position_size_label": "預設保留約 90% 現金",
+      "rationale": "消息驅動仍在，但屬延續性支撐而非擴張型催化；在這種風險報酬下，高現金仍是主體。",
       "conditions": [
-        "若權值/ETF 僅維持橫盤偏強，現金比重不主動下修太多",
-        "若失守開盤承接區，優先回到更高現金與觀察",
-        "午前版不做主動擴倉預設"
+        "若權值/ETF 只是高檔偏穩，現金比重不主動大幅下修",
+        "若午後只剩價格慣性、消息推力續鈍化，優先收斂回更高現金",
+        "除非出現明確再加速佐證，否則不把午前再站穩視為擴倉許可"
       ],
       "status": "active"
     },
@@ -60,20 +61,20 @@
       "ticker": "0050",
       "name": "元大台灣50",
       "direction": "watch",
-      "action": "保留最優先順勢觀察資格，但只允許極小 starter；若只是高檔橫盤，視為可續抱觀察，不視為新增追價點。",
+      "action": "保留最優先順勢觀察資格；午前中段重新站穩有利既有極小 starter 繼續觀察，但不把再站穩直接視為新增追價點。",
       "price_target_value": null,
-      "price_target_label": "不預設追價區，重點看是否續守開盤承接區",
+      "price_target_label": "不預設追價區，重點看是否續守開盤承接區與午前站穩結構",
       "stop_loss_value": null,
-      "stop_loss_label": "若啟動極小試單，以下破開盤承接區或轉為連續回吐作退出依據",
+      "stop_loss_label": "若啟動極小試單，以跌回開盤承接區下方或連續回吐作退出依據",
       "take_profit_value": null,
-      "take_profit_label": "不設擴張型目標，維持走一步看一步",
-      "position_size_pct": 5,
-      "position_size_label": "僅限 0%~5% 極小 starter position",
-      "rationale": "0050 仍是承接消息延續最穩定的代理，但目前屬消化盤，不提供追價勝率。",
+      "take_profit_label": "不設擴張型目標，仍以順勢觀察為主",
+      "position_size_pct": 6,
+      "position_size_label": "僅限 0%~6% 極小 starter position",
+      "rationale": "0050 仍是消息延續最穩定的代理，但 driver 推力有限，盤中優勢在於可續抱觀察，不在於追價。",
       "conditions": [
-        "需持續守在開盤承接區之上，且不是量價明顯失衡後的撐盤",
-        "若接近早盤高點但動能未再擴張，不追價",
-        "只有在穩定偏強時才保留極小倉位觀察"
+        "需持續守在開盤承接區之上，且午前站穩不是單靠尾端撐價",
+        "若貼近早盤高點但動能沒有外擴，不追價",
+        "若午後轉成純價格慣性、消息推動感下降，先收斂而非補倉"
       ],
       "status": "active"
     },
@@ -81,20 +82,20 @@
       "ticker": "2330",
       "name": "台積電",
       "direction": "watch",
-      "action": "繼續作為權值風向驗證器；只有在 0050 與指數同步穩住、2330 本身不轉弱時，才允許更小比例跟隨。",
+      "action": "繼續作為權值風向驗證器；只有在 0050 與指數同步穩住、2330 本身維持不弱時，才允許更小比例跟隨。",
       "price_target_value": null,
-      "price_target_label": "不追急拉，先看是否守住開盤價附近與同步性",
+      "price_target_label": "不追急拉，先看是否續守開盤價附近與同步性",
       "stop_loss_value": null,
       "stop_loss_label": "若啟動微量跟隨部位，以同步性破壞或快速回吐作退出依據",
       "take_profit_value": null,
       "take_profit_label": "不預設延伸目標，重點仍是驗證主線延續",
-      "position_size_pct": 3,
-      "position_size_label": "僅限 0%~3% 微量跟隨倉",
-      "rationale": "2330 到午前仍偏正向，但沒有出現足以支持第二波擴張的再加速，因此仍應偏向驗證而非進攻。",
+      "position_size_pct": 4,
+      "position_size_label": "僅限 0%~4% 微量跟隨倉",
+      "rationale": "2330 到午前中段同步性仍正常，但沒有出現足以支持第二波進攻的再加速，因此仍應偏驗證而非進攻。",
       "conditions": [
         "須與 0050、指數同步，不接受單點急拉後轉弱",
-        "若午前整理後回吐擴大，不開倉或收回微量部位",
-        "即使續穩，也只保留更小比例"
+        "若午後整理後回吐擴大，不開倉或收回微量部位",
+        "即使續穩，也只保留更小比例與觀察心態"
       ],
       "status": "active"
     },
@@ -102,7 +103,7 @@
       "ticker": "00632R",
       "name": "元大台灣50反1",
       "direction": "watch",
-      "action": "維持備案，不主動切成反向主腳本；只有在權值/ETF 明顯跌破開盤承接區時，才提升觀察優先度。",
+      "action": "維持備案，不主動切成反向主腳本；只有在權值/ETF 明顯跌回開盤承接區下方，才提升觀察優先度。",
       "price_target_value": null,
       "price_target_label": "N/A（非主線）",
       "stop_loss_value": null,
@@ -114,8 +115,8 @@
       "rationale": "主導消息尚未失靈，反向 ETF 仍不是主腳本，只在偏多框架被破壞時才有意義。",
       "conditions": [
         "若權值與 ETF 同步跌破開盤承接區，再提升注意",
-        "若只是高檔整理，不過早切空",
-        "午前版仍不主動押空"
+        "若只是高檔偏穩或消化，不過早切空",
+        "午前中段版仍不主動押空"
       ],
       "status": "active"
     }
@@ -129,14 +130,14 @@
     "total_pnl_pct": 0.0,
     "win_rate": 0.0,
     "open_positions": [],
-    "notes": "paper trade 午前基準再保守一點：10:20 thesis_check 顯示 driver 屬「仍有效但不再加速」，因此最多只保留 0050 0%~5% 極小 starter、2330 0%~3% 微量跟隨；若只是高檔整理則不加碼，若失守開盤承接區則維持空倉或更高現金。"
+    "notes": "paper trade 午前中段基準維持保守：11:20 thesis_check 顯示 driver 屬「仍有效但脆弱、推力有限」，因此最多只保留 0050 0%~6% 極小 starter、2330 0%~4% 微量跟隨；若只是高檔偏穩則不加碼，若午後變成純價格慣性或跌回開盤承接區下方，則收斂回高現金。"
   },
   "max_exposure": {
-    "pct": 8,
-    "label": "總曝險上限 8%，僅限開盤承接未破且不追價時使用",
-    "stance": "消息驅動仍在但已進入消化期，風險報酬沒有惡化到翻空，卻也不足以支持擴倉；因此維持極低曝險上限。"
+    "pct": 10,
+    "label": "總曝險上限 10%，僅限開盤承接未破、午前中段重新站穩且不追價時使用",
+    "stance": "消息驅動仍在、風險報酬沒有惡化到翻空，但 driver 只是延續性支撐而非新的加速器；因此只小幅保留順勢空間，不做進攻型擴倉。"
   },
-  "max_exposure_pct": 8,
-  "max_exposure_label": "0%~8% 極低曝險，只允許極小 starter、不追價",
-  "notes": "這份盤中版 action_plan 依據 2026-04-10 10:20 thesis_check 修正：午前權值/ETF 承接仍在，代表停火 risk-on 背景尚未失靈；但最新 driver 狀態是 weakened_but_still_effective，表示消息延續但偏消化、沒有重新轉強。操作因此維持溫和偏多但更保守：保留 0050/2330 的超小倉位彈性，不追高、不因橫盤整理而誤判可擴倉；若後續跌破開盤承接區，再收斂回高現金。"
+  "max_exposure_pct": 10,
+  "max_exposure_label": "0%~10% 極低曝險，只允許極小 starter / 微量跟隨，不追價",
+  "notes": "這份盤中版 action_plan 依據 2026-04-10 11:20 thesis_check 修正：午前中段權值/ETF 在高檔消化後重新站穩，代表停火 risk-on 背景尚未失靈；但最新 driver 狀態仍是 weakened_but_still_effective，表示消息屬延續且脆弱、推力有限。操作因此維持溫和偏多但偏保守：保留 0050/2330 的超小倉位彈性，允許續抱觀察、不追高；若午後只剩價格慣性或跌回開盤承接區下方，再收斂回高現金。"
 }
