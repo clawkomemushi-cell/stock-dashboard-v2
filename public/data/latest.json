@@ -18,12 +18,12 @@
   },
   "date": "2026-04-10",
   "week": "2026-W15",
-  "market_status": "in_session",
+  "market_status": "closed",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-10/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-10/action_plan.json",
     "thesis_check": "/data/daily/2026-04-10/thesis_check.json",
-    "close_review": null,
+    "close_review": "/data/daily/2026-04-10/close_review.json",
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json"
   },
@@ -44,9 +44,9 @@
       "updated_at_label": "13:10"
     },
     "close_review": {
-      "status": "partial",
-      "updated_at_iso": "2026-04-10T07:18:00+08:00",
-      "updated_at_label": "04/10 07:18"
+      "status": "success",
+      "updated_at_iso": "2026-04-10T15:28:55+08:00",
+      "updated_at_label": "15:28"
     },
     "weekly_review": {
       "status": "success",
@@ -81,6 +81,7 @@
   "publish_notes": [
     "Stage2 intraday publish points dashboard consumers to today's published daily_thesis, action_plan, and thesis_check.",
     "latest.paths.thesis_check and file_statuses were refreshed from the 13:10 early-afternoon thesis check; close_review remains null/partial.",
-    "weekly and performance entries are preserved only when backing files actually exist."
+    "weekly and performance entries are preserved only when backing files actually exist.",
+    "Stage3-lite close publish enabled today's close_review for 2026-04-10."
   ]
 }

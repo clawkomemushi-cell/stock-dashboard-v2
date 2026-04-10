@@ -1,0 +1,96 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.close_review",
+    "data_type": "close",
+    "status": "success",
+    "generated_at_iso": "2026-04-10T15:28:55+08:00",
+    "generated_at_label": "15:28",
+    "source_freshness": "verified",
+    "warnings": []
+  },
+  "date": "2026-04-10",
+  "generated_at_iso": "2026-04-10T15:28:55+08:00",
+  "generated_at_label": "15:28",
+  "taiex_close": 35417.83,
+  "taiex_change": 556.67,
+  "taiex_change_pct": 1.60,
+  "taiex_volume": 785029216224,
+  "predicted_direction": "bullish",
+  "predicted_confidence": 0.61,
+  "actual_direction": "up",
+  "direction_verdict": "correct",
+  "thesis_accuracy_score": 86,
+  "ticker_results": [
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "predicted_direction": "watch",
+      "actual_direction": "up",
+      "change_pct": 2.30,
+      "verdict": "correct",
+      "paper_trade_result": null,
+      "notes": "作為權值驗證器，2330 與指數同步承接，驗證了盤前主線對權值的支撐。"
+    },
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "predicted_direction": "watch",
+      "actual_direction": "up",
+      "change_pct": 2.02,
+      "verdict": "correct",
+      "paper_trade_result": null,
+      "notes": "ETF 同步續強，符合『權值/ETF 溫和偏多、不追價』的操作框架。"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "predicted_direction": "watch",
+      "actual_direction": "down",
+      "change_pct": -1.78,
+      "verdict": "correct",
+      "paper_trade_result": null,
+      "notes": "反向 ETF 未取得主導權，反向工具回落與權值/ETF 同步上漲一致。"
+    }
+  ],
+  "what_worked": [
+    "盤前核心論點（停火延續帶來的 risk-on）到收盤大致成立，且最先反映在大型權值與大盤 ETF 上。",
+    "盤中多次 thesis_check 並及時收斂操作建議（保留小倉位、嚴禁追價），避免在高檔盲目擴張。",
+    "2330 與 0050 與指數同步承接，作為權值/ETF 驗證器作用明確。"
+  ],
+  "what_failed": [
+    "缺少即時 FX / US10y / 盤中法人流向的結構化資料，讓跨市場風險定價與尾段確認欠缺核心量化佐證。",
+    "低估油價邊際推力從回落到反彈的速度與不確定性，這使得 driver 的信心在盤中被多次下修。",
+    "未對小倉位的明確停損/出場條件做更強的量化規範，導致若市場逆轉時執行難度增加。"
+  ],
+  "key_learning": "今日情況顯示：當主導 driver（地緣政治 + 油價）仍有效但邊際推力鈍化時，對權值/ETF 的小倉位驗證策略是正確的；缺口在於跨市場（FX/yield）與法人即時流向的快速確認能力，未來應納入快速檢驗流程或 guardrail。",
+  "bias_observed": [
+    "偏向保守（高現金比重）—在本輪雖然正確避免追價，但也降低了在短期同步性延續時的參與度。",
+    "對新聞敘事的適度依賴：當多個新聞面互相矛盾（停火 vs ceasefire strain）時，系統傾向保守處理。"
+  ],
+  "tomorrow_watchpoints": [
+    "油價（Brent/WTI）走勢與是否再度突破 100 美元 → 若再彈升，risk-on 有快速逆轉風險。",
+    "美債 10Y 與美元指數（DXY）短線方向 → 牽動外資流向與權值表現。",
+    "TWSE 官方三大法人盤後/次日盤前淨買賣超（外資買超是否可延續）。",
+    "2330 是否持續與指數同步；若指數續強但 2330 明顯失步，代表分化風險上升。"
+  ],
+  "paper_trade_today_pnl": 0,
+  "analysis_layer_status": {
+    "assessment": "busy",
+    "why": "今日有多重 driver（停火/油價/美債/外資流向）同時存在，盤中多次修正使得訊號解讀出現一定稀釋與重複校正，需要更多跨市場快照以提高判斷精準度。",
+    "signal_count": 4,
+    "driver_count": 4,
+    "thesis_check_entry_count": 4,
+    "overload_signals": [
+      "油價邊際從回落轉為反彈（混淆 risk-on 強度）",
+      "媒體摘要交替報導停火有效與停火脆弱（敘事矛盾）",
+      "缺少 FX / 美債 快照造成跨市場定價不完整",
+      "盤中量價擴張有限，難以確認尾段加碼條件"
+    ],
+    "guardrails_for_tomorrow": [
+      "若無同步性量價擴張（指數 + 0050 + 2330）則禁止尾段追價", 
+      "在缺少 FX/yield 快照前，對倉位維持高現金與小倉觀察原則",
+      "把小倉位停損 / 出場條件具體化（例如 0050 若回落超過 1.5% 且指數失守支撐即出場）"
+    ]
+  }
+}
