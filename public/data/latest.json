@@ -35,13 +35,13 @@
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-10T09:08:00+08:00",
-      "updated_at_label": "09:08"
+      "updated_at_iso": "2026-04-10T10:30:00+08:00",
+      "updated_at_label": "10:30"
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-10T09:08:00+08:00",
-      "updated_at_label": "09:08"
+      "updated_at_iso": "2026-04-10T10:20:00+08:00",
+      "updated_at_label": "10:20"
     },
     "close_review": {
       "status": "partial",

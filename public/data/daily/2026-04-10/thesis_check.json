@@ -4,9 +4,9 @@
     "job_name": "openclaw.thesis_check",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-10T09:08:00+08:00",
-    "generated_at_label": "04/10 09:08",
-    "last_successful_run": "2026-04-10T09:08:00+08:00",
+    "generated_at_iso": "2026-04-10T10:20:00+08:00",
+    "generated_at_label": "04/10 10:20",
+    "last_successful_run": "2026-04-10T10:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "analysis_layer_only_no_publish",
@@ -14,7 +14,9 @@
       "official_twse_mis_used_for_index_and_proxy_quotes",
       "driver_continuity_check_uses_external_news_search_and_oil_snapshot",
       "do_not_overreact_to_single_early_bar",
-      "official_intraday_breadth_fx_yield_and_institutional_flow_not_available"
+      "official_intraday_breadth_fx_yield_and_institutional_flow_not_available",
+      "midmorning_followup_snapshot_only",
+      "driver_still_effective_but_not_reaccelerating"
     ],
     "fallback_used": false
   },
@@ -28,7 +30,7 @@
       "revised_thesis": "到 09:08 為止，盤前的偏多框架先得到第一輪價格驗證，而且強度比盤前保守假設還略好。加權指數報 35,234.72，較昨收 34,861.16 上漲約 1.07%，高於開盤 34,950.87，代表開盤後不是只有象徵性跳高，而是早盤第一輪仍有續強；0050 開 80.00、目前最佳買賣約 80.20/80.25，相對昨收 79.15 約上方 1.3% 左右；2330 開 1,975、盤中高 1,980、目前最佳買賣約 1,970/1,975，相對昨收 1,955 仍屬正向；00632R 開 13.33、目前最佳買賣約 13.30/13.31，低於昨收 13.47，表示反向避險工具沒有取得主導權。這代表今天早上『偏多但不追價』的大框架目前成立，至少開盤第一輪沒有出現高開即失速的否定訊號。不過盤前最核心的 driver 並不是完全 intact：外部可得盤中脈絡顯示，停火仍未被正式推翻，所以 risk-on 背景還在；但油價已從盤前的回落邏輯轉成反彈、Brent 約 97 美元、WTI 約 99 美元，且外媒摘要反覆強調 ceasefire durability 仍受質疑。也就是說，支撐今天方向的主導消息還沒有反轉，但『油價回落』這一腿的推力已經變弱。較合理的修正因此不是把方向翻空，而是維持偏多方向、把 driver 狀態從完整成立下修為偏弱延續：今天早盤仍支持權值/ETF 續強觀察，但不支持把它升級成無腦追價盤。",
       "change_type": "opening_confirmation_with_driver_downgrade",
       "risk_level_change": 0,
-      "confidence_change": 0.0,
+      "confidence_change": 0,
       "updated_direction": "bullish",
       "driver_status": "weakened",
       "driver_implication": "停火延續這條 risk-on 背景目前仍在，所以今天早盤方向沒有被推翻；但盤前『油價回落』的邊際利多已明顯弱化，代表主導消息還能支持偏多框架，卻不足以把它升級成高信心追價腳本。後續若權值/ETF 續強，較應解讀為偏多延續確認；若 09:30 後出現明顯回吐，則要優先解讀成 driver 鈍化後的利多消化，而不是意外事件。",
@@ -65,7 +67,7 @@
         "tsmc_prev_close": 1955,
         "tsmc_bid": 1970,
         "tsmc_ask": 1975,
-        "0050_open": 80.0,
+        "0050_open": 80,
         "0050_intraday_high": 80.4,
         "0050_intraday_low": 79.95,
         "0050_prev_close": 79.15,
@@ -79,6 +81,67 @@
         "00632R_ask": 13.31
       },
       "notes": "台股主體採 TWSE MIS 2026/04/10 09:08:34~09:08:35 snapshot：TAIEX 35,234.72（昨收 34,861.16、開 34,950.87、高 35,299.74、低 34,950.87、估量/量值欄位 1,771,237）、2330 開 1,975 / 高 1,980 / 低 1,970 / 最佳買賣約 1,970-1,975、0050 開 80.00 / 高 80.40 / 低 79.95 / 最佳買賣約 80.20-80.25、00632R 開 13.33 / 高 13.33 / 低 13.27 / 最佳買賣約 13.30-13.31。driver continuity 輔助訊號採 Yahoo Finance 可得油價快照與 04/10 外媒/搜尋摘要交叉檢查：Brent 約 97.06、WTI 約 99.02，皆較前值反彈，且 Reuters / Guardian / CNBC 可得摘要均強調 ceasefire durability 仍受質疑、油價回升。因此本輪把盤前主導消息記為 weakened 而非 intact：停火背景尚未失效，但『油價回落』的支持力已打折。由於目前仍缺官方盤中 breadth、法人、FX、殖利率與可靠題材輪動統計，本輪只做 opening window 的方向與 driver 狀態修正，不做大幅翻案。"
+    },
+    {
+      "id": "check_002",
+      "timestamp": "10:20",
+      "status": "partial",
+      "trigger": "午前 thesis check：確認開盤第一輪偏多框架到 10:20 左右是否仍成立，並重新檢查 market_driver_summary 的主導消息是否還在推動盤勢，或已進一步鈍化。",
+      "original_thesis": "09:08 的盤中修正是「偏多框架先被權值/ETF 承接確認，但主導消息已從完整成立下修為 weakened」；因此可保留極小 starter 想像，但不追價，並觀察 09:30 之後是否出現明顯回吐。",
+      "revised_thesis": "到 10:20 左右，早盤偏多框架仍未被推翻，但市場狀態已從開盤後的快速延伸，轉為高檔整理與邊際降溫，而不是進一步強化。TWSE MIS 顯示加權指數報 35,169.37，較昨收 34,861.16 上漲約 308.21 點、0.88%，雖低於 09:08 的 35,234.72，也低於盤中高點 35,350.29 約 180 點，但仍穩定站在開盤 34,950.87 之上；0050 目前約 80.25/80.30，相對昨收 79.15 仍約上漲 1.4%，未出現明顯轉弱；2330 目前最佳買賣約 1,975/1,980，相對昨收 1,955 仍維持正報酬，且大致守在開盤價附近；00632R 目前最佳買賣約 13.33/13.34，仍低於昨收 13.47，顯示反向避險腳本沒有取得主導權。這代表晨間框架目前仍成立：權值與大盤 ETF 的承接沒有失守，盤勢也還沒出現需要翻案的風險結構惡化；但它更像『利多已被市場接受後的高檔消化』，不是 driver 再次增強帶來的第二波擴張。因此盤中較合理的更新不是改方向，而是把早盤 stance 維持在「溫和偏多、僅限小倉位、嚴禁追價」：若後續只是橫盤整理，屬於 no_change；若再失守開盤承接區，才需要進一步下修。",
+      "change_type": "midmorning_no_major_change_minor_softening",
+      "risk_level_change": 0,
+      "confidence_change": 0,
+      "updated_direction": "bullish",
+      "driver_status": "weakened_but_still_effective",
+      "driver_implication": "主導消息沒有被後續消息正式推翻：停火/風險偏好修復背景仍在，所以權值與 ETF 仍能維持偏多結構；但油價回落這條邊際助力沒有恢復，Reuters 搜尋摘要反而持續顯示 Brent/WTI 反彈且市場仍質疑停火耐久度，表示 driver 目前比較像「仍有效、但正在被消化且推力有限」。這種狀態足以支持盤勢不翻空，卻不足以支持盤中追價或擴倉。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "高現金主體不變；這輪沒有出現足以提升曝險的新增優勢，也沒有立即翻空所需的破壞訊號。"
+        },
+        {
+          "ticker": "0050",
+          "action": "仍是最穩定的偏多代理，但 10:20 前後較像高檔整理，不新增追價理由；僅能維持既有極小 starter 觀察。"
+        },
+        {
+          "ticker": "2330",
+          "action": "續作權值風向驗證器；目前未失守開盤承接，但也尚未出現足以帶動第二波擴張的再加速。"
+        },
+        {
+          "ticker": "00632R",
+          "action": "維持備案；反向工具仍未顯示主導權回到空方，不主動切換空頭腳本。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 35169.37,
+        "taiex_change_points": 308.21,
+        "taiex_change_pct": 0.88,
+        "taiex_open": 34950.87,
+        "taiex_intraday_high": 35350.29,
+        "taiex_intraday_low": 34950.87,
+        "taiex_prev_close": 34861.16,
+        "taiex_volume_est": 1970106,
+        "tsmc_open": 1975,
+        "tsmc_intraday_high": 1985,
+        "tsmc_intraday_low": 1970,
+        "tsmc_prev_close": 1955,
+        "tsmc_bid": 1975,
+        "tsmc_ask": 1980,
+        "0050_open": 80,
+        "0050_intraday_high": 80.65,
+        "0050_intraday_low": 79.95,
+        "0050_prev_close": 79.15,
+        "0050_bid": 80.25,
+        "0050_ask": 80.3,
+        "00632R_open": 13.33,
+        "00632R_intraday_high": 13.34,
+        "00632R_intraday_low": 13.25,
+        "00632R_prev_close": 13.47,
+        "00632R_bid": 13.33,
+        "00632R_ask": 13.34
+      },
+      "notes": "台股盤中快照採 TWSE MIS 2026/04/10 10:20:34~10:20:39：TAIEX 35,169.37（昨收 34,861.16、開 34,950.87、高 35,350.29、低 34,950.87、量欄位 1,970,106）、2330 開 1,975 / 高 1,985 / 低 1,970 / 最佳買賣約 1,975-1,980、0050 開 80.00 / 高 80.65 / 低 79.95 / 現值與最佳買賣約 80.25-80.30、00632R 開 13.33 / 高 13.34 / 低 13.25 / 最佳買賣約 13.33-13.34。driver continuity 採 04/10 Reuters 搜尋摘要交叉檢查：一方面，4/7~4/8 的停火與油價跌破 100 美元所帶來的 risk-on 背景仍未被正式推翻；另一方面，4/9~4/10 相關摘要已轉為「fragile truce / doubts about ceasefire durability / oil back up toward $100」，且 Reuters 04/08 能源稿摘要顯示 Brent 收約 95.92、WTI 收約 97.87，說明早盤可用的主導消息並未失靈，但也沒有重新轉強。本輪因此只記錄『driver 仍有效但持續鈍化』，不把高檔小回落誤判成方向翻轉。"
     }
   ]
 }
