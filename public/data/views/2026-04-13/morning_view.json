@@ -1,0 +1,121 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.morning_view",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-13T07:10:00+08:00",
+    "generated_at_label": "07:10",
+    "last_successful_run": "2026-04-13T07:10:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "stage1_publish_generated_from_today_daily_thesis",
+      "morning_page_prefers_morning_view_when_available",
+      "action_plan_is_available_via_latest_paths_for_stage1"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-13",
+  "page": "morning",
+  "headline": "AI需求證據仍支撐權值/ETF 風險偏好，可保留小倉位先手想像；但這不是全新催化，油價與利率上緣仍在，不追價",
+  "hero": {
+    "direction_bias": "bullish",
+    "trading_style": "溫和偏多、權值/ETF 優先、可保留小倉位先手想像、但不追價",
+    "confidence": 0.58,
+    "risk_level": 3
+  },
+  "sections": {
+    "core_thesis": "這份 daily_thesis 僅建立在 2026-04-13 07:00 的 collection market_context 上。今天不是被單一突發 headline 主宰的盤，而是『沒有新 shock、但近期高權重主線仍在』的開盤框架；其中對台股最有實質支撐的仍是 AI 需求驗證，包含台灣 3 月出口創高、以及台積電 Q1 營收優於預期，這些都在 driver_watchlist 裡被列為 current_high_priority，代表它不是今天偶發冒出的新聞，而是近期仍高權重、仍能支撐大型半導體、權值股與大盤 ETF 風險偏好的主線。對今天盤前的操作含義是：大型權值、AI 鏈核心與 0050 這類 ETF 較容易得到先手支撐，因此可以保留小倉位先手想像；但 collection 也明確指出，中東停火/油價與美國 CPI/Fed/殖利率仍是上方風險罩，且這些利多並非今天才第一次被市場看見，所以較合理的判斷是『溫和偏多、但不追價』，而不是把所有常見題材都包成全面 risk-on。若開盤後只見指數高開、但 2330 與 0050 沒有同步承接，或油價/殖利率再度往不利方向擴張，就要承認那更像噪音與估值壓力回來，而不是新一輪乾淨多頭。",
+    "market_context": {
+      "index_trend": "最近已知 TWSE 現貨收盤為 2026-04-10，TAIEX 35417.83、單日 +1.60%，顯示上週五權值與科技已有明顯續強，不是低檔剛翻多的起點。",
+      "volume_status": "本輪 collection 沒有提供今日盤前量價與委買委賣結構；因此 stage1 只能定義方向框架，不能把偏多直接升級成強攻。",
+      "foreign_capital": "最近已知外資單日買超 28,808,271,208 元，三大法人合計買超 36,765,321,462 元，代表上週五台股風險偏好仍有資金面支撐。",
+      "institutional_summary": "最近已知投信轉為賣超、自營商(自行+避險)合計偏買超，籌碼面整體偏正向，但延續性仍需等今天開盤後驗證。"
+    },
+    "key_risks": [
+      "AI 需求主線雖仍有效，但它不是今天全新催化；若權值開高無承接，代表利多已被反映，追價風險報酬差。",
+      "中東停火若再生變或油價重回急彈，台股大型權值與風險型 ETF 可能快速降溫。",
+      "美國 CPI / Fed / 殖利率仍是估值上蓋；若美債殖利率與美元續強，外資風險偏好可能受抑。",
+      "本輪仍缺 FX、DXY、US10Y 與台股即時快照，跨市場定價確認不足，需沿用高現金與小倉位 guardrail。",
+      "若今天只剩指數或單一權值撐盤，而 AI 次族群與一般個股跟不上，盤勢容易演變成表面偏多、實際分化。"
+    ],
+    "support_levels": [
+      {
+        "price": 35400,
+        "label": "最近已知收盤附近的第一觀察支撐",
+        "strength": "weak"
+      },
+      {
+        "price": 35200,
+        "label": "若開高震盪，權值/ETF 是否仍有承接的短線防守帶",
+        "strength": "weak"
+      }
+    ],
+    "resistance_levels": [
+      {
+        "price": 35650,
+        "label": "短線延續上攻時的第一壓力區",
+        "strength": "weak"
+      },
+      {
+        "price": 35800,
+        "label": "若權值與 ETF 同步續強才有機會挑戰的次級壓力",
+        "strength": "weak"
+      }
+    ],
+    "watchlist": [
+      {
+        "ticker": "0050",
+        "name": "元大台灣50",
+        "direction": "watch",
+        "entry_condition": "若開盤後能穩定承接、不是急拉後立刻轉弱，可保留小倉位先手想像；若高開無承接，則只留觀察。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（stage1 不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（stage1 不給執行價）",
+        "rationale": "0050 最能反映大型權值與 ETF 風險偏好，適合作為今天 AI 需求主線是否仍被市場買單的第一驗證器。",
+        "priority": "high"
+      },
+      {
+        "ticker": "2330",
+        "name": "台積電",
+        "direction": "watch",
+        "entry_condition": "觀察是否與指數、0050 同步承接；若指數偏強但 2330 明顯失步，就要提高對分化盤的警覺。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（stage1 不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（stage1 不給執行價）",
+        "rationale": "台積電是這條 AI 需求驗證主線最直接的權值代理，也是今天權值風險偏好能否延續的關鍵確認點。",
+        "priority": "high"
+      },
+      {
+        "ticker": "00632R",
+        "name": "元大台灣50反1",
+        "direction": "watch",
+        "entry_condition": "只有在油價/殖利率風險重新主導，或 0050、2330 同步失守承接時，才保留避險觀察意義。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（stage1 不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（stage1 不給執行價）",
+        "rationale": "昨天 close_review 已提醒不要把多重 driver 全部並列；因此今天反向 ETF 只作為偏多框架失效時的備用觀察，不作主腳本。",
+        "priority": "medium"
+      }
+    ],
+    "prohibitions": [
+      "禁止把戰爭、油價、AI、川普等常見消息面當成固定題庫，沒有主導性就硬塞進今天 thesis。",
+      "禁止把 AI 需求主線誤當成今天才第一次出現的新催化，進而在權值或 ETF 上無腦追價。",
+      "禁止在缺少 FX / yield / 即時量價快照時，把大盤偏多直接外推成所有個股都適合進場。"
+    ],
+    "cautions": [
+      "今天先看 0050、2330、指數三者是否同步，這比擴大觀察太多個股更重要。",
+      "能源敏感與防禦類型今天比較像風險對照組；除非油價或地緣風險重新放大，否則不是主分析本體。",
+      "若沒有同步量價擴張，則維持小倉位、高現金、只做驗證不做擴張。"
+    ],
+    "notes": "已引用 2026-04-10 close_review 的 key_learning / bias_observed / tomorrow_watchpoints 作為 guardrails，且因昨日 analysis_layer_status=busy，今天主動收斂為『一條主線（AI需求驗證）+ 兩個風險罩（油價/地緣、利率/殖利率）』，不擴大觀察股；缺少新增訊號時，相關雜訊只視為風險提示，不視為獨立 driver。"
+  },
+  "notes": [
+    "Morning page prefers this publish-layer view when latest.published_views.morning_view exists.",
+    "Stage1 publish mirrors today's daily_thesis while leaving intraday/close flows disabled."
+  ]
+}
