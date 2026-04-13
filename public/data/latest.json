@@ -35,13 +35,13 @@
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-13T10:30:00+08:00",
-      "updated_at_label": "10:30"
+      "updated_at_iso": "2026-04-13T11:30:00+08:00",
+      "updated_at_label": "11:30"
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-13T10:20:00+08:00",
-      "updated_at_label": "10:20"
+      "updated_at_iso": "2026-04-13T11:20:00+08:00",
+      "updated_at_label": "11:20"
     },
     "close_review": {
       "status": null,
@@ -82,6 +82,7 @@
   "publish_notes": [
     "Stage1 morning publish points Dashboard and Morning consumers to today's published views plus today's daily_thesis/action_plan.",
     "latest.paths.thesis_check and close_review remain null/partial until later phases produce those artifacts.",
-    "weekly and performance entries are preserved only when backing files actually exist."
+    "weekly and performance entries are preserved only when backing files actually exist.",
+    "Stage2 intraday publish updates latest thesis_check/action_plan for today while close_review remains null/partial."
   ]
 }
