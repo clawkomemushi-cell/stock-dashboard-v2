@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-13T07:18:00+08:00",
-    "generated_at_label": "07:18",
-    "last_successful_run": "2026-04-13T07:18:00+08:00",
+    "generated_at_iso": "2026-04-13T09:18:00+08:00",
+    "generated_at_label": "09:18",
+    "last_successful_run": "2026-04-13T09:18:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "stage1_publish_enabled",
@@ -18,11 +18,11 @@
   },
   "date": "2026-04-13",
   "week": "2026-W15",
-  "market_status": "pre_market",
+  "market_status": "intraday",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-13/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-13/action_plan.json",
-    "thesis_check": null,
+    "thesis_check": "/data/daily/2026-04-13/thesis_check.json",
     "close_review": null,
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json"
@@ -35,13 +35,13 @@
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-13T07:18:00+08:00",
-      "updated_at_label": "07:18"
+      "updated_at_iso": "2026-04-13T09:18:00+08:00",
+      "updated_at_label": "09:18"
     },
     "thesis_check": {
-      "status": null,
-      "updated_at_iso": null,
-      "updated_at_label": null
+      "status": "partial",
+      "updated_at_iso": "2026-04-13T09:08:00+08:00",
+      "updated_at_label": "09:08"
     },
     "close_review": {
       "status": null,

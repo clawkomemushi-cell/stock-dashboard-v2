@@ -1,0 +1,80 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.thesis_check",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-13T09:08:00+08:00",
+    "generated_at_label": "04/13 09:08",
+    "last_successful_run": "2026-04-13T09:08:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "first_opening_window_snapshot_only",
+      "official_twse_mis_used_for_index_and_proxy_quotes",
+      "2330_last_trade_not_available_in_snapshot_used_open_bid_ask_instead",
+      "driver_continuity_check_uses_daily_thesis_plus_limited_external_headlines",
+      "do_not_overreact_to_single_early_bar",
+      "official_intraday_breadth_fx_yield_and_institutional_flow_not_available"
+    ],
+    "fallback_used": false
+  },
+  "entries": [
+    {
+      "id": "check_001",
+      "timestamp": "09:08",
+      "status": "partial",
+      "trigger": "開盤後第一輪 thesis check：驗證盤前偏多框架是否被權值與 ETF 承接確認，並檢查 market_driver_summary 的主導消息到開盤後是否仍成立。",
+      "original_thesis": "盤前主導框架是 AI 需求驗證仍支撐大型權值、半導體與 0050 等 ETF 的風險偏好，因此方向偏多、可保留極小先手想像；但利多不新，油價與利率仍是上蓋，所以不追價。",
+      "revised_thesis": "到 09:08 左右，盤前偏多框架尚未被正式推翻，但也沒有拿到開盤第一輪的價格確認，較合理的修正是先把『溫和偏多』降成『偏中性觀察、保留原偏多假設但等下一輪確認』。TWSE MIS 顯示加權指數 35,351.86，較昨收 35,417.83 下跌約 65.97 點、-0.19%，雖然今日開盤一度到 35,422.91，但很快滑到開盤下方；0050 現值 80.60，較昨收 80.75 下跌約 0.19%，高低區間僅 80.45-80.65，表示大型權值 ETF 並未出現盤前預期中的明顯承接；2330 在本筆快照沒有最新成交價，但開盤 1,985、盤中高 1,990、低 1,985，且最佳買賣約 1,985/1,990，低於昨收 2,000，說明權王至少在開盤第一輪沒有展現強勢續攻。這代表今天早上的偏多框架目前『未被證明』多於『被否定』：市場更像在消化前一波 AI 利多與高檔位置，而不是直接把盤前 thesis 擴大成 risk-on 進攻盤。因此現階段不宜翻空，但也不能再把早上框架表述成已經成立；更好的說法是偏多假設暫時弱化、信心先下修一格，等待 09:20~09:40 是否重新出現 2330、0050 與指數同步承接。",
+      "change_type": "opening_non_confirmation_bias_softened",
+      "risk_level_change": 1,
+      "confidence_change": -0.1,
+      "updated_direction": "neutral",
+      "driver_status": "weakened",
+      "driver_implication": "盤前主導消息本體仍以 AI 需求驗證為主，這一點從盤前可得新聞脈絡上沒有被新訊息直接推翻；但開盤第一輪價格沒有把這條敘事轉成明確買盤優勢，表示它對今天早盤方向的支撐仍在、卻不夠強到立即主導。換句話說，driver 沒有 reversed，但已從『可支持偏多框架』降為『只能提供底色，暫不足以支持追價或擴張曝險』。若後續 2330/0050/指數重新同步轉強，可把它視為 intact 的再確認；若持續只有平盤下震盪，則要接受今天更像利多消化日而不是早盤順風推進日。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "高現金主體不變，且因開盤第一輪未確認偏多框架，短線更應維持觀察優先。"
+        },
+        {
+          "ticker": "0050",
+          "action": "暫不把它升級成可啟動 starter position 的標的；先等是否重新站回昨收並出現較乾淨承接。"
+        },
+        {
+          "ticker": "2330",
+          "action": "繼續作為最核心驗證器，但目前只看到偏弱開盤與買賣盤僵持，還不能當成偏多已確認。"
+        },
+        {
+          "ticker": "00632R",
+          "action": "仍只是備案，不因第一輪轉弱就直接切成主腳本；目前較像偏多未確認，不是空頭已接管。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 35351.86,
+        "taiex_change_points": -65.97,
+        "taiex_change_pct": -0.19,
+        "taiex_open": 35422.91,
+        "taiex_intraday_high": 35422.91,
+        "taiex_intraday_low": 35269.66,
+        "taiex_prev_close": 35417.83,
+        "taiex_volume_est": 1361865,
+        "tsmc_open": 1985,
+        "tsmc_intraday_high": 1990,
+        "tsmc_intraday_low": 1985,
+        "tsmc_prev_close": 2000,
+        "tsmc_bid": 1985,
+        "tsmc_ask": 1990,
+        "0050_open": 80.6,
+        "0050_intraday_high": 80.65,
+        "0050_intraday_low": 80.45,
+        "0050_prev_close": 80.75,
+        "0050_last": 80.6,
+        "0050_bid": 80.6,
+        "0050_ask": 80.65
+      },
+      "notes": "台股盤中快照採 TWSE MIS 2026/04/13 09:08:25~09:08:31：TAIEX 35,351.86（昨收 35,417.83、開 35,422.91、高 35,422.91、低 35,269.66、量欄位 1,361,865）、2330 開 1,985 / 高 1,990 / 低 1,985 / 最佳買賣約 1,985-1,990、0050 現值 80.60 / 開 80.60 / 高 80.65 / 低 80.45 / 最佳買賣約 80.60-80.65。driver continuity 以今日 daily_thesis 的 market_driver_summary 為主、輔以盤前可得外部新聞脈絡：AI 需求與台積電營收/法說預期仍在，未見被明確推翻；但開盤價格表現顯示這個 driver 至少在第一輪未轉化成主導性上攻。另有地緣/油價相關外部訊號可得但內容不夠一致，本輪不把它寫成確定的新 driver，只保留為上蓋風險。故本輪記為 weakened 而非 reversed，也不因單一早盤回落就大幅翻案。"
+    }
+  ]
+}

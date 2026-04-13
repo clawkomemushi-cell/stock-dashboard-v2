@@ -1,0 +1,259 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-13T07:00:00+08:00",
+    "generated_at_label": "04/13 07:00",
+    "last_successful_run": "2026-04-13T07:00:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "pre_open_window_same_day_official_tw_close_not_available_yet",
+      "external_context_is_lightweight_and_narrative_driven"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-13",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "intended_downstream_use": [
+    "daily_thesis market_context seed",
+    "close/weekly explanation context",
+    "latest market status sanity checks"
+  ],
+  "market_window": {
+    "captured_at_local": "2026-04-13T07:00:00+08:00",
+    "tw_market_live_session_available": false,
+    "current_mode": "pre_open_trading_day",
+    "notes": [
+      "Collection-only pre-open capture. No thesis/action plan generated in this run.",
+      "Same-day official TWSE cash-session close and institutional-flow for 2026-04-13 are not yet published at capture time."
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "current_status": "pre_open",
+    "is_trading_day": true,
+    "trading_day_reference": {
+      "date": "2026-04-13",
+      "status": "open_trading_day_by_calendar_inference",
+      "description": "2026-04-13 is not listed as a holiday in the official TWSE 2026 schedule and is treated as a normal Monday trading day.",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "derived_calendar_notes": [
+      "2026-04-13 follows the prior Friday cash session on 2026-04-10 and is the next regular TWSE trading day.",
+      "This is a pre-open collection run, so same-day official close/institutional data are expected only after market close."
+    ],
+    "last_known_cash_session": {
+      "date": "2026-04-10",
+      "index_name": "TAIEX",
+      "close": 35417.83,
+      "change_points": 556.67,
+      "change_pct": 1.6,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260410&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Latest official TWSE cash-session close available prior to the 2026-04-13 pre-open capture.",
+        "TAIEX closed higher on 2026-04-10, with technology-related indices leading; the TWSE Taiwan Technology Index rose 1.98% and the Semiconductor Index rose 2.07%."
+      ]
+    },
+    "institutional_flow_last_known": {
+      "date": "2026-04-10",
+      "foreign_diff_ntd": 28808271208,
+      "investment_trust_diff_ntd": -4301105584,
+      "dealers_proprietary_diff_ntd": 3546373426,
+      "dealers_hedge_diff_ntd": 8711782412,
+      "total_diff_ntd": 36765321462,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260410&type=day&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Official three-institution trading value snapshot for 2026-04-10 showed foreign investors remained net buyers by NT$28.81bn.",
+        "The positive total reading supports the view that Taiwan risk appetite stayed constructive into the weekend, even though投信轉為賣超。"
+      ]
+    }
+  },
+  "global_reference_snapshot": {
+    "headline_risk_context": {
+      "source_type": "media_report",
+      "source_name": "CNBC / Reuters / Focus Taiwan (synthesis)",
+      "source_urls": [
+        "https://www.cnbc.com/2026/04/09/stock-market-today-live-updates.html",
+        "https://www.reuters.com/business/us-stock-futures-subdued-ahead-inflation-data-mideast-focus-2026-04-10/",
+        "https://www.reuters.com/world/asia-pacific/tsmcs-q1-revenue-jumps-35-yy-beats-market-forecast-2026-04-10/",
+        "https://focustaiwan.tw/business/202604100018"
+      ],
+      "capture_method": "manual_normalization_from_readable_page_text_and_search-snippet synthesis",
+      "session_reference": "2026-04-10 U.S. close / 2026-04-13 Asia pre-open",
+      "headline": "Taiwan enters Monday pre-open with no single new shock: AI demand remains the local support, while the fragile Middle East truce and inflation/yield pressure remain the main macro overlays.",
+      "supporting_metrics": {
+        "wti_settlement_usd": 96.57,
+        "sp500_weekly_change_pct": 3.6,
+        "nasdaq_weekly_change_pct": 4.7,
+        "us_cpi_yoy_pct": 3.3,
+        "taiwan_march_exports_usd_billion": 80.18,
+        "taiwan_march_exports_yoy_pct": 61.8,
+        "tsmc_q1_revenue_yoy_pct": 35
+      },
+      "confidence": "medium",
+      "source_layer": "media",
+      "notes": [
+        "CNBC described U.S. equities as finishing a strong week while traders monitored the fragile Iran ceasefire and oil volatility; tech outperformed broadly.",
+        "Reuters snippets indicated March U.S. CPI rose 3.3% year on year and highlighted that inflation/rate concerns remain a valuation cap even as sentiment improved.",
+        "Focus Taiwan reported Taiwan March exports hit a record US$80.18 billion with AI-related demand still strong, while Reuters reported TSMC Q1 revenue rose 35% year on year ahead of April 16 earnings."
+      ]
+    }
+  },
+  "market_driver_summary": {
+    "primary_driver": "none_clear",
+    "secondary_drivers": [
+      "Taiwan AI-demand proof points strengthened after March exports hit a record and TSMC reported Q1 revenue above market expectations",
+      "Middle East truce durability and oil-price direction still shape the macro risk premium for Asia",
+      "US March CPI / Fed path / Treasury-yield sensitivity remains the main cap on valuation expansion"
+    ],
+    "driver_direction": "balanced_to_mild_risk_on",
+    "confidence": "medium",
+    "likely_affected_groups": [
+      "Large-cap semiconductor and AI supply-chain names",
+      "Export-oriented electronics and broad Taiwan tech ETFs",
+      "Old-economy cyclicals sensitive to oil/input costs",
+      "Rate- and FX-sensitive sectors if yields or USD move sharply"
+    ],
+    "why_it_matters": "Into the 2026-04-13 Taiwan pre-open, there is no single fresh shock dominating everything. Instead, the local tape is being supported by concrete AI-demand evidence (record Taiwan exports, strong TSMC revenue) while the macro overlay remains hostage to whether the Middle East truce really holds and whether higher inflation keeps US yields elevated. That combination argues for a still constructive but not clean risk-on setup.",
+    "what_would_invalidate": "A visible breakdown in the truce that re-accelerates oil, a renewed hawkish repricing in US rates after inflation/Fed commentary, or disappointing semiconductor guidance (especially from TSMC this week) would invalidate the mild risk-on read."
+  },
+  "driver_watchlist": {
+    "persistent_watch": [
+      "US inflation / Fed path / Treasury yields",
+      "Middle East geopolitics, shipping risk, and oil-price trajectory",
+      "AI / semiconductor demand confirmation from Taiwan exports, TSMC, and Nvidia-linked supply chain",
+      "USD/TWD and broader Asia FX moves tied to capital-flow repricing",
+      "Any renewed tariff / industrial-policy headlines that directly affect Taiwan supply chains"
+    ],
+    "current_high_priority": [
+      {
+        "title": "AI demand proof-points: Taiwan exports + TSMC revenue into Apr. 16 earnings",
+        "why": "This is the clearest Taiwan-specific fundamental support right now. Record March exports and strong TSMC revenue help explain why foreign money kept returning to Taiwan tech even with macro noise still present.",
+        "expected_actionability": "High — directly changes how much room the market gives AI / semiconductor leaders this week",
+        "source_kind": "official_data_plus_large_media",
+        "confidence": "high"
+      },
+      {
+        "title": "Middle East truce durability and oil around the high-90s",
+        "why": "This remains the fastest path to a risk-on continuation or a violent reversal. Taiwan tends to benefit when the oil/geopolitical risk premium compresses, but that support is fragile.",
+        "expected_actionability": "High — index-level risk appetite and foreign flow sensitivity",
+        "source_kind": "large_media_synthesis",
+        "confidence": "medium"
+      },
+      {
+        "title": "US CPI / Fed / yield ceiling on multiples",
+        "why": "Even if Taiwan fundamentals are good, a hotter inflation read and hawkish-rate repricing can cap semiconductor multiple expansion and pressure FX-sensitive flows.",
+        "expected_actionability": "High — especially for large-cap tech and Taiwan-dollar-sensitive positioning",
+        "source_kind": "large_media_synthesis",
+        "confidence": "medium"
+      }
+    ],
+    "deprioritized": [
+      {
+        "title": "Early-April tariff shock as the standalone dominant narrative",
+        "why": "Still a structural risk, but the last several trading days were more clearly driven by oil/geopolitics, inflation-rate repricing, and AI demand confirmation than by any fresh tariff escalation.",
+        "confidence": "medium"
+      },
+      {
+        "title": "Pure defensive commodity chase",
+        "why": "That was more relevant during the immediate war-scare phase; Taiwan price action has since rotated back toward technology leadership.",
+        "confidence": "medium_low"
+      }
+    ],
+    "surprise_buckets": [
+      "Truce breaks / Strait risk re-prices / oil spikes again → broad Asia risk-off",
+      "US yields jump harder than expected after inflation or Fed talk → tech valuation compression",
+      "TSMC guidance disappoints despite strong monthly sales → AI chain de-rating",
+      "Sharp USD/TWD or wider Asia FX stress → foreign-flow reversal even without bad local fundamentals"
+    ]
+  },
+  "data_gaps": [
+    {
+      "key": "tw_same_day_official_close_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "This capture occurred pre-open; same-day official close for 2026-04-13 is not yet available."
+    },
+    {
+      "key": "tw_same_day_institutional_flow",
+      "status": "missing_in_this_round",
+      "reason": "This capture occurred pre-open; same-day institutional-flow publication for 2026-04-13 is not yet available."
+    },
+    {
+      "key": "tw_live_intraday_tape",
+      "status": "missing",
+      "reason": "No live TW intraday collector integrated into collection layer in this run."
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "FX / DXY structured snapshot is not yet integrated into collection layer."
+    },
+    {
+      "key": "us_treasury_structured_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "Treasury/yield context is narrative-only in this run and not normalized from a structured feed."
+    }
+  ],
+  "source_summary": [
+    {
+      "name": "TWSE holiday API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE MI_INDEX API (TAIEX close & indices)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260410&type=ALLBUT0999&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE BFI82U API (institutional flow)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260410&type=day&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "Focus Taiwan March exports report",
+      "kind": "media_report",
+      "url": "https://focustaiwan.tw/business/202604100018",
+      "status": "ok",
+      "confidence": "medium_high"
+    },
+    {
+      "name": "CNBC U.S. market / oil context",
+      "kind": "media_report",
+      "url": "https://www.cnbc.com/2026/04/09/stock-market-today-live-updates.html",
+      "status": "partial",
+      "confidence": "medium"
+    },
+    {
+      "name": "Reuters U.S. inflation / Middle East market context",
+      "kind": "media_report",
+      "url": "https://www.reuters.com/business/us-stock-futures-subdued-ahead-inflation-data-mideast-focus-2026-04-10/",
+      "status": "partial",
+      "confidence": "medium"
+    },
+    {
+      "name": "Reuters TSMC revenue report",
+      "kind": "media_report",
+      "url": "https://www.reuters.com/world/asia-pacific/tsmcs-q1-revenue-jumps-35-yy-beats-market-forecast-2026-04-10/",
+      "status": "partial",
+      "confidence": "medium"
+    }
+  ]
+}
