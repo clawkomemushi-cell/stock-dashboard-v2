@@ -12,18 +12,19 @@
       "stage1_publish_enabled",
       "latest_points_to_todays_daily_thesis_action_plan_and_published_views",
       "thesis_check_and_close_review_kept_null_or_partial_in_stage1",
-      "weekly_and_performance_paths_list_only_existing_files"
+      "weekly_and_performance_paths_list_only_existing_files",
+      "analysis_layer_busy_guardrail_for_next_preopen"
     ],
     "fallback_used": false
   },
   "date": "2026-04-13",
   "week": "2026-W15",
-  "market_status": "intraday",
+  "market_status": "closed",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-13/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-13/action_plan.json",
     "thesis_check": "/data/daily/2026-04-13/thesis_check.json",
-    "close_review": null,
+    "close_review": "/data/daily/2026-04-13/close_review.json",
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json"
   },
@@ -44,9 +45,9 @@
       "updated_at_label": "13:10"
     },
     "close_review": {
-      "status": null,
-      "updated_at_iso": null,
-      "updated_at_label": null
+      "status": "success",
+      "updated_at_iso": "2026-04-13T15:25:00+08:00",
+      "updated_at_label": "15:25"
     },
     "weekly_review": {
       "status": "success",
@@ -83,6 +84,8 @@
     "Stage1 morning publish points Dashboard and Morning consumers to today's published views plus today's daily_thesis/action_plan.",
     "latest.paths.thesis_check and close_review remain null/partial until later phases produce those artifacts.",
     "weekly and performance entries are preserved only when backing files actually exist.",
-    "Stage2 intraday publish updates latest thesis_check/action_plan for today while close_review remains null/partial."
+    "Stage2 intraday publish updates latest thesis_check/action_plan for today while close_review remains null/partial.",
+    "Stage3 close publish enables today's close_review for consumers.",
+    "Analysis layer busy at close; use tomorrow preopen guardrails before treating breadth-led support as full risk-on."
   ]
 }

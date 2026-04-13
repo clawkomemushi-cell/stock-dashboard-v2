@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.close_review",
+    "data_type": "close",
+    "status": "success",
+    "generated_at_iso": "2026-04-13T15:25:00+08:00",
+    "generated_at_label": "15:25",
+    "source_freshness": "verified",
+    "warnings": [
+      "analysis_only_close_review_generated_without_latest_publish",
+      "official_close_and_quotes_verified_from_twse_mi_index",
+      "intraday_revision_logic_still_used_limited_fx_yield_and_flow_context"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-13",
+  "generated_at_iso": "2026-04-13T15:25:00+08:00",
+  "generated_at_label": "15:25",
+  "taiex_close": 35457.29,
+  "taiex_change": 39.46,
+  "taiex_change_pct": 0.11,
+  "taiex_volume": 743094394232,
+  "predicted_direction": "bullish",
+  "predicted_confidence": 0.58,
+  "actual_direction": "up",
+  "direction_verdict": "correct",
+  "thesis_accuracy_score": 72,
+  "ticker_results": [
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "predicted_direction": "watch",
+      "actual_direction": "down",
+      "change_pct": -0.5,
+      "verdict": "incorrect",
+      "paper_trade_result": null,
+      "notes": "盤前把 2330 當成 AI 主線最核心確認器，但收盤 1990、較昨收 2000 下跌 0.50%，證明今天不是由台積電領漲的乾淨 risk-on。"
+    },
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "predicted_direction": "watch",
+      "actual_direction": "down",
+      "change_pct": -0.19,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "0050 收 80.60、低於昨收 80.75，代表盤前『權值/ETF 先手』沒有真正確認；但午後把試單條件收窄到守昨收且有真實承接，因此最終空倉是有效風控。"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "predicted_direction": "watch",
+      "actual_direction": "up",
+      "change_pct": 0.15,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "反向 ETF 小漲，反映今日雖然大盤收紅，但權值/ETF 並非全面轉強；它有備案意義，但也沒有強到取代主腳本。"
+    }
+  ],
+  "what_worked": [
+    "盤前把今天收斂成『AI 需求驗證主線 + 油價/地緣、利率/殖利率兩個風險罩』，至少方向上沒有把市場誤判成全面轉空；TAIEX 收盤仍小漲 0.11%。",
+    "09:08 就把原本的溫和偏多下修成偏中性觀察，沒有把前一波 AI 利多硬外推成開盤可追的進攻盤。",
+    "午後 action_plan 把 0050 試單條件收得很窄，只接受『守昨收附近且有真實承接』；實際 0050 收盤 80.60 低於昨收 80.75，最終維持 0% 曝險是正確的。",
+    "持續把 2330 當成否決器是有價值的：它整天未重新站回強勢確認位，成功提醒今天紅盤更像非 2330 權值/電子分攤支撐，而不是主線全面再加速。"
+  ],
+  "what_failed": [
+    "盤前把 0050 / 2330 視為第一驗證器雖合理，但沒有先充分容納『指數小漲、核心代理不跟、由其他大型電子接力』這種 breadth-led 結構。",
+    "四次 thesis_check 雖然都在做同一件事，但狀態從 weakened → not_reaccelerating → more_selective → digesting，訊號語義開始變得稀薄，增加了解讀負擔。",
+    "對 driver 的落地方式判讀仍偏窄：AI 需求主線本身沒錯，但今天真正表現在聯發科、台達電、日月光投控、致茂、國巨、南亞科等輪動，而不是 2330 / 0050 同步上攻。",
+    "收盤前仍缺少 FX / yield / 法人流向等結構化確認，因此只能知道『不該追』，卻很難把 breadth-led 小漲日再清楚拆成可執行等級。"
+  ],
+  "key_learning": "今天不是方向大錯，而是把『AI 主線仍有效』過度綁在 2330 / 0050 必須同步確認。之後要把偏多日拆成兩型：一種是 core-proxy confirmation（2330、0050 也同步強），另一種是 breadth-led support（指數守紅但核心代理不跟）。第二種不能當成全面 risk-on，只能當成結構支撐與保守觀察。",
+  "bias_observed": [
+    "對 2330 / 0050 有明顯錨定：當它們不跟時，系統容易先把盤面理解成『偏多未成立』，而不是更快接受『由其他大電子撐盤』的可能性。",
+    "保守 bias 仍在：今天這個保守沒有造成交易傷害，但讓『方向正確』與『可不可以出手』之間的敘事分層不夠乾淨。",
+    "盤中多次微調後，敘事有細碎化傾向；如果沒有更清楚的 decision gate，後續容易把同一件事換句話說很多次。"
+  ],
+  "tomorrow_watchpoints": [
+    "先分辨明天若再偏強，究竟是 2330 / 0050 重新接手，還是仍由非 2330 權值與電子輪動撐盤；這兩種盤不能用同一套結論。",
+    "2330 是否能重新挑戰 2000 附近、0050 是否能重新站回 80.75 之上；若指數續紅但兩者仍弱，預設只視為選擇性支撐盤。",
+    "油價 / 地緣與利率 / 美元這兩個風險罩是否從 mixed 重新收斂；若沒有，就算指數守紅，也不應把曝險規則放寬。",
+    "若仍是 breadth-led 結構，要確認聯發科、台達電、日月光投控、記憶體等輪動是否能延續到隔日，而不是只有單日補漲。"
+  ],
+  "paper_trade_today_pnl": 0,
+  "analysis_layer_status": {
+    "assessment": "busy",
+    "why": "方向本身沒有錯，但今天收盤呈現『TAIEX 收紅、2330 與 0050 收黑、反向 ETF 小漲、其他大型電子接力』的交錯結構；再加上 4 次 thesis_check 連續微調，已出現訊號稀釋，適合標示為 busy 而不是正常穩態。",
+    "signal_count": 8,
+    "driver_count": 4,
+    "thesis_check_entry_count": 4,
+    "overload_signals": [
+      "四次 thesis_check 都在處理同一主線的不同表現型，語義已開始重疊",
+      "TAIEX +0.11%，但 2330 -0.50%、0050 -0.19%、00632R +0.15%，核心代理與指數方向分歧",
+      "盤中加入非 2330 權值/電子輪動支撐，代表主線落地方式改變",
+      "油價/地緣與利率/美元風險罩沒有新結論，只能持續以 mixed 狀態處理"
+    ],
+    "guardrails_for_tomorrow": [
+      "先判斷是 core-proxy confirmation day 還是 breadth-led support day，分類前不要直接下進攻結論",
+      "若指數紅而 2330 / 0050 不跟，預設只做觀察或極小驗證，不寫成全面 risk-on",
+      "把 thesis_check 壓到 2~3 個明確 decision gates，避免同義反覆改寫",
+      "每次 revision 要明確標示是方向改變、driver 改變，還是只有 market-structure 改變"
+    ]
+  },
+  "preopen_thesis_verdict": {
+    "overall": "partial",
+    "what_held": [
+      "AI 需求驗證沒有失效，市場最終仍沒有轉成明確風險卸載，TAIEX 收盤小漲。",
+      "『不追價』這個 guardrail 完全正確。"
+    ],
+    "what_broke": [
+      "盤前預期的 2330 / 0050 同步承接沒有發生。",
+      "偏多不是由核心權值與 ETF 直接確認，而是轉成分散式輪動支撐。"
+    ]
+  },
+  "intraday_revision_verdict": {
+    "overall": "effective_for_risk_control",
+    "effective": [
+      "早盤快速降級偏多信心，避免錯把開盤未確認當作進場機會。",
+      "午後把 0050 試單限制在極小、且必須守昨收附近，最終成功避免無效試單。"
+    ],
+    "ineffective": [
+      "revision 次數偏多，且多次都是同一主線的細部改寫。",
+      "沒有把『breadth-led 小漲』及早抽象成固定類型，導致描述一直細修。"
+    ]
+  },
+  "error_breakdown": {
+    "direction": "mostly_right",
+    "timing": "too_early_to_expect_core_proxy_confirmation",
+    "driver_read": "partly_right_but_landing_through_rotation_not_tsmc_leadership",
+    "sector_correlation_read": "too_narrow_on_2330_and_0050",
+    "execution_bias": "slightly_too_conservative_but_acceptable_given_non_confirmation"
+  },
+  "close_data_sources": [
+    {
+      "name": "TWSE MI_INDEX after trading",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260413&type=ALLBUT0999&response=json",
+      "verified_items": [
+        "TAIEX close/change/change_pct",
+        "market summary trade value",
+        "2330/0050/00632R daily close quotes"
+      ]
+    }
+  ]
+}
