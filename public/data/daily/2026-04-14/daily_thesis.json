@@ -1,0 +1,49 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.daily_thesis",
+    "data_type": "preopen",
+    "status": "error",
+    "generated_at_iso": "2026-04-14T07:10:00+08:00",
+    "generated_at_label": "04/14 07:10",
+    "last_successful_run": null,
+    "source_freshness": "missing",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "market_context_missing_for_today",
+      "daily_thesis_not_generated_without_collection_layer",
+      "stopped_without_forcing_conclusion"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-14",
+  "generated_at_iso": "2026-04-14T07:10:00+08:00",
+  "generated_at_label": "07:10",
+  "market_status": "pre_market",
+  "risk_level": null,
+  "direction_bias": "unknown",
+  "confidence": 0,
+  "headline": "今日 collection market_context 缺失，stage1 thesis 停止生成，不硬做偏多/偏空結論",
+  "core_thesis": "找不到 /public/data/collection/2026-04-14/market_context.json，因此今天的 daily_thesis 無法建立正式盤前框架。依照規則，本階段在 source 缺失時必須停止，不得用舊資料或常見題材硬補結論。",
+  "core_thesis_short": "今日 market_context 缺失，停止生成 thesis，不硬做結論。",
+  "market_driver_summary": "N/A：今日主導消息無法判定，因核心 collection 檔缺失。",
+  "market_context": {
+    "status": "unavailable",
+    "reason": "missing_file",
+    "expected_path": "stock-dashboard-v2/public/data/collection/2026-04-14/market_context.json"
+  },
+  "key_risks": [
+    "若在缺少今日 collection market_context 的情況下硬做 thesis，容易把舊 driver 或固定題材誤當成今天主導消息。"
+  ],
+  "support_levels": [],
+  "resistance_levels": [],
+  "watchlist": [],
+  "prohibitions": [
+    "禁止在今日 market_context 缺失時，用昨日資料或常見消息模板硬推偏多/偏空框架。"
+  ],
+  "cautions": [
+    "待 collection 層補齊後，再重新生成正式 daily_thesis。"
+  ],
+  "trading_style": "no_call",
+  "notes": "stage1 已依規則停止：今日 collection/market_context.json 不存在，因此未引用 latest、close_review 或 tmp status 進行替代判斷。"
+}

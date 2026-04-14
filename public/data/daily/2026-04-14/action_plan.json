@@ -1,0 +1,146 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.action_plan",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-14T09:18:00+08:00",
+    "generated_at_label": "04/14 09:18",
+    "last_successful_run": "2026-04-14T09:18:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "stage2_intraday_publish_update",
+      "intraday_revision_based_on_0909_thesis_check",
+      "original_preopen_daily_thesis_and_action_plan_were_unusable",
+      "driver_marked_intact_but_headline_driven",
+      "starter_position_allowed_only_if_opening_zone_holds_with_real_bids",
+      "do_not_chase_gap_up_strength",
+      "missing_official_intraday_breadth_fx_yield_and_institutional_flow"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-14",
+  "generated_at_iso": "2026-04-14T09:18:00+08:00",
+  "generated_at_label": "09:18",
+  "version": 2,
+  "overall_stance": "開盤第一輪盤中版從原本的 no-call/error 上修為保守偏多，但只接受『消息仍有效、價格也沒走壞』下的極小 starter 想像。TAIEX、0050、2330 與 00632R 的同步表現顯示市場目前採納的主導消息仍在，因此不必硬翻空；但這是跳空後的 headline-driven intact，不是低波動順風盤，所以操作仍以高現金、只留超小驗證空間、不追價為主。",
+  "driver_based_action_hint": {
+    "driver_status": "intact",
+    "driver_implication": "雖然同日 daily_thesis 的 market_driver_summary 本身是 N/A，無法對『V2 正式盤前 driver』做嚴格 continuity check，但從開盤前後可取得的外部脈絡與價格反應看，市場實際採納的 driver 是：川普釋出伊朗仍有協議空間的訊號，使戰事升級恐慌暫時沒有再惡化，配合法說前 AI / 台積電需求期待，帶動資金回到大型電子與大盤 ETF。開盤後 TAIEX、0050、2330 同步跳空轉強，00632R 走弱，表示這條 driver 在開盤第一輪仍是 intact，而不是 weakened 或 reversed；但它仍偏 headline-driven intact，不是低波動穩態，若後續油價/戰事 headline 再惡化，回吐速度可能很快，因此操作上只能接受『不翻空、但不追高』，不能把它誤讀成全天無條件順風盤。",
+    "driver_phase": "headline_driven_intact",
+    "action_bias": "消息仍有效且價格結構尚可，所以只保留極小 starter 空間；若後續只剩價格硬撐或跌回開盤區，立刻收回觀察，不為了有動作而加新交易。",
+    "preferred_groups": [
+      "現金",
+      "0050（僅限守住開盤區與昨收上方時的極小 starter）",
+      "2330（先當同步驗證器，不急著配置）",
+      "大型電子/大盤 ETF（只作結構觀察，不追價）"
+    ],
+    "why_not_chase_or_why_starter_allowed": "本輪 thesis_check 已把 driver 記為 intact，表示市場實際採納的消息尚未被推翻，且開盤第一輪價格同步確認，因此可以容許非常小的 starter position；但因這股強勢主要來自跳空後 headline 驅動，若後續沒有延續承接，回吐可能很快，所以只能小到接近驗證倉，不能追價、不能擴張。",
+    "risk_if_wrong": "若把這種 headline-driven intact 誤判成全天穩定 risk-on，最容易在跳空後追進，接著遇到地緣/油價 headline 反覆或 2330、0050 回吐時被動承受快速收斂；因此把總曝險壓在 2% 以內，錯了就直接退回 0% 觀察。"
+  },
+  "actions": [
+    {
+      "ticker": "CASH",
+      "name": "現金 / 保留主動性",
+      "direction": "hold",
+      "action": "維持絕對主體。雖然 no-call 已被開盤第一輪推翻，但這不等於可以立刻擴張；先尊重它是 jump-up 後的保守偏多，不是可追價攻擊盤。",
+      "price_target_value": null,
+      "price_target_label": "N/A（以守住開盤區與承接延續為主）",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A",
+      "take_profit_value": null,
+      "take_profit_label": "N/A",
+      "position_size_pct": 98,
+      "position_size_label": "98% 現金保留",
+      "rationale": "主導消息仍有效，但優勢來自 headline 與開盤同步確認，不是已經進入穩定可擴張的順風段；高現金仍是最合理主體。",
+      "conditions": [
+        "只要 0050/2330 仍在開盤區與昨收上方附近整理，就維持高現金優先",
+        "只有在 0050 持續守住開盤區且承接乾淨時，才釋出最多 2% 極小額度",
+        "若指數或核心權值跌回開盤區下方、買盤轉弱，直接回到 100% 現金觀察"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "action": "保留唯一可被允許的極小 starter 想像，但前提必須是續守開盤區、昨收上方且看到真實承接；不接受跳空後第一段已經拉開還去追。",
+      "price_target_value": null,
+      "price_target_label": "先看能否續守開盤區與昨收上方，不追價",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動 2% 以內 starter，以失守開盤區或承接明顯轉弱作退出依據",
+      "take_profit_value": null,
+      "take_profit_label": "不設擴張型目標，先看是否維持乾淨承接",
+      "position_size_pct": 2,
+      "position_size_label": "最多 2% 極小 starter 上限",
+      "rationale": "thesis_check 顯示主導消息仍 intact，且 0050 是最穩定的大盤代理；因此可留下極小驗證倉空間，但仍禁止追價。",
+      "conditions": [
+        "需持續守住開盤區、昨收上方且買盤沒有快速抽掉",
+        "若只是價格懸在高檔、沒有承接延續，不啟動 starter",
+        "一旦 2330 與指數同步轉弱或 0050 跌回開盤區下，維持 0% 觀察"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "direction": "watch",
+      "action": "先當最核心同步驗證器；雖然開盤第一輪偏強，但現階段不把它升級成直接配置標的，避免把消息 intact 誤讀成可立刻擴大進攻。",
+      "price_target_value": null,
+      "price_target_label": "先看 2,015~2,025 一帶是否持續承接",
+      "stop_loss_value": null,
+      "stop_loss_label": "本版預設不啟動試單",
+      "take_profit_value": null,
+      "take_profit_label": "以驗證主線延續為主，不預設追價目標",
+      "position_size_pct": 0,
+      "position_size_label": "預設 0%，先當確認器",
+      "rationale": "2330 已給出同步偏多訊號，但因整體框架仍屬保守偏多與 headline 驅動，所以更適合拿來確認，而不是急著配置。",
+      "conditions": [
+        "若持續守在 2,015~2,025 一帶且買盤延續，可視為主線仍有效",
+        "若只是開高後量縮硬撐，不因表面紅盤放寬配置",
+        "若跌回開盤強勢區下緣，優先解讀為 starter 條件失效"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "direction": "watch",
+      "action": "維持備案，不主動啟動。driver 仍 intact 且反向 ETF 開盤走弱，現階段不支持把它升級成主腳本。",
+      "price_target_value": null,
+      "price_target_label": "非主線；只在 driver 明顯失靈時再看",
+      "stop_loss_value": null,
+      "stop_loss_label": "若要啟動避險，依當下失效結構另定",
+      "take_profit_value": null,
+      "take_profit_label": "用途限低曝險風險管理",
+      "position_size_pct": 0,
+      "position_size_label": "預設 0%，不主動啟動",
+      "rationale": "主導消息尚未被推翻、價格結構也沒有太差，因此反向 ETF 仍只保留風險備案功能。",
+      "conditions": [
+        "只有在 0050、2330、指數同步跌回開盤承接區下方時才重評",
+        "若只是高檔整理或漲幅收斂，不因雜訊追空",
+        "用途限風險管理，不作主線押注"
+      ],
+      "status": "active"
+    }
+  ],
+  "paper_trade": {
+    "virtual_capital": 1000000,
+    "available_cash": 1000000,
+    "today_pnl": 0,
+    "today_pnl_pct": 0.0,
+    "total_pnl": 0,
+    "total_pnl_pct": 0.0,
+    "win_rate": 0.0,
+    "open_positions": [],
+    "notes": "paper trade 盤中版從原本 disabled/no-call 修正為：若 0050 持續守住開盤區與昨收上方、且承接乾淨，可允許最多 2% 的極小 starter 模擬倉；除此之外維持空倉。主因是 thesis_check 已把 driver 記為 intact，但仍屬 headline-driven intact，所以只給驗證倉，不給追價或擴張。"
+  },
+  "max_exposure": {
+    "pct": 2,
+    "label": "總曝險上限 2%，僅限 0050 守住開盤區且承接乾淨時的極小 starter",
+    "stance": "消息仍有效、價格結構尚可，所以不必維持完全 no-call；但因優勢仍偏 headline-driven 且盤前正式 framework 缺席，實際上仍以 0%~2% 的驗證倉想像為上限，不追價。"
+  },
+  "max_exposure_pct": 2,
+  "max_exposure_label": "0%~2% 上限（僅限 0050 的極小 starter，禁止追價）",
+  "notes": "這份盤中版 action_plan 依據 2026-04-14 09:09 thesis_check 修正。原本盤前 daily_thesis / action_plan 因同日 market_context 缺失而停在 error/no-call，但開盤第一輪價格已顯示市場實際採納的 driver 為 intact：TAIEX、0050、2330 同步轉強、00632R 轉弱，代表談判期待與法說前 AI / 台積電需求想像暫時仍在支撐 risk-on。操作因此從『完全不做結論』上修為『保守偏多、只留超小 starter 空間』；同時明確註記 driver_based_action_hint 為消息仍有效而非只剩價格硬撐。因這股強勢仍偏 headline-driven intact、非低波動穩態，所以總曝險仍壓在 2% 以內，且只允許 0050 的極小條件式 starter，不新增別的交易、不追價，一旦跌回開盤承接區就退回純觀察。"
+}

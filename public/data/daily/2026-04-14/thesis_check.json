@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.thesis_check",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-14T09:09:45+08:00",
+    "generated_at_label": "04/14 09:09",
+    "last_successful_run": "2026-04-14T09:09:45+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "same_day_daily_thesis_and_action_plan_were_in_error_state_before_open",
+      "today_collection_market_context_missing_so_original_preopen_framework_was_not_available",
+      "first_opening_window_snapshot_only",
+      "official_twse_mis_used_for_index_and_proxy_quotes",
+      "driver_continuity_check_uses_limited_external_headlines_because_same_day_market_driver_summary_was_unavailable",
+      "do_not_overreact_to_single_early_bar",
+      "official_intraday_breadth_fx_yield_and_institutional_flow_not_available"
+    ],
+    "fallback_used": false
+  },
+  "entries": [
+    {
+      "id": "check_001",
+      "timestamp": "09:09",
+      "status": "partial",
+      "trigger": "開盤後第一輪 thesis check：今天盤前 daily_thesis / action_plan 因同日 collection market_context 缺失而未建立正式偏多/偏空/觀望框架，因此本輪改為用開盤第一手盤中證據確認是否需要從 no-call/insufficient-data 狀態修正方向，並額外判斷開盤前市場實際採納的主導消息到開盤後是否仍成立。",
+      "original_thesis": "今日正式盤前 thesis 並未成立：daily_thesis.json 與 action_plan.json 都明確停在 error/no_call，原因是缺少同日 market_context，因此不能把任何固定題材當成既定盤前框架。換句話說，原始狀態不是偏多、偏空或觀望的明確結論，而是『同日 source 缺失，所以不硬做結論』。",
+      "revised_thesis": "到 09:09 左右，雖然盤前正式框架缺席，但開盤第一輪價格本身已經明確偏向 risk-on，而不是延續 no-call 狀態。TWSE MIS 顯示加權指數 36,114.74，較昨收 35,457.29 上漲約 657.45 點、+1.85%，開盤 35,584.09 後一度上摸 36,136.28；0050 開 81.75、盤中高 82.40，明顯高於昨收 80.60；2330 開 2,015、盤中高 2,025、最佳買賣約 2,015/2,020，也高於昨收 1,990；反向 ETF 00632R 開 13.01、低 12.97，低於昨收 13.25。這代表市場在開盤第一輪並沒有把地緣與油價風險解讀成新的 risk-off 衝擊，反而把 overnight 的談判期待、戰事衝擊鈍化，以及法說前 AI / 台積電期待，轉成大型電子與 ETF 的同步承接。較合理的修正因此是：把今天從『正式盤前框架缺失、只能 no-call』上修為『開盤第一輪偏多成立，但屬跳空後初段確認，不追價，等待 09:20~09:40 是否能守住開盤區與權值承接』。",
+      "change_type": "opening_gap_up_establishes_bullish_bias_despite_missing_preopen_framework",
+      "risk_level_change": -1,
+      "confidence_change": 0.35,
+      "updated_direction": "bullish",
+      "driver_status": "intact",
+      "driver_implication": "雖然同日 daily_thesis 的 market_driver_summary 本身是 N/A，無法對『V2 正式盤前 driver』做嚴格 continuity check，但從開盤前後可取得的外部脈絡與價格反應看，市場實際採納的 driver 是：川普釋出伊朗仍有協議空間的訊號，使戰事升級恐慌暫時沒有再惡化，配合法說前 AI / 台積電需求期待，帶動資金回到大型電子與大盤 ETF。開盤後 TAIEX、0050、2330 同步跳空轉強，00632R 走弱，表示這條 driver 在開盤第一輪仍是 intact，而不是 weakened 或 reversed；但它仍偏 headline-driven intact，不是低波動穩態，若後續油價/戰事 headline 再惡化，回吐速度可能很快，因此操作上只能接受『不翻空、但不追高』，不能把它誤讀成全天無條件順風盤。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "從純 no-call 轉成可接受偏多框架，但高現金仍應保留；這一輪強在跳空，不代表可以立刻擴張曝險。"
+        },
+        {
+          "ticker": "0050",
+          "action": "已具備偏多驗證資格，但只適合觀察是否持續守在開盤區與昨收上方，不追第一段跳空。"
+        },
+        {
+          "ticker": "2330",
+          "action": "權王已給出偏多同步訊號；接下來重點不是開得強，而是能否在 2,015~2,025 一帶持續承接，避免變成只開高不續強。"
+        },
+        {
+          "ticker": "00632R",
+          "action": "開盤第一輪不支持把反向 ETF 升級成主腳本，仍只保留風險備案角色。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_level": 36114.74,
+        "taiex_change_points": 657.45,
+        "taiex_change_pct": 1.85,
+        "taiex_open": 35584.09,
+        "taiex_intraday_high": 36136.28,
+        "taiex_intraday_low": 35584.09,
+        "taiex_prev_close": 35457.29,
+        "taiex_volume_est": 2013756,
+        "tsmc_open": 2015,
+        "tsmc_intraday_high": 2025,
+        "tsmc_intraday_low": 2010,
+        "tsmc_prev_close": 1990,
+        "tsmc_last": null,
+        "tsmc_bid": 2015,
+        "tsmc_ask": 2020,
+        "0050_open": 81.75,
+        "0050_intraday_high": 82.4,
+        "0050_intraday_low": 81.75,
+        "0050_prev_close": 80.6,
+        "0050_last": null,
+        "0050_bid": 82.35,
+        "0050_ask": 82.4,
+        "00632R_open": 13.01,
+        "00632R_intraday_high": 13.03,
+        "00632R_intraday_low": 12.97,
+        "00632R_prev_close": 13.25,
+        "00632R_last": null,
+        "00632R_bid": 12.97,
+        "00632R_ask": 12.98
+      },
+      "notes": "盤中快照採 TWSE MIS 2026/04/14 09:09:34~09:09:45：TAIEX 36,114.74（昨收 35,457.29、開 35,584.09、高 36,136.28、低 35,584.09、量欄位 2,013,756）、2330 開 2,015 / 高 2,025 / 低 2,010 / 最佳買賣約 2,015-2,020 / 昨收 1,990、0050 開 81.75 / 高 82.40 / 低 81.75 / 最佳買賣約 82.35-82.40 / 昨收 80.60、00632R 開 13.01 / 高 13.03 / 低 12.97 / 最佳買賣約 12.97-12.98 / 昨收 13.25。driver continuity 因今日 same-day market_context 與 daily_thesis 不可用，改以可讀外部盤前脈絡輔助：Yahoo 股市 / 中央社可得文字顯示川普稱伊朗仍期盼達成協議、帶動美股與台指期夜盤轉強，且本週市場焦點仍在台積電法說與 AI 需求延續；CNBC 4/13 可讀內容則指出，雖然荷莫茲封鎖與油價上衝仍在，但市場對地緣 shock 的反應已明顯鈍化、愈來愈傾向把 headline 視為可被定價的波動，而非持續擴大的恐慌。故本輪把開盤實際 driver 記為 intact，但同時註記其本質仍偏 headline-driven、脆弱，不宜因一輪跳空就過度放大成全天單邊結論。"
+    }
+  ]
+}
