@@ -1,0 +1,63 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.morning_view",
+    "data_type": "preopen",
+    "status": "error",
+    "generated_at_iso": "2026-04-21T18:51:00+08:00",
+    "generated_at_label": "04/21 18:51",
+    "last_successful_run": null,
+    "source_freshness": "mixed",
+    "warnings": [
+      "publish_layer_only_no_new_analysis",
+      "daily_thesis_status_error",
+      "action_plan_status_error",
+      "news_digest_status_missing",
+      "morning_view_reflects_actual_missing_inputs_without_backfill"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-21",
+  "page": "morning",
+  "headline": "今日 market_context 與 news_digest 都缺失，daily_thesis 停止生成，不硬補盤前主線結論",
+  "hero": {
+    "direction_bias": "unknown",
+    "trading_style": "no_call",
+    "confidence": 0,
+    "risk_level": null
+  },
+  "sections": {
+    "core_thesis": "找不到 /public/data/collection/2026-04-21/market_context.json 與 /public/data/news/2026-04-21/news_digest.json，因此今天的 daily_thesis 無法建立正式盤前框架。依規則，當上游 source 缺失時必須停止，不得用舊的 market_context、舊新聞或既有常見題材硬補今天的主導消息結論。最近可得 close_review（2026-04-13）僅能作為 guardrail，且其 analysis_layer_status=busy，所以今天即使之後 source 補齊，也應主動收斂成單一核心 driver，不擴寫多條平行敘事。",
+    "market_context": {
+      "index_trend": "今日 publish layer 未補寫市場結構；僅沿用 daily_thesis 是否可用的事實狀態。",
+      "volume_status": "缺少可用 publish-only 補充來源，不額外推論量價。",
+      "foreign_capital": "publish layer 不重抓法人資料。",
+      "institutional_summary": "publish layer 不重做籌碼解讀。"
+    },
+    "key_risks": [
+      "若在缺少今日 market_context 與 news_digest 的情況下硬做 thesis，容易把舊 driver 或常見題材誤當成今天主導消息。",
+      "最近可得 close_review（2026-04-13）顯示 analysis layer 為 busy，代表即使之後 source 補齊，也應主動收斂多線敘事與觀察標的數量。",
+      "tmp guardrail 檔缺失，無法取得更新版分析層負載訊號，因此不能假設今天分析層已恢復正常。"
+    ],
+    "support_levels": [],
+    "resistance_levels": [],
+    "watchlist": [],
+    "prohibitions": [
+      "禁止在今日 market_context / news_digest 缺失時，用昨日資料、歷史 close_review、或常見消息模板硬推偏多 / 偏空框架。",
+      "禁止把 close_review guardrail 反過來當成今天主導消息來源；它只能用來提醒收斂，不是用來補今天結論。",
+      "禁止在這一層偷做 action_plan、曝險比例或 publish-layer 判斷。"
+    ],
+    "cautions": [
+      "待今日 news_digest 與 market_context 補齊後，再重新生成正式 daily_thesis。",
+      "若後續 source 補齊，因最新可得 close_review 為 busy，應把主線敘事壓回單一核心 driver，避免同時展開太多觀察支線。",
+      "若補齊後主導消息只是已反映或位置差，需明確寫出不追價原因，而不是因為 source 追回就自動轉成進攻敘事。",
+      "今日 news_digest 缺失；如後續補檔，應由上游 job 重建 analysis artifacts，再由 publish layer 重發。"
+    ],
+    "notes": "Publish layer 僅整理今日既有 daily_thesis / action_plan / news_digest 狀態，不重做分析與新聞蒐集。 今日 news_digest.json 缺失，因此 morning_view 與 dashboard_summary 只能反映缺檔與 no-call / error 狀態。 daily_thesis.json 本身為 error；publish layer 保留其 headline 與風險說明，不假裝盤前框架已建立。 action_plan.json 本身為 error；publish layer 僅轉譯其 0% 曝險 / no-call 結果，不新增交易腳本。"
+  },
+  "notes": [
+    "Morning page prefers this publish-layer view when latest.published_views.morning_view exists.",
+    "This publish run preserves error/missing truth instead of backfilling analysis."
+  ]
+}

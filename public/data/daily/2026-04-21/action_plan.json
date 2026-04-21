@@ -1,0 +1,139 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.action_plan",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T20:43:00+08:00",
+    "generated_at_label": "04/21 20:43",
+    "last_successful_run": "2026-04-21T20:43:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "translated_from_same_day_daily_thesis_and_partial_news_digest",
+      "dominant_driver_is_mixed_not_single_headline",
+      "allow_only_tiny_large_cap_or_etf_starter_if_driver_continues_without_bad_opening_position",
+      "do_not_chase_if_ai_support_is_already_priced_without_new_driver_confirmation",
+      "guardrail_convergence_applied_due_to_recent_busy_assessment_and_missing_tmp_analysis_status"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-21",
+  "generated_at_iso": "2026-04-21T20:43:00+08:00",
+  "generated_at_label": "20:43",
+  "version": 2,
+  "overall_stance": "今天的 action plan 轉成『mixed 偏支撐，但操作必須比 thesis 更保守』。AI 風險偏好仍是最有利於大型權值、半導體與大盤 ETF 的那一側，所以不必硬翻成偏空；但同一時間伊朗/油價與 Fed 利率預期仍在壓估值，而且今天現貨已經先走出明顯反彈，代表明天若沒有新 driver 收斂、或開盤位置已經不便宜，就不能把這條主線直接翻成可追價的進攻盤。再加上最近可得 analysis layer guardrail 偏 busy，且 tmp/v2-analysis-layer-status-latest.json 缺失，這一層主動再收斂：主體維持高現金，只保留極小、條件式的大型權值 / ETF starter 想像。",
+  "driver_based_action_hint": {
+    "driver_status": "mixed_supportive_but_already_partly_priced_and_guardrailed",
+    "driver_implication": "這不是單一利多 driver，而是『AI 支撐仍在』與『地緣/油價/Fed 壓力仍在』並存的 mixed 結構。可用的操作含義不是全面 risk-on，而是：如果隔日 AI 支撐延續，且資金仍願意留在大型電子、半導體與 ETF，上述族群可以成為唯一允許保留想像的低爆炸半徑入口；但若只是延續今天已反映的反彈、沒有新消息收斂，則應把它視為風險報酬偏差的延長，而不是新的進攻起點。",
+    "preferred_groups": [
+      "現金",
+      "大型權值 / 大盤 ETF（0050 類型，僅限極小條件式 starter）",
+      "2330 / 半導體核心權值（優先當同步確認器，不急著配置）",
+      "AI 供應鏈主流族群（只作觀察，不做追價擴張）"
+    ],
+    "news_links": [
+      {
+        "label": "Reuters: Stocks rebound on AI boost as Iran talks, Warsh hearing in focus",
+        "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-04-21/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "Reuters: Marvell shares gain on report of deal talks with Google to develop two AI chips",
+        "url": "https://www.reuters.com/business/marvell-shares-gain-report-deal-talks-with-google-develop-two-ai-chips-2026-04-20/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "Internal news digest",
+        "url": "/data/news/2026-04-21/news_digest.json",
+        "source_name": "V2 News Digest"
+      }
+    ],
+    "why_not_chase_or_why_starter_allowed": "允許 starter 的理由，只能是 AI 支撐仍有延續性、且最可能先反映在大型權值 / ETF；但因今天台股現貨已先出現明顯反彈、上游 driver 又不是單一乾淨利多，再加上分析層 guardrail 偏忙，這個 starter 只能小到接近驗證倉，而且前提必須是隔日開盤沒有高開過頭、沒有只剩價格在高位而缺乏新 driver。若只是『今天已經漲了、明天看起來還可能漲』，那不叫可做，反而是最該清楚寫明不追價的場景。",
+    "risk_if_wrong": "若把這種 mixed 偏支撐結構誤讀成可全面進攻，最容易發生的錯誤是：在大型權值 / ETF 已先反彈後又去追價，結果隔日只要伊朗/油價 headline 反覆、Fed 利率預期再施壓，或 AI 題材沒有帶來新的收斂催化，盤面就可能從『支撐』退回『已反映』。在 analysis layer 最近偏 busy、且 tmp guardrail 缺失的情況下，錯了不只容易虧損，也容易暴露在其實沒有足夠乾淨訊號的交易裡，所以總曝險主動壓到只剩 1%。"
+  },
+  "actions": [
+    {
+      "ticker": "CASH",
+      "name": "現金 / 保留主動性",
+      "direction": "hold",
+      "action": "維持絕對主體。明天的基準不是猜 AI 會不會再帶一次，而是先承認今天的反彈與 mixed driver 讓追價風險偏高；沒有更乾淨的新 driver 前，高現金優先。",
+      "price_target_value": null,
+      "price_target_label": "N/A",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A",
+      "take_profit_value": null,
+      "take_profit_label": "N/A",
+      "position_size_pct": 99,
+      "position_size_label": "99% 現金保留",
+      "rationale": "AI 支撐雖在，但同時受地緣、油價與利率牽制，且今日反彈已先發生；配合分析層 guardrail 收斂後，最合理主體仍是高現金。",
+      "conditions": [
+        "若隔日沒有新的單一 driver 收斂，維持高現金不動",
+        "若大型權值 / ETF 一開就落在明顯不利追價的位置，不把強勢表象翻成進攻理由",
+        "若後續確認 AI 支撐延續且開盤位置合理，再只釋出極小驗證額度"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "action": "保留唯一可被允許的極小 starter 想像，但必須同時滿足：AI 支撐延續、開盤位置沒有明顯過熱、且看到大型電子與 ETF 的真實承接；否則維持 0%。",
+      "price_target_value": null,
+      "price_target_label": "只在開盤位置合理且承接延續時觀察，不追價",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動 1% 驗證倉，以開盤承接失敗或主線轉弱作退出依據",
+      "take_profit_value": null,
+      "take_profit_label": "不設擴張目標，先看 driver 是否真的延續",
+      "position_size_pct": 1,
+      "position_size_label": "最多 1% 極小 starter 上限",
+      "rationale": "若 mixed 結構仍往支撐端傾斜，0050 是最能低爆炸半徑承接大型權值 / ETF 想像的入口；但今天已先反彈、而且 guardrail 偏保守，所以只能留 1% 驗證空間。",
+      "conditions": [
+        "需有 AI 支撐延續與大型電子同步承接，不接受只剩價格高掛",
+        "若開盤就是高位延長、風險報酬差，不啟動 starter",
+        "若伊朗/油價/Fed headline 使主線重新偏向壓力端，維持 0% 觀察"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "direction": "watch",
+      "action": "優先作為同步確認器，而不是直接配置標的。只有當它和 ETF / 指數一起顯示 AI 支撐仍能承接，0050 的極小 starter 想像才比較站得住。",
+      "price_target_value": null,
+      "price_target_label": "先看是否與 ETF / 指數同步承接，不預設追價帶",
+      "stop_loss_value": null,
+      "stop_loss_label": "本版預設不啟動試單",
+      "take_profit_value": null,
+      "take_profit_label": "以確認主線為主，不設擴張目標",
+      "position_size_pct": 0,
+      "position_size_label": "預設 0%，先當確認器",
+      "rationale": "台積電是 AI 與大型權值主線最關鍵的同步驗證點；在 mixed 結構與 guardrail 收斂下，它更適合拿來確認，而不是急著配置。",
+      "conditions": [
+        "若無法與 ETF / 指數同步承接，就不放寬任何 starter 想像",
+        "即使紅盤，也不能只看價格表面忽略主線是否已有新催化",
+        "未出現乾淨同步前，維持純觀察"
+      ],
+      "status": "active"
+    }
+  ],
+  "paper_trade": {
+    "virtual_capital": 1000000,
+    "available_cash": 1000000,
+    "today_pnl": 0,
+    "today_pnl_pct": 0,
+    "total_pnl": 0,
+    "total_pnl_pct": 0,
+    "win_rate": 0,
+    "open_positions": [],
+    "notes": "paper trade 預設維持空倉。只有在隔日 AI 支撐延續、0050 開盤位置合理、且大型電子/台積電同步承接時，才保留最多 1% 的極小驗證倉想像；否則不為了有動作而硬開模擬倉。這個收斂幅度比 thesis 更保守，原因是 today driver mixed、今日現貨已先反彈、且最近可得 analysis layer guardrail 偏 busy 並缺少 tmp 即時狀態檔。"
+  },
+  "max_exposure": {
+    "pct": 1,
+    "label": "總曝險上限 1%，僅限大型權值 / ETF 的極小條件式 starter",
+    "stance": "主導消息仍偏向 AI 支撐的大型權值 / ETF 主線，但不是單一乾淨利多，且今日反彈已先發生；再加上 analysis layer guardrail 收斂，因此實際操作以 0% 為預設、1% 為極限，只保留驗證空間，不追價。"
+  },
+  "max_exposure_pct": 1,
+  "max_exposure_label": "0%~1% 上限（僅限大型權值 / ETF 的極小 starter，禁止追價）",
+  "notes": "本次 action_plan 僅把 2026-04-21 的 daily_thesis 與同日 news_digest 轉譯成操作層語言，不重做 thesis。核心轉譯是：mixed driver 的偏支撐面仍落在 AI、大型電子、半導體與大盤 ETF，但同時存在伊朗/油價與 Fed 利率預期壓力，而且今天台股現貨已先反彈，因此不能把『可保留小幅先手想像』擴大翻譯成『可以追價』。此外，daily_thesis 已明確提醒最近可得 analysis layer assessment 為 busy，且 tmp/v2-analysis-layer-status-latest.json 缺失，所以本層主動再收斂一格：高現金為主，預設 0% 曝險，只在 driver 延續且開盤位置合理時，保留 0050 類型大型權值 / ETF 的 1% 極小 starter。"
+}

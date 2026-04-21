@@ -1,0 +1,123 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.daily_thesis",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T18:47:00+08:00",
+    "generated_at_label": "04/21 18:47",
+    "last_successful_run": "2026-04-21T18:47:00+08:00",
+    "source_freshness": "mixed",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "market_context_available_but_partial",
+      "news_digest_missing_for_today",
+      "daily_thesis_built_from_market_context_background_only",
+      "no_old_news_backfilled_into_today_driver",
+      "guardrail_convergence_kept_due_to_latest_available_close_review_busy"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-22",
+  "generated_at_iso": "2026-04-21T18:47:00+08:00",
+  "generated_at_label": "18:47",
+  "market_status": "pre_market",
+  "risk_level": 3,
+  "direction_bias": "mixed",
+  "confidence": 0.29,
+  "headline": "今日無法確認單一新聞主線；可用框架僅剩昨收科技權值與法人買盤形成的偏支撐背景，但因 news_digest 缺失不追價",
+  "core_thesis": "今天主導台股盤前框架的正式『主導消息』其實無法被誠實確認，因為 /public/data/news/2026-04-22/news_digest.json 缺失；依規則，這一層不能拿舊新聞或常見題材硬補今天的主線。現階段唯一可用且來自今日 upstream 的框架，是 market_context 已經明確提供的背景：2026-04-21 台股現貨收盤大漲 1.75%，電子、半導體、電腦週邊、電子零組件等科技權值族群領漲，且外資買超逾 600 億、投信買超逾 82 億，顯示最近一個官方交易日的本地風險偏好與大型電子承接偏強。這代表今天盤前較合理的定義，不是『有新的明確利多 headline 可直接進攻』，而是『大型權值 / 電子 ETF 仍有支撐背景，可保留極小先手想像，但不能把昨收強勢直接外推成今天可追價的正式主線』。若開盤後只是延續已反映的位置優勢、沒有新的上游消息驗證，那麼這條框架就只能停留在支撐背景，而不是升級成高信心偏多結論。另因最新可得 close_review guardrail 顯示 analysis layer 為 busy，今天敘事主動收斂為單一核心：先看大型電子與大盤 ETF 是否延續承接，不展開多條平行故事。",
+  "core_thesis_short": "正式新聞主線缺失；目前只能把昨收科技權值領漲＋法人強買盤視為偏支撐背景，對大型權值 / ETF 有利，但屬低信心、不追價，且因 guardrail 為 busy 主動收斂。",
+  "market_driver_summary": {
+    "summary": "今天無法把某一則新消息認定為主導台股盤前框架，因為 target-date news_digest 缺失；現階段唯一可用的上游主線，是 last-known TWSE 現貨與法人流向所呈現的『科技權值領漲＋大額法人買盤』背景。",
+    "why_it_matters": "這個背景對大型電子權值、半導體、AI 硬體鏈與高電子權重大盤 ETF 有機械式支撐意義，也說明若明天市場續強，最可能先反映在大型權值 / ETF，而不是所有族群同步普漲。但因缺少當日 news digest，不能把這個背景誤寫成今天已被新催化再度點火。",
+    "driver_status": "partial_background_only",
+    "bias": "supportive_background_not_fresh_catalyst",
+    "likely_effect_on_tw_types": [
+      "大型電子權值",
+      "半導體權值與供應鏈",
+      "AI 硬體 / 伺服器 / 電子零組件",
+      "高電子權重的大盤 ETF",
+      "相對不利於金融、防禦與能源相關落後族群"
+    ],
+    "source_guardrail": {
+      "market_context": "partial_available",
+      "news_digest": "missing",
+      "close_review": "latest_available_2026-04-13_busy",
+      "analysis_layer_status_tmp": "missing"
+    }
+  },
+  "market_context": {
+    "status": "partial_available",
+    "index_trend": "最近已知官方現貨為 2026-04-21，TAIEX 收 37605.11、單日 +1.75%，屬明顯強彈。",
+    "leadership": "電子 +2.13%、半導體 +1.94%、電腦及週邊設備 +2.70%、電子零組件 +3.80%，顯示最近一個官方交易日由科技權值與電子鏈主導。",
+    "foreign_capital": "外資最近已知買超 60,153,727,909 元，投信買超 8,216,555,773 元，三大法人合計買超 67,656,870,141 元，屬明顯偏正向的籌碼背景。",
+    "institutional_summary": "最近已知法人流向與指數方向同向，有利把大型權值 / ETF 視為第一層觀察代理，但這仍是背景，不等於今天已有新催化。"
+  },
+  "news_digest": {
+    "status": "unavailable",
+    "reason": "missing_file",
+    "expected_path": "stock-dashboard-v2/public/data/news/2026-04-22/news_digest.json"
+  },
+  "key_risks": [
+    "今天最大的風險不是看錯多空，而是在缺少 target-date news digest 的情況下，把昨收強勢背景誤當成今天的正式主導消息。",
+    "最近一個官方交易日漲幅已大，若今天只是位置延續而非新催化接棒，追價的風險報酬會很差。",
+    "market_context 本身已標記為 partial，且缺少 FX、殖利率與美股隔夜結構化快照，跨市場風險定價不完整。",
+    "若 overnight 真正主導風險偏好的消息與昨收台股背景不同，今天盤前框架可能快速失效。",
+    "最新可得 close_review guardrail 為 busy，代表不宜同時展開太多觀察支線或把同一件事換句話反覆敘述。"
+  ],
+  "support_levels": [],
+  "resistance_levels": [],
+  "watchlist": [
+    {
+      "ticker": "0050",
+      "name": "元大台灣50",
+      "direction": "watch",
+      "entry_condition": "若開盤後承接穩定、不是單純高開後迅速轉弱，可作為大型權值 / ETF 支撐背景是否延續的第一代理；若只是昨收強勢慣性延伸但沒有新訊號，不追。",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本層不給執行價）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本層不給執行價）",
+      "rationale": "若今天的背景支撐有落地，最容易先在高權重大盤 ETF 上看到。",
+      "priority": "high"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "direction": "watch",
+      "entry_condition": "觀察是否與指數同步延續承接；若指數表面偏強但 2330 沒有跟上，代表今天更可能只是背景支撐而非主線再加速。",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本層不給執行價）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本層不給執行價）",
+      "rationale": "大型半導體權值是『科技權值領漲背景』是否真的能延續到隔日的關鍵驗證器。",
+      "priority": "high"
+    },
+    {
+      "ticker": "00632R",
+      "name": "元大台灣50反1",
+      "direction": "watch",
+      "entry_condition": "只有在大型權值 / ETF 承接失敗，或盤前背景被新的負面消息推翻時，才保留避險觀察意義。",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A（本層不給執行價）",
+      "take_profit_value": null,
+      "take_profit_label": "N/A（本層不給執行價）",
+      "rationale": "今天基準情境不是它，但它能當作支撐背景失效時的反向驗證。",
+      "priority": "medium"
+    }
+  ],
+  "prohibitions": [
+    "禁止把 2026-04-21 的強勢收盤直接包裝成 2026-04-22 已被新消息確認的主導 driver。",
+    "禁止在 news_digest 缺失時，用舊新聞、固定 AI 題材、或事後補敘事方式硬寫今天主線。",
+    "禁止把 close_review guardrail 反過來當成今天的消息來源；它只能用來提醒收斂，不是用來補 driver。",
+    "禁止在這一層直接決定實際曝險比例、action_plan 或 publish 層結論。"
+  ],
+  "cautions": [
+    "今天這條主線屬偏支撐，不是高信心新催化；若只是已反映或位置差，應清楚定義為不追價。",
+    "若開盤後大型權值 / ETF 能平穩承接，thesis 可保留極小先手想像；但那仍需後續 action layer 決定，不能在這一層偷做執行結論。",
+    "若之後 target-date news_digest 補齊，應優先檢查是否存在與昨收背景不同的真正主導消息，再決定是否重寫 thesis。",
+    "因最新可得 guardrail 為 busy，今天只保留單一核心觀察：大型權值與 ETF 是否延續承接；不擴張到過多族群敘事。"
+  ],
+  "trading_style": "低信心偏支撐、權值 / ETF 優先觀察、可保留極小先手想像、但不追價",
+  "notes": "本次 run 依規則僅生成 daily_thesis.json。today news_digest 缺失，因此沒有把舊消息硬補成今天的正式 driver；結論僅限於 market_context 可證實的背景支撐。另因最新可得 close_review 顯示 analysis_layer_status=busy，今天主動收斂為單一核心框架。"
+}

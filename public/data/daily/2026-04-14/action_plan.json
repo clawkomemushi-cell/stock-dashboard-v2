@@ -35,6 +35,23 @@
       "2330（先當同步驗證器，不急著配置）",
       "大型電子/大盤 ETF（只作結構觀察，不追價）"
     ],
+    "news_links": [
+      {
+        "label": "Reuters：中東 / 油價與風險資產反應",
+        "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-04-14/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "Reuters：TSMC / AI 需求延續",
+        "url": "https://www.reuters.com/world/asia-pacific/tsmc-likely-book-fourth-straight-quarter-record-profit-on-insatiable-ai-demand-2026-04-13/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "V2 今日消息頁：查看完整消息列表",
+        "url": "/#/news",
+        "source_name": "V2 News Digest"
+      }
+    ],
     "why_not_chase_or_why_starter_allowed": "本輪 thesis_check 已把 driver 記為 intact，表示市場實際採納的消息尚未被推翻，且開盤第一輪價格同步確認，因此可以容許非常小的 starter position；但因這股強勢主要來自跳空後 headline 驅動，若後續沒有延續承接，回吐可能很快，所以只能小到接近驗證倉，不能追價、不能擴張。",
     "risk_if_wrong": "若把這種 headline-driven intact 誤判成全天穩定 risk-on，最容易在跳空後追進，接著遇到地緣/油價 headline 反覆或 2330、0050 回吐時被動承受快速收斂；因此把總曝險壓在 2% 以內，錯了就直接退回 0% 觀察。"
   },

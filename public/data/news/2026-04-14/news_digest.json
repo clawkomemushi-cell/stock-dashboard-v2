@@ -1,0 +1,205 @@
+{
+  "_meta": {
+    "schema_version": "1.2",
+    "job_name": "openclaw.news_digest",
+    "data_type": "news",
+    "status": "partial",
+    "generated_at_iso": "2026-04-14T07:05:00+08:00",
+    "generated_at_label": "04/14 07:05",
+    "last_successful_run": "2026-04-14T07:05:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "round1_manual_seed_sample",
+      "prototype_news_page_before_full_automation"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-14",
+  "generated_at_iso": "2026-04-14T07:05:00+08:00",
+  "generated_at_label": "07:05",
+  "primary_driver": {
+    "title": "中東談判希望與油價回落，短線支撐風險偏好回升",
+    "summary": "市場在消化美伊談判可能帶來的停火 / 降溫希望，油價回落使原本壓在成長股與大盤風險偏好上的壓力稍微緩解。對台股來說，這比較容易先反映在大盤 ETF、權值電子與 AI 相關權值股。",
+    "why_it_matters": "這類 driver 不是台股本地事件，但它會直接影響全球風險資產定價。若油價與戰事風險壓力緩和，台股偏向先受惠於大型權值與 ETF 的 risk-on 回補；反過來說，若談判破局、油價反彈，這條支撐可能很快失效。",
+    "status": "ongoing",
+    "bias": "supportive",
+    "affected_groups": [
+      "大盤 ETF",
+      "大型電子",
+      "AI 鏈權值",
+      "反向 ETF"
+    ],
+    "confidence": "medium"
+  },
+  "secondary_drivers": [
+    {
+      "title": "TSMC / AI 需求仍強，權值電子有基本面支撐",
+      "summary": "AI 晶片需求與 TSMC 財報預期仍是台股權值核心敘事之一，不是單日 headline 而已。",
+      "why_it_matters": "這讓台股偏多時最容易先由 2330、0050 這類大型權值 / ETF 反映，而不是所有中小型題材股一起漲。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "2330",
+        "0050",
+        "大型電子",
+        "AI 供應鏈"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "美債殖利率仍偏高，代表估值壓力沒有完全解除",
+      "summary": "即使短線風險偏好回升，利率與殖利率背景仍會限制追價空間。",
+      "why_it_matters": "這表示偏多不等於可以無條件追高，尤其高估值成長股仍容易因利率預期變化而回吐。",
+      "status": "ongoing",
+      "bias": "mixed",
+      "affected_groups": [
+        "高估值成長股",
+        "AI 題材股",
+        "NASDAQ 連動族群"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "news_items": [
+    {
+      "id": "news-2026-04-14-iran-risk-off-rally",
+      "title": "Wall Street edges up, oil tumbles on hopes of off-ramp from U.S.-Iran war",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-04-14/",
+      "published_at_iso": "2026-04-14T00:00:00Z",
+      "published_at_label": "04/14 Reuters",
+      "summary": "市場因美伊衝突可能出現降溫出口而回到風險資產，油價回落、股市反彈。",
+      "why_it_matters": "若這條線延續，台股開盤最可能先表現在權值、ETF 與 AI 權值；若只是短暫樂觀，則容易變成跳空後回吐。",
+      "affected_groups": [
+        "0050",
+        "2330",
+        "大型電子",
+        "反向 ETF"
+      ],
+      "related_tickers": [
+        "0050",
+        "2330",
+        "00632R"
+      ],
+      "driver_tag": "中東 / 油價 / 風險偏好",
+      "importance": "high",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-13-tsmc-profit-preview",
+      "title": "TSMC likely to book fourth straight quarter of record profit on insatiable AI demand",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/world/asia-pacific/tsmc-likely-book-fourth-straight-quarter-record-profit-on-insatiable-ai-demand-2026-04-13/",
+      "published_at_iso": "2026-04-13T00:00:00Z",
+      "published_at_label": "04/13 Reuters",
+      "summary": "TSMC 財報預期強勁，AI 需求仍被視為推動營運與權值評價的核心因子。",
+      "why_it_matters": "這條線不是只影響 2330 本身，還會牽動台股權值結構與 AI 供應鏈風險偏好。",
+      "affected_groups": [
+        "2330",
+        "0050",
+        "AI 供應鏈",
+        "大型電子 ETF"
+      ],
+      "related_tickers": [
+        "2330",
+        "0050"
+      ],
+      "driver_tag": "AI / 權值基本面",
+      "importance": "high",
+      "confidence": "high",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-16-ai-spending-intact",
+      "title": "Strong ASML, TSMC forecasts signal AI spending boom is intact",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/business/strong-asml-tsmc-forecasts-signal-ai-spending-boom-is-intact-2026-04-16/",
+      "published_at_iso": "2026-04-16T00:00:00Z",
+      "published_at_label": "04/16 Reuters",
+      "summary": "ASML 與 TSMC 的展望都強化了 AI 資本支出熱潮仍在持續的敘事。",
+      "why_it_matters": "這讓台股偏多時更容易集中在大型 AI / 半導體權值，而不是全面普漲。",
+      "affected_groups": [
+        "半導體",
+        "AI 供應鏈",
+        "大型電子"
+      ],
+      "related_tickers": [
+        "2330"
+      ],
+      "driver_tag": "AI 資本支出",
+      "importance": "medium",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-15-yield-pressure",
+      "title": "S&P 500 hits record high, oil choppy as Trump says Iran war \"close to over\"",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-04-15/",
+      "published_at_iso": "2026-04-15T00:00:00Z",
+      "published_at_label": "04/15 Reuters",
+      "summary": "市場雖然偏樂觀，但短天期與長天期美債殖利率仍在相對高位，顯示通膨 / 利率壓力沒有完全解除。",
+      "why_it_matters": "這會限制台股高估值題材股的追價空間，提醒偏多也要保守分層。",
+      "affected_groups": [
+        "高估值 AI 題材",
+        "成長股",
+        "NASDAQ 連動族群"
+      ],
+      "related_tickers": [
+        "2330"
+      ],
+      "driver_tag": "殖利率 / 估值壓力",
+      "importance": "medium",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-16-tsmc-yahoo",
+      "title": "Taiwan Semiconductor Manufacturing Company (TSMC) Stock Price, News, Quote & History",
+      "source_name": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/quote/TSM/",
+      "published_at_iso": null,
+      "published_at_label": "Yahoo Finance 即時頁",
+      "summary": "可作為即時補看 TSMC 財報、股價與市場摘要的參考入口。",
+      "why_it_matters": "除了正式新聞稿，這頁適合你自己再回頭看市場怎麼消化 TSMC / AI 敘事。",
+      "affected_groups": [
+        "2330",
+        "AI 供應鏈"
+      ],
+      "related_tickers": [
+        "2330"
+      ],
+      "driver_tag": "即時參考入口",
+      "importance": "low",
+      "confidence": "medium",
+      "status": "ongoing"
+    }
+  ],
+  "market_implications": [
+    {
+      "group": "大盤 ETF / 權值",
+      "impact": "若中東 / 油價風險降溫持續，最容易先受惠於大盤 ETF 與大型權值股的風險偏好回補。",
+      "driver_link": "中東談判 / 油價回落",
+      "action_bias": "可偏觀察正向延續，但不追跳空。"
+    },
+    {
+      "group": "AI / 半導體",
+      "impact": "TSMC 與 AI 資本支出敘事仍強，代表偏多時資金可能更集中而不是全面擴散。",
+      "driver_link": "AI 需求 / TSMC 財報預期",
+      "action_bias": "優先當主線驗證，不要把所有題材股都視為同步受惠。"
+    },
+    {
+      "group": "高估值題材股",
+      "impact": "殖利率背景仍偏高，意味著就算風險偏好轉暖，估值壓力也沒有完全消失。",
+      "driver_link": "美債殖利率 / 利率預期",
+      "action_bias": "偏多也要保守，避免無條件追價。"
+    }
+  ],
+  "watchpoints": [
+    "若油價重新急彈或談判降溫敘事被推翻，今天這條 risk-on driver 可能很快失效。",
+    "若 2330 / 0050 只剩開高表象、沒有後續承接，應避免把 headline-driven 強勢誤讀成全天順風盤。",
+    "若殖利率重新上行，最先受影響的通常不是防禦股，而是高估值成長股與追價情緒。"
+  ],
+  "notes": "這是第一輪施工加入的樣板 news digest：先提供『原始來源連結 + 一句摘要 + 為什麼重要 + 影響族群』，讓你可以自己加入判斷，而不是只能看我的結論。後續正式版會改由自動化任務產出，不維持手動樣板。"
+}

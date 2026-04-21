@@ -1,0 +1,127 @@
+{
+  "_meta": {
+    "schema_version": "1.2",
+    "job_name": "openclaw.daily_thesis",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T20:40:00+08:00",
+    "generated_at_label": "04/21 20:40",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "thesis_built_from_market_context_and_partial_news_digest",
+      "no_single_clean_macro_driver_detected",
+      "guardrail_used_as_reference_only_no_latest_analysis_status_file"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-21",
+  "generated_at_iso": "2026-04-21T20:40:00+08:00",
+  "generated_at_label": "20:40",
+  "market_status": "pre_market_framework_from_same_day_context",
+  "risk_level": "medium",
+  "direction_bias": "mixed_supportive_tilt",
+  "confidence": 0.62,
+  "headline": "今天主導台股盤前框架的不是單一 headline，而是『AI 風險偏好支撐仍在，但同時被伊朗/油價與 Fed 利率預期壓著』的 mixed 主線。",
+  "core_thesis": "今天不能把盤前框架硬寫成單一利多或單一利空。上游 news_digest 已明確標記 primary_driver 為 none_clear：AI 題材重新支撐全球風險偏好，是最有利於台股大型電子、半導體與 ETF 想像的那一側；但伊朗和談與中東風險溢價、油價波動、以及 Fed 人事與利率路徑預期，仍同時壓在估值端。market_context 也只把這件事定義成『AI 支撐 + 地緣/油價敏感 + 利率壓力』的背景混合，沒有授權直接下單邊結論。對台股來說，最合理的盤前理解是：大型權值、ETF、AI 供應鏈仍可保留小幅先手想像，但前提只限於 AI 支撐能在隔日延續且資金願意繼續留在大型電子；若只是已反映的反彈延長、或開盤位置偏高卻沒有新 driver 收斂，就不該把它解讀成可追價的全面 risk-on。",
+  "core_thesis_short": "主線是 AI 支撐仍在，但被伊朗/油價與 Fed 利率預期同時牽制，屬 mixed 偏支撐，不宜把反彈直接解讀成可追價的全面進攻。",
+  "market_driver_summary": {
+    "dominant_frame": "沒有單一乾淨主導消息；實際主導盤前框架的是 AI 支撐風險偏好、但同時受伊朗/油價與 Fed 利率預期牽制的 mixed 結構。",
+    "summary": "news_digest 與 market_context 一致指出：今天最可用的主線不是單一 headline，而是『AI 題材重新支撐風險偏好』這個偏多底色，外加『伊朗和談/中東風險溢價與油價變動』、『Fed 人事與利率路徑』兩個不能忽略的估值與情緒壓力。這也是為什麼台股映射會先落在大型電子、半導體、AI 供應鏈與大盤 ETF，但不適合直接外推成全面單邊進攻。",
+    "why_it_matters": "這條主線偏向 mixed、但底色略偏支撐：它解釋了為什麼大型權值與 ETF 還能保留小倉位先手想像，也解釋了為什麼不能只因電子回穩就追高。真正有利的是大型電子、半導體、ASIC、AI 伺服器/網通、電子零組件與廣義 ETF；較容易受壓的是能源/通膨敏感、利率敏感高估值端，以及在 headline 反覆時容易被資金抽離的非主線族群。",
+    "driver_status": "mixed_ai_support_with_macro_overhang",
+    "support_or_pressure": "mixed",
+    "affected_groups": [
+      "大盤 ETF",
+      "大型電子",
+      "半導體",
+      "ASIC / AI 供應鏈",
+      "電子零組件與電腦週邊",
+      "能源與通膨敏感族群",
+      "高估值利率敏感股"
+    ],
+    "large_cap_etf_implication": "若隔日是 AI 支撐延續、且外資與大型電子承接同步，大型權值 / ETF 可以保留小倉位先手想像；但在沒有單一新 driver 收斂前，這只是一種條件式想像，不是追價授權。",
+    "news_links": [
+      {
+        "label": "Reuters: Stocks rebound on AI boost as Iran talks, Warsh hearing in focus",
+        "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-04-21/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "Reuters: Marvell shares gain on report of deal talks with Google to develop two AI chips",
+        "url": "https://www.reuters.com/business/marvell-shares-gain-report-deal-talks-with-google-develop-two-ai-chips-2026-04-20/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "Internal news digest",
+        "url": "/data/news/2026-04-21/news_digest.json",
+        "source_name": "V2 News Digest"
+      }
+    ]
+  },
+  "market_context": {
+    "status": "available",
+    "source_path": "stock-dashboard-v2/public/data/collection/2026-04-21/market_context.json",
+    "news_digest_path": "stock-dashboard-v2/public/data/news/2026-04-21/news_digest.json",
+    "digest_status": "partial",
+    "primary_driver": "none_clear",
+    "official_cash_session": {
+      "close": 37605.11,
+      "change_points": 646.31,
+      "change_pct": 1.75
+    },
+    "institutional_flow": {
+      "foreign_diff_ntd": 60153727909,
+      "investment_trust_diff_ntd": 8059253703,
+      "total_diff_ntd": 67499596060
+    },
+    "sector_leadership": [
+      "Electronic Parts/Components",
+      "Computer and Peripheral Equipment",
+      "Communications and Internet",
+      "Electronics",
+      "Semiconductor"
+    ]
+  },
+  "key_risks": [
+    "把 mixed driver 誤讀成單一 AI 利多，會高估隔日追價成功率。",
+    "伊朗和談 / 中東風險溢價若反覆，油價與風險偏好可能快速來回，讓盤前偏多敘事失真。",
+    "Fed 人事與利率路徑仍牽動高估值科技股估值彈性，代表即使 headline 偏多，也不保證走成單邊趨勢。",
+    "AI 題材雖強，但 Reuters 已提示能源 / 電力 / 基建成本是第二層約束，不能把 AI 外推成無條件全面受惠。",
+    "今天台股現貨已經出現明顯反彈與電子領漲，若隔日沒有新訊息收斂，盤前容易面臨『已反映』風險。"
+  ],
+  "support_levels": [],
+  "resistance_levels": [],
+  "watchlist": [
+    {
+      "group": "大型權值 / 大盤 ETF",
+      "why": "AI 支撐若要真的延續到台股，最先受益通常仍是大型電子與 ETF，這裡最能反映市場是否願意把 mixed 結構往支撐端解讀。"
+    },
+    {
+      "group": "半導體 / ASIC / 先進製程 / 先進封裝",
+      "why": "Google/Marvell AI 晶片傳聞延續自研晶片與高階供應鏈敘事，屬今天最有連續性的 AI 細分支線。"
+    },
+    {
+      "group": "AI 伺服器 / 網通 / 電子零組件 / 電腦週邊",
+      "why": "market_context 的官方強勢族群集中在電子零組件、電腦週邊與通訊網路，較符合『AI 支撐但不是單一權值獨走』的結構。"
+    },
+    {
+      "group": "能源 / 通膨敏感族群",
+      "why": "伊朗與油價 headline 若反轉，這裡會最快反映 mixed driver 往壓力端傾斜。"
+    }
+  ],
+  "prohibitions": [
+    "禁止把 none_clear 的上游消息硬寫成單一主導利多或利空。",
+    "禁止用今天台股已收過的強彈表現，事後倒推成『早就確定會全面 risk-on』的敘事。",
+    "禁止因 AI 題材仍在，就自動推導成所有電子都可追價。",
+    "禁止把本層 thesis 延伸成實際曝險比例、進出價位或 action_plan。"
+  ],
+  "cautions": [
+    "這份 thesis 可用，但屬 partial：news_digest 上游本身是 partial，且 primary_driver 不是單一明確 headline。",
+    "大型權值 / ETF 只保留小幅先手想像；若沒有新 driver 收斂或開盤位置已差，重點是『不追價』。",
+    "最近可得 close_review 來自 2026-04-13，且 analysis layer assessment 為 busy；它不是昨天訊號，不能直接套用成今天結論，但提醒本輪避免把同一主線展開成過多分支敘事。",
+    "tmp/v2-analysis-layer-status-latest.json 缺失，因此今天沒有額外使用即時分析層狀態當 hard guardrail。"
+  ],
+  "trading_style": "framework_only_no_exposure_call",
+  "notes": "This layer only determines the mainline framework. It does not generate action_plan, exposure sizing, or publish artifacts. The dominant preopen frame is intentionally kept as mixed because upstream inputs do not justify a single clean narrative."
+}

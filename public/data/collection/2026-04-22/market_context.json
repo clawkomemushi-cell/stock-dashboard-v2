@@ -1,0 +1,196 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T18:43:00+08:00",
+    "generated_at_label": "04/21 18:43",
+    "last_successful_run": "2026-04-21T18:43:00+08:00",
+    "source_freshness": "mixed",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "news_digest_missing_for_target_date",
+      "overnight_pre_open_background_built_from_last_known_cash_session"
+    ],
+    "fallback_used": true
+  },
+  "date": "2026-04-22",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "intended_downstream_use": [
+    "daily_thesis market_context seed",
+    "close/weekly explanation context",
+    "latest market status sanity checks"
+  ],
+  "market_window": {
+    "captured_at_local": "2026-04-21T18:43:00+08:00",
+    "tw_market_live_session_available": false,
+    "current_mode": "overnight_pre_open_next_trading_day",
+    "notes": [
+      "Collection-only run for the next Taiwan trading day background layer.",
+      "This run intentionally did not generate thesis/action-plan conclusions.",
+      "The latest official TWSE cash-session and institutional-flow data available at capture time are for 2026-04-21."
+    ]
+  },
+  "news_digest_context": {
+    "expected_path": "/data/news/2026-04-22/news_digest.json",
+    "status": "missing",
+    "usable": false,
+    "impact": "Primary/secondary news drivers cannot be normalized from the intended upstream digest in this run.",
+    "notes": [
+      "Market driver summary is background-only and does not pretend to reconstruct a full machine-readable news layer."
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "current_status": "pre_open",
+    "is_trading_day": true,
+    "trading_day_reference": {
+      "date": "2026-04-22",
+      "status": "open_trading_day_by_calendar_inference",
+      "description": "2026-04-22 is not listed as a TWSE holiday in the official 2026 schedule and is treated as a normal trading day.",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "derived_calendar_notes": [
+      "2026-04-22 follows the 2026-04-21 cash session and is the next regular TWSE trading day.",
+      "This is an overnight/pre-open background build; same-day 2026-04-22 official close and institutional-flow are not yet available."
+    ],
+    "last_known_cash_session": {
+      "date": "2026-04-21",
+      "index_name": "TAIEX",
+      "close": 37605.11,
+      "change_points": 646.31,
+      "change_pct": 1.75,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260421&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Latest official TWSE cash-session close available prior to the 2026-04-22 pre-open context build.",
+        "Technology-heavy leadership remained visible: Electronics +2.13%, Semiconductor +1.94%, Computer and Peripheral Equipment +2.70%, Electronic Parts/Components +3.80%.",
+        "Lagging groups included Finance and Insurance -0.26% and Oil, Gas and Electricity -1.60%."
+      ]
+    },
+    "institutional_flow_last_known": {
+      "date": "2026-04-21",
+      "foreign_diff_ntd": 60153727909,
+      "investment_trust_diff_ntd": 8216555773,
+      "dealers_proprietary_diff_ntd": 591045960,
+      "dealers_hedge_diff_ntd": -1304459501,
+      "total_diff_ntd": 67656870141,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260421&type=day&response=json",
+      "source_kind": "official_api",
+      "confidence": "high",
+      "notes": [
+        "Official three-institution trading value snapshot for 2026-04-21 showed strong broad buy-side support.",
+        "Foreign investors were net buyers above NT$60bn, while investment trusts were net buyers above NT$8bn; this is constructive tape background but not itself a next-day thesis conclusion."
+      ]
+    }
+  },
+  "market_structure_background": {
+    "last_session_leadership": {
+      "tech_leadership": [
+        {"group": "Electronics", "change_pct": 2.13},
+        {"group": "Semiconductor", "change_pct": 1.94},
+        {"group": "Computer and Peripheral Equipment", "change_pct": 2.7},
+        {"group": "Electronic Parts/Components", "change_pct": 3.8},
+        {"group": "Communications and Internet", "change_pct": 2.66}
+      ],
+      "relative_laggards": [
+        {"group": "Finance and Insurance", "change_pct": -0.26},
+        {"group": "Oil, Gas and Electricity", "change_pct": -1.6},
+        {"group": "Optoelectronic", "change_pct": -1.01},
+        {"group": "Food", "change_pct": -0.61}
+      ],
+      "interpretation": "The most recent official session showed capital preference tilted toward large electronics, semiconductors, AI-adjacent hardware, and component groups rather than defensives or energy-linked pockets."
+    }
+  },
+  "market_driver_summary": {
+    "primary_driver": "news_digest_missing_no_machine_readable_primary_driver",
+    "secondary_drivers": [
+      "Last-known Taiwan cash session showed strong TAIEX upside with technology-heavy sector leadership",
+      "Foreign investors and investment trusts both posted sizeable net buying on 2026-04-21",
+      "Without the intended news_digest input, macro/news catalyst ranking remains incomplete and should not be over-inferred"
+    ],
+    "driver_direction": "background_only_no_conclusion",
+    "confidence": "low_to_medium",
+    "likely_affected_groups": [
+      "Large-cap electronics and semiconductor weights",
+      "AI-adjacent hardware, server, component, and communications supply-chain groups",
+      "Broad Taiwan tech ETFs or index products more exposed to electronic weighting",
+      "Relatively less immediate support visible for finance, energy-sensitive, and defensive pockets in the last known session"
+    ],
+    "why_it_matters": "The last official Taiwan session provides usable tape context: strong index rebound, heavy foreign participation, and clear technology leadership. That is valuable as background for downstream thesis work, but the intended machine-readable message layer is missing, so this run should not pretend to know which macro or geopolitical headline truly dominated the coming session.",
+    "what_would_invalidate": "If the missing news digest later reveals a different dominant catalyst, or if overnight macro/geopolitical developments materially changed risk appetite after the 2026-04-21 close, this background-only framing could become incomplete."
+  },
+  "data_gaps": [
+    {
+      "key": "news_digest_target_date",
+      "status": "missing",
+      "reason": "The intended upstream file /data/news/2026-04-22/news_digest.json was not present at build time."
+    },
+    {
+      "key": "machine_readable_primary_news_driver",
+      "status": "missing_in_this_round",
+      "reason": "Primary/secondary news normalization depends on news_digest.json and was therefore unavailable."
+    },
+    {
+      "key": "tw_same_day_official_close_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "This build targets 2026-04-22 pre-open; same-day official close is not yet available."
+    },
+    {
+      "key": "tw_same_day_institutional_flow",
+      "status": "missing_in_this_round",
+      "reason": "This build targets 2026-04-22 pre-open; same-day institutional-flow data are not yet published."
+    },
+    {
+      "key": "tw_live_intraday_tape",
+      "status": "missing",
+      "reason": "No live TW intraday collector was used in this collection run."
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "Structured FX snapshot is not integrated into this run."
+    },
+    {
+      "key": "us_treasury_structured_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "Structured Treasury/yield snapshot is not integrated into this run."
+    }
+  ],
+  "source_summary": [
+    {
+      "name": "Target-date news digest",
+      "kind": "internal_generated_input",
+      "url": "/data/news/2026-04-22/news_digest.json",
+      "status": "missing",
+      "confidence": "n/a"
+    },
+    {
+      "name": "TWSE holiday API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE MI_INDEX API (TAIEX close & sector indices)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260421&type=ALLBUT0999&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE BFI82U API (institutional flow)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260421&type=day&response=json",
+      "status": "ok",
+      "confidence": "high"
+    }
+  ]
+}

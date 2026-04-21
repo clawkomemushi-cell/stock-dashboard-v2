@@ -1,0 +1,211 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "collection-layer-v0",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "ok",
+    "generated_at_iso": "2026-04-21T20:37:00+08:00",
+    "generated_at_label": "04/21 20:37",
+    "last_successful_run": "2026-04-21T20:37:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "background_only_no_trade_bias_or_strategy"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-21",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "market_window": {
+    "captured_at_local": "2026-04-21T20:37:00+08:00",
+    "tw_market_live_session_available": false,
+    "current_mode": "post_close_official_snapshot_available",
+    "notes": [
+      "Collection-only post-close capture using the same-day official TWSE cash-session and institutional-flow snapshot.",
+      "This run intentionally did not generate daily_thesis, action_plan, watchlist strategy, or latest.json."
+    ]
+  },
+  "news_digest_context": {
+    "expected_path": "/data/news/2026-04-21/news_digest.json",
+    "status": "present",
+    "usable": true,
+    "digest_status": "partial",
+    "primary_driver": "none_clear",
+    "primary_driver_summary": "截至本輪蒐集，市場 headline 同時受 AI 題材、伊朗和談進展、中東油價風險與聯準會人事聽證影響，沒有單一乾淨且壓倒性的主導消息。",
+    "affected_groups": [
+      "大盤 ETF",
+      "大型電子",
+      "AI / 半導體",
+      "能源與通膨敏感族群"
+    ],
+    "notes": [
+      "Used the target-date news_digest as the main narrative input, but normalized here only as background context.",
+      "No bullish/bearish trade conclusion is drawn from the digest in this collection layer."
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "current_status": "post_close",
+    "is_trading_day": true,
+    "trading_day_reference": {
+      "date": "2026-04-21",
+      "status": "open_trading_day_by_calendar_inference",
+      "description": "2026-04-21 is not listed as a TWSE holiday in the official 2026 schedule and is treated as a normal trading day.",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "official_cash_session": {
+      "date": "2026-04-21",
+      "index_name": "TAIEX",
+      "close": 37605.11,
+      "change_points": 646.31,
+      "change_pct": 1.75,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260421&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "institutional_flow": {
+      "date": "2026-04-21",
+      "foreign_diff_ntd": 60153727909,
+      "investment_trust_diff_ntd": 8059253703,
+      "dealers_proprietary_diff_ntd": 591045960,
+      "dealers_hedge_diff_ntd": -1304431512,
+      "total_diff_ntd": 67499596060,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260421&type=day&response=json",
+      "source_kind": "official_api",
+      "confidence": "high"
+    }
+  },
+  "market_structure_background": {
+    "official_sector_leadership": [
+      {
+        "group": "Electronic Parts/Components",
+        "change_pct": 3.8
+      },
+      {
+        "group": "Computer and Peripheral Equipment",
+        "change_pct": 2.7
+      },
+      {
+        "group": "Communications and Internet",
+        "change_pct": 2.66
+      },
+      {
+        "group": "Electronics",
+        "change_pct": 2.13
+      },
+      {
+        "group": "Electrical",
+        "change_pct": 2.1
+      },
+      {
+        "group": "Semiconductor",
+        "change_pct": 1.94
+      }
+    ],
+    "official_relative_laggards": [
+      {
+        "group": "Oil, Gas and Electricity",
+        "change_pct": -1.6
+      },
+      {
+        "group": "Optoelectronic",
+        "change_pct": -1.01
+      },
+      {
+        "group": "Food",
+        "change_pct": -0.61
+      },
+      {
+        "group": "Textile",
+        "change_pct": -0.59
+      },
+      {
+        "group": "Electrical and Cable",
+        "change_pct": -0.39
+      },
+      {
+        "group": "Finance and Insurance",
+        "change_pct": -0.26
+      }
+    ],
+    "interpretation": "The latest official cash session showed leadership concentrated in electronics, electronic parts/components, computer/peripheral equipment, communications/internet, and semiconductor-related groups, while finance, oil/gas/electricity, optoelectronics, and some defensive groups lagged."
+  },
+  "market_driver_summary": {
+    "background_mainline": "Today's digest suggests no single clean macro headline dominated everything; the usable background is a mix of AI support, geopolitical/oil sensitivity, and rate-policy valuation pressure, anchored by a strong same-day Taiwan cash-session rebound.",
+    "official_cash_background": "TAIEX closed at 37605.11 on 2026-04-21, up 646.31 points (+1.75%), with official sector leadership led by electronic parts/components, computer/peripheral equipment, communications/internet, electronics, and semiconductor-linked groups.",
+    "institutional_background": "Official three-institution data showed foreign investors net bought NT$60,153,727,909, investment trusts net bought NT$8,059,253,703, dealers proprietary account net bought NT$591,045,960, dealers hedge account net sold NT$1,304,431,512, and total net buying reached NT$67,499,596,060.",
+    "tech_or_weight_groups": [
+      "Large-cap electronics and semiconductor weights",
+      "Electronic parts/components and computer/peripheral hardware",
+      "Communications / internet and AI-adjacent hardware supply-chain groups"
+    ],
+    "lagging_groups": [
+      "Finance and insurance",
+      "Oil, gas and electricity",
+      "Optoelectronics",
+      "Selected defensive / consumer groups such as food and textile"
+    ],
+    "data_gap_notes": [
+      "This collection layer does not integrate live intraday Taiwan tape, FX, or structured US-yield snapshots.",
+      "Digest-derived drivers are kept as background-only context and are not converted into trading bias."
+    ],
+    "driver_direction": "background_only_no_conclusion",
+    "confidence": "medium_high"
+  },
+  "data_gaps": [
+    {
+      "key": "tw_live_intraday_tape",
+      "status": "missing",
+      "reason": "No live Taiwan intraday collector was used in this collection run."
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "Structured FX snapshot is not integrated into this run."
+    },
+    {
+      "key": "us_treasury_structured_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "Structured Treasury/yield snapshot is not integrated into this run."
+    },
+    {
+      "key": "watchlist_or_strategy_layer",
+      "status": "intentionally_not_generated",
+      "reason": "This P0 job only builds market context background and stops before thesis/action-plan/watchlist output."
+    }
+  ],
+  "source_summary": [
+    {
+      "name": "Target-date news digest",
+      "kind": "internal_generated_input",
+      "url": "/data/news/2026-04-21/news_digest.json",
+      "status": "ok",
+      "confidence": "medium_high"
+    },
+    {
+      "name": "TWSE holiday API",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE MI_INDEX API (TAIEX close & sector indices)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260421&type=ALLBUT0999&response=json",
+      "status": "ok",
+      "confidence": "high"
+    },
+    {
+      "name": "TWSE BFI82U API (institutional flow)",
+      "kind": "official_api",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260421&type=day&response=json",
+      "status": "ok",
+      "confidence": "high"
+    }
+  ]
+}

@@ -26,7 +26,24 @@
   "headline": "今日 collection market_context 缺失，stage1 thesis 停止生成，不硬做偏多/偏空結論",
   "core_thesis": "找不到 /public/data/collection/2026-04-14/market_context.json，因此今天的 daily_thesis 無法建立正式盤前框架。依照規則，本階段在 source 缺失時必須停止，不得用舊資料或常見題材硬補結論。",
   "core_thesis_short": "今日 market_context 缺失，停止生成 thesis，不硬做結論。",
-  "market_driver_summary": "N/A：今日主導消息無法判定，因核心 collection 檔缺失。",
+  "market_driver_summary": {
+    "summary": "盤前正式 collection 缺失，所以這份 thesis 不能聲稱已建立完整主導消息框架；但第一輪 / 第二輪施工已讓 V2 保留一條清楚觀念：即使 thesis 停止生成，你仍可到『今日消息』頁查看外部消息線索，而不是只剩一句 error。",
+    "why_it_matters": "這樣你不會被迫只聽系統給的單一結論。即使正式 thesis 因 source 缺失而停止，網站仍應提供消息入口，讓你自己參與判斷，並知道今天缺的是哪一層。",
+    "driver_status": "unavailable_formal_thesis",
+    "affected_groups": [
+      "大盤 ETF",
+      "大型電子",
+      "AI 權值",
+      "風險偏好觀察"
+    ],
+    "news_links": [
+      {
+        "label": "今日消息頁：查看目前彙整的主導消息與原文連結",
+        "url": "/#/news",
+        "source_name": "V2 News Digest"
+      }
+    ]
+  },
   "market_context": {
     "status": "unavailable",
     "reason": "missing_file",

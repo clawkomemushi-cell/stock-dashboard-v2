@@ -1,0 +1,189 @@
+{
+  "_meta": {
+    "schema_version": "1.2",
+    "job_name": "openclaw.news_digest",
+    "data_type": "news",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T20:32:00+08:00",
+    "generated_at_label": "04/21 20:32",
+    "last_successful_run": "2026-04-21T20:32:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "limited_to_3_search_queries",
+      "reuters_fulltext_fetch_blocked_by_anti_bot",
+      "compiled_from_high-confidence_search_snippets_and_public_headlines"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-21",
+  "generated_at_iso": "2026-04-21T20:32:00+08:00",
+  "generated_at_label": "20:32",
+  "primary_driver": {
+    "title": "none_clear",
+    "summary": "截至本輪蒐集，市場 headline 同時受 AI 題材、伊朗和談進展、中東油價風險與聯準會人事聽證影響，沒有單一乾淨且壓倒性的主導消息。",
+    "why_it_matters": "若把多個並行 driver 硬寫成單一主線，容易誤導後續解讀；因此本輪保守標記為 none_clear，先保留高可信消息清單。",
+    "status": "ongoing",
+    "bias": "mixed",
+    "affected_groups": [
+      "大盤 ETF",
+      "大型電子",
+      "AI / 半導體",
+      "能源與通膨敏感族群"
+    ],
+    "confidence": "medium"
+  },
+  "secondary_drivers": [
+    {
+      "title": "AI 題材重新支撐風險偏好",
+      "summary": "Reuters 4/21 headline 指出，市場反彈的一個支點是 renewed bets on AI，顯示 AI 敘事仍是全球股市的重要支撐來源。",
+      "why_it_matters": "對台股映射通常先落在晶圓代工、ASIC、AI 伺服器與權值電子。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "半導體",
+        "AI 供應鏈",
+        "大型電子"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "伊朗是否參與和談牽動油價與風險情緒",
+      "summary": "Reuters 4/21 提到市場關注伊朗是否考慮參與與美國的和談，這直接牽動中東風險溢價與油價預期。",
+      "why_it_matters": "若地緣風險降溫，通常有利成長股估值與整體風險偏好；若反覆，市場容易快速來回。",
+      "status": "ongoing",
+      "bias": "mixed",
+      "affected_groups": [
+        "大盤 ETF",
+        "電子權值",
+        "能源相關",
+        "航運 / 景氣循環"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "Fed 人事與利率路徑仍在旁邊施壓",
+      "summary": "Reuters 多篇市場稿提到 Kevin Warsh 聽證會與利率路徑問題，代表估值端仍受政策預期牽制。",
+      "why_it_matters": "這讓即使 headline 偏多，市場也未必能把風險偏好順暢放大成單邊走勢。",
+      "status": "ongoing",
+      "bias": "mixed",
+      "affected_groups": [
+        "高估值成長股",
+        "NASDAQ 連動族群",
+        "長天期利率敏感股"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "news_items": [
+    {
+      "id": "news-2026-04-21-reuters-global-markets-wrapup",
+      "title": "Stocks rebound on AI boost as Iran talks, Warsh hearing in focus",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-2026-04-21/",
+      "published_at_iso": "2026-04-21T00:00:00Z",
+      "published_at_label": "04/21 Reuters",
+      "summary": "Reuters 指出 4/21 全球股市反彈，主因包括 AI 題材再受追捧，以及市場關注伊朗可能參與和談；同時 Kevin Warsh 聽證會也在視野內。",
+      "why_it_matters": "這是今天最接近『市場總覽』的高可信 headline，但它本身也反映 driver 並不單一。",
+      "affected_groups": [
+        "大盤 ETF",
+        "AI / 半導體",
+        "大型電子",
+        "能源敏感族群"
+      ],
+      "importance": "high",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-20-reuters-marvell-google-asic",
+      "title": "Marvell shares gain on report of deal talks with Google to develop two AI chips",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/business/marvell-shares-gain-report-deal-talks-with-google-develop-two-ai-chips-2026-04-20/",
+      "published_at_iso": "2026-04-20T00:00:00Z",
+      "published_at_label": "04/20 Reuters",
+      "summary": "Reuters 報導 Marvell 因市場傳出與 Google 洽談開發兩款 AI 晶片而上漲，延續大型雲端客戶加速自研晶片的主線。",
+      "why_it_matters": "這會強化 AI 晶片、ASIC、先進製程與高階封裝供應鏈的關注度。",
+      "affected_groups": [
+        "ASIC",
+        "先進製程",
+        "先進封裝",
+        "AI 伺服器 / 網通"
+      ],
+      "importance": "high",
+      "status": "developing"
+    },
+    {
+      "id": "news-2026-04-20-reuters-ai-energy-squeeze",
+      "title": "'AI or die' - but can Big Tech's profits survive the energy squeeze?",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/markets/commodities/ai-or-die-can-big-techs-profits-survive-energy-squeeze-2026-04-20/",
+      "published_at_iso": "2026-04-20T00:00:00Z",
+      "published_at_label": "04/20 Reuters",
+      "summary": "Reuters 聚焦 AI 擴張帶來的電力與能源成本壓力，指出資料中心與大型科技公司的 AI 投資同時面臨供電與獲利率挑戰。",
+      "why_it_matters": "這提醒市場 AI 敘事雖強，但供電、散熱、基礎設施與成本約束已開始成為第二層關鍵變數。",
+      "affected_groups": [
+        "資料中心電力 / 散熱",
+        "AI 基礎設施",
+        "大型雲端資本支出受惠鏈"
+      ],
+      "importance": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-20-reuters-wall-st-week-ahead-earnings",
+      "title": "Wall St Week Ahead: Surging record-high US stocks to wade deeper into earnings season",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/business/wall-st-week-ahead-surging-record-high-us-stocks-wade-deeper-into-earnings-2026-04-20/",
+      "published_at_iso": "2026-04-20T00:00:00Z",
+      "published_at_label": "04/20 Reuters",
+      "summary": "Reuters 指出美股在高檔進入更深的財報季，市場接下來會看科技企業財報能否延續目前的強勢。",
+      "why_it_matters": "這讓後續市場焦點自然集中到大型科技 / 半導體財報驗證，而不只是題材本身。",
+      "affected_groups": [
+        "大型科技",
+        "半導體",
+        "NASDAQ 連動族群"
+      ],
+      "importance": "medium",
+      "status": "upcoming"
+    },
+    {
+      "id": "news-2026-04-20-reuters-us-stocks-iran-tensions",
+      "title": "Wall Street closes slightly down on renewed tensions between US, Iran",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/business/us-stock-futures-fall-after-rally-mideast-tensions-flare-2026-04-20/",
+      "published_at_iso": "2026-04-20T00:00:00Z",
+      "published_at_label": "04/20 Reuters",
+      "summary": "Reuters 指出前一交易日美股因美伊緊張再起而略為收低，但財報優於預期的背景讓跌勢受限。",
+      "why_it_matters": "這說明市場目前不是單線敘事，而是地緣風險與財報 / AI 樂觀交錯拉扯。",
+      "affected_groups": [
+        "大盤 ETF",
+        "科技權值",
+        "能源敏感股"
+      ],
+      "importance": "medium",
+      "status": "ongoing"
+    }
+  ],
+  "market_implications": [
+    {
+      "group": "AI / 半導體",
+      "impact": "AI 仍是支撐全球股市的重要敘事，但已延伸到 ASIC、自研晶片、電力與基建約束等第二層主題。",
+      "driver_link": "AI 題材反彈 + Google/Marvell 晶片傳聞 + AI 能源壓力"
+    },
+    {
+      "group": "大盤 / 權值",
+      "impact": "地緣政治 headline 仍可能快速改變日內風險偏好，使大盤對單一 headline 的反應容易反覆。",
+      "driver_link": "伊朗和談 / 緊張局勢反覆"
+    },
+    {
+      "group": "利率敏感族群",
+      "impact": "Fed 人事與利率預期仍在背景中影響估值彈性，特別是高估值科技股。",
+      "driver_link": "Kevin Warsh hearing / rate path"
+    }
+  ],
+  "watchpoints": [
+    "伊朗是否實際參與和談、以及油價是否明顯回落或再度飆升。",
+    "本週科技財報是否延續目前對 AI 資本支出的樂觀驗證。",
+    "AI 供電 / 能源成本議題是否從敘事面升級成更具體的獲利率壓力。"
+  ],
+  "notes": "Collection-only quick build. Kept partial on purpose because Reuters full article bodies were not cleanly fetchable in-tool, so this digest is based on high-confidence headline/snippet evidence rather than fully expanded article text."
+}

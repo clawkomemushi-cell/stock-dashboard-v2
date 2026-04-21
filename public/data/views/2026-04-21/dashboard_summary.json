@@ -1,0 +1,38 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.dashboard_summary",
+    "data_type": "preopen",
+    "status": "error",
+    "generated_at_iso": "2026-04-21T18:51:00+08:00",
+    "generated_at_label": "04/21 18:51",
+    "last_successful_run": null,
+    "source_freshness": "mixed",
+    "warnings": [
+      "publish_layer_only_no_new_analysis",
+      "daily_thesis_status_error",
+      "action_plan_status_error",
+      "news_digest_status_missing",
+      "latest_updated_to_reflect_todays_actual_artifact_status"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-21",
+  "headline": "今日 market_context 與 news_digest 都缺失，daily_thesis 停止生成，不硬補盤前主線結論",
+  "core_thesis_short": "今日上游 source 缺失，停止生成 thesis，不硬做結論；且因最新 guardrail 為 busy，後續若補檔也需主動收斂。",
+  "direction_bias": "unknown",
+  "risk_level": null,
+  "confidence": 0,
+  "trading_style": "no_call",
+  "action_plan_version": 2,
+  "overall_stance": "今天的 action plan 維持明確 no-call：因正式 daily_thesis 已記錄當日 market_context 與 news_digest 缺失，主導消息沒有可誠實採信的盤前框架，因此不把舊 driver、固定題材或『大型權值可能受惠』這類常見敘事翻成交易。再加上最近可得 guardrail 顯示 analysis layer 為 busy，且 tmp 負載檔不存在，這一層主動再收斂成 100% 現金 / 0% 曝險，不為了有動作而給 starter。",
+  "watchlist_count": 0,
+  "action_count": 2,
+  "notes": [
+    "Publish layer 僅整理今日既有 daily_thesis / action_plan / news_digest 狀態，不重做分析與新聞蒐集。",
+    "今日 news_digest.json 缺失，因此 morning_view 與 dashboard_summary 只能反映缺檔與 no-call / error 狀態。",
+    "daily_thesis.json 本身為 error；publish layer 保留其 headline 與風險說明，不假裝盤前框架已建立。",
+    "action_plan.json 本身為 error；publish layer 僅轉譯其 0% 曝險 / no-call 結果，不新增交易腳本。"
+  ]
+}
