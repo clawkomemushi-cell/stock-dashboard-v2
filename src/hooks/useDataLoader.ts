@@ -7,6 +7,7 @@ import type {
   CloseReview,
   WeeklyReview,
   PerformanceHistory,
+  NewsDigest,
   DashboardSummaryView,
   MorningView,
   FileHealth,
@@ -150,6 +151,14 @@ export interface DailyDataBundle {
 }
 
 export function useDailyData(paths: LatestIndex['paths'] | null): DailyDataBundle {
+  const activeDate = paths?.daily_thesis?.match(/\d{4}-\d{2}-\d{2}/)?.[0] ?? null
+  const sameDayThesisCheckPath = activeDate && paths?.thesis_check && !paths.thesis_check.includes(`/${activeDate}/`)
+    ? null
+    : (paths?.thesis_check ?? null)
+  const sameDayCloseReviewPath = activeDate && paths?.close_review && !paths.close_review.includes(`/${activeDate}/`)
+    ? null
+    : (paths?.close_review ?? null)
+
   const thesis = useFile<DailyThesis>(
     paths?.daily_thesis ?? null, 'daily_thesis', '盤前分析',
   )
@@ -157,10 +166,10 @@ export function useDailyData(paths: LatestIndex['paths'] | null): DailyDataBundl
     paths?.action_plan ?? null, 'action_plan', '操作計畫',
   )
   const thesisCheck = useFile<ThesisCheckDoc>(
-    paths?.thesis_check ?? null, 'thesis_check', '盤中修正',
+    sameDayThesisCheckPath, 'thesis_check', '盤中修正',
   )
   const closeReview = useFile<CloseReview>(
-    paths?.close_review ?? null, 'close_review', '收盤檢討',
+    sameDayCloseReviewPath, 'close_review', '收盤檢討',
   )
 
   const loading =
@@ -193,6 +202,13 @@ export function useWeeklyReview(
 // ============================================================
 export function usePerformanceHistory(path: string | null) {
   return useFile<PerformanceHistory>(path, 'performance_history', '系統績效')
+}
+
+// ============================================================
+// News digest — path comes from latest.paths
+// ============================================================
+export function useNewsDigest(path: string | null) {
+  return useFile<NewsDigest>(path, 'news_digest', '今日消息')
 }
 
 // ============================================================

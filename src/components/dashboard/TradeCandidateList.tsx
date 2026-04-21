@@ -43,7 +43,15 @@ export function TradeCandidateList({ title, items, emptyMessage = '今天沒有�
         <p className="section-title">{title}</p>
       </div>
       <div className="divide-y divide-border">
-        {items.map((item) => (
+        {items.map((item) => {
+          const sourceBasisRaw = (item as unknown as { source_basis?: string[] | string }).source_basis
+          const sourceBasis = Array.isArray(sourceBasisRaw)
+            ? sourceBasisRaw
+            : (typeof sourceBasisRaw === 'string' && sourceBasisRaw.trim().length > 0)
+              ? [sourceBasisRaw]
+              : []
+
+          return (
           <div key={`${item.ticker}-${item.role}`} className="p-5 space-y-3">
             <div className="flex items-start justify-between gap-3 flex-wrap">
               <div className="space-y-1">
@@ -82,16 +90,19 @@ export function TradeCandidateList({ title, items, emptyMessage = '今天沒有�
               <div className="bg-bg-base border border-border rounded-md p-3">
                 <p className="label mb-2">入選依據</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {item.source_basis.map((source) => (
+                  {sourceBasis.length > 0 ? sourceBasis.map((source) => (
                     <span key={source} className="px-2 py-0.5 rounded border border-border text-xs text-text-secondary bg-bg-card">
                       {source}
                     </span>
-                  ))}
+                  )) : (
+                    <span className="text-xs text-text-muted">暫無結構化依據欄位</span>
+                  )}
                 </div>
               </div>
             </div>
           </div>
-        ))}
+          )
+        })}
       </div>
     </div>
   )
