@@ -5,109 +5,105 @@
     "job_name": "openclaw.publish.morning_view",
     "data_type": "preopen",
     "status": "partial",
-    "generated_at_iso": "2026-04-21T20:52:25+08:00",
-    "generated_at_label": "04/21 20:52",
-    "last_successful_run": "2026-04-21T20:52:25+08:00",
+    "generated_at_iso": "2026-04-21T21:41:00+08:00",
+    "generated_at_label": "04/21 21:41",
+    "last_successful_run": "2026-04-21T21:41:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "manual_refresh_after_publish_layer_lag",
-      "same_day_thesis_is_partial",
-      "same_day_action_plan_is_partial"
+      "same_day_news_digest_is_partial",
+      "same_day_daily_thesis_is_partial",
+      "same_day_action_plan_is_partial",
+      "primary_driver_none_clear",
+      "publish_layer_only_no_analysis_regeneration"
     ],
     "fallback_used": false
   },
   "date": "2026-04-21",
   "page": "morning",
-  "headline": "今天主導台股盤前框架的不是單一 headline，而是『AI 風險偏好支撐仍在，但同時被伊朗/油價與 Fed 利率預期壓著』的 mixed 主線。",
+  "headline": "今天主導台股盤前框架的是『全球 risk-on 與 AI 熱度延續，台股資金再往櫃買/ETF 容器擴散』，但因上游消息不是單一 headline，解讀上屬 mixed 偏支撐。",
   "hero": {
     "direction_bias": "mixed_supportive_tilt",
-    "trading_style": "mixed 偏支撐，但操作更保守、不追價",
-    "confidence": 0.62,
+    "trading_style": "mixed 偏支撐，但高現金優先、只保留單一極小 starter 想像",
+    "confidence": 0.68,
     "risk_level": "medium"
   },
   "sections": {
-    "core_thesis": "今天不能把盤前框架硬寫成單一利多或單一利空。上游 news_digest 已明確標記 primary_driver 為 none_clear：AI 題材重新支撐全球風險偏好，是最有利於台股大型電子、半導體與 ETF 想像的那一側；但伊朗和談與中東風險溢價、油價波動、以及 Fed 人事與利率路徑預期，仍同時壓在估值端。market_context 也只把這件事定義成『AI 支撐 + 地緣/油價敏感 + 利率壓力』的背景混合，沒有授權直接下單邊結論。對台股來說，最合理的盤前理解是：大型權值、ETF、AI 供應鏈仍可保留小幅先手想像，但前提只限於 AI 支撐能在隔日延續且資金願意繼續留在大型電子；若只是已反映的反彈延長、或開盤位置偏高卻沒有新 driver 收斂，就不該把它解讀成可追價的全面 risk-on。",
+    "core_thesis": "今天盤前最重要的不是單一國際 headline，而是 market_context 與 news_digest 都指向同一個複合框架：全球風險偏好因中東談判/停火預期回穩，加上 AI 熱度仍支撐科技需求想像，讓台股不只大型電子與半導體續強，資金還進一步往櫃買中小型 AI 供應鏈與 ETF 容器擴散。官方現貨背景也配合這個框架：4/21 加權收漲 1.75%，電子零組件、電腦週邊、通信網路、電子與半導體領先，外資與投信同步明顯買超。只是這條主線不是乾淨單核驅動，而是『risk-on + AI + 本地擴散』的混合結構，所以今天適合先抓真正可被驗證的承接映射，而不是把所有熱門題材都列進來。再加上最近可得 close_review 對分析層給出 busy guardrail，代表今天應主動收斂，只保留最能驗證主線是否延續的少數候選。",
     "market_context": {
       "index_trend": "TWSE 現貨收 37605.11，單日 1.75%，屬同日官方收盤快照。",
-      "volume_status": "本輪 collection 仍未整合盤中即時量價與結構化 FX / 利率快照，因此只把 market_context 當背景層。",
-      "foreign_capital": "外資買超 NT$60,153,727,909，三大法人合計 NT$67,499,596,060。",
-      "institutional_summary": "Official three-institution data showed foreign investors net bought NT$60,153,727,909, investment trusts net bought NT$8,059,253,703, dealers proprietary account net bought NT$591,045,960, dealers hedge account net sold NT$1,304,431,512, and total net buying reached NT$67,499,596,060."
+      "volume_status": "本輪 publish 只轉寫既有 analysis 輸入，未新增盤中量價或即時宏觀快照。",
+      "foreign_capital": "外資買超 NT$60,153,727,909，投信買超 NT$8,059,253,703，合計 NT$67,499,596,060。",
+      "institutional_summary": "官方 market_context 顯示外資與投信同步明顯買超，且強勢類股集中在電子零組件、電腦週邊、通信網路、電子與半導體。"
     },
     "key_risks": [
-      "把 mixed driver 誤讀成單一 AI 利多，會高估隔日追價成功率。",
-      "伊朗和談 / 中東風險溢價若反覆，油價與風險偏好可能快速來回，讓盤前偏多敘事失真。",
-      "Fed 人事與利率路徑仍牽動高估值科技股估值彈性，代表即使 headline 偏多，也不保證走成單邊趨勢。",
-      "AI 題材雖強，但 Reuters 已提示能源 / 電力 / 基建成本是第二層約束，不能把 AI 外推成無條件全面受惠。",
-      "今天台股現貨已經出現明顯反彈與電子領漲，若隔日沒有新訊息收斂，盤前容易面臨『已反映』風險。"
+      "上游 news_digest 為 partial，今天只能做主線與候選池整理，不能把缺失資訊用舊敘事硬補成單邊結論。",
+      "若全球 risk-on 因中東談判/停火預期反轉而降溫，高 beta 的 OTC 與成長 ETF 會先失去承接。",
+      "若櫃買擴散只是短線補漲而非廣度延續，006201 類映射會比半導體主鏈更快失真。",
+      "主動式 ETF 熱度屬資金風格訊號，不等於所有 AI / 成長標的都可交易。"
     ],
     "support_levels": [],
     "resistance_levels": [],
     "watchlist": [
       {
-        "ticker": "大型權值 / 大盤 ETF",
-        "name": "大型權值 / 大盤 ETF",
+        "ticker": "006201",
+        "name": "元大富櫃50",
         "direction": "watch",
-        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "entry_condition": "下一交易日若櫃買相對加權續強，且 AI/記憶體/PCB 等中小型鏈不是只有少數妖股衝高，而是 ETF 與族群廣度一起延續，才允許把它當成唯一可先手標的；最好還要避免一開盤就大幅高開，讓風險報酬維持可接受。",
         "stop_loss_value": null,
-        "stop_loss_label": "N/A（本輪不給執行價）",
+        "stop_loss_label": "N/A（publish layer 不新增執行價）",
         "take_profit_value": null,
-        "take_profit_label": "N/A（本輪不給執行價）",
-        "rationale": "AI 支撐若要真的延續到台股，最先受益通常仍是大型電子與 ETF，這裡最能反映市場是否願意把 mixed 結構往支撐端解讀。",
-        "priority": "high"
+        "take_profit_label": "N/A（publish layer 不新增執行價）",
+        "rationale": "今天若真的要驗證『台股主線已從權值擴散到本地高 beta 承接』，006201 是最乾淨的第一順位，不是別檔，因為上游 news 直接把它放在櫃買連十紅與 AI 題材擴散的中心位置。",
+        "priority": "high",
+        "role": "starter",
+        "action_bias": "只在觸發條件齊備時保留極小 starter 想像，不追價。"
       },
       {
-        "ticker": "半導體 / ASIC / 先進製程 / 先進封裝",
-        "name": "半導體 / ASIC / 先進製程 / 先進封裝",
+        "ticker": "00892",
+        "name": "富邦台灣半導體",
         "direction": "watch",
-        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "entry_condition": "若隔日市場不是延續 OTC 擴散，而是回到大型半導體與 AI 核心權值承接，且全球科技風險偏好沒有轉弱，00892 才有從觀察升級的理由。",
         "stop_loss_value": null,
-        "stop_loss_label": "N/A（本輪不給執行價）",
+        "stop_loss_label": "N/A（publish layer 不新增執行價）",
         "take_profit_value": null,
-        "take_profit_label": "N/A（本輪不給執行價）",
-        "rationale": "Google/Marvell AI 晶片傳聞延續自研晶片與高階供應鏈敘事，屬今天最有連續性的 AI 細分支線。",
-        "priority": "high"
+        "take_profit_label": "N/A（publish layer 不新增執行價）",
+        "rationale": "如果今天主線比較偏回到全球 AI / 半導體第一層承接，而不是只剩 OTC 題材輪動，00892 會比單一個股更適合當驗證器；它是今天觀察主線有沒有回到更核心 risk-on 的關鍵。",
+        "priority": "high",
+        "role": "watch",
+        "action_bias": "先觀察，不主動進場。"
       },
       {
-        "ticker": "AI 伺服器 / 網通 / 電子零組件 / 電腦週邊",
-        "name": "AI 伺服器 / 網通 / 電子零組件 / 電腦週邊",
+        "ticker": "00981A",
+        "name": "主動統一台股增長",
         "direction": "watch",
-        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "entry_condition": "只有在後續市場明確證明資金持續集中到主動式成長 ETF，且成交/關注度不是單靠申購話題撐住時，才值得重新評估；今天這一輪不主動出手。",
         "stop_loss_value": null,
-        "stop_loss_label": "N/A（本輪不給執行價）",
+        "stop_loss_label": "N/A（publish layer 不新增執行價）",
         "take_profit_value": null,
-        "take_profit_label": "N/A（本輪不給執行價）",
-        "rationale": "market_context 的官方強勢族群集中在電子零組件、電腦週邊與通訊網路，較符合『AI 支撐但不是單一權值獨走』的結構。",
-        "priority": "medium"
-      },
-      {
-        "ticker": "能源 / 通膨敏感族群",
-        "name": "能源 / 通膨敏感族群",
-        "direction": "watch",
-        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
-        "stop_loss_value": null,
-        "stop_loss_label": "N/A（本輪不給執行價）",
-        "take_profit_value": null,
-        "take_profit_label": "N/A（本輪不給執行價）",
-        "rationale": "伊朗與油價 headline 若反轉，這裡會最快反映 mixed driver 往壓力端傾斜。",
-        "priority": "medium"
+        "take_profit_label": "N/A（publish layer 不新增執行價）",
+        "rationale": "這檔不是因為話題熱才看，而是因為今天主線包含『資金容器切換』：若市場更偏好主動追強勢 AI / 成長商品，00981A 能提供風格是否延續的直接線索。",
+        "priority": "medium",
+        "role": "avoid",
+        "action_bias": "今天先避開，不翻成進場理由。"
       }
     ],
     "prohibitions": [
-      "禁止把 none_clear 的上游消息硬寫成單一主導利多或利空。",
-      "禁止用今天台股已收過的強彈表現，事後倒推成『早就確定會全面 risk-on』的敘事。",
-      "禁止因 AI 題材仍在，就自動推導成所有電子都可追價。",
-      "禁止把本層 thesis 延伸成實際曝險比例、進出價位或 action_plan。"
+      "禁止把今天『大家都在聊 AI / 櫃買 / ETF』直接等同於今天可交易。",
+      "禁止把 partial 的上游消息硬寫成單一乾淨主導 headline。",
+      "禁止把 candidate_pool 寫成固定題材清單；每一筆都必須對應今天的上游 source basis。",
+      "禁止把本層 thesis 延伸成 action_plan、曝險比例或發布行為。"
     ],
     "cautions": [
-      "這份 thesis 可用，但屬 partial：news_digest 上游本身是 partial，且 primary_driver 不是單一明確 headline。",
-      "大型權值 / ETF 只保留小幅先手想像；若沒有新 driver 收斂或開盤位置已差，重點是『不追價』。",
-      "最近可得 close_review 來自 2026-04-13，且 analysis layer assessment 為 busy；它不是昨天訊號，不能直接套用成今天結論，但提醒本輪避免把同一主線展開成過多分支敘事。",
-      "tmp/v2-analysis-layer-status-latest.json 缺失，因此今天沒有額外使用即時分析層狀態當 hard guardrail。"
+      "因 guardrail 收斂，今天不追求列滿 5 檔，而是保留最能驗證主線的 3 個容器型候選。",
+      "2330 與 AI 伺服器/CCL/散熱籃子仍有背景意義，但在 busy guardrail 下，今天先不擴大成更長名單。",
+      "若隔日只見單一 ETF 或單一族群衝高，不能自動視為整條主線被確認。",
+      "publish layer 只整理顯示與 latest，不重做 thesis / action_plan / news 的分析內容。",
+      "今天唯一接近可做的是 006201，但仍缺「櫃買續強 + 擴散有廣度 + 開盤位置不過熱」三條件同時成立。"
     ],
-    "notes": "Morning view refreshed from the same-day rerun outputs; publish layer was manually resynced after the scheduled publish left stale error-state views/latest."
+    "notes": "Morning view refreshed from same-day partial inputs only: news_digest 21:31, daily_thesis 21:34, action_plan 21:37. Public view truthfully keeps the day in partial state."
   },
   "notes": [
-    "Morning page should now prefer this refreshed publish-layer view for 2026-04-21.",
-    "Action plan remains intentionally conservative: default 0%, max 1% tiny large-cap/ETF starter if driver continuation is confirmed."
+    "Morning page should use this refreshed publish-layer view for 2026-04-21.",
+    "Public-facing stance: 98% cash baseline, 006201 max 2% tiny conditional starter, 00892 watch-only, 00981A avoid for this round."
   ]
 }

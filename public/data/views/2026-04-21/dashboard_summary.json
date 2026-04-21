@@ -5,31 +5,33 @@
     "job_name": "openclaw.publish.dashboard_summary",
     "data_type": "preopen",
     "status": "partial",
-    "generated_at_iso": "2026-04-21T20:52:25+08:00",
-    "generated_at_label": "04/21 20:52",
-    "last_successful_run": "2026-04-21T20:52:25+08:00",
+    "generated_at_iso": "2026-04-21T21:41:00+08:00",
+    "generated_at_label": "04/21 21:41",
+    "last_successful_run": "2026-04-21T21:41:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "manual_refresh_after_publish_layer_lag",
-      "same_day_daily_thesis_and_action_plan_are_partial",
-      "news_digest_primary_driver_none_clear"
+      "same_day_daily_thesis_is_partial",
+      "same_day_action_plan_is_partial",
+      "same_day_news_digest_is_partial",
+      "primary_driver_none_clear",
+      "publish_layer_only_no_analysis_regeneration"
     ],
     "fallback_used": false
   },
   "date": "2026-04-21",
-  "headline": "今天主導台股盤前框架的不是單一 headline，而是『AI 風險偏好支撐仍在，但同時被伊朗/油價與 Fed 利率預期壓著』的 mixed 主線。",
-  "core_thesis_short": "主線是 AI 支撐仍在，但被伊朗/油價與 Fed 利率預期同時牽制，屬 mixed 偏支撐，不宜把反彈直接解讀成可追價的全面進攻。",
+  "headline": "今天主導台股盤前框架的是『全球 risk-on 與 AI 熱度延續，台股資金再往櫃買/ETF 容器擴散』，但因上游消息不是單一 headline，解讀上屬 mixed 偏支撐。",
+  "core_thesis_short": "主線是全球 risk-on 疊加 AI 熱度，並在台股擴散到櫃買與 ETF 容器；屬 mixed 偏支撐，但今天只保留少數最能驗證資金擴散是否延續的候選。",
   "direction_bias": "mixed_supportive_tilt",
   "risk_level": "medium",
-  "confidence": 0.62,
-  "trading_style": "mixed 偏支撐、只保留大型權值/ETF 極小 starter 想像、明確不追價",
+  "confidence": 0.68,
+  "trading_style": "高現金為主，僅保留 006201 單一極小 starter 條件式想像；00892 觀察、00981A 先避開",
   "action_plan_version": 2,
-  "overall_stance": "今天的 action plan 轉成『mixed 偏支撐，但操作必須比 thesis 更保守』。AI 風險偏好仍是最有利於大型權值、半導體與大盤 ETF 的那一側，所以不必硬翻成偏空；但同一時間伊朗/油價與 Fed 利率預期仍在壓估值，而且今天現貨已經先走出明顯反彈，代表明天若沒有新 driver 收斂、或開盤位置已經不便宜，就不能把這條主線直接翻成可追價的進攻盤。再加上最近可得 analysis layer guardrail 偏 busy，且 tmp/v2-analysis-layer-status-latest.json 缺失，這一層主動再收斂：主體維持高現金，只保留極小、條件式的大型權值 / ETF starter 想像。",
-  "watchlist_count": 4,
-  "action_count": 3,
+  "overall_stance": "今天的 thesis 轉到操作層後，結論不是『看到 AI / 櫃買 / ETF 熱就直接追』，而是『mixed 偏支撐、但位置與負載都要求更保守』。可交易主線仍是全球 risk-on 疊加 AI 熱度，並在台股擴散到櫃買與 ETF 容器；只是這個框架本身不是單一乾淨 headline，而且今日現貨已先大漲，代表隔日若沒有更漂亮的廣度延續與開盤位置配合，風險報酬不夠好。再加上 daily_thesis 已明示 analysis layer busy、tmp guardrail 檔也缺失，所以這一層主動收斂成：高現金為主，只保留 1 個可先手候選、1 個優先觀察候選、1 個過熱先避開候選，不列滿題材、不擴大曝險。",
+  "watchlist_count": 3,
+  "action_count": 4,
   "notes": [
-    "Publish layer reflects the same-day rerun artifacts only and does not regenerate analysis.",
-    "Today is intentionally surfaced as partial rather than full success because the upstream digest has no single clean primary driver.",
-    "Large-cap / ETF starter imagination stays tiny and conditional; default stance remains high cash and no chasing."
+    "Publish layer was refreshed from the same-day 21:31 news_digest, 21:34 daily_thesis, and 21:37 action_plan inputs only.",
+    "Today remains intentionally partial because all three upstream inputs are partial and the news primary driver is none_clear / mixed supportive rather than a single clean headline.",
+    "Default stance stays high cash; only 006201 keeps a conditional tiny starter path, while 00892 remains watch-only and 00981A is treated as overheated / avoid for this round."
   ]
 }

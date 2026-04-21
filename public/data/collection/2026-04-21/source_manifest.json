@@ -1,30 +1,26 @@
 {
   "_meta": {
     "schema_version": "1.1",
-    "schema_extension": "collection-layer-v0",
     "job_name": "openclaw.collect.source_manifest",
     "data_type": "collection",
-    "status": "ok",
-    "generated_at_iso": "2026-04-21T20:37:00+08:00",
-    "generated_at_label": "04/21 20:37",
-    "last_successful_run": "2026-04-21T20:37:00+08:00",
-    "source_freshness": "fresh",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T21:31:00+08:00",
+    "generated_at_label": "04/21 21:31",
     "warnings": [
-      "manifest_only_no_latest_json_update",
-      "collection_layer_only_no_analysis_or_publish"
-    ],
-    "fallback_used": false
+      "collection_layer_only_no_analysis_or_publish",
+      "news_digest_upstream_status_partial"
+    ]
   },
   "date": "2026-04-21",
   "collection_files": [
     {
       "path": "/data/collection/2026-04-21/market_context.json",
-      "purpose": "baseline market background for future analysis layer",
+      "purpose": "compact background layer for downstream thesis generation",
       "status": "written"
     },
     {
       "path": "/data/collection/2026-04-21/source_manifest.json",
-      "purpose": "source registry and coverage status for this collection-only run",
+      "purpose": "source registry and coverage summary for this collection-only run",
       "status": "written"
     }
   ],
@@ -32,37 +28,43 @@
     {
       "name": "news_digest",
       "path": "/data/news/2026-04-21/news_digest.json",
-      "status": "ok"
+      "status": "partial",
+      "notes": "Available and used as primary narrative input; Reuters fulltext not directly available in digest."
     },
     {
       "name": "twse_holiday_api",
       "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "kind": "official_api",
       "status": "ok"
     },
     {
       "name": "twse_mi_index_api",
       "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260421&type=ALLBUT0999&response=json",
+      "kind": "official_api",
       "status": "ok"
     },
     {
       "name": "twse_bfi82u_api",
       "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260421&type=day&response=json",
+      "kind": "official_api",
       "status": "ok"
     }
   ],
   "coverage_matrix": {
-    "news_digest_context": "ok (2026-04-21 partial digest available)",
+    "news_digest_context": "partial but usable",
     "calendar_status": "ok",
-    "same_day_tw_close_snapshot": "ok (2026-04-21)",
-    "same_day_institutional_flow": "ok (2026-04-21)",
+    "same_day_tw_close_snapshot": "ok",
+    "same_day_institutional_flow": "ok",
     "official_sector_leadership": "ok",
+    "local_trade_candidates_to_group_routes": "ok",
     "live_intraday_tw": "missing",
-    "fx_and_yield_snapshot": "missing",
+    "fx_snapshot": "missing",
+    "us_yield_snapshot": "missing",
     "watchlist_or_strategy_layer": "intentionally_skipped"
   },
   "constraints": [
-    "This run intentionally did not create daily_thesis, action_plan, thesis_check, close_review, weekly_review, or performance outputs.",
-    "This run intentionally did not update latest.json or any page/view files.",
-    "This run stayed collection-only and limited narrative output to background context without directional trade conclusions."
+    "This run stayed collection-only and did not create daily_thesis, action_plan, latest.json, or views.",
+    "Background summaries were kept non-directional and did not produce trade bias or watchlist strategy.",
+    "Because news_digest upstream status is partial, this manifest is also marked partial instead of ok."
   ]
 }

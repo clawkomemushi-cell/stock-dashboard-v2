@@ -4,15 +4,15 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-21T20:52:25+08:00",
-    "generated_at_label": "04/21 20:52",
-    "last_successful_run": "2026-04-21T20:52:25+08:00",
+    "generated_at_iso": "2026-04-21T21:41:00+08:00",
+    "generated_at_label": "04/21 21:41",
+    "last_successful_run": "2026-04-21T21:41:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "published_after_manual_v2_morning_chain_rerun",
       "today_news_digest_status_partial",
       "today_daily_thesis_status_partial",
       "today_action_plan_status_partial",
+      "today_primary_driver_none_clear",
       "market_context_available_in_collection_layer"
     ],
     "fallback_used": false
@@ -32,13 +32,13 @@
   "file_statuses": {
     "daily_thesis": {
       "status": "partial",
-      "updated_at_iso": "2026-04-21T20:40:00+08:00",
-      "updated_at_label": "04/21 20:40"
+      "updated_at_iso": "2026-04-21T21:34:00+08:00",
+      "updated_at_label": "21:34"
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-21T20:43:00+08:00",
-      "updated_at_label": "04/21 20:43"
+      "updated_at_iso": "2026-04-21T21:37:00+08:00",
+      "updated_at_label": "21:37"
     },
     "thesis_check": {
       "status": "partial",
@@ -62,8 +62,8 @@
     },
     "news_digest": {
       "status": "partial",
-      "updated_at_iso": "2026-04-21T20:32:00+08:00",
-      "updated_at_label": "04/21 20:32"
+      "updated_at_iso": "2026-04-21T21:31:00+08:00",
+      "updated_at_label": "21:31"
     }
   },
   "available_weeks": [
@@ -89,9 +89,9 @@
     "morning_view": "/data/views/2026-04-21/morning_view.json"
   },
   "publish_notes": [
-    "2026-04-21 manual rerun completed through news_digest → market_context → daily_thesis → action_plan → publish.",
-    "latest.json was refreshed from same-day generated artifacts after the publish-layer lagged behind the newly written analysis files.",
-    "Today remains a partial morning set because news_digest itself is partial and the dominant driver is none_clear / mixed rather than a single clean headline.",
-    "market_context is available at the collection layer and the public views now reflect the refreshed same-day partial state truthfully."
+    "2026-04-21 publish-only refresh completed from already-generated same-day inputs: news_digest → daily_thesis → action_plan.",
+    "latest.json was resynced without regenerating analysis, news collection, or thesis/action plan bodies.",
+    "Today truthfully remains partial because upstream news_digest, daily_thesis, and action_plan are all partial and the primary driver is none_clear / mixed supportive.",
+    "Public views now reflect the newer 21:31 / 21:34 / 21:37 same-day artifacts and keep market_context as a collection-layer reference."
   ]
 }
