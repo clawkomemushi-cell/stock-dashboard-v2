@@ -1,4 +1,6 @@
+import { DriverContextCard } from '../components/dashboard/DriverContextCard'
 import { PaperTradeSummary } from '../components/dashboard/PaperTradeSummary'
+import { TradeCandidateList } from '../components/dashboard/TradeCandidateList'
 import { TradeDirectionBadge } from '../components/ui/Badge'
 import { LoadingSpinner, ErrorDisplay } from '../components/ui/LoadingSpinner'
 import type { ActionPlan } from '../types'
@@ -24,6 +26,24 @@ export function PaperTrade({ actionPlan, loading, error }: Props) {
       </div>
 
       <PaperTradeSummary data={actionPlan.paper_trade} />
+
+      {actionPlan.driver_based_action_hint && (
+        <DriverContextCard
+          title="消息主線 → 操作含義"
+          summary={actionPlan.driver_based_action_hint.driver_implication ?? actionPlan.overall_stance}
+          driverStatus={actionPlan.driver_based_action_hint.driver_status}
+          affectedGroups={actionPlan.driver_based_action_hint.preferred_groups}
+          actionBias={actionPlan.driver_based_action_hint.why_not_chase_or_why_starter_allowed ?? actionPlan.driver_based_action_hint.action_bias}
+          riskIfWrong={actionPlan.driver_based_action_hint.risk_if_wrong}
+          links={actionPlan.driver_based_action_hint.news_links}
+        />
+      )}
+
+      <TradeCandidateList
+        title="可交易候選排序"
+        items={actionPlan.trade_candidates ?? []}
+        emptyMessage="今天沒有新增可交易候選，先以操作明細為主。"
+      />
 
       {/* Overall stance */}
       <div className="card p-4 border-l-4 border-l-accent">

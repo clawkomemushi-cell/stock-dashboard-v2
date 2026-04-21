@@ -1,11 +1,13 @@
 import { MarketContextPanel } from '../components/dashboard/MarketContextPanel'
+import { DriverContextCard } from '../components/dashboard/DriverContextCard'
 import { ConfidenceBar } from '../components/ui/ConfidenceBar'
 import { RiskLevelMeter } from '../components/ui/RiskLevelMeter'
 import { DirectionBadge } from '../components/ui/Badge'
 import { CollapsibleSection } from '../components/ui/CollapsibleSection'
 import { WatchlistTable } from '../components/dashboard/WatchlistTable'
+import { TradeCandidateList } from '../components/dashboard/TradeCandidateList'
 import { LoadingSpinner, ErrorDisplay } from '../components/ui/LoadingSpinner'
-import type { DailyThesis, MorningView } from '../types'
+import type { DailyThesis, MorningView, MarketDriverSummaryBlock } from '../types'
 
 interface Props {
   thesis: DailyThesis | null
@@ -38,6 +40,12 @@ export function MorningAnalysis({ thesis, morningView, loading, error }: Props) 
   const cautions = morningView?.sections.cautions ?? thesis?.cautions ?? []
   const notes = morningView?.sections.notes ?? thesis?.notes
   const watchlist = morningView?.sections.watchlist ?? thesis?.watchlist ?? []
+  const driverSummary = thesis?.market_driver_summary
+  const candidatePool = thesis?.candidate_pool ?? []
+  const normalizedDriverSummary: MarketDriverSummaryBlock | null =
+    typeof driverSummary === 'string'
+      ? { summary: driverSummary }
+      : driverSummary ?? null
 
   return (
     <div className="space-y-5">
@@ -66,6 +74,17 @@ export function MorningAnalysis({ thesis, morningView, loading, error }: Props) 
         {marketContextThesis ? <MarketContextPanel thesis={marketContextThesis} /> : <div className="card p-4 text-sm text-text-muted">缺少市場環境資料</div>}
 
         <div className="space-y-4">
+          {normalizedDriverSummary && (
+            <DriverContextCard
+              title="消息主線"
+              summary={normalizedDriverSummary.summary}
+              whyItMatters={normalizedDriverSummary.why_it_matters}
+              driverStatus={normalizedDriverSummary.driver_status}
+              affectedGroups={normalizedDriverSummary.affected_groups}
+              links={normalizedDriverSummary.news_links}
+            />
+          )}
+
           <CollapsibleSection title="禁止事項" defaultOpen>
             <ul className="p-4 space-y-2">
               {prohibitions.map((p, i) => (
@@ -96,6 +115,12 @@ export function MorningAnalysis({ thesis, morningView, loading, error }: Props) 
           )}
         </div>
       </div>
+
+      <TradeCandidateList
+        title="動態候選池"
+        items={candidatePool}
+        emptyMessage="今天沒有額外入選的動態候選，先看下方觀察標的。"
+      />
 
       <WatchlistTable items={watchlist} />
     </div>

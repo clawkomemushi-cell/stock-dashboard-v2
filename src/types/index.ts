@@ -11,7 +11,7 @@ export type MarketStatus =
   | 'closed'
   | 'holiday'
 
-export type DirectionBias = 'bullish' | 'bearish' | 'neutral'
+export type DirectionBias = 'bullish' | 'bearish' | 'neutral' | 'unknown'
 
 export type RiskLevel = 1 | 2 | 3 | 4 | 5
 
@@ -27,9 +27,9 @@ export type TradeDirection = 'long' | 'short' | 'watch' | 'avoid' | 'hold'
 
 export type Verdict = 'correct' | 'incorrect' | 'partial' | 'pending'
 
-export type DataStatus = 'success' | 'partial' | 'failed'
+export type DataStatus = 'success' | 'partial' | 'failed' | 'error'
 
-export type SourceFreshness = 'fresh' | 'stale' | 'unknown'
+export type SourceFreshness = 'fresh' | 'stale' | 'unknown' | 'missing'
 
 // data_type drives freshness policy; OpenClaw sets this, frontend reads it
 export type DataType =
@@ -39,6 +39,7 @@ export type DataType =
   | 'weekly'        // weekly_review
   | 'performance'   // performance_history
   | 'index'         // latest.json itself
+  | 'news'          // news digest / external reference feed
   | 'collection'    // collection-layer artifacts (not yet rendered directly)
 
 // ============================================================
@@ -83,6 +84,7 @@ export interface LatestIndex {
     close_review: string | null
     weekly_review: string | null    // current week
     performance_history: string | null
+    news_digest?: string | null
   }
 
   // Per-file health snapshot written by OpenClaw after each job
@@ -93,6 +95,7 @@ export interface LatestIndex {
     close_review: FileStatusEntry
     weekly_review: FileStatusEntry
     performance_history: FileStatusEntry
+    news_digest?: FileStatusEntry
   }
 
   // History navigation
@@ -130,6 +133,20 @@ export interface DashboardSummaryView {
   notes: string[]
 }
 
+export interface NewsReferenceLink {
+  label: string
+  url: string
+  source_name?: string
+}
+
+export interface MarketDriverSummaryBlock {
+  summary: string
+  why_it_matters?: string
+  driver_status?: string
+  affected_groups?: string[]
+  news_links?: NewsReferenceLink[]
+}
+
 export interface MorningView {
   _meta: DataMeta
   date: string
@@ -156,6 +173,63 @@ export interface MorningView {
 }
 
 // ============================================================
+// news_digest.json
+// ============================================================
+
+export type NewsImportance = 'high' | 'medium' | 'low'
+export type NewsConfidence = 'high' | 'medium' | 'low'
+export type NewsStatus = 'new' | 'ongoing' | 'fading' | 'invalidated'
+export type DriverBias = 'supportive' | 'pressure' | 'mixed'
+
+export interface DriverSummary {
+  title: string
+  summary: string
+  why_it_matters: string
+  status: NewsStatus
+  bias: DriverBias
+  affected_groups: string[]
+  confidence: NewsConfidence
+}
+
+export interface NewsItem {
+  id: string
+  title: string
+  source_name: string
+  url: string
+  published_at_iso: string | null
+  published_at_label: string
+  summary: string
+  why_it_matters: string
+  affected_groups: string[]
+  related_tickers: string[]
+  driver_tag: string
+  importance: NewsImportance
+  confidence: NewsConfidence
+  status: NewsStatus
+}
+
+export interface MarketImplication {
+  group: string
+  impact: string
+  driver_link: string
+  action_bias: string
+}
+
+export interface NewsDigest {
+  _meta: DataMeta
+  date: string
+  generated_at_iso: string
+  generated_at_label: string
+  primary_driver: DriverSummary
+  secondary_drivers: DriverSummary[]
+  news_items: NewsItem[]
+  market_implications: MarketImplication[]
+  local_trade_candidates?: TradeCandidate[]
+  watchpoints: string[]
+  notes: string
+}
+
+// ============================================================
 // daily_thesis.json
 // ============================================================
 
@@ -178,6 +252,22 @@ export interface WatchlistItem {
   priority: 'high' | 'medium' | 'low'
 }
 
+export type TradeCandidateKind = 'stock' | 'etf' | 'basket'
+export type TradeCandidateRole = 'lead' | 'starter' | 'watch' | 'observe' | 'avoid' | 'hedge'
+
+export interface TradeCandidate {
+  ticker: string
+  name: string
+  kind: TradeCandidateKind
+  theme: string
+  role: TradeCandidateRole
+  why_selected: string
+  trigger_to_act: string
+  invalidation: string
+  source_basis: string[]
+  priority: 'high' | 'medium' | 'low'
+}
+
 export interface DailyThesis {
   _meta: DataMeta
   date: string
@@ -190,6 +280,7 @@ export interface DailyThesis {
   headline: string
   core_thesis: string               // 2–4 sentences, full version
   core_thesis_short: string         // 1–2 sentences, for Dashboard quick view
+  market_driver_summary?: string | MarketDriverSummaryBlock
   market_context: {
     index_trend: string
     volume_status: string
@@ -199,6 +290,7 @@ export interface DailyThesis {
   key_risks: string[]
   support_levels: SupportResistanceLevel[]
   resistance_levels: SupportResistanceLevel[]
+  candidate_pool?: TradeCandidate[]
   watchlist: WatchlistItem[]
   prohibitions: string[]
   cautions: string[]
@@ -262,8 +354,24 @@ export interface ActionPlan {
   generated_at_label: string
   version: number
   overall_stance: string
+  trade_candidates?: TradeCandidate[]
+  driver_based_action_hint?: {
+    driver_status?: string
+    driver_implication?: string
+    driver_phase?: string
+    action_bias?: string
+    preferred_groups?: string[]
+    why_not_chase_or_why_starter_allowed?: string
+    risk_if_wrong?: string
+    news_links?: NewsReferenceLink[]
+  }
   actions: ActionItem[]
   paper_trade: PaperTradeSummary
+  max_exposure?: {
+    pct?: number | null
+    label?: string
+    stance?: string
+  }
   max_exposure_pct: number | null   // raw
   max_exposure_label: string        // "25%（今日保守設定）"
   notes: string
