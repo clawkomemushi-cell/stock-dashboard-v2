@@ -3,23 +3,23 @@
     "schema_version": "1.2",
     "job_name": "openclaw.index",
     "data_type": "index",
-    "status": "error",
-    "generated_at_iso": "2026-04-21T18:51:00+08:00",
-    "generated_at_label": "04/21 18:51",
-    "last_successful_run": "2026-04-14T09:18:00+08:00",
-    "source_freshness": "mixed",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T20:52:25+08:00",
+    "generated_at_label": "04/21 20:52",
+    "last_successful_run": "2026-04-21T20:52:25+08:00",
+    "source_freshness": "fresh",
     "warnings": [
-      "publish_only_run_did_not_regenerate_analysis_inputs",
-      "today_daily_thesis_status_error",
-      "today_action_plan_status_error",
-      "today_news_digest_status_missing",
-      "published_views_updated_to_todays_truthful_state"
+      "published_after_manual_v2_morning_chain_rerun",
+      "today_news_digest_status_partial",
+      "today_daily_thesis_status_partial",
+      "today_action_plan_status_partial",
+      "market_context_available_in_collection_layer"
     ],
     "fallback_used": false
   },
   "date": "2026-04-21",
   "week": "2026-W17",
-  "market_status": "source_missing",
+  "market_status": "pre_market_framework_from_same_day_context",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-21/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-21/action_plan.json",
@@ -31,14 +31,14 @@
   },
   "file_statuses": {
     "daily_thesis": {
-      "status": "error",
-      "updated_at_iso": "2026-04-21T17:44:00+08:00",
-      "updated_at_label": "04/21 17:44"
+      "status": "partial",
+      "updated_at_iso": "2026-04-21T20:40:00+08:00",
+      "updated_at_label": "04/21 20:40"
     },
     "action_plan": {
-      "status": "error",
-      "updated_at_iso": "2026-04-21T18:49:00+08:00",
-      "updated_at_label": "04/21 18:49"
+      "status": "partial",
+      "updated_at_iso": "2026-04-21T20:43:00+08:00",
+      "updated_at_label": "04/21 20:43"
     },
     "thesis_check": {
       "status": "partial",
@@ -61,9 +61,9 @@
       "updated_at_label": "04/03 16:00"
     },
     "news_digest": {
-      "status": "missing",
-      "updated_at_iso": null,
-      "updated_at_label": null
+      "status": "partial",
+      "updated_at_iso": "2026-04-21T20:32:00+08:00",
+      "updated_at_label": "04/21 20:32"
     }
   },
   "available_weeks": [
@@ -89,9 +89,9 @@
     "morning_view": "/data/views/2026-04-21/morning_view.json"
   },
   "publish_notes": [
-    "2026-04-21 publish-morning is publish-only: it updates view artifacts and latest.json without regenerating thesis, action_plan, or news_digest.",
-    "Today's daily_thesis status is error and action_plan status is error; both are surfaced as-is.",
-    "Today's news_digest is missing, so latest.paths.news_digest still points to today's expected file while file_statuses.news_digest truthfully records missing status.",
-    "Because a core input is unavailable, dashboard_summary and morning_view preserve an error-state publish rather than pretending the morning layer succeeded."
+    "2026-04-21 manual rerun completed through news_digest → market_context → daily_thesis → action_plan → publish.",
+    "latest.json was refreshed from same-day generated artifacts after the publish-layer lagged behind the newly written analysis files.",
+    "Today remains a partial morning set because news_digest itself is partial and the dominant driver is none_clear / mixed rather than a single clean headline.",
+    "market_context is available at the collection layer and the public views now reflect the refreshed same-day partial state truthfully."
   ]
 }

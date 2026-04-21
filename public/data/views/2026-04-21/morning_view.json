@@ -4,60 +4,110 @@
     "schema_extension": "publish-layer-v0",
     "job_name": "openclaw.publish.morning_view",
     "data_type": "preopen",
-    "status": "error",
-    "generated_at_iso": "2026-04-21T18:51:00+08:00",
-    "generated_at_label": "04/21 18:51",
-    "last_successful_run": null,
-    "source_freshness": "mixed",
+    "status": "partial",
+    "generated_at_iso": "2026-04-21T20:52:25+08:00",
+    "generated_at_label": "04/21 20:52",
+    "last_successful_run": "2026-04-21T20:52:25+08:00",
+    "source_freshness": "fresh",
     "warnings": [
-      "publish_layer_only_no_new_analysis",
-      "daily_thesis_status_error",
-      "action_plan_status_error",
-      "news_digest_status_missing",
-      "morning_view_reflects_actual_missing_inputs_without_backfill"
+      "manual_refresh_after_publish_layer_lag",
+      "same_day_thesis_is_partial",
+      "same_day_action_plan_is_partial"
     ],
     "fallback_used": false
   },
   "date": "2026-04-21",
   "page": "morning",
-  "headline": "今日 market_context 與 news_digest 都缺失，daily_thesis 停止生成，不硬補盤前主線結論",
+  "headline": "今天主導台股盤前框架的不是單一 headline，而是『AI 風險偏好支撐仍在，但同時被伊朗/油價與 Fed 利率預期壓著』的 mixed 主線。",
   "hero": {
-    "direction_bias": "unknown",
-    "trading_style": "no_call",
-    "confidence": 0,
-    "risk_level": null
+    "direction_bias": "mixed_supportive_tilt",
+    "trading_style": "mixed 偏支撐，但操作更保守、不追價",
+    "confidence": 0.62,
+    "risk_level": "medium"
   },
   "sections": {
-    "core_thesis": "找不到 /public/data/collection/2026-04-21/market_context.json 與 /public/data/news/2026-04-21/news_digest.json，因此今天的 daily_thesis 無法建立正式盤前框架。依規則，當上游 source 缺失時必須停止，不得用舊的 market_context、舊新聞或既有常見題材硬補今天的主導消息結論。最近可得 close_review（2026-04-13）僅能作為 guardrail，且其 analysis_layer_status=busy，所以今天即使之後 source 補齊，也應主動收斂成單一核心 driver，不擴寫多條平行敘事。",
+    "core_thesis": "今天不能把盤前框架硬寫成單一利多或單一利空。上游 news_digest 已明確標記 primary_driver 為 none_clear：AI 題材重新支撐全球風險偏好，是最有利於台股大型電子、半導體與 ETF 想像的那一側；但伊朗和談與中東風險溢價、油價波動、以及 Fed 人事與利率路徑預期，仍同時壓在估值端。market_context 也只把這件事定義成『AI 支撐 + 地緣/油價敏感 + 利率壓力』的背景混合，沒有授權直接下單邊結論。對台股來說，最合理的盤前理解是：大型權值、ETF、AI 供應鏈仍可保留小幅先手想像，但前提只限於 AI 支撐能在隔日延續且資金願意繼續留在大型電子；若只是已反映的反彈延長、或開盤位置偏高卻沒有新 driver 收斂，就不該把它解讀成可追價的全面 risk-on。",
     "market_context": {
-      "index_trend": "今日 publish layer 未補寫市場結構；僅沿用 daily_thesis 是否可用的事實狀態。",
-      "volume_status": "缺少可用 publish-only 補充來源，不額外推論量價。",
-      "foreign_capital": "publish layer 不重抓法人資料。",
-      "institutional_summary": "publish layer 不重做籌碼解讀。"
+      "index_trend": "TWSE 現貨收 37605.11，單日 1.75%，屬同日官方收盤快照。",
+      "volume_status": "本輪 collection 仍未整合盤中即時量價與結構化 FX / 利率快照，因此只把 market_context 當背景層。",
+      "foreign_capital": "外資買超 NT$60,153,727,909，三大法人合計 NT$67,499,596,060。",
+      "institutional_summary": "Official three-institution data showed foreign investors net bought NT$60,153,727,909, investment trusts net bought NT$8,059,253,703, dealers proprietary account net bought NT$591,045,960, dealers hedge account net sold NT$1,304,431,512, and total net buying reached NT$67,499,596,060."
     },
     "key_risks": [
-      "若在缺少今日 market_context 與 news_digest 的情況下硬做 thesis，容易把舊 driver 或常見題材誤當成今天主導消息。",
-      "最近可得 close_review（2026-04-13）顯示 analysis layer 為 busy，代表即使之後 source 補齊，也應主動收斂多線敘事與觀察標的數量。",
-      "tmp guardrail 檔缺失，無法取得更新版分析層負載訊號，因此不能假設今天分析層已恢復正常。"
+      "把 mixed driver 誤讀成單一 AI 利多，會高估隔日追價成功率。",
+      "伊朗和談 / 中東風險溢價若反覆，油價與風險偏好可能快速來回，讓盤前偏多敘事失真。",
+      "Fed 人事與利率路徑仍牽動高估值科技股估值彈性，代表即使 headline 偏多，也不保證走成單邊趨勢。",
+      "AI 題材雖強，但 Reuters 已提示能源 / 電力 / 基建成本是第二層約束，不能把 AI 外推成無條件全面受惠。",
+      "今天台股現貨已經出現明顯反彈與電子領漲，若隔日沒有新訊息收斂，盤前容易面臨『已反映』風險。"
     ],
     "support_levels": [],
     "resistance_levels": [],
-    "watchlist": [],
+    "watchlist": [
+      {
+        "ticker": "大型權值 / 大盤 ETF",
+        "name": "大型權值 / 大盤 ETF",
+        "direction": "watch",
+        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（本輪不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（本輪不給執行價）",
+        "rationale": "AI 支撐若要真的延續到台股，最先受益通常仍是大型電子與 ETF，這裡最能反映市場是否願意把 mixed 結構往支撐端解讀。",
+        "priority": "high"
+      },
+      {
+        "ticker": "半導體 / ASIC / 先進製程 / 先進封裝",
+        "name": "半導體 / ASIC / 先進製程 / 先進封裝",
+        "direction": "watch",
+        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（本輪不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（本輪不給執行價）",
+        "rationale": "Google/Marvell AI 晶片傳聞延續自研晶片與高階供應鏈敘事，屬今天最有連續性的 AI 細分支線。",
+        "priority": "high"
+      },
+      {
+        "ticker": "AI 伺服器 / 網通 / 電子零組件 / 電腦週邊",
+        "name": "AI 伺服器 / 網通 / 電子零組件 / 電腦週邊",
+        "direction": "watch",
+        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（本輪不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（本輪不給執行價）",
+        "rationale": "market_context 的官方強勢族群集中在電子零組件、電腦週邊與通訊網路，較符合『AI 支撐但不是單一權值獨走』的結構。",
+        "priority": "medium"
+      },
+      {
+        "ticker": "能源 / 通膨敏感族群",
+        "name": "能源 / 通膨敏感族群",
+        "direction": "watch",
+        "entry_condition": "只觀察是否有延續承接，不把 mixed 主線直接翻成追價訊號。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（本輪不給執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（本輪不給執行價）",
+        "rationale": "伊朗與油價 headline 若反轉，這裡會最快反映 mixed driver 往壓力端傾斜。",
+        "priority": "medium"
+      }
+    ],
     "prohibitions": [
-      "禁止在今日 market_context / news_digest 缺失時，用昨日資料、歷史 close_review、或常見消息模板硬推偏多 / 偏空框架。",
-      "禁止把 close_review guardrail 反過來當成今天主導消息來源；它只能用來提醒收斂，不是用來補今天結論。",
-      "禁止在這一層偷做 action_plan、曝險比例或 publish-layer 判斷。"
+      "禁止把 none_clear 的上游消息硬寫成單一主導利多或利空。",
+      "禁止用今天台股已收過的強彈表現，事後倒推成『早就確定會全面 risk-on』的敘事。",
+      "禁止因 AI 題材仍在，就自動推導成所有電子都可追價。",
+      "禁止把本層 thesis 延伸成實際曝險比例、進出價位或 action_plan。"
     ],
     "cautions": [
-      "待今日 news_digest 與 market_context 補齊後，再重新生成正式 daily_thesis。",
-      "若後續 source 補齊，因最新可得 close_review 為 busy，應把主線敘事壓回單一核心 driver，避免同時展開太多觀察支線。",
-      "若補齊後主導消息只是已反映或位置差，需明確寫出不追價原因，而不是因為 source 追回就自動轉成進攻敘事。",
-      "今日 news_digest 缺失；如後續補檔，應由上游 job 重建 analysis artifacts，再由 publish layer 重發。"
+      "這份 thesis 可用，但屬 partial：news_digest 上游本身是 partial，且 primary_driver 不是單一明確 headline。",
+      "大型權值 / ETF 只保留小幅先手想像；若沒有新 driver 收斂或開盤位置已差，重點是『不追價』。",
+      "最近可得 close_review 來自 2026-04-13，且 analysis layer assessment 為 busy；它不是昨天訊號，不能直接套用成今天結論，但提醒本輪避免把同一主線展開成過多分支敘事。",
+      "tmp/v2-analysis-layer-status-latest.json 缺失，因此今天沒有額外使用即時分析層狀態當 hard guardrail。"
     ],
-    "notes": "Publish layer 僅整理今日既有 daily_thesis / action_plan / news_digest 狀態，不重做分析與新聞蒐集。 今日 news_digest.json 缺失，因此 morning_view 與 dashboard_summary 只能反映缺檔與 no-call / error 狀態。 daily_thesis.json 本身為 error；publish layer 保留其 headline 與風險說明，不假裝盤前框架已建立。 action_plan.json 本身為 error；publish layer 僅轉譯其 0% 曝險 / no-call 結果，不新增交易腳本。"
+    "notes": "Morning view refreshed from the same-day rerun outputs; publish layer was manually resynced after the scheduled publish left stale error-state views/latest."
   },
   "notes": [
-    "Morning page prefers this publish-layer view when latest.published_views.morning_view exists.",
-    "This publish run preserves error/missing truth instead of backfilling analysis."
+    "Morning page should now prefer this refreshed publish-layer view for 2026-04-21.",
+    "Action plan remains intentionally conservative: default 0%, max 1% tiny large-cap/ETF starter if driver continuation is confirmed."
   ]
 }
