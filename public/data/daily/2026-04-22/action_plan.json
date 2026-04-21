@@ -1,0 +1,215 @@
+{
+  "_meta": {
+    "schema_version": "1.3",
+    "job_name": "openclaw.action_plan",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-22T07:22:00+08:00",
+    "generated_at_label": "04/22 07:22",
+    "last_successful_run": "2026-04-22T07:22:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "translated_from_same_day_daily_thesis_and_partial_news_digest",
+      "trade_candidates_built_from_intersection_of_candidate_pool_and_local_trade_candidates",
+      "busy_guardrail_reduced_candidate_count_and_max_exposure",
+      "no_tmp_analysis_status_file_found",
+      "today_has_no_clean_multi-line_entry_so_cash_remains_primary"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-22",
+  "generated_at_iso": "2026-04-22T07:22:00+08:00",
+  "generated_at_label": "07:22",
+  "version": 2,
+  "overall_stance": "今天操作層的翻譯不是『AI/記憶體/主動式 ETF 都熱，所以一起追』，而是『mixed 偏支撐，但已部分反映、上游仍 partial，且分析層 guardrail 是 busy，所以只能收斂成單一極小先手 + 單一核心確認 + 單一過熱避開』。最接近可做的是主動式 ETF 容器 00987A，因為它最能驗證資金是否還願意承接分散的 AI 成長熱度；但若只是延續話題熱度、沒有看到開盤後的實際承接與位置優勢，就寧可維持高現金。2330 先當核心錨點確認，不急著配置；00947 則因需要記憶體與 IC 設計雙主題同步承接、現在卻還看不到足夠乾淨確認，所以今天先列為過熱/不夠乾淨而避開。",
+  "trade_candidates": [
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "kind": "etf",
+      "theme": "主動式 ETF / AI 成長熱度承接",
+      "role": "starter",
+      "why_selected": "這是 daily_thesis.candidate_pool 與 news_digest.local_trade_candidates 最一致、也最符合今天主線的交集。今天若真有可先手標的，不該是再去追單一題材股，而是看資金是否願意透過主動式 ETF 繼續承接 AI、半導體、PCB、散熱等分散熱度；00987A 正好是最乾淨的容器型驗證器。",
+      "trigger_to_act": "開盤後若成長風格延續，且不是只有零星熱門股衝高，而是資金願意繼續停留在主動式 ETF 容器，並且 00987A 自身沒有出現明顯高開過熱、追價風險惡化，才允許把它當成今天唯一極小先手。",
+      "invalidation": "若市場風格快速轉回純權值防守、主動式 ETF 承接轉弱，或 00987A 一開盤就只剩情緒高開而沒有續留買盤，代表今天最接近可做的候選也不夠乾淨，則不進場。",
+      "source_basis": [
+        "daily_thesis.candidate_pool: 00987A lead",
+        "news_digest.local_trade_candidates: 00987A lead",
+        "TechNews 2026-04-20 top-10-etfs",
+        "market_context: 本地熱度由大型電子向 AI 擴散鏈與主動式 ETF 容器延伸"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "kind": "stock",
+      "theme": "全球 risk-on 與半導體核心錨點",
+      "role": "watch",
+      "why_selected": "它同樣是 thesis 與 news 的交集，但今天更適合當核心確認器，而不是直接先手。今天的主線不是單一權值日，可是若 2330 完全不提供承接，代表全球 risk-on 留在核心半導體的敘事就不夠穩；所以它的重要性在確認，不在追價配置。",
+      "trigger_to_act": "若盤面沒有延續 ETF/擴散容器主線，反而回到大型半導體與權值核心承接，且 2330 能穩定提供 risk-on 錨點，才有從純觀察升級的理由。",
+      "invalidation": "若權值無法接棒、盤面只剩題材零散輪動，或 2330 對大盤沒有給出任何核心承接訊號，則它今天就維持背景錨點，不升級成主腳本。",
+      "source_basis": [
+        "daily_thesis.candidate_pool: 2330 watch",
+        "news_digest.local_trade_candidates: 2330 watch",
+        "Reuters 4/19-4/21 global markets search snippets",
+        "market_context: 半導體列入官方強勢類股"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "00947",
+      "name": "台新臺灣IC設計",
+      "kind": "etf",
+      "theme": "記憶體 / IC 設計雙映射",
+      "role": "avoid",
+      "why_selected": "它雖然也是交集候選，但今天更適合明確列入『先避開』。原因不是題材無效，而是它需要記憶體與 IC 設計雙主題同步承接才夠乾淨；目前上游消息仍是 partial，且 news_digest 對記憶體熱度同時提醒了南亞科的高檔整理風險，代表這條線今天比較像次一階驗證，不值得在 busy guardrail 下硬擠進可做名單。",
+      "trigger_to_act": "只有在盤面明確證明不是單點記憶體炒作，而是記憶體與 IC 設計同步承接、ETF 容器也有一致性量價時，才值得重新從避開改成觀察。",
+      "invalidation": "若熱度仍停留在單一記憶體題材、IC 設計沒有跟上，或 ETF 表現只是被動跟著熱門敘事走，則 00947 今天維持不夠乾淨、先不做。",
+      "source_basis": [
+        "daily_thesis.candidate_pool: 00947 observe",
+        "news_digest.local_trade_candidates: 00947 watch",
+        "UDN 2026-01-06 00947 權重結構描述",
+        "news_digest watchpoint: 記憶體熱點股已有高檔整理風險"
+      ],
+      "priority": "medium"
+    }
+  ],
+  "driver_based_action_hint": {
+    "driver_status": "mixed_supportive_but_partly_reflected_and_busy_guardrailed",
+    "driver_implication": "今天的 driver 沒有壞掉，但也沒有乾淨到能把多條熱門敘事都翻成交易。可執行的重點只剩：先確認資金是不是還願意透過主動式 ETF 容器承接 AI 成長熱度；若是，00987A 才保留唯一極小先手資格。若市場改回大型半導體核心承接，就由 2330 做確認，而不是同時開兩條線。至於記憶體 / IC 設計映射，現在仍比較像需要下一層確認的次主線，今天先不硬做。",
+    "driver_phase": "supportive_rotation_partly_reflected_guardrailed",
+    "action_bias": "只保留一個極小先手想像，不做多候選並行。今天最接近可做的是 00987A，但缺的不是故事，而是『開盤後仍有容器型承接、而且位置不過熱』這個觸發。沒有這個確認，就維持高現金。",
+    "preferred_groups": [
+      "現金",
+      "主動式 ETF 容器映射（00987A，僅限單一極小 starter）",
+      "大型半導體核心確認（2330，先觀察）",
+      "記憶體 / IC 設計 ETF 映射（00947，今天先避開）"
+    ],
+    "why_not_chase_or_why_starter_allowed": "允許 starter 的理由，是 00987A 同時命中 thesis 與 news 的交集，且最能驗證今天真正可交易的主線是否存在；不追價的理由則更明確：news_digest 仍是 partial、主線屬 mixed 偏支撐而非單核強催化、daily_thesis 已標示 busy guardrail，且市場昨天已先大漲。也就是說，今天不是完全不能做，而是只能在條件補齊時給很小的驗證倉，不能把熱度本身當成進場理由。",
+    "risk_if_wrong": "若把今天這種『主線尚在、但已部分反映且需要收斂』的結構錯當成全面進攻盤，最容易犯的錯就是同時追 ETF、追權值、再追記憶體映射，結果只要開盤後承接不如預期，會一起失去甜蜜點。因分析層 busy、tmp guardrail 檔又缺失，今天更該避免多線敘事與多標的並行曝險。",
+    "news_links": [
+      {
+        "label": "TechNews：主動式 ETF 績效與資金偏好",
+        "url": "https://technews.tw/2026/04/20/top-10-etfs/",
+        "source_name": "TechNews"
+      },
+      {
+        "label": "Reuters：全球風險偏好 / 中東 / 油價",
+        "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-graphic-2026-04-19/",
+        "source_name": "Reuters"
+      },
+      {
+        "label": "V2 News Digest",
+        "url": "/data/news/2026-04-22/news_digest.json",
+        "source_name": "V2 News Digest"
+      }
+    ]
+  },
+  "actions": [
+    {
+      "ticker": "CASH",
+      "name": "現金 / 保留主動性",
+      "direction": "hold",
+      "action": "維持絕對主體。今天不是完全 no-call，但也沒有乾淨到值得同時打開多個候選；先承認最好的風險報酬仍在等待觸發條件補齊，而不是為了有動作硬做。",
+      "price_target_value": null,
+      "price_target_label": "N/A",
+      "stop_loss_value": null,
+      "stop_loss_label": "N/A",
+      "take_profit_value": null,
+      "take_profit_label": "N/A",
+      "position_size_pct": 98,
+      "position_size_label": "98% 現金保留",
+      "rationale": "上游 partial + busy guardrail + 主線已部分反映，代表高現金仍是最合理主體。",
+      "conditions": [
+        "若 00987A 沒有出現乾淨承接，維持高現金不動",
+        "若 2330 也無法提供核心承接確認，不把熱度表象翻成交易理由",
+        "今天任何候選若一開盤就過熱，寧可錯過，不放寬紀律"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "direction": "watch",
+      "action": "保留今天唯一可先手的極小 starter 想像，但前提是開盤後仍看到容器型承接，而不是只有話題熱度。若位置已過熱或量價承接不乾淨，就不啟動。",
+      "price_target_value": null,
+      "price_target_label": "僅在位置合理且承接延續時觀察啟動，不追價",
+      "stop_loss_value": null,
+      "stop_loss_label": "若啟動 2% 內驗證倉，以主動式 ETF 承接失敗或風格快速轉弱作退出依據",
+      "take_profit_value": null,
+      "take_profit_label": "不設擴張型目標，先看主線驗證是否成立",
+      "position_size_pct": 2,
+      "position_size_label": "最多 2% 極小 starter 上限",
+      "rationale": "它是今天最接近可做的候選，但真正可做的前提是『資金承接仍在 + 位置還沒壞』兩件事都成立。",
+      "conditions": [
+        "開盤後仍能看到主動式 ETF 容器承接，而非單純情緒高開",
+        "成長風格延續不是只靠少數熱門股，至少要有容器型資金停留",
+        "若高開過熱或承接不足，維持 0% 觀察"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "direction": "watch",
+      "action": "列為核心確認器，不主動進場。只有當市場風格明顯從 ETF/擴散容器切回大型半導體核心承接時，才值得在下一輪重新升級。",
+      "price_target_value": null,
+      "price_target_label": "先看是否成為核心承接錨點，不設追價帶",
+      "stop_loss_value": null,
+      "stop_loss_label": "本輪預設不啟動試單",
+      "take_profit_value": null,
+      "take_profit_label": "以主線確認為主，不設追價目標",
+      "position_size_pct": 0,
+      "position_size_label": "預設 0%，先觀察",
+      "rationale": "它很重要，但今天的重要性在於確認 risk-on 是否仍留在核心半導體，而不是急著拿來配置。",
+      "conditions": [
+        "需看到大型半導體與大盤同步承接，而非只有題材敘事熱",
+        "若 00987A 容器主線較強，2330 不硬升級成主腳本",
+        "未出現乾淨切換前，維持純觀察"
+      ],
+      "status": "active"
+    },
+    {
+      "ticker": "00947",
+      "name": "台新臺灣IC設計",
+      "direction": "watch",
+      "action": "今天列入先避開，不做先手也不給模擬倉。它的價值主要是觀察記憶體與 IC 設計是否真的同步承接，而不是承擔今天第一順位的交易風險。",
+      "price_target_value": null,
+      "price_target_label": "今天不設定進場帶",
+      "stop_loss_value": null,
+      "stop_loss_label": "本輪不啟動",
+      "take_profit_value": null,
+      "take_profit_label": "本輪不啟動",
+      "position_size_pct": 0,
+      "position_size_label": "0%，先避開",
+      "rationale": "雙映射邏輯還沒被乾淨確認，且記憶體熱度已有位置風險提醒，今天不值得在 busy guardrail 下硬做。",
+      "conditions": [
+        "只有在記憶體與 IC 設計同步承接時，才重新評估",
+        "若只是單點記憶體熱，不翻成 00947 的交易理由",
+        "本輪維持避開"
+      ],
+      "status": "active"
+    }
+  ],
+  "paper_trade": {
+    "virtual_capital": 1000000,
+    "available_cash": 1000000,
+    "today_pnl": 0,
+    "today_pnl_pct": 0,
+    "total_pnl": 0,
+    "total_pnl_pct": 0,
+    "win_rate": 0,
+    "open_positions": [],
+    "notes": "paper trade 預設空倉。今天最接近可做的是 00987A，但只有在『開盤後仍有主動式 ETF 容器承接 + 位置不過熱』兩個核心條件同時成立時，才容許最多 2% 的極小驗證倉；2330 只當核心確認器，00947 明確先避開。因 analysis layer busy、且 tmp guardrail 檔缺失，本輪不做多候選並行模擬。"
+  },
+  "max_exposure": {
+    "pct": 2,
+    "label": "總曝險上限 2%，僅限單一 00987A 極小 starter；其餘維持觀察或避開",
+    "stance": "今天不是沒有機會，但沒有乾淨到值得擴張。最接近可做的是 00987A，不過缺的正是開盤後的容器型承接與位置確認；在 busy guardrail 下，寧可高現金，也不把 2330 與 00947 一起升級成可做名單。"
+  },
+  "max_exposure_pct": 2,
+  "max_exposure_label": "0%~2% 上限（僅限 00987A 的單一極小 starter，禁止追價）",
+  "notes": "本次 action_plan 只把 2026-04-22 的 daily_thesis 與 news_digest 轉譯成操作排序，不重做 thesis。trade_candidates 僅取自 daily_thesis.candidate_pool 與 news_digest.local_trade_candidates 的交集 / 收斂版，沒有另外硬造固定題材清單。操作排序明確分成：00987A 可先手、2330 只是觀察、00947 先避開。若今天沒有更乾淨的承接與位置配合，預設就維持高現金；但仍清楚交代最接近可做的是誰，以及差哪個觸發條件才成立。"
+}

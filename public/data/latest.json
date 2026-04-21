@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-21T21:41:00+08:00",
-    "generated_at_label": "04/21 21:41",
-    "last_successful_run": "2026-04-21T21:41:00+08:00",
+    "generated_at_iso": "2026-04-22T07:22:00+08:00",
+    "generated_at_label": "07:22",
+    "last_successful_run": "2026-04-22T07:22:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "today_news_digest_status_partial",
@@ -17,28 +17,28 @@
     ],
     "fallback_used": false
   },
-  "date": "2026-04-21",
+  "date": "2026-04-22",
   "week": "2026-W17",
   "market_status": "pre_market_framework_from_same_day_context",
   "paths": {
-    "daily_thesis": "/data/daily/2026-04-21/daily_thesis.json",
-    "action_plan": "/data/daily/2026-04-21/action_plan.json",
+    "daily_thesis": "/data/daily/2026-04-22/daily_thesis.json",
+    "action_plan": "/data/daily/2026-04-22/action_plan.json",
     "thesis_check": "/data/daily/2026-04-14/thesis_check.json",
     "close_review": null,
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json",
-    "news_digest": "/data/news/2026-04-21/news_digest.json"
+    "news_digest": "/data/news/2026-04-22/news_digest.json"
   },
   "file_statuses": {
     "daily_thesis": {
       "status": "partial",
-      "updated_at_iso": "2026-04-21T21:34:00+08:00",
-      "updated_at_label": "21:34"
+      "updated_at_iso": "2026-04-22T07:14:00+08:00",
+      "updated_at_label": "07:14"
     },
     "action_plan": {
       "status": "partial",
-      "updated_at_iso": "2026-04-21T21:37:00+08:00",
-      "updated_at_label": "21:37"
+      "updated_at_iso": "2026-04-22T07:22:00+08:00",
+      "updated_at_label": "07:22"
     },
     "thesis_check": {
       "status": "partial",
@@ -62,14 +62,16 @@
     },
     "news_digest": {
       "status": "partial",
-      "updated_at_iso": "2026-04-21T21:31:00+08:00",
-      "updated_at_label": "21:31"
+      "updated_at_iso": "2026-04-22T06:52:00+08:00",
+      "updated_at_label": "06:52"
     }
   },
   "available_weeks": [
-    "2026-W14"
+    "2026-W14",
+    "2026-W17"
   ],
   "available_dates": [
+    "2026-04-22",
     "2026-04-21",
     "2026-04-14",
     "2026-04-13",
@@ -85,13 +87,13 @@
     "2026-W14": "/data/weekly/2026-W14/weekly_review.json"
   },
   "published_views": {
-    "dashboard_summary": "/data/views/2026-04-21/dashboard_summary.json",
-    "morning_view": "/data/views/2026-04-21/morning_view.json"
+    "dashboard_summary": "/data/views/2026-04-22/dashboard_summary.json",
+    "morning_view": "/data/views/2026-04-22/morning_view.json"
   },
   "publish_notes": [
-    "2026-04-21 publish-only refresh completed from already-generated same-day inputs: news_digest → daily_thesis → action_plan.",
+    "2026-04-22 publish-only refresh completed from already-generated same-day inputs: news_digest → daily_thesis → action_plan.",
     "latest.json was resynced without regenerating analysis, news collection, or thesis/action plan bodies.",
     "Today truthfully remains partial because upstream news_digest, daily_thesis, and action_plan are all partial and the primary driver is none_clear / mixed supportive.",
-    "Public views now reflect the newer 21:31 / 21:34 / 21:37 same-day artifacts and keep market_context as a collection-layer reference."
+    "Public views now reflect the newer 06:52 / 07:14 / 07:22 same-day artifacts and keep market_context as a collection-layer reference."
   ]
 }

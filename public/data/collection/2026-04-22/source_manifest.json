@@ -1,0 +1,74 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.collect.source_manifest",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-22T07:02:00+08:00",
+    "generated_at_label": "04/22 07:02",
+    "warnings": [
+      "collection_layer_only_no_analysis_or_publish",
+      "pre_open_last_known_official_cash_and_flow_are_2026-04-21",
+      "news_digest_upstream_status_partial"
+    ]
+  },
+  "date": "2026-04-22",
+  "collection_files": [
+    {
+      "path": "/data/collection/2026-04-22/market_context.json",
+      "purpose": "compact background layer for downstream thesis generation",
+      "status": "written"
+    },
+    {
+      "path": "/data/collection/2026-04-22/source_manifest.json",
+      "purpose": "source registry and coverage summary for this collection-only run",
+      "status": "written"
+    }
+  ],
+  "upstream_inputs": [
+    {
+      "name": "news_digest",
+      "path": "/data/news/2026-04-22/news_digest.json",
+      "status": "partial",
+      "notes": "Available and used as the primary narrative input; upstream file is marked partial."
+    },
+    {
+      "name": "twse_holiday_api",
+      "url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "kind": "official_api",
+      "status": "ok"
+    },
+    {
+      "name": "twse_mi_index_api_last_known",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260421&type=ALLBUT0999&response=json",
+      "kind": "official_api",
+      "status": "ok"
+    },
+    {
+      "name": "twse_bfi82u_api_last_known",
+      "url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260421&type=day&response=json",
+      "kind": "official_api",
+      "status": "ok"
+    }
+  ],
+  "coverage_matrix": {
+    "news_digest_context": "partial but usable",
+    "calendar_status": "ok",
+    "target_day_trading_day_check": "ok",
+    "last_known_tw_close_snapshot": "ok",
+    "last_known_institutional_flow": "ok",
+    "official_sector_leadership": "ok",
+    "local_trade_candidates_to_group_routes": "ok",
+    "same_day_tw_close_snapshot": "not_yet_available_pre_open",
+    "same_day_institutional_flow": "not_yet_available_pre_open",
+    "live_intraday_tw": "missing",
+    "fx_snapshot": "missing",
+    "us_yield_snapshot": "missing",
+    "watchlist_or_strategy_layer": "intentionally_skipped"
+  },
+  "constraints": [
+    "This run stayed collection-only and did not create daily_thesis, action_plan, latest.json, or views.",
+    "Background summaries were kept non-directional and did not produce trade bias or watchlist strategy.",
+    "Because the upstream news_digest status is partial and same-day official TWSE close/flow are not yet available pre-open, this manifest is marked partial instead of ok."
+  ]
+}

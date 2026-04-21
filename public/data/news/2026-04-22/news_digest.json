@@ -1,0 +1,324 @@
+{
+  "_meta": {
+    "schema_version": "1.3",
+    "job_name": "openclaw.news_digest",
+    "data_type": "news",
+    "status": "partial",
+    "generated_at_iso": "2026-04-22T06:52:00+08:00",
+    "generated_at_label": "04/22 06:52",
+    "last_successful_run": "2026-04-22T06:52:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "reuters_fulltext_fetch_blocked_by_js",
+      "used_reuters_search_snippets_plus_local_media_crosscheck",
+      "collection_only_no_market_conclusion",
+      "local_hot_groups_are_media-derived_not_exchange-ranked"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-22",
+  "generated_at_iso": "2026-04-22T06:52:00+08:00",
+  "generated_at_label": "06:52",
+  "primary_driver": {
+    "title": "none_clear",
+    "summary": "今天盤前較像複合框架而不是單核 headline：全球風險偏好仍受美伊緊張降溫 / 談判希望支撐，本地則由 AI 與強勢題材延伸到記憶體、矽光子 / CPO、高階 PCB / CCL，以及主動式 ETF 資金容器。現階段沒有單一一則消息能乾淨壓過其他因素。",
+    "why_it_matters": "這代表今天消息層更適合做『熱度地圖 + 台股可交易映射候選池』，而不是把市場過度簡化成單一主題。若全球 risk-on、台積電 / AI 敘事、或本地題材輪動任一條鬆動，承接焦點都可能快速切換。",
+    "status": "ongoing",
+    "bias": "supportive",
+    "affected_groups": [
+      "大型電子 / 半導體",
+      "記憶體",
+      "矽光子 / CPO",
+      "高階 PCB / CCL",
+      "主動式台股 ETF"
+    ],
+    "confidence": "medium"
+  },
+  "secondary_drivers": [
+    {
+      "title": "全球/跨市場主線：中東風險未完全消失，但市場仍偏向押注衝擊可控",
+      "summary": "Reuters 搜尋結果顯示，4/19-4/21 全球市場仍在圍繞美伊局勢、油價與風險偏好交易；股市表現並未轉向全面避險，代表投資人暫時仍把事件視為可控而非失控。",
+      "why_it_matters": "對台股來說，這種外部環境通常先影響大型電子、半導體與科技 ETF 的折價 / 溢價背景，而不是直接指定單一中小型題材。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "大型電子",
+        "半導體",
+        "科技 ETF"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "台灣本地熱度：題材輪動沒有停在權值，記憶體/CPO/PCB/散熱仍在盤面中心",
+      "summary": "本地媒體整理顯示，4/21 台股創高後，市場焦點不只停留在台積電，而是持續往記憶體、矽光子 / CPO、高階 PCB / CCL、散熱等 AI 基建與漲價鏈條擴散。",
+      "why_it_matters": "這讓今天更需要找『誰真正承接熱度』，因為本地盤面已不是純權值單線，而是 ETF 與題材族群一起輪動。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "記憶體",
+        "矽光子 / CPO",
+        "高階 PCB / CCL",
+        "散熱",
+        "AI 供應鏈"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "資金偏好容器：主動式 ETF 持續吸收成長股熱度",
+      "summary": "TechNews 指出近一月績效與規模增量領先的台股 ETF 以主動式產品居多，00987A、00981A 都是熱度直接受益者，背後共通點是成分股集中在今年最強的 AI / 半導體 / PCB / 散熱鏈。",
+      "why_it_matters": "當市場不想只押單一個股時，主動式 ETF 會變成承接題材熱度的更乾淨映射，也能反映資金偏好是否仍在成長題材。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "主動式台股 ETF",
+        "AI / 半導體",
+        "PCB / CCL",
+        "散熱"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "news_items": [
+    {
+      "id": "news-2026-04-22-reuters-global-markets-iran-risk",
+      "title": "Oil surges, stocks end lower on worries about tenuous US-Iran ceasefire",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/world/china/global-markets-wrapup-1-graphic-2026-04-19/",
+      "published_at_iso": "2026-04-19T00:00:00Z",
+      "published_at_label": "04/19 Reuters",
+      "summary": "Reuters 搜尋摘要顯示，全球市場仍在交易美伊停火 / 談判可信度與油價波動，但亞洲股市並未全面轉空，代表市場把地緣風險視為擾動而非失控危機。",
+      "why_it_matters": "這對台股的含義是：大型科技與 ETF 的風險偏好底還在，但若油價或戰事敘事突然反轉，第一波受影響的也會是高 beta 科技鏈。",
+      "affected_groups": [
+        "大型電子",
+        "半導體",
+        "大盤 / 科技 ETF"
+      ],
+      "related_tickers": [
+        "2330",
+        "0050",
+        "00892"
+      ],
+      "driver_tag": "全球風險偏好 / 中東 / 油價",
+      "importance": "high",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-22-cmoney-four-strong-groups",
+      "title": "台股再創歷史新高，四大強勢族群聚焦記憶體、矽光子/CPO、高階PCB/CCL等方向",
+      "source_name": "CMoney",
+      "url": "https://cmnews.com.tw/article/cmoney-ae06b829-3d67-11f1-968c-5af46d1d0bbc",
+      "published_at_iso": "2026-04-21T00:00:00+08:00",
+      "published_at_label": "04/21 CMoney",
+      "summary": "CMoney 盤後整理指出，4/21 台股創高背後不只台積電法說與中東風險降溫，資金也明顯在記憶體、矽光子 / CPO、高階 PCB / CCL、散熱等族群輪動。",
+      "why_it_matters": "這提供今天本地熱門族群的盤面線索：真正要觀察的是哪些台股 / ETF 在承接這些熱度，而不是固定背題材名單。",
+      "affected_groups": [
+        "記憶體",
+        "矽光子 / CPO",
+        "高階 PCB / CCL",
+        "散熱"
+      ],
+      "related_tickers": [
+        "2408",
+        "2383",
+        "6274",
+        "3081",
+        "3163"
+      ],
+      "driver_tag": "本地熱門族群 / 題材輪動",
+      "importance": "high",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-22-technews-active-etf-performance",
+      "title": "近一月前十大 ETF 規模、報酬率出爐，主動式 ETF 與 AI 強勢成分股領先",
+      "source_name": "TechNews",
+      "url": "https://technews.tw/2026/04/20/top-10-etfs/",
+      "published_at_iso": "2026-04-20T00:00:00+08:00",
+      "published_at_label": "04/20 TechNews",
+      "summary": "TechNews 指出 00987A 近一月報酬率逾 26% 為主被動 ETF 績效王，00981A 則是 4 月規模增加金額第一，反映市場正把資金集中到可承接 AI / 成長股熱度的主動式 ETF。",
+      "why_it_matters": "這不是單一 ETF 新聞而已，而是直接說明『哪些容器真的在承接市場熱度』；對今天的台股動態候選池非常關鍵。",
+      "affected_groups": [
+        "主動式台股 ETF",
+        "AI / 半導體",
+        "PCB / CCL",
+        "散熱"
+      ],
+      "related_tickers": [
+        "00987A",
+        "00981A"
+      ],
+      "driver_tag": "ETF 熱點 / 資金偏好",
+      "importance": "high",
+      "confidence": "high",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-22-udn-memory-icdesign-etf-map",
+      "title": "近一季台股原型 ETF 前五強中，00947 搭上記憶體與 IC 設計熱潮",
+      "source_name": "經濟日報 / UDN",
+      "url": "https://udn.com/news/story/7251/9248861",
+      "published_at_iso": "2026-01-06T14:29:00Z",
+      "published_at_label": "01/06 UDN",
+      "summary": "UDN 整理指出，00947 近一季漲幅逾三成，前七大權重包含華邦電、聯發科、南亞科、群聯、台達電、信驊、創意，剛好對應當前記憶體與 IC 設計雙熱點的 ETF 映射。",
+      "why_it_matters": "雖然文章時間較早，但它提供了今天『台灣可交易映射』的重要結構參考：若記憶體 / IC 設計熱度延續，00947 是比單押某一檔更乾淨的承接容器之一。",
+      "affected_groups": [
+        "IC 設計",
+        "記憶體",
+        "半導體 ETF"
+      ],
+      "related_tickers": [
+        "00947",
+        "2454",
+        "2408",
+        "8299",
+        "5274"
+      ],
+      "driver_tag": "ETF 映射 / 記憶體 / IC設計",
+      "importance": "medium",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-22-cmoney-memory-nanya-watch",
+      "title": "南亞科被點名為記憶體行情領頭羊，但法說後呈現高檔整理",
+      "source_name": "CMoney",
+      "url": "https://cmnews.com.tw/article/cmoney-ae06b829-3d67-11f1-968c-5af46d1d0bbc",
+      "published_at_iso": "2026-04-21T00:00:00+08:00",
+      "published_at_label": "04/21 CMoney",
+      "summary": "CMoney 指出南亞科是記憶體行情代表股，但法說後股價出現『利多不漲』與 200 元保衛戰的高檔整理訊號。",
+      "why_it_matters": "這讓今天候選池不能只看熱度，還要區分哪些是承接容器、哪些雖然熱門但位置可能已不夠乾淨。",
+      "affected_groups": [
+        "記憶體",
+        "高 beta 熱門股"
+      ],
+      "related_tickers": [
+        "2408",
+        "00947"
+      ],
+      "driver_tag": "強勢股位置風險 / 記憶體",
+      "importance": "medium",
+      "confidence": "medium",
+      "status": "ongoing"
+    }
+  ],
+  "market_implications": [
+    {
+      "group": "大型電子 / 半導體 ETF",
+      "impact": "若全球 risk-on 框架延續，大型科技與半導體 ETF 仍是第一層映射，但今天沒有乾淨到能把全部熱度收斂成單一權值主線。",
+      "driver_link": "Reuters 全球風險偏好 / 中東 / 油價",
+      "action_bias": "偏向先看是否有續留承接，而不是把昨晚外部消息直接外推成全面單邊盤。"
+    },
+    {
+      "group": "記憶體 / IC 設計 / AI 基建擴散鏈",
+      "impact": "本地熱度顯示資金仍願意往記憶體、矽光子 / CPO、PCB / CCL、散熱等次族群輪動，但這些方向更適合用 ETF 或籃子來驗證，而非預設每一檔都同步受惠。",
+      "driver_link": "CMoney 四大強勢族群 + UDN 00947 映射",
+      "action_bias": "先辨認『誰是承接者』，不要把熱門族群當成永久規則。"
+    },
+    {
+      "group": "主動式台股 ETF",
+      "impact": "主動式 ETF 熱度上升本身就是資金偏好的可交易映射，尤其在市場主線不是單核時，這類商品更容易承接分散的成長題材熱度。",
+      "driver_link": "TechNews 00987A / 00981A 規模與績效",
+      "action_bias": "把它們視為熱度容器與資金風向球，比把單一 ETF 認定為永久主線更合理。"
+    }
+  ],
+  "watchpoints": [
+    "若美伊相關敘事重新惡化、油價急彈，今天這個偏 supportive 的外部背景可能很快失效。",
+    "若本地題材輪動只剩少數妖股或高檔補漲，ETF 映射會比單一熱門股更可靠。",
+    "記憶體雖然仍是熱點，但像南亞科這種已出現利多後高檔整理訊號的標的，不能只因為熱門就自動升級成 lead。"
+  ],
+  "local_trade_candidates": [
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "kind": "etf",
+      "theme": "主動式 ETF / AI 成長熱度承接",
+      "role": "lead",
+      "why_selected": "TechNews 直接點出 00987A 近一月報酬率逾 26%，且前十大成分股幾乎全是今年強勢的 AI、PCB、散熱與半導體鏈，屬於今天最乾淨的本地熱度承接容器之一。",
+      "trigger_to_act": "若市場延續成長題材風格，且資金仍願意透過主動式 ETF 承接 AI / 半導體 / PCB / 散熱熱度。",
+      "invalidation": "若市場風格突然轉回純防禦 / 高股息，或主動式 ETF 熱度降溫，這個映射優勢會下降。",
+      "source_basis": [
+        "TechNews 2026-04-20 top-10-etfs",
+        "成分股集中於台積電、台燿、旺矽、奇鋐、貿聯、創意、台光電、台達電等強勢鏈"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "00981A",
+      "name": "主動統一台股增長",
+      "kind": "etf",
+      "theme": "主動式 ETF / 規模擴張資金偏好",
+      "role": "watch",
+      "why_selected": "TechNews 指出 00981A 是 4 月規模增加金額第一名，代表它不只是題材存在，而是真的有資金往這類成長股容器集中。",
+      "trigger_to_act": "若今天市場仍維持『題材輪動但資金不離場』格局，且主動式 ETF 仍被當成承接 AI 成長股熱度的主容器。",
+      "invalidation": "若成交與資金明顯回流大型被動市值 ETF，00981A 的邊際訊號就會弱化。",
+      "source_basis": [
+        "TechNews 2026-04-20 top-10-etfs",
+        "4月規模增加金額第一名為00981A"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "kind": "stock",
+      "theme": "全球 risk-on 與 AI 權值錨點",
+      "role": "watch",
+      "why_selected": "儘管今天不是單核權值主線，但 Reuters 的全球風險偏好背景加上本地對台積電法說正向解讀，仍讓 2330 成為驗證『風險偏好有沒有回到大型科技』的第一層錨點。",
+      "trigger_to_act": "若盤面重新由大型半導體與權值帶動，而不是只剩中小型題材股輪動。",
+      "invalidation": "若權值走弱而題材繼續往記憶體 / CPO / 上櫃中小型擴散，2330 在這輪就比較像背景錨而不是主承接者。",
+      "source_basis": [
+        "Reuters 4/19-4/21 global markets search snippets",
+        "CMoney 2026-04-21 對台積電法說與AI資本支出支撐的整理"
+      ],
+      "priority": "medium"
+    },
+    {
+      "ticker": "00947",
+      "name": "台新臺灣IC設計",
+      "kind": "etf",
+      "theme": "記憶體 / IC 設計雙映射",
+      "role": "watch",
+      "why_selected": "若今天本地熱度真的由記憶體與 IC 設計共同承接，00947 比單押單一記憶體股更乾淨，因為其權重直接包進聯發科、南亞科、群聯、信驊、創意等高辨識度映射。",
+      "trigger_to_act": "若盤面延續記憶體與 IC 設計的雙主題，且資金沒有明顯從半導體設計鏈撤退。",
+      "invalidation": "若熱度只剩單一記憶體報價題材，而 IC 設計族群未跟上，00947 的廣泛映射效果會降低。",
+      "source_basis": [
+        "UDN 2026-01-06 00947近一季強勢與前七大權重描述",
+        "CMoney 2026-04-21 對記憶體族群再度獲資金關注的盤後整理"
+      ],
+      "priority": "medium"
+    },
+    {
+      "ticker": "2408",
+      "name": "南亞科",
+      "kind": "stock",
+      "theme": "記憶體熱點代表股",
+      "role": "avoid",
+      "why_selected": "它確實命中今天『近期熱度 + 事件催化 + 直接映射記憶體報價』，但 CMoney 同時明講法說後出現利多不漲與高檔整理，位置風險比熱度本身更值得被記住。",
+      "trigger_to_act": "只有在記憶體族群重新獲得一致性承接，且股價結構不再只是高檔整理時，才有重新評估空間。",
+      "invalidation": "若只是維持高檔震盪或跌破關鍵支撐，代表它在今天候選池裡更像風險提醒而不是乾淨承接標的。",
+      "source_basis": [
+        "CMoney 2026-04-21 記憶體族群整理",
+        "南亞科被描述為領頭羊但法說後呈現利多不漲 / 200元保衛戰"
+      ],
+      "priority": "medium"
+    },
+    {
+      "ticker": "BASKET_CPO_PCB_THERMAL",
+      "name": "矽光子/CPO/PCB/散熱題材籃子",
+      "kind": "basket",
+      "theme": "AI 基建規格升級擴散",
+      "role": "observe",
+      "why_selected": "今天本地熱度最明顯的不是單一個股，而是 AI 基建規格升級下的多支鏈條一起強：矽光子 / CPO、高階 PCB / CCL、散熱都被點名，適合先作為族群級觀察籃子。",
+      "trigger_to_act": "若下一交易日市場仍由 AI 基建擴散主導，且相關次族群不是單日拉抬後熄火。",
+      "invalidation": "若市場重新只剩權值或 ETF 表現，或題材快速輪到其他族群，這個籃子就不夠乾淨。",
+      "source_basis": [
+        "CMoney 2026-04-21 四大強勢族群整理",
+        "TechNews 2026-04-20 對 AI基建受惠方向與主動式ETF偏好的整理"
+      ],
+      "priority": "medium"
+    }
+  ],
+  "notes": "本輪嚴格壓在 3 個查詢內完成：一條抓全球/跨市場主線、一條抓台灣本地熱門族群、一條抓台灣可交易映射。由於 Reuters 全文抓取被 JS 擋住，且本地熱門族群多來自媒體盤後整理而非官方排行，因此本檔誠實標為 partial。今天沒有足夠乾淨的單一主導消息，所以 primary_driver.title 直接寫 none_clear；本檔只做消息層整理與 local_trade_candidates 候選池，不延伸為市場結論、操作建議或其他下游檔案。"
+}

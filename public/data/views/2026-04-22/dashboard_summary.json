@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.dashboard_summary",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-22T07:22:00+08:00",
+    "generated_at_label": "07:22",
+    "last_successful_run": "2026-04-22T07:22:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "same_day_daily_thesis_is_partial",
+      "same_day_action_plan_is_partial",
+      "same_day_news_digest_is_partial",
+      "primary_driver_none_clear",
+      "publish_layer_only_no_analysis_regeneration"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-22",
+  "headline": "今天主導台股盤前框架的不是單一 headline，而是『全球 risk-on 尚未破壞，台股熱度由大型電子往 AI 擴散鏈與主動式 ETF 容器延伸』；屬 mixed 偏支撐，但要用少數驗證器確認。",
+  "core_thesis_short": "主線是全球 risk-on 未破壞、台股 AI 熱度往擴散鏈與 ETF 容器延伸；屬 mixed 偏支撐，但因 guardrail 為 busy，今天只保留少數最值得交易驗證的候選。",
+  "direction_bias": "mixed_supportive_tilt",
+  "risk_level": "medium",
+  "confidence": 0.66,
+  "trading_style": "高現金為主，只保留 00987A 最多 2% 極小 starter 條件式想像；2330 先觀察、00947 先避開",
+  "action_plan_version": 2,
+  "overall_stance": "今天操作層的翻譯不是『AI/記憶體/主動式 ETF 都熱，所以一起追』，而是『mixed 偏支撐，但已部分反映、上游仍 partial，且分析層 guardrail 是 busy，所以只能收斂成單一極小先手 + 單一核心確認 + 單一過熱避開』。",
+  "watchlist_count": 3,
+  "action_count": 4,
+  "notes": [
+    "Publish layer was refreshed from the same-day news_digest 06:52, daily_thesis 07:14, and action_plan 07:22 inputs only.",
+    "Today truthfully remains partial because upstream news_digest, daily_thesis, and action_plan are all partial and the primary driver is none_clear / mixed supportive.",
+    "Default stance stays high cash: 98% cash baseline, only 00987A keeps a conditional tiny starter path, while 2330 remains watch-only and 00947 is treated as avoid for this round."
+  ]
+}
