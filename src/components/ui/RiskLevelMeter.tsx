@@ -17,20 +17,31 @@ const segmentColors = [
 ]
 
 interface Props {
-  level: RiskLevel
+  level: RiskLevel | number | string
   showLabel?: boolean
 }
 
+function normalizeRiskLevel(level: RiskLevel | number | string): RiskLevel {
+  if (typeof level === 'number' && level >= 1 && level <= 5) return level as RiskLevel
+  const normalized = String(level).toLowerCase()
+  if (normalized === 'low' || normalized === '偏低') return 2
+  if (normalized === 'medium' || normalized === '中等') return 3
+  if (normalized === 'high' || normalized === '偏高') return 4
+  return 3
+}
+
 export function RiskLevelMeter({ level, showLabel = true }: Props) {
+  const normalizedLevel = normalizeRiskLevel(level)
+
   return (
     <div className="space-y-2">
       {showLabel && (
         <div className="flex items-center justify-between">
           <span className="label">風險等級</span>
           <span className={`text-sm font-semibold font-mono ${
-            level <= 2 ? 'text-bull' : level === 3 ? 'text-warning' : level === 4 ? 'text-bear' : 'text-danger'
+            normalizedLevel <= 2 ? 'text-bull' : normalizedLevel === 3 ? 'text-warning' : normalizedLevel === 4 ? 'text-bear' : 'text-danger'
           }`}>
-            {level} / 5 — {labels[level]}
+            {normalizedLevel} / 5 — {labels[normalizedLevel]}
           </span>
         </div>
       )}
@@ -39,8 +50,8 @@ export function RiskLevelMeter({ level, showLabel = true }: Props) {
           <div
             key={n}
             className={`flex-1 rounded-sm transition-opacity duration-300 ${
-              n <= level ? segmentColors[n - 1] : 'bg-border'
-            } ${n <= level ? 'opacity-100' : 'opacity-30'}`}
+              n <= normalizedLevel ? segmentColors[n - 1] : 'bg-border'
+            } ${n <= normalizedLevel ? 'opacity-100' : 'opacity-30'}`}
           />
         ))}
       </div>

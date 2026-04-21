@@ -33,10 +33,20 @@ const directionConfig: Record<DirectionBias, { label: string; icon: string; colo
   bullish: { label: '偏多', icon: '↑', color: 'bg-bull/15 text-bull border-bull/30' },
   bearish: { label: '偏空', icon: '↓', color: 'bg-bear/15 text-bear border-bear/30' },
   neutral: { label: '觀望', icon: '→', color: 'bg-border/50 text-text-secondary border-border' },
+  unknown: { label: '未知', icon: '?', color: 'bg-border/50 text-text-muted border-border' },
 }
 
-export function DirectionBadge({ direction, size = 'md' }: { direction: DirectionBias; size?: 'sm' | 'md' | 'lg' }) {
-  const cfg = directionConfig[direction]
+function normalizeDirectionBias(direction: DirectionBias | string): DirectionBias {
+  if (direction in directionConfig) return direction as DirectionBias
+  const normalized = String(direction).toLowerCase()
+  if (normalized.includes('bull') || normalized.includes('support')) return 'bullish'
+  if (normalized.includes('bear') || normalized.includes('pressure')) return 'bearish'
+  if (normalized.includes('mixed') || normalized.includes('neutral')) return 'neutral'
+  return 'unknown'
+}
+
+export function DirectionBadge({ direction, size = 'md' }: { direction: DirectionBias | string; size?: 'sm' | 'md' | 'lg' }) {
+  const cfg = directionConfig[normalizeDirectionBias(direction)]
   const sizeClass = size === 'sm' ? 'text-xs px-2 py-0.5' : size === 'lg' ? 'text-sm px-3 py-1.5' : 'text-xs px-2.5 py-1'
   return (
     <span className={`inline-flex items-center gap-1 rounded-md font-semibold border font-mono ${sizeClass} ${cfg.color}`}>
@@ -78,10 +88,20 @@ const riskColors: Record<RiskLevel, string> = {
   5: 'bg-danger/30 text-danger border-danger/40',
 }
 
-export function RiskLevelBadge({ level }: { level: RiskLevel }) {
+function normalizeRiskLevel(level: RiskLevel | number | string): RiskLevel {
+  if (typeof level === 'number' && level >= 1 && level <= 5) return level as RiskLevel
+  const normalized = String(level).toLowerCase()
+  if (normalized === 'low' || normalized === '偏低') return 2
+  if (normalized === 'medium' || normalized === '中等') return 3
+  if (normalized === 'high' || normalized === '偏高') return 4
+  return 3
+}
+
+export function RiskLevelBadge({ level }: { level: RiskLevel | number | string }) {
+  const normalizedLevel = normalizeRiskLevel(level)
   return (
-    <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold font-mono border ${riskColors[level]}`}>
-      RISK {level}
+    <span className={`inline-flex items-center px-2.5 py-1 rounded-md text-xs font-semibold font-mono border ${riskColors[normalizedLevel]}`}>
+      RISK {normalizedLevel}
     </span>
   )
 }
