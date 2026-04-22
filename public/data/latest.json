@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-22T07:22:00+08:00",
-    "generated_at_label": "07:22",
-    "last_successful_run": "2026-04-22T07:22:00+08:00",
+    "generated_at_iso": "2026-04-22T17:19:00+08:00",
+    "generated_at_label": "17:19",
+    "last_successful_run": "2026-04-22T17:19:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "today_news_digest_status_partial",
@@ -96,6 +96,7 @@
     "Today truthfully remains partial because upstream news_digest, daily_thesis, and action_plan are all partial and the primary driver is none_clear / mixed supportive.",
     "Public views now reflect the newer 06:52 / 07:14 / 07:22 same-day artifacts and keep market_context as a collection-layer reference.",
     "2026-04-22 close_review published and enabled in latest.json.",
-    "Analysis layer busy; keep tomorrow pre-market guardrails tighter before upgrading exposure."
+    "Analysis layer busy; keep tomorrow pre-market guardrails tighter before upgrading exposure.",
+    "latest.json top-level metadata refreshed after manual close_review publish verification."
   ]
 }
