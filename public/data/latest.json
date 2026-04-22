@@ -19,12 +19,12 @@
   },
   "date": "2026-04-22",
   "week": "2026-W17",
-  "market_status": "pre_market_framework_from_same_day_context",
+  "market_status": "closed",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-22/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-22/action_plan.json",
     "thesis_check": "/data/daily/2026-04-14/thesis_check.json",
-    "close_review": null,
+    "close_review": "/data/daily/2026-04-22/close_review.json",
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json",
     "news_digest": "/data/news/2026-04-22/news_digest.json"
@@ -46,9 +46,9 @@
       "updated_at_label": "09:09"
     },
     "close_review": {
-      "status": "partial",
-      "updated_at_iso": null,
-      "updated_at_label": null
+      "status": "success",
+      "updated_at_iso": "2026-04-22T17:08:00+08:00",
+      "updated_at_label": "17:08"
     },
     "weekly_review": {
       "status": "success",
@@ -94,6 +94,8 @@
     "2026-04-22 publish-only refresh completed from already-generated same-day inputs: news_digest → daily_thesis → action_plan.",
     "latest.json was resynced without regenerating analysis, news collection, or thesis/action plan bodies.",
     "Today truthfully remains partial because upstream news_digest, daily_thesis, and action_plan are all partial and the primary driver is none_clear / mixed supportive.",
-    "Public views now reflect the newer 06:52 / 07:14 / 07:22 same-day artifacts and keep market_context as a collection-layer reference."
+    "Public views now reflect the newer 06:52 / 07:14 / 07:22 same-day artifacts and keep market_context as a collection-layer reference.",
+    "2026-04-22 close_review published and enabled in latest.json.",
+    "Analysis layer busy; keep tomorrow pre-market guardrails tighter before upgrading exposure."
   ]
 }

@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.close_review",
+    "data_type": "close",
+    "status": "success",
+    "generated_at_iso": "2026-04-22T17:08:00+08:00",
+    "generated_at_label": "17:08",
+    "source_freshness": "verified",
+    "warnings": [
+      "analysis_only_close_review_generated_from_local_artifacts_and_official_twse",
+      "analysis_layer_status_marked_busy_due_to_many_drivers_and_guardrail_convergence"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-22",
+  "generated_at_iso": "2026-04-22T17:08:00+08:00",
+  "generated_at_label": "17:08",
+  "taiex_close": 37878.47,
+  "taiex_change": 273.36,
+  "taiex_change_pct": 0.73,
+  "taiex_volume": 892382023536,
+  "predicted_direction": "neutral",
+  "predicted_confidence": 0.66,
+  "actual_direction": "up",
+  "direction_verdict": "partial",
+  "thesis_accuracy_score": 70,
+  "ticker_results": [
+    {
+      "ticker": "00987A",
+      "name": "主動台新優勢成長",
+      "predicted_direction": "watch",
+      "actual_direction": "up",
+      "change_pct": 1.65,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "盤前列為唯一可做的極小 starter (00987A)。收盤上漲 1.65%，證明其作為容器型映射有一定承接，但因預設為 watch/starter，表現屬部分驗證而非完全勝出。"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "predicted_direction": "watch",
+      "actual_direction": "flat",
+      "change_pct": 0.00,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "盤前把 2330 當成核心確認器；收盤維持平盤，未提供明確核心承接訊號，代表 core-proxy 未被完全確認。"
+    },
+    {
+      "ticker": "00947",
+      "name": "台新臺灣IC設計",
+      "predicted_direction": "avoid",
+      "actual_direction": "up",
+      "change_pct": 2.55,
+      "verdict": "incorrect",
+      "paper_trade_result": null,
+      "notes": "盤前列為避開 (00947) 因需雙主題同步承接；收盤上漲 2.55%，顯示有類股輪動或題材表現，但在 busy guardrail 下避免進場仍是合乎風控。"
+    }
+  ],
+  "what_worked": [
+    "堅守 guardrail：將總曝險壓在極小 starter 或高現金，避免在部分反映的情況下追價。",
+    "把 00987A 定位為唯一極小 starter 並以觀察為主，收盤表現證明其作為容器型驗證器具有價值（上漲 1.65%）。",
+    "action_plan 將 2330 做為否決器 / 核心確認器的用途是有意義的，當 2330 不跟時可避免擴張曝險。"
+  ],
+  "what_failed": [
+    "過度錨定於核心代理 (2330 / 0050) 的同步承接假設，未能更快把盤面拆成『core-proxy confirmation』與『breadth-led support』兩類型。",
+    "analysis 層多次微調（guardrail 降維收斂）導致訊號語義稀釋，增加判讀負擔並降低可執行性。",
+    "缺少跨市場結構化快照（FX / US 10Y / 盤中法人流向）來在收盤階段確認資金方向，讓失效原因難以精準分拆。"
+  ],
+  "key_learning": "當市場呈現指數小漲但核心代理不跟的情況，系統要迅速分類為 'breadth-led support' 而非強迫期待 core-proxy confirmation；不同類型要套用不同的進場/觀察門檻。",
+  "bias_observed": [
+    "對 2330 / 0050 有錨定傾向：當它們不跟時系統較習慣把偏多判定為未成立，未即時接受由其他大型電子輪動撐盤的可能性。",
+    "保守偏差：在部分反映與訊號稀釋時採取高現金雖降低風險，但也可能錯失短期 breadth-led 機會。"
+  ],
+  "tomorrow_watchpoints": [
+    "判斷若指數再偏強，是否由 2330 / 0050 重新接手，或仍由非 2330 權值與大型電子輪動撐盤（兩者需分別對待）。",
+    "觀察主動式 ETF (00987A/00981A) 的量價是否持續承接，若容器持續承接，代表資金偏好確有延續。",
+    "追蹤 FX / US10Y / 外資盤後淨買賣超以取得跨市場驗證。",
+    "若出現 breadth-led 支撐，確認是否能延續到隔日；若只是單日輪動則不視為可持續進場理由。"
+  ],
+  "paper_trade_today_pnl": 0,
+  "analysis_layer_status": {
+    "assessment": "busy",
+    "why": "今日上游 news_digest 為 partial，且市場是複合型支撐（global risk-on 混合 local 題材輪動），分析層多次修正與 guardrail 收斂導致訊號稀釋，需要標示為 busy。",
+    "signal_count": 6,
+    "driver_count": 4,
+    "thesis_check_entry_count": 0,
+    "overload_signals": [
+      "上游 news_digest 標記 partial，消息不完整",
+      "盤面呈現指數小漲但核心代理不跟（TAIEX +0.73% vs 2330 flat）",
+      "多次 thesis_check / action_plan 修正導致語義重複與稀釋",
+      "缺少 FX / yield / 盤中法人等結構化快照以做最後確認"
+    ],
+    "guardrails_for_tomorrow": [
+      "先分類當日為 'core-proxy confirmation' 或 'breadth-led support'，分類前勿下進攻結論。",
+      "若指數續紅但 2330 / 0050 不跟，預設僅觀察或小倉位驗證，不放寬曝險規則。",
+      "把 thesis_check 控制在 2~3 個明確 decision gates，避免同義反覆微調。",
+      "納入跨市場快照（FX / US10Y / 外資盤後）作為次日收斂條件之一。"
+    ]
+  }
+}
