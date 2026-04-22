@@ -1,0 +1,171 @@
+{
+  "_meta": {
+    "schema_version": "1.3",
+    "job_name": "openclaw.daily_thesis",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-23T07:14:00+08:00",
+    "generated_at_label": "04/23 07:14",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "thesis_built_from_market_context_and_partial_news_digest",
+      "candidate_pool_converged_due_to_busy_guardrail",
+      "no_latest_analysis_status_tmp_file_found",
+      "recent_close_review_used_as_guardrail_only"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-23",
+  "generated_at_iso": "2026-04-23T07:14:00+08:00",
+  "generated_at_label": "07:14",
+  "market_status": "pre_market_framework_from_same_day_context",
+  "risk_level": "medium",
+  "direction_bias": "mixed_supportive_tilt",
+  "confidence": 0.68,
+  "headline": "今天主導台股盤前框架的不是單一 headline，而是『全球 risk-on 仍偏正向，但本地承接已從大型 AI 權值擴散到聯發科/ASIC 與有成分依據的 ETF 容器』；屬混合偏支撐，但因昨天 analysis layer 為 busy，今天主動收斂成少數可驗證候選。",
+  "core_thesis": "今天盤前最重要的回答，不是硬選一條單核消息，而是承認上游 market_context 與 news_digest 都指向同一個複合框架：外部由美伊停火延長帶來的 relief 仍讓全球風險偏好維持偏正向，但油價與荷姆茲風險讓這個 risk-on 帶著裂縫；本地則不是只有台積電一條線，而是從 AI / 半導體權值背景，進一步擴散到聯發科作為 ASIC 驗證點、再往 CCL / 光通訊 / 散熱與櫃買風格容器延伸。market_context 的最近已知官方背景也支持這種讀法：4/22 加權收漲 0.73%，電子相關族群相對強，三大法人合計買超約 160.6 億元，代表本地風格承接不是空口敘事。只是上游 news_digest 仍標記 partial，且 4/22 close_review 已把 analysis layer 標成 busy，並提醒昨天其實更像 breadth-led support 而不是強迫要求 core-proxy 同步確認；因此今天不能把所有熱門鏈全部展開，而應主動收斂，只保留少數最值得交易驗證的候選：一個看聯發科是否仍是本地 ASIC 擴散主軸，一個看主動式 ETF 是否繼續承接 AI / ASIC / CCL / 散熱複合熱度，一個看櫃買廣度容器是否真的延續，而不是只剩單一權值或單一飆股在撐場。",
+  "core_thesis_short": "主線是全球 risk-on 偏正向、本地熱度由大型 AI 權值擴散到聯發科/ASIC 與有依據的 ETF 容器；屬混合偏支撐，但因 guardrail 為 busy，今天只留 3 個最值得驗證的候選。",
+  "market_driver_summary": {
+    "dominant_frame": "全球 risk-on 尚未破壞，但台股本地承接重心從單一權值轉向聯發科/ASIC 擴散與具成分/方法論依據的 ETF 容器。",
+    "summary": "news_digest 的 primary_driver 明確是 none_clear，代表今天不該事後硬補一條單核 headline。真正主導盤前框架的是：Reuters 所代表的全球 relief 背景仍在，提供大型科技與半導體評價底；而台灣本地最有辨識度的新增承接，來自聯發科強彈把焦點延伸到 ASIC / CCL / 光通訊 / 散熱，以及資金透過主動式 ETF 與櫃買 ETF 去承接多題材熱度。market_context 再以 4/22 官方現貨強勢族群與法人同步買超，提供這個框架的資金背景。",
+    "why_it_matters": "這條主線不是全面無條件做多，而是 mixed 偏支撐：最可能受影響的是大型 AI / 半導體權值、聯發科帶動的 ASIC 擴散鏈、櫃買成長題材，以及真正有成分/方法論依據的 ETF 容器。若外部 relief 轉弱，或本地擴散縮回單一權值急拉，今天的候選排序就要下修。",
+    "driver_status": "mixed_supportive_global_relief_with_local_asic_etf_breadth",
+    "support_or_pressure": "mixed_supportive",
+    "affected_groups": [
+      "大型 AI / 半導體權值",
+      "聯發科 / ASIC 供應鏈",
+      "CCL / 光通訊 / 散熱等 AI 基建擴散鏈",
+      "櫃買成長題材",
+      "有成分或方法論依據的主動式 / 上櫃 ETF"
+    ],
+    "style_read": "比較像 breadth-led support，而不是要求所有訊號都回到單一 core-proxy 才算成立。"
+  },
+  "market_context": {
+    "status": "available",
+    "source_path": "stock-dashboard-v2/public/data/collection/2026-04-23/market_context.json",
+    "news_digest_path": "stock-dashboard-v2/public/data/news/2026-04-23/news_digest.json",
+    "digest_status": "partial",
+    "primary_driver": "none_clear",
+    "official_cash_session": {
+      "date": "2026-04-22",
+      "close": 37878.47,
+      "change_points": 273.36,
+      "change_pct": 0.73
+    },
+    "institutional_flow": {
+      "date": "2026-04-22",
+      "foreign_diff_ntd": 11609397320,
+      "investment_trust_diff_ntd": 3713321157,
+      "dealers_proprietary_diff_ntd": 1327544416,
+      "total_diff_ntd": 16060732270
+    },
+    "sector_leadership": [
+      "Other Electronic",
+      "Electric Machinery",
+      "Computer and Peripheral Equipment",
+      "Electronics"
+    ]
+  },
+  "guardrail_context": {
+    "recent_close_review_date": "2026-04-22",
+    "analysis_layer_status": "busy",
+    "tmp_status_file_found": false,
+    "applied_convergence": true,
+    "convergence_reason": "昨天 close_review 明確標示 analysis layer busy，且關鍵學習是要先接受 breadth-led support 可能成立，不要把所有熱門題材都展開。因此今天主動收斂，只保留 3 個最能驗證主線的候選，不做長名單。"
+  },
+  "candidate_pool": [
+    {
+      "ticker": "2454",
+      "name": "聯發科",
+      "kind": "stock",
+      "theme": "AI ASIC / 本地擴散主軸驗證點",
+      "role": "lead",
+      "why_selected": "今天最直接的本地主軸不是抽象的 AI，而是聯發科是否能繼續扮演 ASIC 擴散的核心驗證點。news_digest 明確指出 4/22 聯發科強彈，並把市場焦點從單一先進製程延伸到 ASIC 晶片設計服務、先進封測與伺服器鏈；這讓它比單純再看台積電，更貼近今天的本地動態。",
+      "trigger_to_act": "若盤面延續 AI / ASIC 主軸，且聯發科不只是單日情緒急拉，而是能繼續帶動周邊 ASIC / CCL / 光通訊 / 散熱方向一起被資金承接。",
+      "invalidation": "若盤勢重新退回只靠少數權值撐指數，或聯發科失去延續性、周邊擴散鏈也不跟，則它更像一次性情緒點火而非穩定主線。",
+      "source_basis": [
+        "news_digest.local_trade_candidates: 2454（UDN 2026-04-22 聯發科強力反彈、Google TPU 受惠敘事）",
+        "news_digest.secondary_drivers: 聯發科把焦點拉向 ASIC / 先進封測 / CCL / 光通訊，不再只剩台積電",
+        "market_context.market_driver_summary: 本地承接已由大型 AI / 半導體權值延伸到聯發科-ASIC 擴散鏈"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "kind": "etf",
+      "theme": "主動式 ETF / AI-ASIC-CCL-散熱複合容器",
+      "role": "lead",
+      "why_selected": "它不是因為 ETF 熱度高才入選，而是上游已提供明確成分依據。TechNews 直接列出其前十大成分股包括台積電、台燿、旺矽、奇鋐、貿聯、雍智科技、創意、致茂、台光電、台達電，權重方向清楚落在晶圓代工、ASIC、探針卡、散熱、連接線、PCB/CCL 與電源，與今天的 AI / ASIC / CCL / 散熱主線高度重疊，所以它可以升到 lead，而不是只當題材名稱容器。",
+      "trigger_to_act": "若市場仍偏成長風格，且資金想承接 AI / ASIC / CCL / 散熱多題材，而不是只追單一熱門股時。",
+      "invalidation": "若市場風格突然轉回防禦 / 高股息，或 AI 成長題材縮成少數個股獨走，這種多題材容器的映射力會下降。",
+      "source_basis": [
+        "news_digest.local_trade_candidates: 00987A（TechNews 2026-04-20 列出前十大成分股與近一月報酬率逾 26%）",
+        "已核對上游提供的主要成分方向：台積電、台燿、旺矽、奇鋐、貿聯、雍智科技、創意、致茂、台光電、台達電",
+        "market_context.affected_group_read: 主動式 ETF 是今天多題材熱度的重要承接容器"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "006201",
+      "name": "元大富櫃50",
+      "kind": "etf",
+      "theme": "櫃買廣度 / 上櫃題材擴散容器",
+      "role": "watch",
+      "why_selected": "它入池不是因為名字像櫃買題材，而是上游已提供方法論依據。UDN 指出 006201 在櫃買擴散盤勢下近一周績效居前；同時 news_digest 已整理其官方方法論：追蹤富櫃五十指數，以上櫃股票為母體，依市值、公眾流通量、流動性與近四季 EPS 為正等規則篩選。這代表它確實是『櫃買廣度是否延續』的制度化容器，而不是只看 ETF 名稱。",
+      "trigger_to_act": "若今天櫃買仍強於加權，且資金延續從單一權值往上櫃成長題材擴散的結構。",
+      "invalidation": "若盤勢縮回少數大型權值獨撐、櫃買廣度明顯降溫，或上櫃只剩零星飆股而非整體擴散，006201 的映射效果就會下降。",
+      "source_basis": [
+        "news_digest.local_trade_candidates: 006201（UDN 2026-04-20 指出其近一周績效居前）",
+        "已核對上游提供的方法論依據：追蹤富櫃五十指數，依市值、公眾流通量、流動性、近四季 EPS 為正等規則篩選上櫃 50 檔",
+        "market_context.market_driver_summary: 今天較合理的背景主線包含櫃買題材與 ETF 容器"
+      ],
+      "priority": "medium"
+    }
+  ],
+  "watchlist": [
+    {
+      "ticker": "2454",
+      "name": "聯發科",
+      "kind": "stock",
+      "why": "今天第一順位追蹤它，是因為它最能回答『本地主軸到底是不是 ASIC 擴散，而不只是單一權值故事』。若它有延續、且周邊跟上，今天的主線才算真的被盤面驗證。",
+      "alignment": "candidate_pool.lead"
+    },
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "kind": "etf",
+      "why": "今天看它，不是因為主動式 ETF 很紅，而是因為上游已給出明確成分方向，能驗證資金是否仍願意用容器承接 AI / ASIC / CCL / 散熱複合熱度。比起再列更多單股，它更貼近今天的複合主線。",
+      "alignment": "candidate_pool.lead"
+    },
+    {
+      "ticker": "006201",
+      "name": "元大富櫃50",
+      "kind": "etf",
+      "why": "今天把它放進 watchlist，是因為它有清楚方法論依據，能檢查櫃買廣度是否真的延續；若櫃買不跟，就不該把『題材很多人聊』誤判成『題材仍可交易』。",
+      "alignment": "candidate_pool.watch"
+    }
+  ],
+  "key_risks": [
+    "上游 news_digest 為 partial，今天只能做主線與候選池整理，不能用舊資料硬補成單邊結論。",
+    "若美伊停火延長的 relief 快速反轉、油價續彈，今天這個偏支撐的外部背景會先傷到高 beta 科技與成長容器。",
+    "若聯發科無法延續、周邊 ASIC / CCL / 光通訊 / 散熱也不跟，代表本地主線可能退化成單日情緒而非可驗證擴散。",
+    "ETF 候選只在有成分或方法論依據時才保留較高角色；不能把 ETF 名稱像題材就直接當 lead。"
+  ],
+  "support_levels": [],
+  "resistance_levels": [],
+  "prohibitions": [
+    "禁止把『今天大家都在聊聯發科 / ASIC / ETF』直接等於『今天可交易』。",
+    "禁止把 partial 的上游消息硬寫成單一乾淨主導 headline。",
+    "禁止把 candidate_pool 寫成固定題材清單；每一筆都必須對應今天的 news_digest.local_trade_candidates 與 market_context 背景。",
+    "禁止在本層生成 action_plan、曝險比例、latest.json 更新或發布。"
+  ],
+  "cautions": [
+    "因昨天 guardrail 為 busy，今天不追求列滿 5 筆，而是主動收斂成 3 個最值得交易驗證的候選。",
+    "00928、2330 與 ASIC / CCL / 光通訊 / 散熱籃子仍有背景意義，但今天先不延展成更長名單。",
+    "若只看到單一 ETF 或單一個股衝高，不能自動視為整條主線被確認。"
+  ],
+  "trading_style": "framework_only_no_exposure_call",
+  "notes": "This layer only decides the same-day pre-open mainline and a dynamic candidate pool derived from same-day market_context and news_digest. It does not generate action_plan, exposure sizing, latest.json updates, or publishing outputs. Guardrail convergence was actively applied because the most recent available close_review marked the analysis layer as busy."
+}

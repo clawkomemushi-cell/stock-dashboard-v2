@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "schema_extension": "publish-layer-v0",
+    "job_name": "openclaw.publish.morning_view",
+    "data_type": "preopen",
+    "status": "partial",
+    "generated_at_iso": "2026-04-23T07:22:00+08:00",
+    "generated_at_label": "07:22",
+    "last_successful_run": "2026-04-23T07:22:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "same_day_news_digest_is_partial",
+      "same_day_daily_thesis_is_partial",
+      "same_day_action_plan_is_partial",
+      "primary_driver_none_clear",
+      "publish_layer_only_no_analysis_regeneration"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-23",
+  "page": "morning",
+  "headline": "今天主導台股盤前框架的不是單一 headline，而是『全球 risk-on 仍偏正向，但本地承接已從大型 AI 權值擴散到聯發科/ASIC 與有成分依據的 ETF 容器』，屬 mixed 偏支撐。",
+  "hero": {
+    "direction_bias": "mixed_supportive_tilt",
+    "trading_style": "mixed 偏支撐，但高現金優先、只保留單一極小 starter 想像",
+    "confidence": 0.68,
+    "risk_level": "medium"
+  },
+  "sections": {
+    "core_thesis": "今天盤前最重要的結論，是上游 news_digest 與 market_context 都沒有支持單一事件壟斷盤面，反而共同指向一個複合框架：全球風險偏好暫時仍受美伊停火延長 / 談判希望支撐，本地則延續 4/21 台股強彈後的電子與半導體主軸，並把熱度再往記憶體、IC 設計映射、矽光子/CPO、高階 PCB/CCL、散熱，以及主動式台股 ETF 這些承接容器擴散。",
+    "market_context": {
+      "index_trend": "TWSE 官方已知收盤 37878.47，單日 0.73%。",
+      "volume_status": "本輪 publish 只轉寫既有 analysis 輸入，未新增盤中量價或即時宏觀快照。",
+      "foreign_capital": "外資買超 NT$11,609,397,320，投信買超 NT$3,713,321,157，合計 NT$16,060,732,270。",
+      "institutional_summary": "官方 market_context 顯示外資與投信同步明顯買超，且強勢類股集中在 Other Electronic/Electric Machinery/Computer and Peripheral Equipment/Electronics。"
+    },
+    "key_risks": [
+      "上游 news_digest 為 partial，今天只能做主線與候選池整理，不能把缺失資訊用舊敘事硬補成單邊結論。",
+      "若全球 risk-on 因中東談判/停火預期反轉而降溫，高 beta 的 OTC 與成長 ETF 會先失去承接。",
+      "若櫃買擴散只是短線補漲而非廣度延續，006201 類映射會比半導體主鏈更快失真。",
+      "主動式 ETF 熱度屬資金風格訊號，不等於所有 AI / 成長標的都可交易。"
+    ],
+    "support_levels": [],
+    "resistance_levels": [],
+    "watchlist": [
+      {
+        "ticker": "00987A",
+        "name": "主動台新台灣優勢成長",
+        "direction": "watch",
+        "entry_condition": "開盤後若成長風格延續，且不是只有零星熱門股衝高，而是資金願意繼續停留在主動式 ETF 容器，並且 00987A 自身沒有出現明顯高開過熱、追價風險惡化，才允許把它當成今天唯一極小先手。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（publish layer 不新增執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（publish layer 不新增執行價）",
+        "rationale": "它是今天最接近可做的候選，但真正可做的前提是『資金承接仍在 + 位置還沒壞』兩件事都成立。",
+        "priority": "high",
+        "role": "starter",
+        "action_bias": "只在觸發條件齊備時保留極小 starter 想像，不追價。"
+      },
+      {
+        "ticker": "2330",
+        "name": "台積電",
+        "direction": "watch",
+        "entry_condition": "若盤面重新由大型半導體與權值帶動，且不是只有中小型題材股自行輪動，2330 才有從觀察升級的理由。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（publish layer 不新增執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（publish layer 不新增執行價）",
+        "rationale": "它同樣是 thesis 與 news 的交集，但今天更適合當核心確認器，而不是直接先手。",
+        "priority": "high",
+        "role": "watch",
+        "action_bias": "先觀察，不主動進場。"
+      },
+      {
+        "ticker": "00947",
+        "name": "台新臺灣IC設計",
+        "direction": "watch",
+        "entry_condition": "只有在盤面明確證明資金同步承接記憶體與 IC 設計，且 ETF 容器也有一致性量價時，才重新評估。",
+        "stop_loss_value": null,
+        "stop_loss_label": "N/A（publish layer 不新增執行價）",
+        "take_profit_value": null,
+        "take_profit_label": "N/A（publish layer 不新增執行價）",
+        "rationale": "若今天本地熱度真的由記憶體與 IC 設計共同承接，00947 比單押單一記憶體股更乾淨；但目前上游仍 partial，今天先避開。",
+        "priority": "medium",
+        "role": "avoid",
+        "action_bias": "今天先避開，不翻成進場理由。"
+      }
+    ],
+    "prohibitions": [
+      "禁止把今天『大家都在聊 AI / 櫃買 / ETF』直接等同於今天可交易。",
+      "禁止把 partial 的上游消息硬寫成單一乾淨主導 headline。",
+      "禁止把 candidate_pool 寫成固定題材清單；每一筆都必須對應今天的上游 source basis。",
+      "禁止把本層 thesis 延伸成 action_plan、曝險比例或發布行為。"
+    ],
+    "cautions": [
+      "因 guardrail 收斂，今天不追求列滿 5 檔，而是保留最能驗證主線的 3 個容器型候選。",
+      "2330 與 AI 伺服器/CCL/散熱籃子仍有背景意義，但在 busy guardrail 下，今天先不擴大成更長名單。",
+      "若隔日只見單一 ETF 或單一強勢股衝高，不能自動視為整條主線被確認。",
+      "publish layer 只整理顯示與 latest，不重做 thesis / action_plan / news 的分析內容。",
+      "今天唯一接近可做的是 00987A，但仍缺「開盤後仍有主動式 ETF 容器承接 + 位置不過熱」兩條件同時成立。"
+    ],
+    "notes": "Morning view refreshed from same-day partial inputs only: news_digest 06:52, daily_thesis 07:14, action_plan 07:22. Public view truthfully keeps the day in partial state."
+  },
+  "notes": [
+    "Morning page should use this refreshed publish-layer view for 2026-04-23.",
+    "Public-facing stance: 97% 現金保留, 00987A max 3% tiny conditional starter, 006201 watch-only, 2454 avoid for this round."
+  ]
+}

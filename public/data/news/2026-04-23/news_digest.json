@@ -1,0 +1,324 @@
+{
+  "_meta": {
+    "schema_version": "1.3",
+    "job_name": "openclaw.news_digest",
+    "data_type": "news",
+    "status": "partial",
+    "generated_at_iso": "2026-04-23T06:52:00+08:00",
+    "generated_at_label": "04/23 06:52",
+    "last_successful_run": "2026-04-23T06:52:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "reuters_fulltext_fetch_blocked_by_js",
+      "used_reuters_search_snippets_plus_local_media_crosscheck",
+      "collection_only_no_market_conclusion",
+      "etf_candidates_filtered_by_constituent_or_methodology_evidence"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-23",
+  "generated_at_iso": "2026-04-23T06:52:00+08:00",
+  "generated_at_label": "06:52",
+  "primary_driver": {
+    "title": "none_clear",
+    "summary": "今天盤前更像『全球風險偏好仍偏正向，但本地承接熱度已從單一權值擴散到聯發科/ASIC、櫃買題材與主動式ETF』的複合結構，而不是一條乾淨單核 headline。全球面仍圍繞美伊停火延長與油價風險，本地面則由台積電 AI 資本支出背景，延伸到聯發科強彈、ASIC 供應鏈與櫃買題材擴散。",
+    "why_it_matters": "這代表今天消息層的重點不是硬定義唯一主線，而是辨認哪些台股 / ETF 真正承接了這些熱度：大型 AI 權值、聯發科/ASIC 映射、櫃買擴散 ETF、以及主動式ETF資金容器。若外部風險或本地題材擴散任一條鬆動，候選池排序也可能快速切換。",
+    "status": "ongoing",
+    "bias": "supportive",
+    "affected_groups": [
+      "大型 AI / 半導體權值",
+      "聯發科 / ASIC 供應鏈",
+      "櫃買題材股",
+      "主動式台股 ETF"
+    ],
+    "confidence": "medium"
+  },
+  "secondary_drivers": [
+    {
+      "title": "全球/跨市場主線：美伊停火延長帶來 relief，但油價與荷姆茲風險仍讓 risk-on 帶著裂縫前進",
+      "summary": "Reuters 搜尋結果顯示，4/22 美股在停火延長與財報支撐下走高，但同時又提到伊朗挑戰脆弱休戰、荷姆茲海峽再生變數，表示全球風險偏好仍偏正向，卻不是完全無風險的單邊樂觀。",
+      "why_it_matters": "對台股來說，這種外部背景通常先影響大型電子、半導體與科技 ETF 的評價底，而不是直接指定單一中小型題材。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "大型電子",
+        "半導體",
+        "科技 ETF"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "台灣本地熱度：聯發科急彈把焦點拉向 ASIC / 先進封測 / CCL / 光通訊，不再只剩台積電",
+      "summary": "UDN 指出聯發科 4/22 再度收漲停，並把市場焦點從 AI 先進製程擴散到 ASIC 晶片設計服務、先進封測與伺服器供應鏈；同頁延伸內容也點名台光電、奇鋐、京元電、聯亞等高速 ASIC 傳輸與散熱 / CCL 相關標的。",
+      "why_it_matters": "這讓今天的台股映射更偏向『聯發科作為主軸驗證點，周邊 ASIC / CCL / 光通訊題材作為第二層擴散鏈』。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "聯發科",
+        "ASIC 供應鏈",
+        "CCL / PCB",
+        "散熱",
+        "光通訊"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "title": "資金偏好容器：主動式 ETF 與上櫃題材 ETF 仍在承接成長股熱度",
+      "summary": "TechNews 指出 00987A 近一月報酬率逾 26%，前十大成分股幾乎都是今年強勢 AI 鏈；UDN 則顯示 006201、00928 在櫃買擴散盤勢下近一周績效居前，顯示資金同時透過主動式與上櫃題材 ETF 承接熱度。",
+      "why_it_matters": "當盤面不是單核主線時，ETF 本身就會變成最直接的熱度容器與映射工具。",
+      "status": "ongoing",
+      "bias": "supportive",
+      "affected_groups": [
+        "主動式台股 ETF",
+        "上櫃題材 ETF",
+        "AI / 成長股"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "news_items": [
+    {
+      "id": "news-2026-04-23-reuters-wall-st-gains-iran-truce",
+      "title": "Wall St gains as Iran ceasefire extension and robust earnings bring relief",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/business/us-stock-index-futures-climb-after-trump-extends-iran-truce-2026-04-22/",
+      "published_at_iso": "2026-04-22T00:00:00Z",
+      "published_at_label": "04/22 Reuters",
+      "summary": "Reuters 搜尋摘要顯示，美股在美伊停火延長與企業財報支撐下走高，代表全球市場暫時仍把衝突視為可控事件，而不是全面風險關閉。",
+      "why_it_matters": "這提供台股盤前大型科技與半導體鏈的 risk-on 背景。",
+      "affected_groups": [
+        "大型電子",
+        "半導體",
+        "科技 ETF"
+      ],
+      "related_tickers": [
+        "2330",
+        "2454",
+        "00892"
+      ],
+      "driver_tag": "全球風險偏好 / 中東 / 財報",
+      "importance": "high",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-23-reuters-global-markets-truce-tested",
+      "title": "Stocks rise on ceasefire relief, oil gains as truce is tested",
+      "source_name": "Reuters",
+      "url": "https://www.reuters.com/world/china/global-markets-global-markets-2026-04-22/",
+      "published_at_iso": "2026-04-22T00:00:00Z",
+      "published_at_label": "04/22 Reuters",
+      "summary": "另一則 Reuters 搜尋結果同時指出，停火 relief 雖支撐股市，但油價因荷姆茲海峽風險再度走高，表示外部環境仍是 supportive yet fragile。",
+      "why_it_matters": "這提醒今天的台股候選池應偏向『有熱度承接』而不是把外部消息直接外推成全面單邊多頭。",
+      "affected_groups": [
+        "大型電子",
+        "高 beta 科技股",
+        "科技 ETF"
+      ],
+      "related_tickers": [
+        "2330",
+        "2454",
+        "006201"
+      ],
+      "driver_tag": "全球風險偏好 / 油價 / 荷姆茲",
+      "importance": "high",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-23-cmoney-four-strong-groups",
+      "title": "台股再創歷史新高，四大強勢族群聚焦記憶體、矽光子/CPO、高階 PCB/CCL 與設備",
+      "source_name": "CMoney",
+      "url": "https://cmnews.com.tw/article/cmoney-ae06b829-3d67-11f1-968c-5af46d1d0bbc",
+      "published_at_iso": "2026-04-21T00:00:00+08:00",
+      "published_at_label": "04/21 CMoney",
+      "summary": "CMoney 盤後整理指出，台股創高背後並非只有台積電與地緣風險降溫，資金也往記憶體、矽光子 / CPO、高階 PCB / CCL、設備與散熱等 AI 基建鏈輪動。",
+      "why_it_matters": "這提供今天本地熱門族群的底圖，讓候選池不必被單一個股綁死。",
+      "affected_groups": [
+        "記憶體",
+        "矽光子 / CPO",
+        "高階 PCB / CCL",
+        "設備 / 散熱"
+      ],
+      "related_tickers": [
+        "2408",
+        "3081",
+        "6274",
+        "2383"
+      ],
+      "driver_tag": "本地熱門族群 / 題材輪動",
+      "importance": "high",
+      "confidence": "medium",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-23-udn-mediatek-etf-map",
+      "title": "聯發科強力反彈，含『發哥』的大型市值型 ETF 同步受惠",
+      "source_name": "經濟日報 / UDN",
+      "url": "https://udn.com/news/story/7240/9457812",
+      "published_at_iso": "2026-04-22T16:36:00+08:00",
+      "published_at_label": "04/22 UDN",
+      "summary": "UDN 指出聯發科 4/22 收漲停，4 月以來帶動 009816、00850、00923、00922、00888 等含聯發科的大型市值型 ETF 全數雙位數上漲，並把市場焦點延伸到 ASIC、先進封測與伺服器產業鏈。",
+      "why_it_matters": "這是今天最直接的『台灣可交易映射』之一：聯發科本體，以及含發哥的市值型 ETF 容器。",
+      "affected_groups": [
+        "聯發科",
+        "含聯發科 ETF",
+        "ASIC 供應鏈"
+      ],
+      "related_tickers": [
+        "2454",
+        "009816",
+        "00850",
+        "00923",
+        "00922",
+        "00888"
+      ],
+      "driver_tag": "聯發科 / ASIC / ETF 映射",
+      "importance": "high",
+      "confidence": "high",
+      "status": "ongoing"
+    },
+    {
+      "id": "news-2026-04-23-technews-active-etf-performance",
+      "title": "近一月前十大 ETF 規模、報酬率出爐，00987A 與主動式 ETF 居前",
+      "source_name": "TechNews",
+      "url": "https://finance.technews.tw/2026/04/20/top-10-etfs/",
+      "published_at_iso": "2026-04-20T00:00:00+08:00",
+      "published_at_label": "04/20 TechNews",
+      "summary": "TechNews 指出 00987A 近一月大漲逾 26%，前十大成分股包括台積電、台燿、旺矽、奇鋐、貿聯、雍智科技、創意、致茂、台光電、台達電；同時 00981A 4 月規模增加金額居前，顯示主動式 ETF 持續承接成長題材熱度。",
+      "why_it_matters": "這不是只看 ETF 名稱，而是有具體成分方向可對照今天 AI / ASIC / CCL / 散熱主線。",
+      "affected_groups": [
+        "主動式台股 ETF",
+        "AI / 半導體",
+        "PCB / CCL",
+        "散熱"
+      ],
+      "related_tickers": [
+        "00987A",
+        "00981A"
+      ],
+      "driver_tag": "ETF 熱點 / 資金偏好 / AI 供應鏈",
+      "importance": "high",
+      "confidence": "high",
+      "status": "ongoing"
+    }
+  ],
+  "market_implications": [
+    {
+      "group": "大型 AI 權值 / 半導體",
+      "impact": "全球 risk-on 背景仍在，但被油價與中東風險牽制，因此大型科技更像第一層風向錨，而不是保證全盤同步上漲的唯一主線。",
+      "driver_link": "Reuters 4/22 停火延長 relief + 油價風險並存",
+      "action_bias": "偏向先看誰真正承接全球 risk-on，而不是把外部 headline 直接等同全面做多。"
+    },
+    {
+      "group": "聯發科 / ASIC / CCL / 光通訊擴散鏈",
+      "impact": "本地盤面最具辨識度的新增催化，是聯發科帶動 ASIC 設計服務與高速傳輸周邊題材升溫，這比單純重複『AI 受惠』更接近今天的台股動態。",
+      "driver_link": "UDN 聯發科強彈 + CMoney AI 基建擴散",
+      "action_bias": "把聯發科視為驗證點，把周邊題材股與 ETF 視為第二層映射會比較合理。"
+    },
+    {
+      "group": "主動式 / 上櫃題材 ETF",
+      "impact": "當市場主線不是單核時，ETF 會成為承接多題材熱度的乾淨容器；尤其是有成分或方法論依據的產品，比單靠名稱更有判讀價值。",
+      "driver_link": "TechNews 00987A 成分股 + UDN 006201/00928 表現與成分描述 + 元大 006201 方法論",
+      "action_bias": "優先保留有成分 / 方法論證據的 ETF 候選，避免只因名稱相似就入池。"
+    }
+  ],
+  "watchpoints": [
+    "若美伊停火延長敘事反轉、油價續彈，今天這個偏 supportive 的外部背景可能很快降級。",
+    "聯發科雖是 4/22 最醒目的本地驗證點，但若隔天只剩單一權值急拉而周邊 ASIC / OTC 題材不跟，代表擴散力度可能不足。",
+    "主動式 ETF 熱度很高，但若缺乏成分 / 方法論依據，不應只因名稱像題材就升級成 lead。"
+  ],
+  "local_trade_candidates": [
+    {
+      "ticker": "2454",
+      "name": "聯發科",
+      "kind": "stock",
+      "theme": "AI ASIC / Google TPU 受惠鏈核心驗證點",
+      "role": "lead",
+      "why_selected": "它同時命中近期熱度、事件催化、前一交易日強勢與全球 driver 對台股的直接映射。UDN 指出 4/22 聯發科收漲停，市場預期 Google 新一代 TPU 問世將帶動受惠想像，並把焦點從單一先進製程延伸到 ASIC 晶片設計服務與伺服器鏈。",
+      "trigger_to_act": "若盤面仍由 AI / ASIC 主軸領軍，且聯發科不只是單日急拉，而能持續作為含發哥 ETF 與周邊 ASIC 題材的共同驗證點。",
+      "invalidation": "若隔日轉為純權值拉指數、聯發科本身失去延續性，或周邊 ASIC / 封測 / 光通訊無法共振，則它更像一次性情緒點火而非穩定主線。",
+      "source_basis": [
+        "經濟日報 / UDN 2026-04-22 聯發科強力反彈、Google TPU 受惠敘事",
+        "同文點出市場焦點擴散到 ASIC 晶片設計服務、先進封測與伺服器產業鏈"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "kind": "etf",
+      "theme": "主動式 ETF / AI-ASIC-CCL-散熱綜合承接容器",
+      "role": "lead",
+      "why_selected": "TechNews 不只提到績效，還直接列出前十大成分股：台積電、台燿、旺矽、奇鋐、貿聯、雍智科技、創意、致茂、台光電、台達電。這些成分方向同時覆蓋晶圓代工、ASIC、探針卡、散熱、連接線、PCB/CCL 與電源，明確對應今天的 AI 基建與聯發科/ASIC 擴散主題。",
+      "trigger_to_act": "若市場仍維持成長股風格，且資金想參與 AI / ASIC / CCL / 散熱多題材而不只押單一個股時。",
+      "invalidation": "若市場風格突然轉回防禦 / 高股息，或 AI 成長題材轉為少數個股獨走，這種多題材容器的優勢會下降。",
+      "source_basis": [
+        "TechNews 2026-04-20 列出 00987A 前十大成分股與近一月報酬率逾 26%",
+        "成分方向包含台積電、台燿、旺矽、奇鋐、創意、台光電等，直接映射 AI / ASIC / CCL / 散熱"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "006201",
+      "name": "元大富櫃50",
+      "kind": "etf",
+      "theme": "櫃買強勢 / 題材擴散 ETF 映射",
+      "role": "watch",
+      "why_selected": "它命中近期熱度、前一交易日強勢與題材擴散三條。UDN 指出 006201 在 4/20 單日漲幅與近一周績效居前；元大官網則確認其追蹤櫃買中心編製的富櫃五十指數，以上櫃股票為母體，經市值、公眾流通量、流動性與近四季 EPS 為正等條件篩選，屬於櫃買強勢擴散的制度化容器。",
+      "trigger_to_act": "若今天櫃買仍強於加權，且資金延續從權值轉向上櫃題材股的結構。",
+      "invalidation": "若加權由少數大型權值獨撐而櫃買明顯降溫，006201 的廣泛映射效果會下降。",
+      "source_basis": [
+        "經濟日報 / UDN 2026-04-20 指出 006201 單日漲幅第一、近一周績效最強",
+        "元大投信官方產品頁：追蹤富櫃五十指數，依市值、公眾流通量、流動性、近四季 EPS 為正等規則篩選上櫃 50 檔"
+      ],
+      "priority": "high"
+    },
+    {
+      "ticker": "00928",
+      "name": "中信上櫃 ESG 30",
+      "kind": "etf",
+      "theme": "上櫃 AI / 記憶體 / 光通訊 / 材料混合映射",
+      "role": "watch",
+      "why_selected": "UDN 直接列出 00928 調整後前十大成分股為台燿、聯亞、元太、信驊、旺矽、群聯、宜鼎、聖暉、昇達科、光洋科，剛好對應光通訊、探針卡、記憶體、廠務工程、低軌衛星與銅箔基板等熱門鏈。這讓它不是只因為『上櫃』兩個字就入選，而是有具體成分可對照。",
+      "trigger_to_act": "若櫃買續強、題材輪動維持廣度，且市場偏好用 ETF 承接多個上櫃熱門鏈。",
+      "invalidation": "若上櫃只剩極少數飆股獨走、整體廣度縮窄，ETF 的平均映射優勢會下降。",
+      "source_basis": [
+        "經濟日報 / UDN 2026-04-20 列出 00928 前十大成分股與新增弘塑",
+        "成分方向涵蓋台燿、聯亞、信驊、旺矽、群聯、宜鼎、聖暉、昇達科等，對應光通訊、記憶體、廠務、材料與衛星題材"
+      ],
+      "priority": "medium"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "kind": "stock",
+      "theme": "全球 risk-on 與 AI 資本支出錨點",
+      "role": "watch",
+      "why_selected": "雖然今天不是純台積電單核盤，但 CMoney 仍把台積電法說、全年資本支出維持高檔與 AI 長線需求確認列為本波台股創高的重要結構支撐。它更像整個 AI 權值鏈的背景錨點。",
+      "trigger_to_act": "若盤面重新由大型半導體主導，或市場需要確認外部 risk-on 是否真的回到核心權值。",
+      "invalidation": "若資金繼續偏向聯發科 / ASIC / 櫃買題材擴散而非回到台積電主導，2330 在這輪就較像背景錨而不是主承接者。",
+      "source_basis": [
+        "CMoney 2026-04-21 指出台積電法說與 AI 資本支出為本波台股創高支撐",
+        "Reuters 4/22 搜尋摘要顯示全球風險偏好仍偏向支撐大型科技"
+      ],
+      "priority": "medium"
+    },
+    {
+      "ticker": "BASKET_ASIC_CCL_OPTICAL_THERMAL",
+      "name": "ASIC / CCL / 光通訊 / 散熱題材籃子",
+      "kind": "basket",
+      "theme": "聯發科擴散後的第二層台股動態池",
+      "role": "observe",
+      "why_selected": "今天更值得留意的不是死背單一題材，而是聯發科強彈後帶出的第二層受惠鏈。UDN 延伸內容點名台光電、奇鋐、京元電、聯亞；CMoney 則把 CPO、PCB/CCL、設備與散熱列為四大強勢族群，代表這些方向至少有事件催化與前一交易日強勢的交集。",
+      "trigger_to_act": "若下一交易日市場仍由 AI 伺服器規格升級、ASIC 高速傳輸與周邊材料 / 散熱鏈共同推動。",
+      "invalidation": "若盤勢轉回單一權值或 ETF 主導，而這些次族群沒有持續共振，則此籃子就不足以升級成更高優先級。",
+      "source_basis": [
+        "經濟日報 / UDN 2026-04-22 點名台光電、奇鋐、京元電、聯亞為 ASIC 題材延伸受惠方向",
+        "CMoney 2026-04-21 將矽光子 / CPO、高階 PCB / CCL、設備與散熱列為四大強勢族群"
+      ],
+      "priority": "medium"
+    }
+  ],
+  "notes": "本輪依規則壓在 3 個查詢內完成：一條抓 Reuters 全球/跨市場主線、一條抓台灣本地熱門族群與聯發科/ETF 熱點、一條抓 ETF 成分/方法論依據。由於 Reuters 全文抓取仍被 JS 擋住，部分台股/ETF 證據需以可信媒體與可抓取的官方方法論頁交叉確認，因此誠實標為 partial。今天沒有單一乾淨 headline 能壓過全球停火 relief、聯發科/ASIC 強彈、以及 ETF 資金容器三條線，所以 primary_driver.title 使用 none_clear；本檔只做消息整理與 local_trade_candidates 候選池，不延伸為市場結論、操作建議、market_context、daily_thesis、action_plan 或 latest.json。"
+}

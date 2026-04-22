@@ -1,0 +1,146 @@
+{
+  "_meta": {
+    "schema_version": "1.2",
+    "schema_extension": "collection-layer-v2-p0-compact",
+    "job_name": "openclaw.collect.market_context",
+    "data_type": "collection",
+    "status": "partial",
+    "generated_at_iso": "2026-04-23T07:02:00+08:00",
+    "generated_at_label": "04/23 07:02",
+    "last_successful_run": "2026-04-23T07:02:00+08:00",
+    "source_freshness": "fresh_digest_plus_last_known_official_pre_open",
+    "warnings": [
+      "background_only_no_trade_conclusion",
+      "pre_open_last_known_official_cash_and_flow_are_2026-04-22",
+      "news_digest_status_partial"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-23",
+  "timezone": "Asia/Taipei",
+  "collection_scope": "baseline_market_context_only",
+  "news_digest_context": {
+    "path": "/data/news/2026-04-23/news_digest.json",
+    "status": "present",
+    "digest_status": "partial",
+    "primary_driver": "none_clear",
+    "background_read": "今天盤前更像『全球風險偏好仍偏正向，但本地承接熱度已從單一權值擴散到聯發科/ASIC、櫃買題材與主動式ETF』的複合結構，而不是一條乾淨單核 headline。全球面仍圍繞美伊停火延長與油價風險，本地面則由台積電 AI 資本支出背景，延伸到聯發科強彈、ASIC 供應鏈與櫃買題材擴散。",
+    "important_notes": [
+      "本層只把 digest 正規化成背景，不下偏多/偏空結論。",
+      "digest 本身標記 partial，可用但不代表消息排序已完整。"
+    ]
+  },
+  "tw_market_context": {
+    "exchange": "TWSE",
+    "market_status": "pre_open",
+    "is_trading_day": true,
+    "trading_day_reference": {
+      "date": "2026-04-23",
+      "status": "open_trading_day_by_official_calendar",
+      "source_url": "https://www.twse.com.tw/holidaySchedule/holidaySchedule?response=json&date=2026",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "official_cash_session_last_known": {
+      "date": "2026-04-22",
+      "index_name": "TAIEX",
+      "close": 37878.47,
+      "change_points": 273.36,
+      "change_pct": 0.73,
+      "source_url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260422&type=ALLBUT0999&response=json",
+      "source_kind": "official_api",
+      "confidence": "high"
+    },
+    "official_sector_snapshot_last_known": {
+      "leaders": [
+        { "group": "Other Electronic", "change_pct": 3.42 },
+        { "group": "Electric Machinery", "change_pct": 1.51 },
+        { "group": "Computer and Peripheral Equipment", "change_pct": 1.49 },
+        { "group": "Green Energy and Environmental Services", "change_pct": 1.17 },
+        { "group": "Electrical", "change_pct": 0.88 },
+        { "group": "Electronics", "change_pct": 0.88 }
+      ],
+      "laggards": [
+        { "group": "Glass and Ceramic", "change_pct": -4.02 },
+        { "group": "Electrical and Cable", "change_pct": -1.87 },
+        { "group": "Cement and Ceramic", "change_pct": -1.75 },
+        { "group": "Rubber", "change_pct": -1.47 },
+        { "group": "Household", "change_pct": -1.3 },
+        { "group": "Paper and Pulp", "change_pct": -1.06 }
+      ]
+    },
+    "institutional_flow_last_known": {
+      "date": "2026-04-22",
+      "foreign_diff_ntd": 11609397320,
+      "investment_trust_diff_ntd": 3713321157,
+      "dealers_proprietary_diff_ntd": 1327544416,
+      "dealers_hedge_diff_ntd": -589530623,
+      "total_diff_ntd": 16060732270,
+      "source_url": "https://www.twse.com.tw/rwd/en/fund/BFI82U?dayDate=20260422&type=day&response=json",
+      "source_kind": "official_api",
+      "confidence": "high"
+    }
+  },
+  "market_driver_summary": {
+    "background_mainline": "最近已知官方現貨背景是 4/22 台股續強，TAIEX 收 37878.47 點，電子/科技相關族群仍在相對強勢區；最近已知法人背景是外資、投信、券商自營同步買超，合計買超約 NT$160.607 億。把今天的 news_digest 疊上去後，較合理的背景主線是：全球 risk-on 尚未明顯破壞，但台股本地承接已由大型 AI / 半導體權值，延伸到聯發科-ASIC 擴散鏈、櫃買題材與主動式 ETF 容器。",
+    "official_cash_background": "4/22 TAIEX 收 37878.47，上漲 273.36 點、+0.73%；最近已知官方類股領先集中在 Other Electronic、電機機械、電腦及週邊、綠能環保，以及電子/電機相關指數；半導體本身也維持正報酬。",
+    "institutional_background": "4/22 三大法人合計買超 NT$160.607 億，其中外資買超 NT$116.094 億、投信買超 NT$37.133 億、券商自營買超 NT$13.275 億、自營避險賣超 NT$5.895 億；這提供明確的現貨與資金面背景，但本層不直接轉成交易方向。",
+    "affected_group_read": "目前最值得讓下游 thesis 往下驗證的不是固定題材名單，而是幾個動態承接層：大型 AI / 半導體權值、聯發科帶出的 ASIC / CCL / 光通訊 / 散熱擴散鏈、上櫃題材承接，以及有成分依據的主動式 / 上櫃 ETF 容器。",
+    "driver_direction": "background_only_no_conclusion",
+    "confidence": "medium_high"
+  },
+  "thesis_validation_routes": [
+    {
+      "route": "先驗證大型 AI / 半導體權值與相關 ETF 是否仍是全球 risk-on 的本地承接核心。",
+      "related_candidates": ["2330", "2454", "00892"],
+      "why_this_route": "這是 digest 全球背景與官方電子/半導體現貨強勢重疊最高的區塊。"
+    },
+    {
+      "route": "再驗證聯發科帶出的 ASIC / CCL / 光通訊 / 散熱擴散是否仍有跨族群共振，而不是單一權值急拉。",
+      "related_candidates": ["2454", "BASKET_ASIC_CCL_OPTICAL_THERMAL"],
+      "why_this_route": "這是今天 digest 最明顯的本地擴散鏈，但需要後續 thesis 判斷延續性。"
+    },
+    {
+      "route": "最後驗證主動式與上櫃題材 ETF 是否仍是多題材熱度容器，而非僅名稱對題材。",
+      "related_candidates": ["00987A", "006201", "00928"],
+      "why_this_route": "當主線不是單核 headline 時，ETF 更能反映資金風格是否延續。"
+    }
+  ],
+  "data_gaps": [
+    {
+      "key": "tw_same_day_official_cash_session",
+      "status": "not_yet_available_pre_open",
+      "reason": "本輪為 4/23 盤前 build，最近已知官方現貨仍是 4/22。"
+    },
+    {
+      "key": "tw_same_day_institutional_flow",
+      "status": "not_yet_available_pre_open",
+      "reason": "本輪為 4/23 盤前 build，最近已知法人資料仍是 4/22。"
+    },
+    {
+      "key": "news_digest_full_completeness",
+      "status": "partial",
+      "reason": "上游 news_digest 可用，但自身標記為 partial。"
+    },
+    {
+      "key": "live_intraday_tw_tape",
+      "status": "missing_in_this_round",
+      "reason": "本輪未整合台股即時盤中資料。"
+    },
+    {
+      "key": "fx_snapshot_usdtwd_dxy",
+      "status": "missing_in_this_round",
+      "reason": "本輪未整合結構化匯率快照。"
+    },
+    {
+      "key": "us_yield_structured_snapshot",
+      "status": "missing_in_this_round",
+      "reason": "本輪未整合結構化美債殖利率快照。"
+    },
+    {
+      "key": "strategy_outputs",
+      "status": "intentionally_not_generated",
+      "reason": "依規則本輪停在 market_context，不生成 daily_thesis/action_plan/latest。"
+    }
+  ]
+}
