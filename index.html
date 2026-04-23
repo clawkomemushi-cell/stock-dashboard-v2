@@ -5,6 +5,33 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenClaw | 台股分析助手</title>
+    <script>
+      // github-pages-spa-hash-redirect
+      ;(() => {
+        const repoBase = '/stock-dashboard-v2'
+        const current = window.location
+
+        if (!current.pathname.startsWith(repoBase) || current.hash) {
+          return
+        }
+
+        let rawPath = current.pathname.slice(repoBase.length) || '/'
+
+        if (rawPath === '/' || rawPath === '/index.html') {
+          return
+        }
+
+        if (rawPath === '/404.html') {
+          rawPath = '/'
+        }
+
+        if (!rawPath.startsWith('/')) {
+          rawPath = `/${rawPath}`
+        }
+
+        current.replace(`${repoBase}/#${rawPath}${current.search || ''}`)
+      })()
+    </script>
     <style>
       /* System font stack — no external CDN dependency */
       :root {
