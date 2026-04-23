@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "health:site": "node scripts/check-v2-site-health.mjs"
+    "health:site": "node scripts/check-v2-site-health.mjs",
+    "close:review": "node scripts/generate-v2-close-review.mjs",
+    "smoke:publish": "node scripts/smoke-test-v2-publish.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",
