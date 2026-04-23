@@ -4,9 +4,9 @@
     "job_name": "openclaw.thesis_check",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-23T09:08:00+08:00",
-    "generated_at_label": "04/23 09:08",
-    "last_successful_run": "2026-04-23T09:08:00+08:00",
+    "generated_at_iso": "2026-04-23T11:20:00+08:00",
+    "generated_at_label": "04/23 11:20",
+    "last_successful_run": "2026-04-23T11:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "analysis_layer_only_no_publish",
@@ -96,6 +96,93 @@
         "006201_change_pct": -5.2
       },
       "notes": "盤中快照取自 Yahoo 股市可讀頁面於 2026-04-23 09:08 左右抓取：TAIEX 38,795.16（昨收 37,878.47、開 37,971.69、高 38,798.91、低 37,971.69、漲幅 +2.42%）、2330 2,120（昨收 2,050、+3.41%）、2454 2,310（昨收 2,295、+0.65%，開高後一度回探 2,265）、00987A 16.49（昨收 15.98、+3.19%）、006201 45.03（昨收 47.50、-5.20%）。這組證據足夠支持『driver 未翻空、但參與度不健康到不足以上修 action plan』的 lite 判讀；惟同時缺少官方盤中 breadth、櫃買指數、法人流向與更完整籃子共振資料，所以本輪維持 partial。"
+    },
+    {
+      "id": "check_002",
+      "timestamp": "11:20",
+      "status": "partial",
+      "trigger": "午前 decision gate（11:20 checkpoint）。本輪只確認開盤後到午前的主線是否延續、是否擴散，以及是否已實質影響既有 action_plan。",
+      "original_thesis": "09:08 版判斷為：盤前 mixed supportive 的框架尚未被推翻，但參與度偏窄，較像大型權值領先、少數容器部分確認，故維持高現金、00987A 最多 3% 極小 starter 想像、006201 只做廣度確認、2454 先避開追價。",
+      "revised_thesis": "到 11:20 左右，早盤第一輪的強勢不但沒有擴散成 breadth-led support，反而已演變成明顯反轉。加權指數由 09:08 約 +2.42% 轉為約 -1.34%，櫃檯指數約 -4.98%，代表不是單純指數高檔震盪，而是中小型與風格股出現更重的風險釋放；盤前期待驗證的本地主軸代理也同步失守：2454 約 -4.58%、00987A 約 -4.32%、006201 直接落到跌停，顯示『聯發科 / ASIC 擴散 + ETF / 櫃買容器承接』這條線到午前已被盤面否定。2330 雖仍約 +0.73%，但已從早盤高檔明顯回落，只剩大型權值相對抗跌，無法再替 breadth 或容器承接背書。較合理的午前結論是：盤前 supportive driver 不是單純鈍化，而是被更強的 broad risk-off / 風格反轉所取代，09:08 的 no-change 判讀到 11:20 已不再適用，action plan 應視為需要實質下修。",
+      "change_type": "direction_flip",
+      "risk_level_change": 1,
+      "confidence_change": -0.24,
+      "updated_direction": "supportive_frame_failed_broad_morning_reversal",
+      "driver_status": "clearly_reversed",
+      "driver_implication": "盤前『全球 risk-on 偏正向、本地擴散到聯發科/ASIC 與 ETF 容器』的主導解讀，到午前已不再是盤面主控力量。真正支配午前的是 opening gap 失敗後的 broad unwind：大型權值只剩相對抗跌，擴散鏈與容器全數轉弱，代表後續不能再用早盤第一輪的 supportive read 去保留任何 starter 想像。",
+      "participation_mode": "broad_risk_off_unwind",
+      "structure_status": "opening_gap_faded_into_broad_reversal_with_otc_breakdown",
+      "action_delta_needed": true,
+      "change_grade": "material",
+      "preferred_groups_if_driver_holds": [
+        "大型半導體權值（僅限午後能重新站回午前失守區時再觀察）"
+      ],
+      "risk_if_wrong": "若把這一段 broad unwind 誤判成只是正常消化，最容易留下原本 00987A 的 starter 想像或過度相信 2330 相對抗跌能帶回 breadth；但目前 OTC、2454、00987A、006201 同步轉弱，這種錯誤會直接影響 max_exposure 與候選排序。反過來說，若午後真的快速收復，最多是保守過頭；在 11:20 這個 checkpoint，先承認主線已翻案的代價較小。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "午前應回到 100% 現金 / 0% 新曝險基準，不再保留 3% starter 想像。"
+        },
+        {
+          "ticker": "00987A",
+          "action": "由唯一可先手容器降級為失效候選；在未重新站穩前，不再保留啟動條件。"
+        },
+        {
+          "ticker": "006201",
+          "action": "櫃買廣度確認已失敗，且午前落到跌停附近，移出任何近端可做想像。"
+        },
+        {
+          "ticker": "2454",
+          "action": "主軸驗證點已從『不追價』升級為『驗證失敗』；除非午後連同 ASIC 擴散鏈同步回穩，否則不再視為主線支點。"
+        },
+        {
+          "ticker": "2330",
+          "action": "只保留相對抗跌觀察價值，不把單一權值仍紅盤誤讀成市場已穩。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_last": 37369.44,
+        "taiex_change_points": -509.03,
+        "taiex_change_pct": -1.34,
+        "taiex_open": 37971.69,
+        "taiex_intraday_high": 38921.95,
+        "taiex_intraday_low": 37232.95,
+        "taiex_prev_close": 37878.47,
+        "taiex_turnover_100m_ntd": 10259.02,
+        "otc_last": 375.42,
+        "otc_change_points": -19.66,
+        "otc_change_pct": -4.98,
+        "otc_open": 396.15,
+        "otc_intraday_high": 404.55,
+        "otc_intraday_low": 374.93,
+        "otc_prev_close": 395.08,
+        "otc_turnover_100m_ntd": 3075.69,
+        "tsmc_last": 2065,
+        "tsmc_open": 2090,
+        "tsmc_intraday_high": 2135,
+        "tsmc_intraday_low": 2055,
+        "tsmc_prev_close": 2050,
+        "tsmc_change_pct": 0.73,
+        "mediatek_last": 2190,
+        "mediatek_open": 2325,
+        "mediatek_intraday_high": 2335,
+        "mediatek_intraday_low": 2170,
+        "mediatek_prev_close": 2295,
+        "mediatek_change_pct": -4.58,
+        "00987A_last": 15.29,
+        "00987A_open": 16.44,
+        "00987A_intraday_high": 16.56,
+        "00987A_intraday_low": 15.28,
+        "00987A_prev_close": 15.98,
+        "00987A_change_pct": -4.32,
+        "006201_last": 42.75,
+        "006201_open": 45.88,
+        "006201_intraday_high": 45.88,
+        "006201_intraday_low": 42.75,
+        "006201_prev_close": 47.5,
+        "006201_change_pct": -10.0
+      },
+      "notes": "盤中快照採 Yahoo 股市可讀頁面內嵌 quote JSON 於 2026-04-23 11:21~11:22 左右抓取：TAIEX 37,369.44（昨收 37,878.47、開 37,971.69、高 38,921.95、低 37,232.95、-1.34%、成交金額約 10,259.02 億）、櫃檯指數 375.42（昨收 395.08、開 396.15、高 404.55、低 374.93、-4.98%、成交金額約 3,075.69 億）、2330 2,065（+0.73%）、2454 2,190（-4.58%）、00987A 15.29（-4.32%）、006201 42.75（-10.00%，跌停）。這組證據已足夠把 09:08 的『confirmation_with_caution / no action delta』修正為午前的 material reversal；惟仍缺官方盤中 breadth、法人流向與更完整族群統計，因此本輪維持 partial。"
     }
   ]
 }

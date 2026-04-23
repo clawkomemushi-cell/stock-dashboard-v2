@@ -2,61 +2,50 @@
   "_meta": {
     "schema_version": "1.3",
     "job_name": "openclaw.action_plan",
-    "data_type": "preopen",
+    "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-23T07:22:00+08:00",
-    "generated_at_label": "04/23 07:22",
-    "last_successful_run": "2026-04-23T07:22:00+08:00",
+    "generated_at_iso": "2026-04-23T11:30:00+08:00",
+    "generated_at_label": "04/23 11:30",
+    "last_successful_run": "2026-04-23T11:30:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
-      "analysis_layer_only_no_publish",
-      "translated_from_same_day_daily_thesis_and_partial_news_digest",
-      "trade_candidates_built_from_intersection_of_candidate_pool_and_local_trade_candidates",
-      "busy_guardrail_reduced_candidate_count_and_max_exposure",
-      "no_tmp_analysis_status_file_found",
-      "today_has_no_clean_multi-line_entry_so_cash_remains_primary"
+      "intraday_adjustment_from_thesis_check_11:20",
+      "action_plan_conservatively_downgraded_due_to_material_morning_reversal",
+      "no_tmp_analysis_status_file_found"
     ],
     "fallback_used": false
   },
   "date": "2026-04-23",
-  "generated_at_iso": "2026-04-23T07:22:00+08:00",
-  "generated_at_label": "07:22",
-  "version": 2,
-  "overall_stance": "今天操作層的翻譯不是把『全球 relief + 聯發科急彈 + ETF 熱度』直接等於全面進攻，而是承認這是一個 mixed 偏支撐、但已部分反映且上游仍 partial 的結構。因 daily_thesis guardrail 明確沿用 busy 狀態、tmp 分析狀態檔也缺失，所以今天只保留一個可先手容器、一個廣度觀察器、以及一個明確過熱先避開的核心人氣股。最接近可做的是 00987A，因為它有成分依據、能驗證 AI / ASIC / CCL / 散熱複合熱度是否還有容器型承接；006201 留作櫃買廣度確認，不主動先手；2454 雖是本地主軸驗證點，但在前一交易日強勢急彈之後，今天更像要等延續性與擴散共振確認，不能把人氣本身當進場理由。",  
+  "generated_at_iso": "2026-04-23T11:30:00+08:00",
+  "generated_at_label": "11:30",
+  "version": 3,
+  "overall_stance": "午前 11:20 的 thesis_check 顯示早盤發生 broad reversal，原先的 mixed_supportive 構型已被盤面否定。action_plan 於 intraday gate 下保守調整：回到以現金為主、移除或降級先前的 starter 想像，並把所有候選暫時降為觀察或移出，直到午後出現明確回穩信號。此為保守 intraday 修正，不重跑上游分析。",
   "trade_candidates": [
     {
       "ticker": "00987A",
       "name": "主動台新台灣優勢成長",
       "kind": "etf",
       "theme": "主動式 ETF / AI-ASIC-CCL-散熱複合容器",
-      "role": "starter",
-      "why_selected": "它是 daily_thesis.candidate_pool 與 news_digest.local_trade_candidates 最乾淨的交集之一，而且不是只因 ETF 名稱熱門。上游已提供前十大成分股與權重方向：台積電、台燿、旺矽、奇鋐、貿聯、雍智科技、創意、致茂、台光電、台達電，實際覆蓋晶圓代工、ASIC、探針卡、散熱、連接線、PCB/CCL 與電源，所以它能驗證今天『AI / ASIC / CCL / 散熱不是單點衝高，而是複合承接』是否成立。相較直接追單一人氣股，它更適合當今天唯一可先手的低維度驗證器。",
-      "trigger_to_act": "開盤後若成長風格延續，且市場不是只剩單一熱門股衝高，而是資金願意持續停留在主動式 ETF 容器；同時 00987A 本身沒有明顯高開失衡、追價風險仍可控，才允許作為今天唯一極小 starter。",
-      "invalidation": "若市場風格快速轉回防禦 / 高股息，或 AI 成長題材縮成少數個股獨走、ETF 容器留不住資金，或 00987A 一開盤就過熱高開卻無法延續，則今天最接近可做的候選也不啟動。",
+      "role": "avoid",
+      "why_selected": "原為交集中的唯一 starter，但 11:20 intraday thesis_check 顯示 broad reversal，00987A 的承接失敗，故暫時降級為 avoid / 失效候選。",
       "source_basis": [
-        "daily_thesis.candidate_pool: 00987A lead",
-        "news_digest.local_trade_candidates: 00987A lead",
-        "TechNews 2026-04-20 列出前十大成分股：台積電、台燿、旺矽、奇鋐、貿聯、雍智科技、創意、致茂、台光電、台達電",
-        "成分 / 權重方向主要對應 AI / ASIC / CCL / 散熱複合主線，符合 ETF 可升級為 starter 的成分驗證要求"
+        "thesis_check.entries[1] (11:20) updated_actions: downgrade starter -> invalid",
+        "daily_thesis.candidate_pool (same-day)"
       ],
-      "priority": "high"
+      "priority": "low"
     },
     {
       "ticker": "006201",
       "name": "元大富櫃50",
       "kind": "etf",
       "theme": "櫃買廣度 / 上櫃題材擴散容器",
-      "role": "watch",
-      "why_selected": "它保留下來不是因為『上櫃 ETF 很熱』，而是有方法論依據可驗證櫃買廣度。上游已提供其追蹤富櫃五十指數、以上櫃股票為母體，依市值、公眾流通量、流動性與近四季 EPS 為正等規則篩選；這代表它是真正的制度化櫃買廣度容器。若今天櫃買熱度延續，它比追零散飆股更適合當觀察器；但因 analysis layer busy，今天先不把它直接升成 starter。",
-      "trigger_to_act": "若今天櫃買仍強於加權，且資金延續從大型權值往上櫃成長題材擴散，並且 006201 呈現穩定承接而非跟隨情緒急拉，才有從 watch 升級的理由。",
-      "invalidation": "若盤勢重新縮回少數大型權值獨撐、櫃買廣度降溫，或上櫃只剩零星飆股而非整體擴散，006201 的映射效果就不足以支撐今天進場。",
+      "role": "avoid",
+      "why_selected": "11:20 快照顯示櫃買明顯走弱（跌停附近），006201 無法作為即時廣度確認器，暫時移出可做想像。",
       "source_basis": [
-        "daily_thesis.candidate_pool: 006201 watch",
-        "news_digest.local_trade_candidates: 006201 watch",
-        "元大官方方法論：追蹤富櫃五十指數，依市值、公眾流通量、流動性、近四季 EPS 為正等條件篩選上櫃 50 檔",
-        "方法論明確對應櫃買廣度，而非只靠 ETF 名稱猜題材"
+        "thesis_check.entries[1] (11:20) updated_actions: remove from active candidates",
+        "daily_thesis.candidate_pool (same-day)"
       ],
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "ticker": "2454",
@@ -64,133 +53,64 @@
       "kind": "stock",
       "theme": "AI ASIC / 本地擴散主軸驗證點",
       "role": "avoid",
-      "why_selected": "它仍是今天最重要的本地主軸驗證點之一，所以不能忽略；但操作層更該誠實承認，4/22 的強彈已讓它從『低位驗證』變成『高人氣延續測試』。也就是說，2454 對 thesis 很重要，對交易卻未必最友善。若今天一早只是延續人氣追價、卻沒有帶出 ASIC / CCL / 光通訊 / 散熱共振，那風險報酬反而偏差；因此它比較適合列為過熱先避開，而不是直接當先手。",
-      "trigger_to_act": "只有在聯發科不是單獨續噴，而是能穩定帶動 ASIC / CCL / 光通訊 / 散熱方向同步承接，且自身不是失衡式追價結構時，才值得從 avoid 重新升級。",
-      "invalidation": "若 2454 只剩人氣續衝、周邊擴散鏈沒有共振，或盤面重新退回單一權值撐指數，則它更像已反映的情緒主角，今天不宜追。",
+      "why_selected": "仍為重要驗證點，但 11:20 的快照顯示其表現與周邊擴散鏈同步失守，操作上不建議追價或啟動。",
       "source_basis": [
-        "daily_thesis.candidate_pool: 2454 lead",
-        "news_digest.local_trade_candidates: 2454 lead",
-        "UDN 2026-04-22 聯發科強力反彈並帶出 ASIC / 先進封測 / 伺服器鏈敘事",
-        "操作層判斷：主線重要不等於位置乾淨；在 busy guardrail 下優先避開過熱延續測試"
+        "thesis_check.entries[1] (11:20) updated_actions: validation failed -> avoid",
+        "daily_thesis.candidate_pool (same-day)"
       ],
-      "priority": "high"
+      "priority": "medium"
     }
   ],
   "driver_based_action_hint": {
-    "driver_status": "mixed_supportive_local_asic_and_etf_breadth_but_partly_reflected_and_busy_guardrailed",
-    "driver_implication": "今天的 driver 沒有壞，但也沒有乾淨到可以同時開多條線。可執行的重點只剩：先看資金是否還願意透過有成分依據的主動式 ETF 容器承接 AI / ASIC / CCL / 散熱複合熱度；再看櫃買廣度是否真的延續；至於聯發科本體，因昨天已強勢急彈，今天更需要延續與擴散共振確認，不能直接把人氣翻成進場理由。",
-    "driver_phase": "supportive_rotation_partly_reflected_with_busy_convergence",
-    "action_bias": "只保留一個極小 starter 想像，不做多候選並行。今天最接近可做的是 00987A，但缺的不是故事，而是『開盤後仍有容器型承接、且位置不過熱』這個觸發；006201 只做廣度確認；2454 則先當過熱觀察，不追價。",
-    "preferred_groups": [
-      "現金",
-      "有成分依據的主動式 ETF 容器（00987A，僅限單一極小 starter）",
-      "櫃買廣度 ETF 容器（006201，先觀察）",
-      "聯發科 / ASIC 核心人氣股（2454，今天先避開追價）"
-    ],
-    "why_not_chase_or_why_starter_allowed": "允許 starter 的理由，是 00987A 同時命中 thesis 與 news 交集，而且上游已提供成分依據，不是只看 ETF 名稱。不能追價的理由則更明確：news_digest 仍 partial、driver 屬 mixed 偏支撐而非單核強催化、daily_thesis 已標示 busy guardrail，且 2454 昨天已先走出明顯強勢。也就是說，今天不是完全不能做，而是只能在條件補齊時給單一極小驗證倉，不能把人氣延續當成風險報酬充足。",
-    "risk_if_wrong": "若把今天這種『主線還在、但位置與確認不足』的結構錯當成全面進攻盤，最容易犯的錯就是同時追 2454、追 ETF、再擴到櫃買題材。只要開盤後承接沒有想像中乾淨，甜蜜點會一起消失。因分析層仍偏 busy、tmp guardrail 檔又缺失，今天更該避免多標的並行曝險。",
-    "news_links": [
-      {
-        "label": "TechNews：00987A 成分股與主動式 ETF 熱度",
-        "url": "https://finance.technews.tw/2026/04/20/top-10-etfs/",
-        "source_name": "TechNews"
-      },
-      {
-        "label": "UDN：聯發科強彈與 ASIC 擴散",
-        "url": "https://udn.com/news/story/7240/9457812",
-        "source_name": "經濟日報 / UDN"
-      },
-      {
-        "label": "V2 News Digest",
-        "url": "/data/news/2026-04-23/news_digest.json",
-        "source_name": "V2 News Digest"
-      }
-    ]
+    "driver_status": "clearly_reversed",
+    "participation_mode": "broad_risk_off_unwind",
+    "driver_implication": "午前盤面由早盤的短暫強勢演變為 broad unwind：原先寄望的聯發科/ASIC 與 ETF/櫃買容器承接已同步失守，市場偏向風格性回撤。",
+    "driver_phase": "reversal_broad_unwind",
+    "action_bias": "立即回歸保守，將現金比重提升至 100%，暫不啟動任何先手倉。",
+    "why_not_chase_or_why_starter_allowed": "因 driver 已翻案且參與度廣泛轉弱，先前允許的 starter（00987A）失去必要的容器型承接條件；追價風險顯著提高，故不允許新啟動。",
+    "risk_if_wrong": "若誤判午前為 broad unwind 而實際午後快速回穩，最大代價是保守過頭（錯失短暫反彈），但相對於在明顯多標的同步翻弱時擴張曝險，保守的代價可控。",
+    "news_links": []
   },
   "actions": [
     {
       "ticker": "CASH",
       "name": "現金 / 保留主動性",
       "direction": "hold",
-      "action": "維持絕對主體。今天不是完全 no-call，但沒有乾淨到值得同時打開多個候選；先承認最好的風險報酬仍在等待觸發條件補齊，而不是為了有動作硬做。",
-      "price_target_value": null,
-      "price_target_label": "N/A",
-      "stop_loss_value": null,
-      "stop_loss_label": "N/A",
-      "take_profit_value": null,
-      "take_profit_label": "N/A",
-      "position_size_pct": 97,
-      "position_size_label": "97% 現金保留",
-      "rationale": "上游 partial + busy guardrail + 聯發科已先反映一段，代表高現金仍是最合理主體。",
-      "conditions": [
-        "若 00987A 沒有出現乾淨承接，維持高現金不動",
-        "若 006201 也無法證明櫃買廣度延續，不把櫃買熱度表象翻成交易理由",
-        "2454 若一開盤就過熱追價，寧可錯過，不放寬紀律"
-      ],
+      "action": "午前回到 100% 現金基準，不再保留任何新曝險；等待午後或下一輪 intraday gate 提供重新評估依據。",
+      "position_size_pct": 100,
+      "position_size_label": "100% 現金保留",
+      "rationale": "11:20 快照顯示 broad reversal，原有 starter/觀察器皆失去承接條件，保守回到現金是合理選擇。",
       "status": "active"
     },
     {
       "ticker": "00987A",
       "name": "主動台新台灣優勢成長",
-      "direction": "watch",
-      "action": "保留今天唯一可先手的極小 starter 想像，但前提是開盤後仍看到容器型承接，而不是只有題材熱度。若位置已過熱或量價承接不乾淨，就不啟動。",
-      "price_target_value": null,
-      "price_target_label": "僅在位置合理且承接延續時觀察啟動，不追價",
-      "stop_loss_value": null,
-      "stop_loss_label": "若啟動，以上游主線容器承接失敗或風格快速轉弱作退出依據",
-      "take_profit_value": null,
-      "take_profit_label": "不設擴張型目標，先看主線驗證是否成立",
-      "position_size_pct": 3,
-      "position_size_label": "最多 3% 極小 starter 上限",
-      "rationale": "它是今天最接近可做的候選，但真正可做的前提是『資金承接仍在 + 位置還沒壞』兩件事都成立。",
-      "conditions": [
-        "開盤後仍能看到主動式 ETF 容器承接，而非單純情緒高開",
-        "成長風格延續不是只靠少數熱門股，至少要有容器型資金停留",
-        "若高開過熱或承接不足，維持 0% 觀察"
-      ],
-      "status": "active"
+      "direction": "avoid",
+      "action": "由唯一可先手的 starter 降級為 avoid / 失效候選，暫不允許啟動。",
+      "position_size_pct": 0,
+      "position_size_label": "0%",
+      "rationale": "11:20 快照顯示 00987A 同步轉弱，失去容器型承接的條件。",
+      "status": "inactive"
     },
     {
       "ticker": "006201",
       "name": "元大富櫃50",
-      "direction": "watch",
-      "action": "列為櫃買廣度確認器，不主動先手。只有當櫃買廣度真的延續、而且不是零星飆股撐場時，才值得在下一輪重新升級。",
-      "price_target_value": null,
-      "price_target_label": "先看是否成為廣度承接錨點，不設追價帶",
-      "stop_loss_value": null,
-      "stop_loss_label": "本輪預設不啟動試單",
-      "take_profit_value": null,
-      "take_profit_label": "以廣度確認為主，不設擴張目標",
+      "direction": "avoid",
+      "action": "櫃買廣度確認失敗，暫時移出任何近端可做想像。",
       "position_size_pct": 0,
-      "position_size_label": "預設 0%，先觀察",
-      "rationale": "它有方法論依據，所以值得保留；但在 busy guardrail 下，今天更適合先看廣度有沒有真的成立，而不是同時再開第二個 ETF 倉。",
-      "conditions": [
-        "需看到櫃買明顯強於加權，且不是單點飆股撐場",
-        "若 00987A 容器主線已足夠，006201 不硬升級成第二個主腳本",
-        "未出現乾淨廣度延續前，維持純觀察"
-      ],
-      "status": "active"
+      "position_size_label": "0%",
+      "rationale": "11:20 快照顯示櫃買指數與 006201 已明顯走弱（跌停附近）。",
+      "status": "inactive"
     },
     {
       "ticker": "2454",
       "name": "聯發科",
-      "direction": "watch",
-      "action": "今天列入過熱先避開，不做先手也不給模擬倉。它的價值主要是觀察 ASIC 擴散是否真的成立，而不是承擔今天第一順位的追價風險。",
-      "price_target_value": null,
-      "price_target_label": "今天不設定進場帶",
-      "stop_loss_value": null,
-      "stop_loss_label": "本輪不啟動",
-      "take_profit_value": null,
-      "take_profit_label": "本輪不啟動",
+      "direction": "avoid",
+      "action": "列為驗證失敗 / avoid，除非午後出現明確且同步的回穩證據，否則不啟動。",
       "position_size_pct": 0,
-      "position_size_label": "0%，先避開",
-      "rationale": "主線重要不等於位置乾淨；在昨天急彈後，今天更應先確認延續性與周邊共振，而不是追人氣。",
-      "conditions": [
-        "只有在 ASIC / CCL / 光通訊 / 散熱同步承接時，才重新評估",
-        "若只是聯發科單點衝高，不翻成進場理由",
-        "本輪維持避開追價"
-      ],
-      "status": "active"
+      "position_size_label": "0%",
+      "rationale": "主軸驗證點在午前失守，操作上不宜追價。",
+      "status": "inactive"
     }
   ],
   "paper_trade": {
@@ -202,14 +122,14 @@
     "total_pnl_pct": 0,
     "win_rate": 0,
     "open_positions": [],
-    "notes": "paper trade 預設空倉。今天最接近可做的是 00987A，但只有在『開盤後仍有主動式 ETF 容器承接 + 位置不過熱』兩個核心條件同時成立時，才容許最多 3% 的極小驗證倉；006201 只當櫃買廣度確認器，2454 明確列為過熱先避開。因 analysis layer busy、且 tmp guardrail 檔缺失，本輪不做多候選並行模擬。"
+    "notes": "intraday conservative reset: return to 100% cash given 11:20 material reversal."
   },
   "max_exposure": {
-    "pct": 3,
-    "label": "總曝險上限 3%，僅限單一 00987A 極小 starter；其餘維持觀察或避開",
-    "stance": "今天不是沒有機會，但沒有乾淨到值得擴張。最接近可做的是 00987A，不過缺的正是開盤後的容器型承接與位置確認；在 busy guardrail 下，寧可高現金，也不把 006201 與 2454 一起升級成可做名單。"
+    "pct": 0,
+    "label": "總曝險上限 0%（午前保守重置），除非後續明確回穩才考慮放寬",
+    "stance": "午前 broad reversal 導致所有先手想像失效，暫不允許新曝險。"
   },
-  "max_exposure_pct": 3,
-  "max_exposure_label": "0%~3% 上限（僅限 00987A 的單一極小 starter，禁止追價）",
-  "notes": "本次 action_plan 只把 2026-04-23 的 daily_thesis 與 news_digest 轉譯成操作排序，不重做 thesis。trade_candidates 僅取自 daily_thesis.candidate_pool 與 news_digest.local_trade_candidates 的交集 / 收斂版，沒有另外硬造固定題材清單。操作排序明確分成：00987A 可先手、006201 只是觀察、2454 因位置過熱先避開。若今天沒有更乾淨的承接與位置配合，預設就維持高現金；但仍清楚交代最接近可做的是誰，以及差哪個觸發條件才成立。"
+  "max_exposure_pct": 0,
+  "max_exposure_label": "0% 上限（午前保守重置）",
+  "notes": "此為 intraday 保守修正，僅反映 thesis_check 11:20 的 material change；不重跑任何上游分析或重新抓取新聞。"
 }
