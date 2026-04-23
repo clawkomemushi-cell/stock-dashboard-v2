@@ -1,0 +1,161 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.close_review",
+    "data_type": "close",
+    "status": "success",
+    "generated_at_iso": "2026-04-23T16:58:00+08:00",
+    "generated_at_label": "16:58",
+    "source_freshness": "verified",
+    "warnings": [
+      "manual_same_day_backfill_after_scheduled_close_review_generation_aborted",
+      "official_twse_close_and_quotes_used_for_taiex_2330_2454_00987a",
+      "006201_close_verified_from_yahoo_quote_page_due_to_tpex_endpoint_limit",
+      "analysis_layer_status_marked_busy_due_to_gap_fail_and_breadth_breakdown"
+    ],
+    "fallback_used": false
+  },
+  "date": "2026-04-23",
+  "generated_at_iso": "2026-04-23T16:58:00+08:00",
+  "generated_at_label": "16:58",
+  "taiex_close": 37714.15,
+  "taiex_change": -164.32,
+  "taiex_change_pct": -0.43,
+  "taiex_volume": 1297122523226,
+  "predicted_direction": "neutral",
+  "predicted_confidence": 0.68,
+  "actual_direction": "down",
+  "direction_verdict": "partial",
+  "thesis_accuracy_score": 61,
+  "ticker_results": [
+    {
+      "ticker": "2454",
+      "name": "聯發科",
+      "predicted_direction": "watch",
+      "actual_direction": "down",
+      "change_pct": -3.49,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "盤前把 2454 視為本地 ASIC 擴散主軸驗證點，但收盤 2215、較昨收 2295 下跌 3.49%，代表早盤擴散想像未延續；好在 11:20 thesis_check 已將其明確降級為驗證失敗 / avoid。"
+    },
+    {
+      "ticker": "00987A",
+      "name": "主動台新台灣優勢成長",
+      "predicted_direction": "watch",
+      "actual_direction": "down",
+      "change_pct": -2.75,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "盤前保留 00987A 作為有成分依據的容器型 starter 想像，但收盤 15.54、較昨收 15.98 下跌 2.75%，表示容器承接失敗；午前把它撤回 avoid 是正確的風控修正。"
+    },
+    {
+      "ticker": "006201",
+      "name": "元大富櫃50",
+      "predicted_direction": "watch",
+      "actual_direction": "down",
+      "change_pct": -10.0,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "006201 原本是櫃買廣度是否延續的制度化容器；收盤 42.75、較昨收 47.50 直接跌停（-10.00%），證明今天不是 breadth-led support，而是廣度明顯破壞。這個失敗訊號本身對風控是有價值的。"
+    },
+    {
+      "ticker": "2330",
+      "name": "台積電",
+      "predicted_direction": "watch",
+      "actual_direction": "up",
+      "change_pct": 1.46,
+      "verdict": "partial",
+      "paper_trade_result": null,
+      "notes": "2330 收盤 2080、較昨收 2050 上漲 1.46%，代表核心權值相對抗跌甚至偏強；但它沒有把 2454 / 00987A / 006201 一起帶回來，因此只能視為 index support，而不是整體市場修復。"
+    }
+  ],
+  "what_worked": [
+    "09:08 → 11:20 → 13:10 的三個 lite decision gates 有抓到今天真正的結構變化：開高後沒有擴散，午前演變成 broad reversal，午後只是指數回拉而非 breadth repair。",
+    "11:20 把 action_plan 直接收斂回 100% 現金，成功避免把早盤的大漲錯當成可追的 breadth-led support。",
+    "把 006201、00987A 這類容器當成廣度驗證器是有用的：當它們同步失守時，比只看指數或只看 2330 更能說明市場結構已經變差。"
+  ],
+  "what_failed": [
+    "盤前 mixed_supportive_tilt 對 4/22 breadth-led support 的延續性仍偏樂觀，低估了今天會出現『權值還撐、但多數擴散標的先翻弱』的 gap-fail 結構。",
+    "缺少官方盤中 breadth / 法人流向 / FX / US10Y 等結構化快照，導致午前只能用多個代理標的去推斷 broad unwind，判斷雖正確但證據鏈不夠乾淨。",
+    "今日 close_review 的排程生成流程本身沒有正常落地，顯示收盤鏈除了市場分析外，還需要補強生成穩定性與 publish 接力。"
+  ],
+  "key_learning": "今天的關鍵不是『有沒有新 headline』，而是市場用很快的速度證明：開盤權值急拉 ≠ 可交易的 breadth-led support。未來遇到 gap-up day，要更快用容器與擴散代理（2454 / 00987A / 006201 / OTC）去分辨是 core-proxy confirmation、index-only drift，還是 broad reversal。",
+  "bias_observed": [
+    "延續偏差：容易把前一交易日的 breadth-led support 想像成隔天也會自然延續，忽略了 gap-open 當天的結構可能完全不同。",
+    "2330 錨定仍在，但今天更大的偏誤其實是對『本地擴散可延續』的樂觀預設；後來雖靠 intraday gate 修正，但盤前仍偏鬆。",
+    "資料偏差：盤中需要借助 Yahoo 代理快照，缺少官方 breadth / flow 資料時，分析層很容易進入 busy 狀態。"
+  ],
+  "tomorrow_watchpoints": [
+    "先判斷明天若再偏強，是 2330 / 大型半導體真的帶動 breadth repair，還是只是少數權值繼續撐指數。",
+    "觀察 2454、00987A 是否能止跌回穩；若它們仍弱，就不要把 2330 單兵走強誤讀成整體主線修復。",
+    "006201 / OTC 是否脫離今天的 broad damage；若櫃買與題材容器沒有修復，預設仍以保守框架處理。",
+    "盡量補上盤前可得的跨市場快照（FX / US10Y / 外資盤後）再決定是否從觀察升級到 starter。"
+  ],
+  "paper_trade_today_pnl": 0,
+  "analysis_layer_status": {
+    "assessment": "busy",
+    "why": "今天同時出現 gap-up fail、權值與廣度分歧、三輪 thesis_check 連續修正，以及缺少官方盤中 breadth / flow 快照，分析層需要標示為 busy，而不是假裝這是乾淨單線條的日子。",
+    "signal_count": 7,
+    "driver_count": 4,
+    "thesis_check_entry_count": 3,
+    "overload_signals": [
+      "開盤大漲後快速翻成午前 broad reversal，結構變化劇烈",
+      "2330 收紅但 2454 / 00987A / 006201 同步偏弱，核心權值與廣度嚴重分歧",
+      "三輪 thesis_check 都在處理同一主線的不同狀態，語義已有收斂壓力",
+      "缺少官方盤中 breadth / 法人流向 / FX / US10Y 快照，只能以代理標的交叉驗證"
+    ],
+    "guardrails_for_tomorrow": [
+      "先分辨是 core-proxy confirmation、index-only drift，還是 breadth-led support，分類前不要直接下偏多結論。",
+      "若 2330 強但 2454 / 00987A / 006201 / OTC 不修復，預設只觀察、不放寬曝險。",
+      "維持 thesis_check 2~3 個 decision gates 的 lite 節奏，不要再把同一件事重寫成太多版本。",
+      "在缺少跨市場快照前，從 observation 升級到 starter 需更嚴格。"
+    ]
+  },
+  "preopen_thesis_verdict": {
+    "overall": "partial",
+    "what_held": [
+      "2330 / 大型半導體仍具相對強度，全球 risk-on 背景沒有直接崩毀。",
+      "把 ETF 容器與擴散代理納入觀察名單是對的，因為今天真正的訊號就是它們失敗。"
+    ],
+    "what_broke": [
+      "盤前對本地擴散延續的想像沒有成立，2454 / 00987A / 006201 都無法提供正向承接。",
+      "市場最終不是 breadth-led support，而是開高後午前 broad unwind，午後只剩指數層回拉。"
+    ]
+  },
+  "intraday_revision_verdict": {
+    "overall": "effective_for_risk_control",
+    "effective": [
+      "11:20 明確承認主線已翻案，將 action_plan 收斂為 100% 現金。",
+      "13:10 沒把午後指數回拉誤判成整體修復，避免尾盤追回去。"
+    ],
+    "ineffective": [
+      "盤中證據鏈仍偏代理化，缺少官方 breadth / flow 資料支撐。",
+      "收盤鏈沒有自動正常落地，代表 runtime 穩定性還要補。"
+    ]
+  },
+  "error_breakdown": {
+    "direction": "morning_frame_too_supportive_but_intraday_correction_effective",
+    "timing": "too_slow_to_assume_gap_up_could_hold_without_breadth",
+    "driver_read": "global_relief_not_broken_but_local_breadth_failed",
+    "sector_correlation_read": "containers_and_otc_mattered_more_than_index_strength",
+    "execution_bias": "appropriately_conservative_after_1120_flip"
+  },
+  "close_data_sources": [
+    {
+      "name": "TWSE MI_INDEX after trading",
+      "url": "https://www.twse.com.tw/rwd/en/afterTrading/MI_INDEX?date=20260423&type=ALLBUT0999&response=json",
+      "verified_items": [
+        "TAIEX close/change/change_pct",
+        "market summary trade value",
+        "2330/2454/00987A daily close quotes"
+      ]
+    },
+    {
+      "name": "Yahoo Taiwan quote page",
+      "url": "https://tw.stock.yahoo.com/quote/006201.TWO",
+      "verified_items": [
+        "006201 close/open/high/low/prev_close snapshot"
+      ]
+    }
+  ]
+}

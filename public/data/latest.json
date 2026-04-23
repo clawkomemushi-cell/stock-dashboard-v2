@@ -4,27 +4,29 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-23T13:20:00+08:00",
-    "generated_at_label": "13:20",
-    "last_successful_run": "2026-04-23T13:20:00+08:00",
+    "generated_at_iso": "2026-04-23T16:58:00+08:00",
+    "generated_at_label": "16:58",
+    "last_successful_run": "2026-04-23T16:58:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "today_news_digest_status_partial",
       "today_daily_thesis_status_partial",
       "today_action_plan_status_partial",
       "today_primary_driver_changed_to_reversed",
-      "market_context_available_in_collection_layer"
+      "market_context_available_in_collection_layer",
+      "today_close_review_backfilled_locally_after_generate_abort",
+      "analysis_layer_busy_guardrail_updated_for_2026_04_23"
     ],
     "fallback_used": false
   },
   "date": "2026-04-23",
   "week": "2026-W17",
-  "market_status": "mid_session",
+  "market_status": "closed",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-23/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-23/action_plan.json",
     "thesis_check": "/data/daily/2026-04-23/thesis_check.json",
-    "close_review": "/data/daily/2026-04-22/close_review.json",
+    "close_review": "/data/daily/2026-04-23/close_review.json",
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json",
     "news_digest": "/data/news/2026-04-23/news_digest.json"
@@ -47,8 +49,8 @@
     },
     "close_review": {
       "status": "success",
-      "updated_at_iso": "2026-04-22T17:08:00+08:00",
-      "updated_at_label": "17:08"
+      "updated_at_iso": "2026-04-23T16:58:00+08:00",
+      "updated_at_label": "16:58"
     },
     "weekly_review": {
       "status": "success",
@@ -98,6 +100,8 @@
     "market_status maintained as mid_session. action_plan was downgraded to reflect a conservative 100% cash posture pending further intraday confirmation.",
     "Public views now reflect same-day artifacts and keep market_context as a collection-layer reference.",
     "latest.json top-level metadata refreshed after intraday publish-only verification.",
-    "13:20 intraday publish linked the 13:10 thesis_check checkpoint; afternoon index rebound did not repair breadth, so action_plan remained unchanged at the 11:30 conservative intraday version."
+    "13:20 intraday publish linked the 13:10 thesis_check checkpoint; afternoon index rebound did not repair breadth, so action_plan remained unchanged at the 11:30 conservative intraday version.",
+    "2026-04-23 close_review was backfilled locally after the scheduled generate step aborted before writing the same-day artifact.",
+    "2026-04-23 analysis layer was marked busy after a gap-fail / breadth-breakdown day; use this as tomorrow morning's guardrail."
   ]
 }
