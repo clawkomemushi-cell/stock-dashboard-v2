@@ -1,0 +1,101 @@
+{
+  "_meta": {
+    "schema_version": "1.1",
+    "job_name": "openclaw.thesis_check",
+    "data_type": "intraday",
+    "status": "partial",
+    "generated_at_iso": "2026-04-23T09:08:00+08:00",
+    "generated_at_label": "04/23 09:08",
+    "last_successful_run": "2026-04-23T09:08:00+08:00",
+    "source_freshness": "fresh",
+    "warnings": [
+      "analysis_layer_only_no_publish",
+      "stage2_lite_first_opening_window_snapshot_only",
+      "same_day_daily_thesis_and_action_plan_are_partial",
+      "intraday_evidence_based_on_limited_live_quote_snapshots",
+      "yahoo_quote_pages_used_for_index_and_proxy_quotes",
+      "official_intraday_breadth_otc_and_institutional_flow_not_available",
+      "do_not_overreact_to_single_early_bar"
+    ],
+    "fallback_used": false
+  },
+  "entries": [
+    {
+      "id": "check_001",
+      "timestamp": "09:08",
+      "status": "partial",
+      "trigger": "開盤後第一輪 thesis check（stage2-lite）。本輪不重跑盤前 thesis，而是只驗證盤前 market_driver_summary 到開盤後是否延續，以及目前參與度是否足以推翻既有 action_plan。",
+      "original_thesis": "盤前框架是『全球 risk-on 仍偏正向，但本地承接重心從單一大型 AI 權值延伸到聯發科/ASIC 擴散與具成分依據的 ETF 容器』，風格判讀偏 breadth-led support；操作層因此維持高現金，只保留 00987A 最多 3% 的極小 starter 想像，006201 只做廣度確認，2454 則先避開追價。",
+      "revised_thesis": "到 09:08 左右，盤前主線還沒有被推翻，但盤面呈現方式比盤前期待更偏『指數與大型權值領先、廣度尚未同步』。加權指數約 38,795.16、較昨收 37,878.47 上漲 916.69 點（+2.42%），2330 約 2,120、較昨收 2,050 上漲 70 點（+3.41%），顯示全球 risk-on / 大型科技權值背景仍在；但本地主軸驗證點 2454 僅約 +0.65%，且 006201 約 -5.20%，沒有跟著指數與主動式 ETF 一起確認，表示『聯發科/ASIC + ETF/櫃買廣度同步承接』這一段目前只得到部分支持。00987A 約 +3.19%，代表有成分依據的成長容器仍有資金，但 006201 的明顯轉弱又提醒盤面並非全面 breadth-led。較保守的修正是：把盤前 driver 記為仍在但已 weakened，盤面暫時更像 index-led / selective confirmation，而不是可以上修曝險的全面確認。",
+      "change_type": "confirmation_with_caution",
+      "risk_level_change": 0,
+      "confidence_change": -0.06,
+      "updated_direction": "mixed_supportive_but_narrower_than_preopen_frame",
+      "driver_status": "weakened",
+      "driver_implication": "全球 risk-on 與大型半導體權值的支撐沒有壞，台股也確實高開後維持強勢；但盤前最重要的『本地承接擴散到聯發科/ASIC 與 ETF / 櫃買容器』目前只被 00987A 部分確認，未被 2454 與 006201 同步確認。這代表 driver 不是 reversed，也不是被新主線 replaced，而是從原本較偏 breadth-led support 的想像，暫時收斂成大型權值主導、少數容器跟漲的 narrower tape。",
+      "participation_mode": "index_only_drift",
+      "structure_status": "opening_range_stand_above_for_index_but_not_yet_broad_tradeable_structure",
+      "action_delta_needed": false,
+      "change_grade": "minor",
+      "preferred_groups_if_driver_holds": [
+        "大型半導體權值",
+        "有成分依據的主動式 ETF 容器（以 00987A 為主）",
+        "與 AI / ASIC 主線高度重疊但不追價的核心代理"
+      ],
+      "risk_if_wrong": "若把目前這種早盤權值急拉、廣度未齊的結構誤判成全面 breadth confirmation，最容易犯的錯是提早放大 00987A 以外的曝險，或把 2454 / 006201 的未確認也當成已確認。反過來說，若之後 breadth 補上，本輪最多只是保守而非方向性大錯，因此維持 no_change / confirmation_with_caution 較符合 lite gate 原則。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "維持高現金主體，不因大盤高開就擴張。"
+        },
+        {
+          "ticker": "00987A",
+          "action": "保留唯一極小 starter 想像，但仍限於『容器承接延續且不過熱』條件，不升級倉位上限。"
+        },
+        {
+          "ticker": "006201",
+          "action": "早盤明顯未提供櫃買廣度確認，維持 watch，不升級。"
+        },
+        {
+          "ticker": "2454",
+          "action": "仍視為主軸驗證點而非追價點；未見足夠擴散共振前，不改 avoid/watch 讀法。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_last": 38795.16,
+        "taiex_change_points": 916.69,
+        "taiex_change_pct": 2.42,
+        "taiex_open": 37971.69,
+        "taiex_intraday_high": 38798.91,
+        "taiex_intraday_low": 37971.69,
+        "taiex_prev_close": 37878.47,
+        "taiex_turnover_100m_ntd": 1988.13,
+        "tsmc_last": 2120,
+        "tsmc_open": 2090,
+        "tsmc_intraday_high": 2125,
+        "tsmc_intraday_low": 2090,
+        "tsmc_prev_close": 2050,
+        "tsmc_change_pct": 3.41,
+        "mediatek_last": 2310,
+        "mediatek_open": 2325,
+        "mediatek_intraday_high": 2335,
+        "mediatek_intraday_low": 2265,
+        "mediatek_prev_close": 2295,
+        "mediatek_change_pct": 0.65,
+        "00987A_last": 16.49,
+        "00987A_open": 16.44,
+        "00987A_intraday_high": 16.54,
+        "00987A_intraday_low": 16.41,
+        "00987A_prev_close": 15.98,
+        "00987A_change_pct": 3.19,
+        "006201_last": 45.03,
+        "006201_open": 45.88,
+        "006201_intraday_high": 45.88,
+        "006201_intraday_low": 45.0,
+        "006201_prev_close": 47.5,
+        "006201_change_pct": -5.2
+      },
+      "notes": "盤中快照取自 Yahoo 股市可讀頁面於 2026-04-23 09:08 左右抓取：TAIEX 38,795.16（昨收 37,878.47、開 37,971.69、高 38,798.91、低 37,971.69、漲幅 +2.42%）、2330 2,120（昨收 2,050、+3.41%）、2454 2,310（昨收 2,295、+0.65%，開高後一度回探 2,265）、00987A 16.49（昨收 15.98、+3.19%）、006201 45.03（昨收 47.50、-5.20%）。這組證據足夠支持『driver 未翻空、但參與度不健康到不足以上修 action plan』的 lite 判讀；惟同時缺少官方盤中 breadth、櫃買指數、法人流向與更完整籃子共振資料，所以本輪維持 partial。"
+    }
+  ]
+}

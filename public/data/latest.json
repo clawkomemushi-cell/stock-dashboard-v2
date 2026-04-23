@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-23T07:22:00+08:00",
-    "generated_at_label": "07:22",
-    "last_successful_run": "2026-04-23T07:22:00+08:00",
+    "generated_at_iso": "2026-04-23T09:18:00+08:00",
+    "generated_at_label": "09:18",
+    "last_successful_run": "2026-04-23T09:18:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "today_news_digest_status_partial",
@@ -19,11 +19,11 @@
   },
   "date": "2026-04-23",
   "week": "2026-W17",
-  "market_status": "preopen",
+  "market_status": "mid_session",
   "paths": {
     "daily_thesis": "/data/daily/2026-04-23/daily_thesis.json",
     "action_plan": "/data/daily/2026-04-23/action_plan.json",
-    "thesis_check": "/data/daily/2026-04-14/thesis_check.json",
+    "thesis_check": "/data/daily/2026-04-23/thesis_check.json",
     "close_review": "/data/daily/2026-04-22/close_review.json",
     "weekly_review": "/data/weekly/2026-W14/weekly_review.json",
     "performance_history": "/data/performance/history.json",
@@ -42,8 +42,8 @@
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-14T09:09:45+08:00",
-      "updated_at_label": "09:09"
+      "updated_at_iso": "2026-04-23T09:08:00+08:00",
+      "updated_at_label": "09:08"
     },
     "close_review": {
       "status": "success",
@@ -97,6 +97,7 @@
     "Today truthfully remains partial because upstream news_digest, daily_thesis, and action_plan are all partial and the primary driver is none_clear / mixed supportive.",
     "Public views now reflect the newer 06:52 / 07:14 / 07:22 same-day artifacts and keep market_context as a collection-layer reference.",
     "Pre-open publish completed; thesis_check remains on the latest available prior checkpoint until same-day checkpoints are generated.",
+    "09:18 intraday publish-only refresh linked the same-day thesis_check checkpoint, marked market_status as mid_session, and kept action_plan unchanged because the latest checkpoint was minor / no action delta.",
     "latest.json top-level metadata refreshed after publish-only verification."
   ]
 }
