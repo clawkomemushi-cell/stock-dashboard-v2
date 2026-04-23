@@ -4,18 +4,18 @@
     "job_name": "openclaw.thesis_check",
     "data_type": "intraday",
     "status": "partial",
-    "generated_at_iso": "2026-04-23T11:20:00+08:00",
-    "generated_at_label": "04/23 11:20",
-    "last_successful_run": "2026-04-23T11:20:00+08:00",
+    "generated_at_iso": "2026-04-23T13:10:00+08:00",
+    "generated_at_label": "04/23 13:10",
+    "last_successful_run": "2026-04-23T13:10:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "analysis_layer_only_no_publish",
-      "stage2_lite_first_opening_window_snapshot_only",
+      "stage2_lite_afternoon_checkpoint_only",
       "same_day_daily_thesis_and_action_plan_are_partial",
       "intraday_evidence_based_on_limited_live_quote_snapshots",
       "yahoo_quote_pages_used_for_index_and_proxy_quotes",
-      "official_intraday_breadth_otc_and_institutional_flow_not_available",
-      "do_not_overreact_to_single_early_bar"
+      "official_intraday_breadth_and_institutional_flow_not_available",
+      "afternoon_index_rebound_not_equal_to_breadth_repair"
     ],
     "fallback_used": false
   },
@@ -183,6 +183,94 @@
         "006201_change_pct": -10.0
       },
       "notes": "盤中快照採 Yahoo 股市可讀頁面內嵌 quote JSON 於 2026-04-23 11:21~11:22 左右抓取：TAIEX 37,369.44（昨收 37,878.47、開 37,971.69、高 38,921.95、低 37,232.95、-1.34%、成交金額約 10,259.02 億）、櫃檯指數 375.42（昨收 395.08、開 396.15、高 404.55、低 374.93、-4.98%、成交金額約 3,075.69 億）、2330 2,065（+0.73%）、2454 2,190（-4.58%）、00987A 15.29（-4.32%）、006201 42.75（-10.00%，跌停）。這組證據已足夠把 09:08 的『confirmation_with_caution / no action delta』修正為午前的 material reversal；惟仍缺官方盤中 breadth、法人流向與更完整族群統計，因此本輪維持 partial。"
+    },
+    {
+      "id": "check_003",
+      "timestamp": "13:10",
+      "status": "partial",
+      "trigger": "午後早段 checkpoint（13:10 stage2-lite）。本輪不重做分析，只確認午前 11:20 的 broad reversal 到午後是否被實質修復，或只是指數層的回拉。",
+      "original_thesis": "11:20 版判斷為：盤前 supportive driver 已被 broad morning reversal 取代，OTC、2454、00987A、006201 同步轉弱，action plan 因此保守重置為 100% 現金、0% 新曝險。",
+      "revised_thesis": "到 13:10 左右，午前的 broad reversal 並沒有被真正翻案，只是下殺後出現『指數 / 核心權值回拉、廣度仍未修復』的午後版本。加權指數已從 11:20 約 -1.34% 拉回到約 +0.06%，2330 也從約 +0.73% 回升到約 +2.20%，代表大型權值對指數的支撐重新浮現；但盤前主線想驗證的本地擴散代理仍偏弱：2454 約 -3.05%、00987A 約 -2.00%、006201 仍鎖在 -10.00%，櫃檯指數也仍約 -3.09%。這表示午前『主線被翻轉、盤面退化成非廣度結構』的核心結論到午後仍站得住，只是從 11:20 的 broad unwind，稍微鈍化成 index-led drift。較保守的午後結論應是：盤前 driver 仍屬 reversed，不足以恢復任何追價或重新放寬曝險的理由。",
+      "change_type": "confirmation_with_caution",
+      "risk_level_change": 0,
+      "confidence_change": 0.04,
+      "updated_direction": "morning_reversal_partially_absorbed_by_index_rebound_but_breadth_still_failed",
+      "driver_status": "reversed",
+      "driver_implication": "盤前『全球 risk-on + 本地聯發科/ASIC 與 ETF 容器擴散』這條主線到午後仍未重新取得盤面主控權。午後只證明大型權值與指數有能力回拉，但沒有證明本地擴散、ETF 容器與櫃買廣度已恢復，因此不能把指數回到近平盤誤讀為 driver 修復。",
+      "participation_mode": "index_only_drift",
+      "structure_status": "morning_reversal_stabilized_at_index_level_but_breadth_not_repaired_and_chase_risk_still_high",
+      "action_delta_needed": false,
+      "change_grade": "minor",
+      "preferred_groups_if_driver_holds": [
+        "大型半導體權值（僅作相對抗跌/撐指數觀察）",
+        "與指數關聯度高的核心代理，不延伸到廣度型容器或櫃買籃子"
+      ],
+      "risk_if_wrong": "若把這種午後指數回拉誤判成主線已修復，最容易在 2454、00987A 或其他 AI / ASIC 擴散鏈上做出『尾盤追回去』的動作；但目前 OTC、006201 與容器承接都仍明顯偏弱，這種誤判會直接違反午前已建立的保守框架。反過來說，若午後後續再拉高，維持 0% 曝險的代價仍主要是少賺，而不是承擔不對稱風險。",
+      "updated_actions": [
+        {
+          "ticker": "CASH",
+          "action": "維持午前 100% 現金 / 0% 新曝險基準，不因指數拉回近平盤就放寬。"
+        },
+        {
+          "ticker": "2330",
+          "action": "只保留指數支撐與核心 proxy 觀察意義，不把其回升誤判為整體市場修復。"
+        },
+        {
+          "ticker": "2454",
+          "action": "雖自午前低點回穩，但截至 13:10 仍為負報酬，維持驗證失敗 / avoid 讀法。"
+        },
+        {
+          "ticker": "00987A",
+          "action": "容器跌幅較午前收斂但仍未翻正，維持 avoid，不恢復 starter 想像。"
+        },
+        {
+          "ticker": "006201",
+          "action": "櫃買廣度容器仍在跌停，視為 breadth repair 尚未發生。"
+        }
+      ],
+      "market_snapshot": {
+        "taiex_last": 37901.29,
+        "taiex_change_points": 22.82,
+        "taiex_change_pct": 0.06,
+        "taiex_open": 37971.69,
+        "taiex_intraday_high": 38921.95,
+        "taiex_intraday_low": 37164.44,
+        "taiex_prev_close": 37878.47,
+        "taiex_turnover_100m_ntd": 12964.68,
+        "otc_last": 382.89,
+        "otc_change_points": -12.19,
+        "otc_change_pct": -3.09,
+        "otc_open": 396.15,
+        "otc_intraday_high": 404.55,
+        "otc_intraday_low": 371.73,
+        "otc_prev_close": 395.08,
+        "otc_turnover_100m_ntd": 3868.54,
+        "tsmc_last": 2095,
+        "tsmc_open": 2090,
+        "tsmc_intraday_high": 2135,
+        "tsmc_intraday_low": 2055,
+        "tsmc_prev_close": 2050,
+        "tsmc_change_pct": 2.2,
+        "mediatek_last": 2225,
+        "mediatek_open": 2325,
+        "mediatek_intraday_high": 2335,
+        "mediatek_intraday_low": 2170,
+        "mediatek_prev_close": 2295,
+        "mediatek_change_pct": -3.05,
+        "00987A_last": 15.66,
+        "00987A_open": 16.44,
+        "00987A_intraday_high": 16.56,
+        "00987A_intraday_low": 15.09,
+        "00987A_prev_close": 15.98,
+        "00987A_change_pct": -2.0,
+        "006201_last": 42.75,
+        "006201_open": 45.88,
+        "006201_intraday_high": 45.88,
+        "006201_intraday_low": 42.75,
+        "006201_prev_close": 47.5,
+        "006201_change_pct": -10.0
+      },
+      "notes": "盤中快照採 Yahoo 股市可讀頁面於 2026-04-23 13:10 左右抓取：TAIEX 37,901.29（昨收 37,878.47、開 37,971.69、高 38,921.95、低 37,164.44、+0.06%、成交金額約 12,964.68 億）、櫃檯指數 382.89（昨收 395.08、開 396.15、高 404.55、低 371.73、-3.09%、成交金額約 3,868.54 億）、2330 2,095（+2.20%）、2454 2,225（-3.05%）、00987A 15.66（-2.00%）、006201 42.75（-10.00%，跌停）。這組證據支持『午前翻弱仍有效，但午後退化成指數回拉、廣度未修復』的 lite 判讀；由於仍缺官方盤中 breadth、法人流向與更完整族群統計，本輪維持 partial。"
     }
   ]
 }

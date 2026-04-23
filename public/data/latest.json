@@ -4,9 +4,9 @@
     "job_name": "openclaw.index",
     "data_type": "index",
     "status": "partial",
-    "generated_at_iso": "2026-04-23T11:30:00+08:00",
-    "generated_at_label": "11:30",
-    "last_successful_run": "2026-04-23T11:30:00+08:00",
+    "generated_at_iso": "2026-04-23T13:20:00+08:00",
+    "generated_at_label": "13:20",
+    "last_successful_run": "2026-04-23T13:20:00+08:00",
     "source_freshness": "fresh",
     "warnings": [
       "today_news_digest_status_partial",
@@ -42,8 +42,8 @@
     },
     "thesis_check": {
       "status": "partial",
-      "updated_at_iso": "2026-04-23T11:20:00+08:00",
-      "updated_at_label": "11:20"
+      "updated_at_iso": "2026-04-23T13:10:00+08:00",
+      "updated_at_label": "13:10"
     },
     "close_review": {
       "status": "success",
@@ -97,6 +97,7 @@
     "11:30 intraday publish linked the 11:20 thesis_check checkpoint and conservatively updated action_plan to intraday because the latest checkpoint reported action_delta_needed=true / change_grade=material.",
     "market_status maintained as mid_session. action_plan was downgraded to reflect a conservative 100% cash posture pending further intraday confirmation.",
     "Public views now reflect same-day artifacts and keep market_context as a collection-layer reference.",
-    "latest.json top-level metadata refreshed after intraday publish-only verification."
+    "latest.json top-level metadata refreshed after intraday publish-only verification.",
+    "13:20 intraday publish linked the 13:10 thesis_check checkpoint; afternoon index rebound did not repair breadth, so action_plan remained unchanged at the 11:30 conservative intraday version."
   ]
 }
